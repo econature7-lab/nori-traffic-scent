@@ -1,3245 +1,3163 @@
 {
- "schema": "nori-traffic-scent/2",
- "generated_at": "2026-11-21T18:48:42+09:00",
- "issue": {
-  "no": 1,
-  "label": "No.01 (11.21)",
-  "date": "2026-11-21"
- },
- "stats": {
-  "sources": 20,
-  "collected": 102,
-  "cross_sources": 0,
-  "live_sources": 24,
-  "skipped_sources": 8,
-  "elapsed_sec": 28.1
- },
- "sources": [
-  "AI타임스",
-  "GeekNews",
-  "JTBC",
-  "SBS News",
-  "YTN",
-  "개드립",
-  "구글뉴스 부동산",
-  "더쿠",
-  "루리웹",
-  "매일경제",
-  "바이라인네트워크",
-  "보배드림",
-  "슬로우뉴스",
-  "실시간베스트",
-  "에펨카리아",
-  "연합뉴스",
-  "인스티즈",
-  "전자신문",
-  "클리앙",
-  "톡커들의 선택"
- ],
- "youtube_mode": "channel-rss",
- "site": {
-  "repo": "econature7-lab/nori-traffic-scent",
-  "pages_url": "https://econature7-lab.github.io/nori-traffic-scent/"
- },
- "posts": [
-  {
-   "id": "s_804d3b606f",
-   "cat": "ai",
-   "source": "모두의AI실험실",
-   "title": "클로드 코드로 3시간 만에 만든 부동산 실거래가 대시보드 — 만든 과정 그대로 공유",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 282,
-   "hot": 76,
-   "comments": 143,
-   "views": 6320,
-   "keywords": [
-    "클로드 코드",
-    "바이브코딩",
-    "부동산 대시보드"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 267,
-    "variant": 3
-   },
-   "cross": 1
+  "schema": "nori-traffic-scent/2",
+  "generated_at": "2026-11-21T22:26:04+09:00",
+  "issue": {
+    "no": 2,
+    "label": "No.02 (11.21)",
+    "date": "2026-11-21"
   },
-  {
-   "id": "s_97b9ef2cc3",
-   "cat": "mom",
-   "source": "맘스홀릭",
-   "title": "겨울방학 유아 숲체험 프로그램 어디가 좋아요? 서울 서북권 위주로 아시는 곳",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 258,
-   "hot": 70,
-   "comments": 128,
-   "views": 4210,
-   "keywords": [
-    "겨울방학 숲체험",
-    "유아숲체험",
-    "서울 숲체험"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 335,
-    "variant": 3
-   },
-   "cross": 1
+  "stats": {
+    "sources": 18,
+    "collected": 102,
+    "cross_sources": 0,
+    "live_sources": 25,
+    "skipped_sources": 7,
+    "elapsed_sec": 53.3
   },
-  {
-   "id": "s_444882c7d2",
-   "cat": "estate",
-   "source": "부동산스터디",
-   "title": "전세 심리지수 3주 연속 상승 기사 봤는데, 내년 1월 이사 계획 있으면 지금 움직여야 하나요",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 257,
-   "hot": 70,
-   "comments": 112,
-   "views": 5140,
-   "keywords": [
-    "전세 심리지수",
-    "이사 시즌",
-    "전세 시장"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 138,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_b0fca53259",
-   "cat": "apptech",
-   "source": "뽐뿌",
-   "title": "토스 행운퀴즈 11/21 정답 모음 (오전 9시 기준, 계속 업데이트)",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 251,
-   "hot": 69,
-   "comments": 87,
-   "views": 5880,
-   "keywords": [
-    "토스 행운퀴즈",
-    "앱테크 정답",
-    "오늘의 퀴즈"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 343,
-    "variant": 3
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_2766c5dd58",
-   "cat": "ai",
-   "source": "모두의AI실험실",
-   "title": "바이브코딩으로 만든 앱 첫 달 수익 공개 — 광고 12만원, 비용은 0원",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 247,
-   "hot": 68,
-   "comments": 98,
-   "views": 4720,
-   "keywords": [
-    "바이브코딩 수익",
-    "앱 부업",
-    "광고 수익"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 78,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_79b8e9298e",
-   "cat": "mom",
-   "source": "레몬테라스",
-   "title": "초1 아이 방과후로 숲놀이 12주 등록했는데 만족도 후기 (사진 많이 넣었어요)",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 234,
-   "hot": 65,
-   "comments": 96,
-   "views": 3180,
-   "keywords": [
-    "숲놀이 후기",
-    "초등 방과후",
-    "겨울방학 숲체험"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 195,
-    "variant": 3
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_c047b7eb56",
-   "cat": "estate",
-   "source": "부동산스터디",
-   "title": "광진구 강변 테크노마트 근처 10평 사무실, 요즘 실매물 시세 얼마까지 부르나요",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 236,
-   "hot": 65,
-   "comments": 88,
-   "views": 3920,
-   "keywords": [
-    "강변 테크노마트",
-    "소형 사무실",
-    "광진구 사무실"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 182,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_7667514434",
-   "cat": "ai",
-   "source": "X(트위터)",
-   "title": "X 수익화 프로그램 개편 이후 노출 회복된 계정들, 공통 패턴만 정리해봤습니다",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 224,
-   "hot": 63,
-   "comments": 71,
-   "views": 3410,
-   "keywords": [
-    "X 수익화",
-    "노출 복구",
-    "트위터 알고리즘"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 9,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_2f42dbe35b",
-   "cat": "estate",
-   "source": "호갱노노",
-   "title": "서울 소형 상가 경매 낙찰가율, 11월 들어 확 올랐다는 기사 보셨나요",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 212,
-   "hot": 60,
-   "comments": 57,
-   "views": 2780,
-   "keywords": [
-    "소형 상가 경매",
-    "낙찰가율",
-    "법원경매"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 78,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_ce3f442a2e",
-   "cat": "apptech",
-   "source": "네이버카페",
-   "title": "쿠팡 파트너스 숏츠로 이번 주 8만원 정산 인증 (주방 수전 편)",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 211,
-   "hot": 60,
-   "comments": 64,
-   "views": 2260,
-   "keywords": [
-    "쿠팡 파트너스 정산",
-    "쇼핑 숏츠",
-    "수전"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 173,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_c6310d0a6c",
-   "cat": "apptech",
-   "source": "뽐뿌",
-   "title": "오늘의집 11월 할인 정보 모음 — 냉장고·건조기 실제 체감가 비교",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 200,
-   "hot": 57,
-   "comments": 45,
-   "views": 1980,
-   "keywords": [
-    "오늘의집 할인",
-    "블랙프라이데이",
-    "가전 핫딜"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 340,
-    "variant": 0
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_07d9063aee",
-   "cat": "mom",
-   "source": "네이버카페",
-   "title": "월드컵공원 숲해설 토요일 10시반반, 이번 주 날씨에 진행될까요?",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 194,
-   "hot": 56,
-   "comments": 41,
-   "views": 1540,
-   "keywords": [
-    "월드컵공원 숲해설",
-    "서울월드컵숲",
-    "주말 숲체험"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 177,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_840dec8c1e",
-   "cat": "build",
-   "source": "네이버카페",
-   "title": "나라장터 소규모 건축설계 용역 공고, 11월 3주차 한 번에 정리했습니다",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 187,
-   "hot": 54,
-   "comments": 33,
-   "views": 1120,
-   "keywords": [
-    "나라장터 공고",
-    "건축설계 용역",
-    "입찰 일정"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 10,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_59bd73f606",
-   "cat": "comm",
-   "source": "실시간베스트",
-   "source_key": "dcbest",
-   "title": "일본 여사친이 초대한 숲속의 온천",
-   "url": "https://gall.dcinside.com/board/view/?id=dcbest&no=480535",
-   "published": "",
-   "time": "최근",
-   "rise": 183,
-   "hot": 53,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "실시간베스트"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 49,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_f2ed3432b6",
-   "cat": "comm",
-   "source": "실시간베스트",
-   "source_key": "dcbest",
-   "title": "의외로 인간이길 포기한 음식들 TOP7",
-   "url": "https://gall.dcinside.com/board/view/?id=dcbest&no=480687",
-   "published": "",
-   "time": "최근",
-   "rise": 183,
-   "hot": 53,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "실시간베스트"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 357,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_c313c3caf5",
-   "cat": "comm",
-   "source": "실시간베스트",
-   "source_key": "dcbest",
-   "title": "JTBC) 정부, 수능 부정시험자 끝까지 추적한다ㅋㅋ",
-   "url": "https://gall.dcinside.com/board/view/?id=dcbest&no=480596",
-   "published": "",
-   "time": "최근",
-   "rise": 183,
-   "hot": 53,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "실시간베스트"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 343,
-    "variant": 3
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_997683fef1",
-   "cat": "comm",
-   "source": "톡커들의 선택",
-   "source_key": "natepann",
-   "title": "마마 예측 1위 팀 대놓고 8위 팀한테 상 주는건 태어...",
-   "url": "https://pann.nate.com/talk/375728947",
-   "published": "",
-   "time": "최근",
-   "rise": 183,
-   "hot": 53,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
+  "sources": [
+    "AI타임스",
+    "GeekNews",
+    "JTBC",
+    "SBS News",
+    "YTN",
+    "개드립",
+    "구글뉴스 부동산",
+    "더쿠",
+    "루리웹",
+    "매일경제",
+    "바이라인네트워크",
+    "보배드림",
+    "슬로우뉴스",
+    "실시간베스트",
+    "에펨카리아",
+    "연합뉴스",
+    "전자신문",
     "톡커들의 선택"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 54,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_554092ace6",
-   "cat": "comm",
-   "source": "톡커들의 선택",
-   "source_key": "natepann",
-   "title": "오해원 왜 지젤 됐음?",
-   "url": "https://pann.nate.com/talk/375728832",
-   "published": "",
-   "time": "최근",
-   "rise": 183,
-   "hot": 53,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "톡커들의 선택"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 105,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_b9f01f91a6",
-   "cat": "comm",
-   "source": "톡커들의 선택",
-   "source_key": "natepann",
-   "title": "디올 행사간 뉴진스 해린 근황",
-   "url": "https://pann.nate.com/talk/375729101",
-   "published": "",
-   "time": "최근",
-   "rise": 183,
-   "hot": 53,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "톡커들의 선택"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 198,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_c1ea0a32fa",
-   "cat": "build",
-   "source": "클리앙",
-   "title": "공동수급 분담이행 실적증명, 지분율 표기에서 자주 틀리는 부분",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 183,
-   "hot": 53,
-   "comments": 28,
-   "views": 940,
-   "keywords": [
-    "분담이행",
-    "실적증명",
-    "지분율"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 299,
-    "variant": 3
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_88c4a5c287",
-   "cat": "build",
-   "source": "나라장터",
-   "title": "2027년 공공건축 설계공모 일정 미리 보기 — 상반기 몰리는 달",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 179,
-   "hot": 53,
-   "comments": 22,
-   "views": 780,
-   "keywords": [
-    "설계공모 일정",
-    "공공건축",
-    "2027 공모"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 24,
-    "variant": 0
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_73b3214789",
-   "cat": "comm",
-   "source": "더쿠",
-   "source_key": "theqoo",
-   "title": "리트냥이를 실제로 만났던 사람",
-   "url": "https://theqoo.net/hot/4413899671",
-   "published": "",
-   "time": "최근",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "더쿠"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 24,
-    "variant": 0
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_f8ac3aa8cf",
-   "cat": "comm",
-   "source": "더쿠",
-   "source_key": "theqoo",
-   "title": "2026 MAMA 올해의 앨범 방탄소년단 수상소감🏆",
-   "url": "https://theqoo.net/hot/4413881684",
-   "published": "",
-   "time": "최근",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "더쿠"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 329,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_3b1d5a676a",
-   "cat": "comm",
-   "source": "더쿠",
-   "source_key": "theqoo",
-   "title": "젤렌스키 : 내년에 1150억달러 필요하다.",
-   "url": "https://theqoo.net/hot/4413878305",
-   "published": "",
-   "time": "최근",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "더쿠"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 113,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_167f6a881d",
-   "cat": "comm",
-   "source": "보배드림",
-   "source_key": "bobaedream",
-   "title": "손정의, 하이닉스 1조달러 인수 추진",
-   "url": "https://www.bobaedream.co.kr/view?code=best&No=1049232&vdate=",
-   "published": "",
-   "time": "최근",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "보배드림"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 161,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_3d858c7593",
-   "cat": "comm",
-   "source": "보배드림",
-   "source_key": "bobaedream",
-   "title": "국내에서 섭외가 가장 쉽다는 연예인",
-   "url": "https://www.bobaedream.co.kr/view?code=best&No=1049231&vdate=",
-   "published": "",
-   "time": "최근",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "보배드림"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 189,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_51f9e10d17",
-   "cat": "comm",
-   "source": "보배드림",
-   "source_key": "bobaedream",
-   "title": "'열혈강호' 30여년만에 마침표",
-   "url": "https://www.bobaedream.co.kr/view?code=best&No=1049229&vdate=",
-   "published": "",
-   "time": "최근",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "보배드림"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 75,
-    "variant": 3
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_27ad50c23e",
-   "cat": "comm",
-   "source": "개드립",
-   "source_key": "dogdrip",
-   "title": "요즘 화제라는 그 짤 원본 찾아봤습니다",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "개드립"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 77,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_80251ef849",
-   "cat": "comm",
-   "source": "개드립",
-   "source_key": "dogdrip",
-   "title": "월급날 가장 무서운 순간 TOP3",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "개드립"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 45,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_6fd6009411",
-   "cat": "comm",
-   "source": "에펨카리아",
-   "source_key": "fmkorea",
-   "title": "이번 주 해외축구 이적 루머 정리 (팬 시점)",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "에펨카리아"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 190,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_c845bb7402",
-   "cat": "comm",
-   "source": "에펨카리아",
-   "source_key": "fmkorea",
-   "title": "중고거래 사기 예방 체크리스트 공유",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "에펨카리아"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 149,
-    "variant": 1
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_347073e38c",
-   "cat": "comm",
-   "source": "루리웹",
-   "source_key": "ruliweb",
-   "title": "올해 가장 오래 붙잡고 있는 게임 뭐야",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "루리웹"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 104,
-    "variant": 0
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_b4ced581e3",
-   "cat": "comm",
-   "source": "루리웹",
-   "source_key": "ruliweb",
-   "title": "패치 이후 달라진 점 정리해봤습니다",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "루리웹"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 206,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_c8bea0b52b",
-   "cat": "comm",
-   "source": "클리앙",
-   "source_key": "clien",
-   "title": "[베타] 토픽 필터 기능을 추가합니다.(메인 추가)",
-   "url": "https://www.clien.net/service/board/annonce/19238259",
-   "published": "",
-   "time": "최근",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "클리앙"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 123,
-    "variant": 3
-   },
-   "cross": 1
-  },
-  {
-   "id": "c_22e375ee60",
-   "cat": "comm",
-   "source": "인스티즈",
-   "source_key": "instiz",
-   "title": "요즘 아이돌 무대 중 계속 돌려보는 것",
-   "url": "",
-   "published": "",
-   "time": "예시",
-   "rise": 169,
-   "hot": 50,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "인스티즈"
-   ],
-   "sample": true,
-   "thumb": {
-    "hue": 291,
-    "variant": 3
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_06e3b141c6",
-   "cat": "ai",
-   "source": "GeekNews",
-   "title": "Show GN: codemap-search - 코딩 에이전트용 단일 바이너리 Rust 코드 탐색 MCP 서버",
-   "url": "https://news.hada.io/topic?id=37568&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "published": "",
-   "time": "11분 전",
-   "rise": 162,
-   "hot": 49,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "GeekNews",
-    "AI·개발"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 15,
-    "variant": 3
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_e72487eadb",
-   "cat": "ai",
-   "source": "GeekNews",
-   "title": "Backblaze 개인정보 수집 고지 및 개인정보 처리방침",
-   "url": "https://news.hada.io/topic?id=37567&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "published": "",
-   "time": "14분 전",
-   "rise": 162,
-   "hot": 49,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "GeekNews",
-    "AI·개발"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 151,
-    "variant": 3
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_e5c67d963e",
-   "cat": "ai",
-   "source": "GeekNews",
-   "title": "Vim Classic 8.3.1 출시, Python 2 지원 제거 및 Vim 패치 반영",
-   "url": "https://news.hada.io/topic?id=37566&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "published": "",
-   "time": "47분 전",
-   "rise": 162,
-   "hot": 49,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "GeekNews",
-    "AI·개발"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 162,
-    "variant": 2
-   },
-   "cross": 1
-  },
-  {
-   "id": "s_438344d741",
-   "cat": "ai",
-   "source": "GeekNews",
-   "title": "DreamCoder: Mastering Emacs 저자가 만든 코딩 하네스와 IDE",
-   "url": "https://news.hada.io/topic?id=37564&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "published": "",
-   "time": "2시간 전",
-   "rise": 162,
-   "hot": 49,
-   "comments": 0,
-   "views": 0,
-   "keywords": [
-    "GeekNews",
-    "AI·개발"
-   ],
-   "sample": false,
-   "thumb": {
-    "hue": 184,
-    "variant": 0
-   },
-   "cross": 1
-  }
- ],
- "news": [
-  {
-   "id": "n_f0eb9e5618",
-   "section": "경제·증시",
-   "title": "머스크 “나는 열렬한 중국 팬…‘중국산 장난감’ 가진 아들도 사랑하는 나라”",
-   "source": "매일경제",
-   "url": "https://www.mk.co.kr/news/world/12215307",
-   "published": "2026-11-21T18:11:00+09:00",
-   "time": "37분 전",
-   "fresh": 0.984,
-   "keywords": [
-    "헤드라인"
-   ],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 85,
-   "rise": 260,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 48,
-    "variant": 0
-   }
-  },
-  {
-   "id": "n_59aacca895",
-   "section": "경제·증시",
-   "title": "“울기 직전, 노래도 거부”…주영훈, 이지혜·서지영 불화 현장 23년 만 재소환",
-   "source": "매일경제",
-   "url": "https://www.mk.co.kr/news/culture/12215305",
-   "published": "2026-11-21T17:52:18+09:00",
-   "time": "56분 전",
-   "fresh": 0.977,
-   "keywords": [
-    "헤드라인"
-   ],
-   "noise": true,
-   "sample": false,
-   "cat": "news",
-   "hot": 84,
-   "rise": 254,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 231,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_e4ccc84199",
-   "section": "경제·증시",
-   "title": "졸업 미루며 대기업만 노리는 청년들…“첫 단추 잘못 꿰면 인생 꼬일 수도”",
-   "source": "매일경제",
-   "url": "https://www.mk.co.kr/news/economy/12215302",
-   "published": "2026-11-21T17:43:55+09:00",
-   "time": "1시간 전",
-   "fresh": 0.973,
-   "keywords": [
-    "헤드라인"
-   ],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 83,
-   "rise": 248,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 347,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_6fa2ba3859",
-   "section": "경제·증시",
-   "title": "‘갤럭시 S펜’ 핵심기술 보유한 日와콤, MBK가 1조원대 인수",
-   "source": "매일경제",
-   "url": "https://www.mk.co.kr/news/stock/12215301",
-   "published": "2026-11-21T17:42:34+09:00",
-   "time": "1시간 전",
-   "fresh": 0.972,
-   "keywords": [
-    "헤드라인"
-   ],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 82,
-   "rise": 242,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 51,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_3fa371e64b",
-   "section": "경제·증시",
-   "title": "“답장 받으려면 하루, 연락하고 지내기 힘드네”…49년 날아간 보이저 1호",
-   "source": "매일경제",
-   "url": "https://www.mk.co.kr/news/world/12215300",
-   "published": "2026-11-21T17:42:13+09:00",
-   "time": "1시간 전",
-   "fresh": 0.972,
-   "keywords": [
-    "헤드라인"
-   ],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 81,
-   "rise": 236,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 135,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_c50241113d",
-   "section": "경제·증시",
-   "title": "‘카카오 vs TPG’ 분쟁 첫 분기점…메가박스중앙은 회생안 마련 ‘총력’ [M&A복덕방]",
-   "source": "매일경제",
-   "url": "https://www.mk.co.kr/news/stock/12215299",
-   "published": "2026-11-21T17:41:52+09:00",
-   "time": "1시간 전",
-   "fresh": 0.972,
-   "keywords": [
-    "헤드라인"
-   ],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 80,
-   "rise": 230,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 193,
-    "variant": 1
-   }
-  },
-  {
-   "id": "n_953d0a1cbd",
-   "section": "경제·증시",
-   "title": "“20대 열 명 중 여덟 명이 부모와 산다고?”…독립 포기 청년, 세계로 확산",
-   "source": "매일경제",
-   "url": "https://www.mk.co.kr/news/world/12215298",
-   "published": "2026-11-21T17:41:41+09:00",
-   "time": "1시간 전",
-   "fresh": 0.972,
-   "keywords": [
-    "헤드라인"
-   ],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 79,
-   "rise": 224,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 229,
-    "variant": 1
-   }
-  },
-  {
-   "id": "n_2279c4c1ec",
-   "section": "경제·증시",
-   "title": "‘52세’ 주진모, 의사 아내와 결혼 7년 만 아빠된다…초음파 사진에 감격",
-   "source": "매일경제",
-   "url": "https://www.mk.co.kr/news/culture/12215295",
-   "published": "2026-11-21T17:37:53+09:00",
-   "time": "1시간 전",
-   "fresh": 0.971,
-   "keywords": [
-    "헤드라인"
-   ],
-   "noise": true,
-   "sample": false,
-   "cat": "news",
-   "hot": 78,
-   "rise": 218,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 359,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_6719d8bd57",
-   "section": "경제·증시",
-   "title": "차 안에서 전자발찌 끊고 달아나…충북 진천서 50대 성범죄자 추적중",
-   "source": "매일경제",
-   "url": "https://www.mk.co.kr/news/society/12215294",
-   "published": "2026-11-21T17:34:32+09:00",
-   "time": "1시간 전",
-   "fresh": 0.969,
-   "keywords": [
-    "헤드라인"
-   ],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 77,
-   "rise": 212,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 282,
-    "variant": 2
-   }
-  },
-  {
-   "id": "n_e2eb5faee3",
-   "section": "IT·AI",
-   "title": "AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
-   "source": "AI타임스",
-   "url": "https://www.aitimes.com/news/articleView.html?idxno=217649",
-   "published": "2026-11-21T18:20:47+09:00",
-   "time": "27분 전",
-   "fresh": 0.988,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 76,
-   "rise": 206,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 333,
-    "variant": 1
-   }
-  },
-  {
-   "id": "n_e8f9e94889",
-   "section": "IT·AI",
-   "title": "韓 조선업계 산재 사고 줄고 질병 늘었다…지난해 질병재해 1900명 육박",
-   "source": "전자신문",
-   "url": "https://www.etnews.com/20261120000253",
-   "published": "2026-11-21T18:00:00+09:00",
-   "time": "48분 전",
-   "fresh": 0.98,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 75,
-   "rise": 200,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 173,
-    "variant": 1
-   }
-  },
-  {
-   "id": "n_bdfc06e268",
-   "section": "IT·AI",
-   "title": "[ET시선] 공공 클라우드 전환, 보안·개방 해법 찾아야",
-   "source": "전자신문",
-   "url": "https://www.etnews.com/20261120000265",
-   "published": "2026-11-21T17:00:00+09:00",
-   "time": "1시간 전",
-   "fresh": 0.955,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 74,
-   "rise": 194,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 161,
-    "variant": 1
-   }
-  },
-  {
-   "id": "n_c001a1588e",
-   "section": "IT·AI",
-   "title": "AI 커닝 안걸렸다고 끝?…“수능장 와이파이·블루투스는 당신이 한 일을 기억하고 있다”",
-   "source": "전자신문",
-   "url": "https://www.etnews.com/20261121000039",
-   "published": "2026-11-21T16:50:00+09:00",
-   "time": "1시간 전",
-   "fresh": 0.951,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 73,
-   "rise": 188,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 51,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_798070f9b1",
-   "section": "IT·AI",
-   "title": "200만 건 주문 폭주했는데 상품은 사라졌다…中 쇼핑몰의 수상한 '2원 잠옷'",
-   "source": "전자신문",
-   "url": "https://www.etnews.com/20261120000310",
-   "published": "2026-11-21T16:50:00+09:00",
-   "time": "1시간 전",
-   "fresh": 0.951,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 72,
-   "rise": 182,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 250,
-    "variant": 2
-   }
-  },
-  {
-   "id": "n_2758b83dbe",
-   "section": "IT·AI",
-   "title": "구글, 제미나이 앱에 GIF 생성 기능 출시…오픈AI 이어 도입",
-   "source": "AI타임스",
-   "url": "https://www.aitimes.com/news/articleView.html?idxno=217648",
-   "published": "2026-11-21T16:39:48+09:00",
-   "time": "2시간 전",
-   "fresh": 0.946,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 71,
-   "rise": 176,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 7,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_14b752c1c2",
-   "section": "IT·AI",
-   "title": "수능 시험장에 지우개가 안왔다…“내 책임이여” 교장이 내린 결단은",
-   "source": "전자신문",
-   "url": "https://www.etnews.com/20261121000038",
-   "published": "2026-11-21T12:53:03+09:00",
-   "time": "5시간 전",
-   "fresh": 0.852,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 70,
-   "rise": 170,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 135,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_ab1e5629f6",
-   "section": "IT·AI",
-   "title": "고흐의 '꽃 핀 밤나무', 소유권 분쟁 딛고 2500억 '역대 최고가' 경신",
-   "source": "전자신문",
-   "url": "https://www.etnews.com/20261119000372",
-   "published": "2026-11-21T12:50:00+09:00",
-   "time": "5시간 전",
-   "fresh": 0.851,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 69,
-   "rise": 164,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 287,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_668776a7b6",
-   "section": "IT·AI",
-   "title": "[소부장 테크페어]아이큐랩, 초고주파 GaN 소자 국산화 속도…“측정·인증 인프라 시급”",
-   "source": "전자신문",
-   "url": "https://www.etnews.com/20261120000114",
-   "published": "2026-11-21T12:00:00+09:00",
-   "time": "6시간 전",
-   "fresh": 0.83,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 68,
-   "rise": 158,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 60,
-    "variant": 0
-   }
-  },
-  {
-   "id": "n_0c9c7f3d49",
-   "section": "부동산·정책",
-   "title": "[펜앤인터뷰] 李 부동산 대책 몇 점? 최경환 \"경제 조금이라도 알면 이런 짓 못해\"",
-   "source": "구글뉴스 부동산",
-   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9GTUFmMVVVZ1U2MUFCeVFFVUdBM1pHbExHVjhfazVmSEFFU1BrTzREQlVoSGRIOFFPNDJuRmZsU2pqNE5pck9VS2pkcENUUW1sbl9YMmRBWXdyVUUtZ2gyWHNCYTFRcXZpejVV0gFvQVVfeXFMTVpfXzlLZTBRV0ZvZmx2QklETkNWdGRFbDYzT3l4UHhPc1NkMUxEZDN4dnNrOUdvOGVLd1MtVGRmMi1nZnBoeC1EeGFUb3Q2VmxCdUtrY3NXTG9tZWFIRGJnZWhSOUVNUXp3RXROV2Vn?oc=5",
-   "published": "2026-11-21T06:23:10+09:00",
-   "time": "12시간 전",
-   "fresh": 0.689,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 67,
-   "rise": 152,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 340,
-    "variant": 0
-   }
-  },
-  {
-   "id": "n_d3fe261f38",
-   "section": "부동산·정책",
-   "title": "[이재명 부동산정책 분석] ③수도권 집중 해소, 성공할 것인가",
-   "source": "구글뉴스 부동산",
-   "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTFBqa25PeEc1ZGZYcVNwYUhDelQxTDR3alUwUERwYmVDRDVPT3c5YXVYbWZjdlJKUHlmMXZxekZyWXA0RHM?oc=5",
-   "published": "2026-11-20T02:14:00+09:00",
-   "time": "1일 전",
-   "fresh": 0.2,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 66,
-   "rise": 146,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 114,
-    "variant": 2
-   }
-  },
-  {
-   "id": "n_0fc3e109e8",
-   "section": "부동산·정책",
-   "title": "부동산 정책 몇달만에 잇단 조정…시장은 '예측가능성' 우려",
-   "source": "구글뉴스 부동산",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBfWk9JTkx3bzVQMFJIZzNpcHR5Z0QyalJ5LWFrNlBEaGdmdk5UTWstQmJSXzNsYUdieTU1SVBhWDMweHdRNTlacUF4NVJ6Z0dyRlZJNGhSa1JLOEnSAWBBVV95cUxNNThhZmd4RkRHWU5VbmZnRnpqcUxJNEFkbWJZejJVcEdjVzdLZWxmV01KaURUalNSZTl2RkpOeVQzcFJVdUVlclp0NjhidXBaMTZHV240aDJjU2Z1a2NwcEM?oc=5",
-   "published": "2026-09-20T07:00:00+09:00",
-   "time": "09.20",
-   "fresh": 0.2,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 65,
-   "rise": 140,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 15,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_4d740836e6",
-   "section": "부동산·정책",
-   "title": "李대통령, \"부동산 정상화, 지금은 견디는 중…국민주권정부는 한다\"",
-   "source": "구글뉴스 부동산",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1tb2tkcmp1dENZMUtzS0JPWVNPdjQwVDhybzFLWk0xVm13ZGd3MWszMUhtZ2lLbE14dXBWX0lQY0FxQ0wtYzZOR1hPZVktMkJNd2Y4Q3JnSFBRNjBKMlFqUExHVTZLbVIxVXZMUWFDMTk?oc=5",
-   "published": "2026-10-31T07:00:00+09:00",
-   "time": "10.31",
-   "fresh": 0.2,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 64,
-   "rise": 134,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 315,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_06eea6bd12",
-   "section": "부동산·정책",
-   "title": "[브릿지 칼럼] 토지공개념의 부활… 위협받는 재산권",
-   "source": "구글뉴스 부동산",
-   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE8za2NTNXEycTAxbHVfNGVBb2dCaHBjaWYwYmV4ZURBTVFKTjFhQ0dsMUtaNHpybTFJZFlGWTVrM01LZTd0ZWlJbkJ6MXI3NHNaS2QzQ1BIbnplZw?oc=5",
-   "published": "2026-11-18T12:00:00+09:00",
-   "time": "3일 전",
-   "fresh": 0.2,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 63,
-   "rise": 128,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 267,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_1c4111c81c",
-   "section": "부동산·정책",
-   "title": "李 지지율 40%…부정평가 이유 1위 ‘부동산’서 ‘경제·민생’으로[갤럽]",
-   "source": "구글뉴스 부동산",
-   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZmRCdHJHRWg3VGdFa0F1dzF2YUdEUXA5M0VpMkxjdXdpQjJjQkppMHN6bWtvUFJhRkxTRUlsbnpSbHdma1djdjkwRDl1X1BmVlBGcFpvQmNwa2dTeDktejJIazBSNXZsSUVldjJrVFZGenpkcEFXTzh0YlJ4SjBrZw?oc=5",
-   "published": "2026-11-20T02:43:37+09:00",
-   "time": "1일 전",
-   "fresh": 0.2,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 62,
-   "rise": 122,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 183,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_c2eff455fc",
-   "section": "부동산·정책",
-   "title": "고동진 의원, 이재명 정부의 부동산 세제개편안 관련 강남구민 의견 국회에 전달",
-   "source": "구글뉴스 부동산",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1BWW9URzFQSURrQ3RaRGVXWE1XeUM3LXhqTXZVNDB3WHRkaUxNMURkNnNHczh5ei1yU0VNU2FHYjNwQWRjN2pEQnV1Q3dDWll4Vjh4czlhLU1ZZndIdXpfQTNaTkU1ZXdH?oc=5",
-   "published": "2026-11-19T05:50:07+09:00",
-   "time": "2일 전",
-   "fresh": 0.2,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 61,
-   "rise": 116,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 210,
-    "variant": 2
-   }
-  },
-  {
-   "id": "n_bb2dfb9296",
-   "section": "부동산·정책",
-   "title": "“정부 부동산정책 비판한 전문가들 사찰 당해”…김은혜, 과거 문건 공개",
-   "source": "구글뉴스 부동산",
-   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9zMUdXalFVclBudFhkaWdJS2hXcm82YUE1SFNhVUNhZ0hPRzhaV1plRnVHXzR1S0F0bTVRS281R29GSmxLalI1Z2dNWFBBcEhfeUs2V2xyZkQ?oc=5",
-   "published": "2026-10-07T07:00:00+09:00",
-   "time": "10.07",
-   "fresh": 0.2,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 60,
-   "rise": 110,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 224,
-    "variant": 0
-   }
-  },
-  {
-   "id": "n_f4e21c3941",
-   "section": "부동산·정책",
-   "title": "부동산정책, 국민 대토론회에서 제안해보세요! - 정책뉴스 | 뉴스",
-   "source": "구글뉴스 부동산",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9YdkpPWmJibUsxQUN3Z3VmdS13UkZVcDU1VTk4WGxQVWhTajhkNjh6WDJaajFxTWFTMGt2LWNLQ0VwX3Utb0NSOWdxOEhRMDFPb2ZrSC1pa1duQ3FnRGpZSkNEZm03V2RTMkpRSQ?oc=5",
-   "published": "2026-07-15T07:00:00+09:00",
-   "time": "07.15",
-   "fresh": 0.2,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 59,
-   "rise": 104,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 5,
-    "variant": 1
-   }
-  },
-  {
-   "id": "n_fc728ab46a",
-   "section": "사회·생활",
-   "title": "추미애 \"조희대 대법원장 탄핵 실행, 좌고우면 안 돼\"",
-   "source": "연합뉴스",
-   "url": "https://www.yna.co.kr/view/AKR20261121045800061",
-   "published": "2026-11-21T18:44:48+09:00",
-   "time": "3분 전",
-   "fresh": 0.998,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 58,
-   "rise": 98,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 353,
-    "variant": 1
-   }
-  },
-  {
-   "id": "n_4e5d7c9dca",
-   "section": "사회·생활",
-   "title": "[프로축구 중간순위] 21일",
-   "source": "연합뉴스",
-   "url": "https://www.yna.co.kr/view/AKR20261121046000007",
-   "published": "2026-11-21T18:43:49+09:00",
-   "time": "4분 전",
-   "fresh": 0.998,
-   "keywords": [],
-   "noise": true,
-   "sample": false,
-   "cat": "news",
-   "hot": 57,
-   "rise": 92,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 160,
-    "variant": 0
-   }
-  },
-  {
-   "id": "n_6edfba44a5",
-   "section": "사회·생활",
-   "title": "K리그1 대전, 10경기 무패 행진…2위 울산과 승점 1 차이(종합)",
-   "source": "연합뉴스",
-   "url": "https://www.yna.co.kr/view/AKR20261121040751007",
-   "published": "2026-11-21T18:41:27+09:00",
-   "time": "7분 전",
-   "fresh": 0.997,
-   "keywords": [],
-   "noise": true,
-   "sample": false,
-   "cat": "news",
-   "hot": 56,
-   "rise": 90,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 200,
-    "variant": 0
-   }
-  },
-  {
-   "id": "n_7f012101b0",
-   "section": "사회·생활",
-   "title": "구글, 인도네시아 친정부 유튜브 채널 대량 삭제…당국 반발",
-   "source": "연합뉴스",
-   "url": "https://www.yna.co.kr/view/AKR20261121045700084",
-   "published": "2026-11-21T18:37:05+09:00",
-   "time": "11분 전",
-   "fresh": 0.995,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 55,
-   "rise": 90,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 162,
-    "variant": 2
-   }
-  },
-  {
-   "id": "n_3185f4f7e1",
-   "section": "사회·생활",
-   "title": "남자배구 삼성화재, OK저축은행 잡고 3연승으로 2위 도약(종합)",
-   "source": "연합뉴스",
-   "url": "https://www.yna.co.kr/view/AKR20261121041351007",
-   "published": "2026-11-21T18:29:22+09:00",
-   "time": "19분 전",
-   "fresh": 0.992,
-   "keywords": [],
-   "noise": true,
-   "sample": false,
-   "cat": "news",
-   "hot": 54,
-   "rise": 90,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 200,
-    "variant": 0
-   }
-  },
-  {
-   "id": "n_56605cc183",
-   "section": "사회·생활",
-   "title": "[프로축구 강릉전적] 대전 3-1 강원",
-   "source": "연합뉴스",
-   "url": "https://www.yna.co.kr/view/AKR20261121045600007",
-   "published": "2026-11-21T18:27:27+09:00",
-   "time": "21분 전",
-   "fresh": 0.991,
-   "keywords": [],
-   "noise": true,
-   "sample": false,
-   "cat": "news",
-   "hot": 53,
-   "rise": 90,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 151,
-    "variant": 3
-   }
-  },
-  {
-   "id": "n_a8fb504439",
-   "section": "사회·생활",
-   "title": "[프로축구 인천전적] 인천 2-1 울산",
-   "source": "연합뉴스",
-   "url": "https://www.yna.co.kr/view/AKR20261121045500007",
-   "published": "2026-11-21T18:27:15+09:00",
-   "time": "21분 전",
-   "fresh": 0.991,
-   "keywords": [],
-   "noise": true,
-   "sample": false,
-   "cat": "news",
-   "hot": 52,
-   "rise": 90,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 168,
-    "variant": 0
-   }
-  },
-  {
-   "id": "n_7c73470af6",
-   "section": "사회·생활",
-   "title": "[프로배구 전적] 21일",
-   "source": "연합뉴스",
-   "url": "https://www.yna.co.kr/view/AKR20261118184453007",
-   "published": "2026-11-21T18:24:50+09:00",
-   "time": "23분 전",
-   "fresh": 0.99,
-   "keywords": [],
-   "noise": true,
-   "sample": false,
-   "cat": "news",
-   "hot": 51,
-   "rise": 90,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 346,
-    "variant": 2
-   }
-  },
-  {
-   "id": "n_d3791333f4",
-   "section": "사회·생활",
-   "title": "평창서 공기총 사격 연습 중 60대 행인 맞아 숨져(종합)",
-   "source": "연합뉴스",
-   "url": "https://www.yna.co.kr/view/AKR20261121034451062",
-   "published": "2026-11-21T18:19:40+09:00",
-   "time": "28분 전",
-   "fresh": 0.988,
-   "keywords": [],
-   "noise": false,
-   "sample": false,
-   "cat": "news",
-   "hot": 50,
-   "rise": 90,
-   "comments": 0,
-   "views": 0,
-   "thumb": {
-    "hue": 340,
-    "variant": 0
-   }
-  }
- ],
- "videos": [
-  {
-   "id": "y_5c21c96973",
-   "rank": 1,
-   "kind": "long",
-   "title": "민주 \"조희대 탄핵, 12·3 기점 발의 공감대\"...국힘 \"헌법 질서 파괴\" / YTN",
-   "channel": "YTN",
-   "views": 0,
-   "likes": 0,
-   "published": "2026-11-21T09:21:52+00:00",
-   "time": "26분 전",
-   "url": "https://www.youtube.com/watch?v=X3Oli487R_I",
-   "sample": false,
-   "cat": "youtube",
-   "source": "YTN",
-   "hot": 75,
-   "rise": 245,
-   "comments": 0,
-   "keywords": [
-    "유튜브",
-    "long"
-   ]
-  },
-  {
-   "id": "y_c32df20ff5",
-   "rank": 2,
-   "kind": "long",
-   "title": "여권-조희대 '갈등의 골'...탄핵 추진으로 정점 찍나 / YTN",
-   "channel": "YTN",
-   "views": 0,
-   "likes": 0,
-   "published": "2026-11-21T09:17:56+00:00",
-   "time": "30분 전",
-   "url": "https://www.youtube.com/watch?v=OuLIrgnc_6E",
-   "sample": false,
-   "cat": "youtube",
-   "source": "YTN",
-   "hot": 74,
-   "rise": 240,
-   "comments": 0,
-   "keywords": [
-    "유튜브",
-    "long"
-   ]
-  },
-  {
-   "id": "y_b50587af59",
-   "rank": 3,
-   "kind": "long",
-   "title": "갑자기 추워졌지만...'맛있게' 떡볶이 '활기차게' 실내 레포츠 / YTN",
-   "channel": "YTN",
-   "views": 0,
-   "likes": 0,
-   "published": "2026-11-21T09:17:10+00:00",
-   "time": "31분 전",
-   "url": "https://www.youtube.com/watch?v=XE5eyO5HE2Q",
-   "sample": false,
-   "cat": "youtube",
-   "source": "YTN",
-   "hot": 73,
-   "rise": 235,
-   "comments": 0,
-   "keywords": [
-    "유튜브",
-    "long"
-   ]
-  },
-  {
-   "id": "y_7c3efc35ac",
-   "rank": 4,
-   "kind": "long",
-   "title": "다카이치 '굴욕적 장면'에 '충격'…일본 내부 '이상 신호' [이슈픽] / YTN",
-   "channel": "YTN",
-   "views": 0,
-   "likes": 0,
-   "published": "2026-11-21T05:13:37+00:00",
-   "time": "4시간 전",
-   "url": "https://www.youtube.com/watch?v=8tnZc9y9kIc",
-   "sample": false,
-   "cat": "youtube",
-   "source": "YTN",
-   "hot": 72,
-   "rise": 230,
-   "comments": 0,
-   "keywords": [
-    "유튜브",
-    "long"
-   ]
-  },
-  {
-   "id": "y_1524100a4a",
-   "rank": 5,
-   "kind": "long",
-   "title": "Groundhog Day is not a documentary 😭 | Long Story Short",
-   "channel": "SBS News",
-   "views": 0,
-   "likes": 0,
-   "published": "2026-11-20T21:01:09+00:00",
-   "time": "12시간 전",
-   "url": "https://www.youtube.com/shorts/5hZf2dZhqxw",
-   "sample": false,
-   "cat": "youtube",
-   "source": "SBS News",
-   "hot": 71,
-   "rise": 225,
-   "comments": 0,
-   "keywords": [
-    "유튜브",
-    "long"
-   ]
-  },
-  {
-   "id": "y_9ca7309c3f",
-   "rank": 6,
-   "kind": "long",
-   "title": "Evidence that rocked the Kumanjayi Walker inquest",
-   "channel": "SBS News",
-   "views": 0,
-   "likes": 0,
-   "published": "2026-11-20T05:30:35+00:00",
-   "time": "1일 전",
-   "url": "https://www.youtube.com/shorts/XoKwW6xQdMM",
-   "sample": false,
-   "cat": "youtube",
-   "source": "SBS News",
-   "hot": 70,
-   "rise": 220,
-   "comments": 0,
-   "keywords": [
-    "유튜브",
-    "long"
-   ]
-  },
-  {
-   "id": "y_392c5c3351",
-   "rank": 7,
-   "kind": "long",
-   "title": "The jury selection | 2.6 Seconds: Death in the Outback",
-   "channel": "SBS News",
-   "views": 0,
-   "likes": 0,
-   "published": "2026-11-20T05:00:49+00:00",
-   "time": "1일 전",
-   "url": "https://www.youtube.com/shorts/0ir6qwScpUA",
-   "sample": false,
-   "cat": "youtube",
-   "source": "SBS News",
-   "hot": 69,
-   "rise": 215,
-   "comments": 0,
-   "keywords": [
-    "유튜브",
-    "long"
-   ]
-  },
-  {
-   "id": "y_efbe1f22d5",
-   "rank": 8,
-   "kind": "long",
-   "title": "You Really Can’t Please Everyone | Tea with Mussolini",
-   "channel": "SBS News",
-   "views": 0,
-   "likes": 0,
-   "published": "2026-11-18T23:49:29+00:00",
-   "time": "2일 전",
-   "url": "https://www.youtube.com/shorts/zyTAd7ayU4s",
-   "sample": false,
-   "cat": "youtube",
-   "source": "SBS News",
-   "hot": 68,
-   "rise": 210,
-   "comments": 0,
-   "keywords": [
-    "유튜브",
-    "long"
-   ]
-  },
-  {
-   "id": "y_63dffa99c0",
-   "rank": 9,
-   "kind": "long",
-   "title": "My MTV",
-   "channel": "JTBC",
-   "views": 0,
-   "likes": 0,
-   "published": "2006-03-05T17:02:50+00:00",
-   "time": "03.06",
-   "url": "https://www.youtube.com/watch?v=5hu2g5hRXCg",
-   "sample": false,
-   "cat": "youtube",
-   "source": "JTBC",
-   "hot": 67,
-   "rise": 205,
-   "comments": 0,
-   "keywords": [
-    "유튜브",
-    "long"
-   ]
-  }
- ],
- "blogs": [
-  {
-   "id": "b_06e3b141c6",
-   "title": "Show GN: codemap-search - 코딩 에이전트용 단일 바이너리 Rust 코드 탐색 MCP 서버",
-   "source": "GeekNews",
-   "url": "https://news.hada.io/topic?id=37568&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "time": "11분 전",
-   "desc": "codemap-search는 Claude Code나 Codex 같은 코딩 에이전트에서 로컬 저장소를 탐색할 때 쓰는 단일 바이너리 Rust MCP 서버입니다. 직접 만들어 오픈소스로 공개했고, 별도 런타임이나 DB 없이 설치해 바로 붙일 수 있습니다. 처음에는 Serena를 계기로 코드 탐색 MCP에 관심이 생겼는데, 기",
-   "keywords": [],
-   "sample": false
-  },
-  {
-   "id": "b_e72487eadb",
-   "title": "Backblaze 개인정보 수집 고지 및 개인정보 처리방침",
-   "source": "GeekNews",
-   "url": "https://news.hada.io/topic?id=37567&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "time": "14분 전",
-   "desc": "Backblaze는 데이터 컨트롤러로서 처리하는 개인정보 의 수집, 이용, 공개, 보관 범위와 이용자 권리를 규정함. 웹사이트와 앱뿐 아니라 고객 문의, 거래, 행사, 오프라인 및 제3자를 통한 수집에도 적용됨 직전 12개월 동안 식별자, 인터넷 활동, 상업 정보, 위치 정보 를 광고 네트워크와 분석 제공업체에 판매하거나",
-   "keywords": [],
-   "sample": false
-  },
-  {
-   "id": "b_e5c67d963e",
-   "title": "Vim Classic 8.3.1 출시, Python 2 지원 제거 및 Vim 패치 반영",
-   "source": "GeekNews",
-   "url": "https://news.hada.io/topic?id=37566&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "time": "47분 전",
-   "desc": "안정성과 장기 지원(LTS) 을 지향하는 Vim 포크, Vim Classic의 두 번째 릴리스 8.3.1 이 출시됨 Vim 8.2.3237까지의 적용 가능한 패치 를 반영해 다수의 버그 수정, 소규모 기능 추가, Vim 플러그인 호환성 개선을 포함함 이번 릴리스부터 Python 2 지원을 제거 함 Vim Classic은 ",
-   "keywords": [],
-   "sample": false
-  },
-  {
-   "id": "b_438344d741",
-   "title": "DreamCoder: Mastering Emacs 저자가 만든 코딩 하네스와 IDE",
-   "source": "GeekNews",
-   "url": "https://news.hada.io/topic?id=37564&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-   "time": "2시간 전",
-   "desc": "DreamCoder 는 15개월간 개발과 베타 테스트를 거쳐 공개된 AI 코딩 하네스로, 브라우저에서 타일링 창 관리자와 대화창, 터미널을 함께 제공함 사람 중심 인터페이스 에 초점을 맞춰 창 크기를 자동 조정하고, 여러 작업 공간에서 실행 중인 AI의 진행 상태와 사용자 개입 필요 여부를 미니맵으로 보여줌 백그라운드 서",
-   "keywords": [],
-   "sample": false
-  },
-  {
-   "id": "b_d169e0d43d",
-   "title": "“비급여로 돈 버는 병원, 값 싸고 질 좋은 의료 서비스가 한계에 봉착했다는 사실을 인정해야 한다.",
-   "source": "슬로우뉴스",
-   "url": "https://slownews.kr/169912",
-   "time": "1시간 전",
-   "desc": "장부승(51·일본 간사이외국어대 교수) 인터뷰 마지막 편이다. 한국 의료 공급 체계의 가장 큰 특징 가운데 하나는 ‘요양기관 당연지정제’다. 모든 의료기관을 국민건강보험 요양기관에 강제 편입시킨 제도로 막강한 국가 동원 체제였던 유신의 산물이다. 덕분에 한국 국민은 기초적 의료서비스로 지정된 급여 대상 의료 행위에 대해서",
-   "keywords": [
-    "김도연 인터뷰.",
-    "경제",
-    "통찰."
-   ],
-   "sample": false
-  },
-  {
-   "id": "b_0184f156da",
-   "title": "블루 쓰나미, 그 뿌리는 감당할 수 없었던 삶",
-   "source": "슬로우뉴스",
-   "url": "https://slownews.kr/169587",
-   "time": "1일 전",
-   "desc": "인터뷰어 서문: 부분과 전체 지난 미국 중간선거를 분석해 달라는 내 질문에 AI는 “장바구니 물가가 이념을 꺾었다”라는 제목으로 리포트를 생성했다. 이런 AI 같으니라고. 세상은 그렇게 단순하게 굴러가지 않는다고 캡콜드(김낙호 드렉셀 대학교 교수)는 말했다. 동의한다. 세상은 때론 아주 단순해 보이지만, 그렇게 ‘보여지는",
-   "keywords": [
-    "정치",
-    "국제",
-    "민노인터뷰."
-   ],
-   "sample": false
-  },
-  {
-   "id": "b_ec7b1da833",
-   "title": "Slow Letter: November 20, 2026.",
-   "source": "슬로우뉴스",
-   "url": "https://slownews.kr/169904",
-   "time": "1일 전",
-   "desc": "Han Duck-soo’s Retrial: Nothing Fundamentally Changed. Nine Majority Opinions, Three Dissenting Voices. A Ruling That Seemed Determined to Reduce the Sentence. What Matters Now. “H",
-   "keywords": [
-    "slowletter_english_version",
-    "경제"
-   ],
-   "sample": false
-  },
-  {
-   "id": "b_16051eaaed",
-   "title": "1.5조 달러, 앤트로픽 상장 첫날 17% 급등: 슬로우레터 11월20일.",
-   "source": "슬로우뉴스",
-   "url": "https://slownews.kr/169867",
-   "time": "1일 전",
-   "desc": "🎧 한덕수 파기환송, 본질적으로 달라진 건 없다. 9명의 다수 의견과 3명의 소수 의견. “형량을 깎아주려 작정한 판결.” 쟁점과 현안. “역사적 반역”, 조희대 탄핵으로 가나. 위급재난문자 세 번에, 98명 적발. AI 시대, 시험이라는 재난. 리트 만점자, 공개 검증받겠다더니 자살. 앤트로픽, 사상 최대 규모 IPO에",
-   "keywords": [
-    "컨텍스트 레터.",
-    "경제"
-   ],
-   "sample": false
-  },
-  {
-   "id": "b_f69d037804",
-   "title": "쿤텍 “AI 에이전트 보안, 전주기 연결해 대응 시간 줄여야”",
-   "source": "바이라인네트워크",
-   "url": "https://byline.network/2026/11/19-692/",
-   "time": "1일 전",
-   "desc": "기업이 인공지능(AI) 에이전트를 도입할 때는 어떤 모델과 도구를 사용하는지를 알아야 한다. 만약 기업이 보유한 서버와 소프트웨어조차 정확히 파악하지 못한다면 AI 에이전트의 위험을 관리하기는 더 어려워진다. 어떤 시스템에 문제가 있는지 알아야 취약점을 찾아 대응할 수 있기 때문이다. 융합 보안 전문기업 쿤텍은 AI 에이",
-   "keywords": [
-    "AI",
-    "기사",
-    "기획"
-   ],
-   "sample": false
-  },
-  {
-   "id": "b_59caec53ed",
-   "title": "병원도 해킹 비상…보건복지부, 보안관제 확대 검토",
-   "source": "바이라인네트워크",
-   "url": "https://byline.network/2026/11/20-681/",
-   "time": "1일 전",
-   "desc": "잇단 병원 침해사고에 보건복지부가 보안관제 범위 확대를 검토하고 있다. 김재민 보건복지부 정보보호팀장은 19일 서울 광진구 세종대학교 광개토관에서 열린 ‘2026 병원 의료정보보호 컨퍼런스’에서 “병원급 의료기관의 보안관제를 넓히는 방안을 검토하고 있다”고 말했다.",
-   "keywords": [
-    "AI",
-    "기사",
-    "엔터프라이즈 IT"
-   ],
-   "sample": false
-  }
- ],
- "deals": [
-  {
-   "id": "d_7a006b2706",
-   "name": "준앤코 3WAY 폭포수 수전 KF302",
-   "off": 64,
-   "price": 39800,
-   "original": 109000,
-   "store": "쿠팡",
-   "note": "05편 실물 일치 소재로 재사용",
-   "url": "https://search.shopping.naver.com/search/all?query=%ED%8F%AD%ED%8F%AC%EC%88%98%20%EC%88%98%EC%A0%84",
-   "sample": true
-  },
-  {
-   "id": "d_dfbab99ec5",
-   "name": "샤오미 미지아 무선 진공청소기 2세대",
-   "off": 52,
-   "price": 89000,
-   "original": 189000,
-   "store": "쿠팡",
-   "note": "살림 꿀템 · 언박싱 숏츠",
-   "url": "https://search.shopping.naver.com/search/all?query=%EB%AC%B4%EC%84%A0%20%EC%B2%AD%EC%86%8C%EA%B8%B0",
-   "sample": false
-  },
-  {
-   "id": "d_09475e9d79",
-   "name": "북유럽 원목 3단 수납장",
-   "off": 41,
-   "price": 129000,
-   "original": 219000,
-   "store": "오늘의집",
-   "note": "집꾸미기 롱폼 소재",
-   "url": "https://search.shopping.naver.com/search/all?query=3%EB%8B%A8%20%EC%88%98%EB%82%A9%EC%9E%A5",
-   "sample": false
-  },
-  {
-   "id": "d_adbe815b4f",
-   "name": "비스포크 살균 건조기 19kg",
-   "off": 38,
-   "price": 1249000,
-   "original": 1990000,
-   "store": "네이버플러스",
-   "note": "고가 · 비교 리뷰형",
-   "url": "https://search.shopping.naver.com/search/all?query=%EA%B1%B4%EC%A1%B0%EA%B8%B0%2019kg",
-   "sample": false
-  },
-  {
-   "id": "d_1042946f93",
-   "name": "알리 스테인리스 진공 텀블러 900ml",
-   "off": 67,
-   "price": 6900,
-   "original": 21000,
-   "store": "알리",
-   "note": "가성비 텀 · 3초 훅",
-   "url": "https://search.shopping.naver.com/search/all?query=%EC%A7%84%EA%B3%B5%20%ED%85%80%EB%B8%94%EB%9F%AC",
-   "sample": false
-  },
-  {
-   "id": "d_0d8ee40d1a",
-   "name": "김장 매트 2.5m (미끄럼 방지)",
-   "off": 55,
-   "price": 12900,
-   "original": 28900,
-   "store": "쿠팡",
-   "note": "계절 키워드 ‘김장’ 연동",
-   "url": "https://search.shopping.naver.com/search/all?query=%EA%B9%80%EC%9E%A5%EB%A7%A4%ED%8A%B8",
-   "sample": false
-  },
-  {
-   "id": "d_8e4966426f",
-   "name": "캠핑 접이식 소파 베드",
-   "off": 47,
-   "price": 45900,
-   "original": 87000,
-   "store": "뽐뿌",
-   "note": "커뮤니티 핫딜 반응 좋음",
-   "url": "https://search.shopping.naver.com/search/all?query=%EC%A0%91%EC%9D%B4%EC%8B%9D%20%EC%86%8C%ED%8C%8C",
-   "sample": false
-  },
-  {
-   "id": "d_b361806807",
-   "name": "주방 실리콘 조리도구 12종 세트",
-   "off": 58,
-   "price": 15900,
-   "original": 38000,
-   "store": "알구몬",
-   "note": "살림 숏츠 3종 세트",
-   "url": "https://search.shopping.naver.com/search/all?query=%EC%8B%A4%EB%A6%AC%EC%BD%98%20%EC%A1%B0%EB%A6%AC%EB%8F%84%EA%B5%AC",
-   "sample": false
-  }
- ],
- "opensource": [
-  {
-   "id": "o_013200e995",
-   "repo": "elementalsouls/Claude-BugHunter",
-   "stars": 14945,
-   "desc": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identi",
-   "url": "https://github.com/elementalsouls/Claude-BugHunter",
-   "sample": false
-  },
-  {
-   "id": "o_1e49a71d3f",
-   "repo": "obra/superpowers",
-   "stars": 323080,
-   "desc": "An agentic skills framework & software development methodology that works.",
-   "url": "https://github.com/obra/superpowers",
-   "sample": false
-  },
-  {
-   "id": "o_400cd7896a",
-   "repo": "HKUDS/CLI-Anything",
-   "stars": 61651,
-   "desc": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-   "url": "https://github.com/HKUDS/CLI-Anything",
-   "sample": false
-  },
-  {
-   "id": "o_e3acf9ef67",
-   "repo": "jingyaogong/minimind",
-   "stars": 67882,
-   "desc": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
-   "url": "https://github.com/jingyaogong/minimind",
-   "sample": false
-  },
-  {
-   "id": "o_07a8bcfbd9",
-   "repo": "cursor/plugins",
-   "stars": 17943,
-   "desc": "Cursor plugin specification and official plugins",
-   "url": "https://github.com/cursor/plugins",
-   "sample": false
-  },
-  {
-   "id": "o_9c1a78a903",
-   "repo": "firecrawl/firecrawl",
-   "stars": 205618,
-   "desc": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
-   "url": "https://github.com/firecrawl/firecrawl",
-   "sample": false
-  }
- ],
- "apps": [
-  {
-   "id": "a_e5483302e2",
-   "platform": "앱스토어",
-   "rank": 1,
-   "name": "네이버플러스 스토어",
-   "category": "앱",
-   "publisher": "NAVER Corp.",
-   "url": "https://apps.apple.com/kr/app/%EB%84%A4%EC%9D%B4%EB%B2%84%ED%94%8C%EB%9F%AC%EC%8A%A4-%EC%8A%A4%ED%86%A0%EC%96%B4/id6738063154",
-   "sample": false
-  },
-  {
-   "id": "a_53884caaa4",
-   "platform": "앱스토어",
-   "rank": 2,
-   "name": "MUJI KR",
-   "category": "앱",
-   "publisher": "MUJI KOREA CO.,LTD",
-   "url": "https://apps.apple.com/kr/app/muji-kr/id6739993593",
-   "sample": false
-  },
-  {
-   "id": "a_4c31691c14",
-   "platform": "앱스토어",
-   "rank": 3,
-   "name": "피클: 나만의 AI 에이전트",
-   "category": "앱",
-   "publisher": "Pickle Company",
-   "url": "https://apps.apple.com/kr/app/%ED%94%BC%ED%81%B4-%EB%82%98%EB%A7%8C%EC%9D%98-ai-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8/id6795790129",
-   "sample": false
-  },
-  {
-   "id": "a_de09b2d3db",
-   "platform": "앱스토어",
-   "rank": 4,
-   "name": "Claude by Anthropic",
-   "category": "앱",
-   "publisher": "Anthropic PBC",
-   "url": "https://apps.apple.com/kr/app/claude-by-anthropic/id6473753684",
-   "sample": false
-  },
-  {
-   "id": "a_dc9d91df9a",
-   "platform": "앱스토어",
-   "rank": 5,
-   "name": "하나은행, 새로워진 하나원큐를 경험해 보세요",
-   "category": "앱",
-   "publisher": "Hana Bank",
-   "url": "https://apps.apple.com/kr/app/%ED%95%98%EB%82%98%EC%9D%80%ED%96%89-%EC%83%88%EB%A1%9C%EC%9B%8C%EC%A7%84-%ED%95%98%EB%82%98%EC%9B%90%ED%81%90%EB%A5%BC-%EA%B2%BD%ED%97%98%ED%95%B4-%EB%B3%B4%EC%84%B8%EC%9A%94/id6743190232",
-   "sample": false
-  },
-  {
-   "id": "a_49ef67c1c9",
-   "platform": "앱스토어",
-   "rank": 6,
-   "name": "쿠우쿠우 멤버십",
-   "category": "앱",
-   "publisher": "Waldlust Co., Ltd.",
-   "url": "https://apps.apple.com/kr/app/%EC%BF%A0%EC%9A%B0%EC%BF%A0%EC%9A%B0-%EB%A9%A4%EB%B2%84%EC%8B%AD/id6465872138",
-   "sample": false
-  },
-  {
-   "id": "a_fd08e1f223",
-   "platform": "앱스토어",
-   "rank": 7,
-   "name": "실손24",
-   "category": "앱",
-   "publisher": "Korean Insurance Development Institute Inc.",
-   "url": "https://apps.apple.com/kr/app/%EC%8B%A4%EC%86%9024/id6553966660",
-   "sample": false
-  },
-  {
-   "id": "a_dd2f5d930d",
-   "platform": "앱스토어",
-   "rank": 8,
-   "name": "DramaBox - 영화와 숏폼 드라마",
-   "category": "앱",
-   "publisher": "STORYMATRIX PTE. LTD.",
-   "url": "https://apps.apple.com/kr/app/dramabox-%EC%98%81%ED%99%94%EC%99%80-%EC%88%8F%ED%8F%BC-%EB%93%9C%EB%9D%BC%EB%A7%88/id6445905219",
-   "sample": false
-  },
-  {
-   "id": "g_16a9efea48",
-   "platform": "스팀 게임",
-   "rank": 1,
-   "name": "Counter-Strike 2",
-   "category": "게임",
-   "publisher": "동시접속 1,201,500",
-   "url": "https://store.steampowered.com/app/730",
-   "sample": false
-  },
-  {
-   "id": "g_4260e7eabc",
-   "platform": "스팀 게임",
-   "rank": 2,
-   "name": "Dota 2",
-   "category": "게임",
-   "publisher": "동시접속 821,299",
-   "url": "https://store.steampowered.com/app/570",
-   "sample": false
-  },
-  {
-   "id": "g_fcfc8b7784",
-   "platform": "스팀 게임",
-   "rank": 3,
-   "name": "PUBG: BATTLEGROUNDS",
-   "category": "게임",
-   "publisher": "동시접속 747,070",
-   "url": "https://store.steampowered.com/app/578080",
-   "sample": false
-  },
-  {
-   "id": "g_72c3d26e36",
-   "platform": "스팀 게임",
-   "rank": 4,
-   "name": "Wallpaper Engine",
-   "category": "게임",
-   "publisher": "동시접속 116,339",
-   "url": "https://store.steampowered.com/app/431960",
-   "sample": false
-  },
-  {
-   "id": "g_5329a62166",
-   "platform": "스팀 게임",
-   "rank": 5,
-   "name": "Steam App 4262460",
-   "category": "게임",
-   "publisher": "동시접속 481,348",
-   "url": "https://store.steampowered.com/app/4262460",
-   "sample": false
-  },
-  {
-   "id": "g_79ef753577",
-   "platform": "스팀 게임",
-   "rank": 6,
-   "name": "Steam App 1422450",
-   "category": "게임",
-   "publisher": "동시접속 190,852",
-   "url": "https://store.steampowered.com/app/1422450",
-   "sample": false
-  }
- ],
- "hackathons": [
-  {
-   "id": "h_405ade3c5e",
-   "name": "DevFest Münster 2026: Agentic AI Hackathon",
-   "host": "GDG Münster",
-   "prize": "$ 0",
-   "deadline": "Nov 21, 2026",
-   "dday": "D-0",
-   "url": "https://devfest-ai-hackathon.devpost.com/",
-   "sample": false
-  },
-  {
-   "id": "h_aee410ec7e",
-   "name": "TUM XR Value Creation Hackathon 2026",
-   "host": "Technical University of Munich",
-   "prize": "€ 0",
-   "deadline": "Nov 19 - 21, 2026",
-   "dday": "D-0",
-   "url": "https://tum-xr-hackathon-2026.devpost.com/",
-   "sample": false
-  },
-  {
-   "id": "h_7c959ca340",
-   "name": "WoHack",
-   "host": "Queen Mary Computer Science Society",
-   "prize": "$ 0",
-   "deadline": "Nov 21, 2026",
-   "dday": "D-0",
-   "url": "https://wohack.devpost.com/",
-   "sample": false
-  },
-  {
-   "id": "h_69d2f47956",
-   "name": "Creators AI Winter Challenge ",
-   "host": "Creators AI",
-   "prize": "$ 0",
-   "deadline": "Nov 19 - 21, 2026",
-   "dday": "D-0",
-   "url": "https://creators-ai-winter-challenge.devpost.com/",
-   "sample": false
-  },
-  {
-   "id": "h_9144a6e5ee",
-   "name": "Teens Hack Houston Hackathon",
-   "host": "HackClub ✓⃝",
-   "prize": "$ 300",
-   "deadline": "Nov 14 - 21, 2026",
-   "dday": "D-0",
-   "url": "https://tripleh.devpost.com/",
-   "sample": false
-  },
-  {
-   "id": "h_bbd2f669cc",
-   "name": "CrossPointX 2026",
-   "host": "Science Innovation Association of XJTLU",
-   "prize": "$ 0",
-   "deadline": "Nov 20 - 22, 2026",
-   "dday": "D-0",
-   "url": "https://cpx2026.devpost.com/",
-   "sample": false
-  }
- ],
- "benchmarks": {
-  "metric": "지능",
-  "rows": [
-   {
-    "rank": 1,
-    "model": "Gemini 2.5 Flash",
-    "vendor": "Google",
-    "score": 74,
-    "note": "무료 티어 · 요약/속도 균형"
-   },
-   {
-    "rank": 2,
-    "model": "Claude Sonnet 4.5",
-    "vendor": "Anthropic",
-    "score": 73,
-    "note": "문장 품질"
-   },
-   {
-    "rank": 3,
-    "model": "GPT-5",
-    "vendor": "OpenAI",
-    "score": 71,
-    "note": "범용"
-   },
-   {
-    "rank": 4,
-    "model": "Qwen3 32B",
-    "vendor": "Alibaba",
-    "score": 64,
-    "note": "오픈웨이트"
-   },
-   {
-    "rank": 5,
-    "model": "Llama 4 70B",
-    "vendor": "Meta",
-    "score": 61,
-    "note": "로컬 실행 가능"
-   }
   ],
-  "source": "수동 큐레이션(월 1회 갱신) · 벤치마크 점수는 참고용"
- },
- "indie": [
-  {
-   "id": "i1",
-   "tab": "meta",
-   "cat": "메타버스 · 종교",
-   "emoji": "🏯",
-   "name": "산사 · 온라인 절",
-   "desc": "청연당에서 함께 절하고 합장하며 염주를 굴려요. 연등 산책길과 연꽃 연못, 달빛 마당도 둘러볼 수 있어요.",
-   "likes": 0,
-   "maker": "인디 사례",
-   "url": "",
-   "detail": {
-    "문제": "오프라인 절 체험을 온라인에서 가볍게 경험하고 싶다는 수요.",
-    "기능": "가상 공간 산책 · 절하기 인터랙션 · 연등/연못 배경.",
-    "스택": "웹 3D · 정적 호스팅",
-    "시간": "사례"
-   }
+  "youtube_mode": "channel-rss",
+  "site": {
+    "repo": "econature7-lab/nori-traffic-scent",
+    "pages_url": "https://econature7-lab.github.io/nori-traffic-scent/"
   },
-  {
-   "id": "i2",
-   "tab": "meta",
-   "cat": "메타버스 · 놀이",
-   "emoji": "❄️",
-   "name": "눈 오는 마을 · 크리스마스 마켓",
-   "desc": "눈 내리는 마을을 함께 걷고 선물 상자를 찾거나 썰매를 타요. 마켓에서 부스를 구경하고 도장도 모을 수 있어요.",
-   "likes": 0,
-   "maker": "인디 사례",
-   "url": "",
-   "detail": {
-    "문제": "겨울 시즌 이벤트를 웹에서 가볍게 열고 싶은 소규모 팀.",
-    "기능": "마을 산책 · 선물 찾기 · 도장 모으기.",
-    "스택": "웹 3D",
-    "시간": "사례"
-   }
-  },
-  {
-   "id": "i3",
-   "tab": "game",
-   "cat": "웹 게임 · 퍼즐",
-   "emoji": "🎸",
-   "name": "KÖTTBULLAR METAL",
-   "desc": "이케아 제품 이름으로 만든 데스메탈 가사. 15분 모시핏을 버틸 수 있나요?",
-   "likes": 0,
-   "maker": "인디 사례",
-   "url": "",
-   "detail": {
-    "문제": "짧은 시간에 웃음 터지는 미니게임.",
-    "기능": "리듬·서바이벌 게임 루프.",
-    "스택": "웹 게임",
-    "시간": "사례"
-   }
-  },
-  {
-   "id": "i4",
-   "tab": "game",
-   "cat": "웹 게임 · 시뮬",
-   "emoji": "🍔",
-   "name": "BUNGR INC.",
-   "desc": "버거를 만들어 자유를 얻는 경영 시뮬레이션.",
-   "likes": 0,
-   "maker": "인디 사례",
-   "url": "",
-   "detail": {
-    "문제": "탭 몇 번으로 즐기는 경영 게임.",
-    "기능": "재료 조합 · 판매 · 성장.",
-    "스택": "웹 게임",
-    "시간": "사례"
-   }
-  },
-  {
-   "id": "i5",
-   "tab": "life",
-   "cat": "생활 · 앱테크",
-   "emoji": "🌿",
-   "name": "숲놀이 사진 자동 정리함",
-   "desc": "현장 사진을 날짜·프로그램별로 폴더 정리하고 아이 얼굴 영역을 자동으로 흐리게 만드는 1인용 웹툴.",
-   "likes": 128,
-   "maker": "노리짱 · 클로드 코드",
-   "url": "",
-   "detail": {
-    "문제": "사진 수백 장 분류·얼굴 가리기에 매번 2시간 이상.",
-    "기능": "자동 폴더 분류 · 얼굴 블러 · 썸네일 생성.",
-    "스택": "HTML + JS + 얼굴 감지",
-    "시간": "3시간 20분"
-   }
-  },
-  {
-   "id": "i6",
-   "tab": "util",
-   "cat": "웹 유틸",
-   "emoji": "🔗",
-   "name": "쿠팡 링크 + 고지문 생성기",
-   "desc": "상품 링크를 넣으면 추적 링크와 공정위 고지 문구 3종을 한 번에 만들어 주는 유틸.",
-   "likes": 143,
-   "maker": "노리짱 · 클로드 코드",
-   "url": "",
-   "detail": {
-    "문제": "고지 문구를 세 번 따로 붙여넣다 빠뜨림.",
-    "기능": "링크 정규화 · 고지문 3종 복사 · 체크리스트.",
-    "스택": "단일 HTML + JS",
-    "시간": "1시간 30분"
-   }
-  }
- ],
- "ranks": {
-  "all": [
-   {
-    "k": "성리",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "굴",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "류효영",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "산불",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "은지원",
-    "r": 110,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "삼성전자 tsmc 중국 반도체 출하 중단 및",
-    "r": 110,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "멜라니아 트럼프",
-    "r": 105,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   }
-  ],
-  "comm": [
-   {
-    "k": "실시간베스트",
-    "r": 298
-   },
-   {
-    "k": "톡커들의 선택",
-    "r": 298
-   },
-   {
-    "k": "더쿠",
-    "r": 296
-   },
-   {
-    "k": "보배드림",
-    "r": 296
-   },
-   {
-    "k": "개드립",
-    "r": 227
-   },
-   {
-    "k": "에펨카리아",
-    "r": 227
-   },
-   {
-    "k": "루리웹",
-    "r": 227
-   }
+  "posts": [
+    {
+      "id": "s_804d3b606f",
+      "cat": "ai",
+      "source": "모두의AI실험실",
+      "title": "클로드 코드로 3시간 만에 만든 부동산 실거래가 대시보드 — 만든 과정 그대로 공유",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 282,
+      "hot": 76,
+      "comments": 143,
+      "views": 6320,
+      "keywords": [
+        "클로드 코드",
+        "바이브코딩",
+        "부동산 대시보드"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 267,
+        "variant": 3
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_97b9ef2cc3",
+      "cat": "mom",
+      "source": "맘스홀릭",
+      "title": "겨울방학 유아 숲체험 프로그램 어디가 좋아요? 서울 서북권 위주로 아시는 곳",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 258,
+      "hot": 70,
+      "comments": 128,
+      "views": 4210,
+      "keywords": [
+        "겨울방학 숲체험",
+        "유아숲체험",
+        "서울 숲체험"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 335,
+        "variant": 3
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_444882c7d2",
+      "cat": "estate",
+      "source": "부동산스터디",
+      "title": "전세 심리지수 3주 연속 상승 기사 봤는데, 내년 1월 이사 계획 있으면 지금 움직여야 하나요",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 257,
+      "hot": 70,
+      "comments": 112,
+      "views": 5140,
+      "keywords": [
+        "전세 심리지수",
+        "이사 시즌",
+        "전세 시장"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 138,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_b0fca53259",
+      "cat": "apptech",
+      "source": "뽐뿌",
+      "title": "토스 행운퀴즈 11/21 정답 모음 (오전 9시 기준, 계속 업데이트)",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 251,
+      "hot": 69,
+      "comments": 87,
+      "views": 5880,
+      "keywords": [
+        "토스 행운퀴즈",
+        "앱테크 정답",
+        "오늘의 퀴즈"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 343,
+        "variant": 3
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_2766c5dd58",
+      "cat": "ai",
+      "source": "모두의AI실험실",
+      "title": "바이브코딩으로 만든 앱 첫 달 수익 공개 — 광고 12만원, 비용은 0원",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 247,
+      "hot": 68,
+      "comments": 98,
+      "views": 4720,
+      "keywords": [
+        "바이브코딩 수익",
+        "앱 부업",
+        "광고 수익"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 78,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_79b8e9298e",
+      "cat": "mom",
+      "source": "레몬테라스",
+      "title": "초1 아이 방과후로 숲놀이 12주 등록했는데 만족도 후기 (사진 많이 넣었어요)",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 234,
+      "hot": 65,
+      "comments": 96,
+      "views": 3180,
+      "keywords": [
+        "숲놀이 후기",
+        "초등 방과후",
+        "겨울방학 숲체험"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 195,
+        "variant": 3
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_c047b7eb56",
+      "cat": "estate",
+      "source": "부동산스터디",
+      "title": "광진구 강변 테크노마트 근처 10평 사무실, 요즘 실매물 시세 얼마까지 부르나요",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 236,
+      "hot": 65,
+      "comments": 88,
+      "views": 3920,
+      "keywords": [
+        "강변 테크노마트",
+        "소형 사무실",
+        "광진구 사무실"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 182,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_7667514434",
+      "cat": "ai",
+      "source": "X(트위터)",
+      "title": "X 수익화 프로그램 개편 이후 노출 회복된 계정들, 공통 패턴만 정리해봤습니다",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 224,
+      "hot": 63,
+      "comments": 71,
+      "views": 3410,
+      "keywords": [
+        "X 수익화",
+        "노출 복구",
+        "트위터 알고리즘"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 9,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_2f42dbe35b",
+      "cat": "estate",
+      "source": "호갱노노",
+      "title": "서울 소형 상가 경매 낙찰가율, 11월 들어 확 올랐다는 기사 보셨나요",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 212,
+      "hot": 60,
+      "comments": 57,
+      "views": 2780,
+      "keywords": [
+        "소형 상가 경매",
+        "낙찰가율",
+        "법원경매"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 78,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_ce3f442a2e",
+      "cat": "apptech",
+      "source": "네이버카페",
+      "title": "쿠팡 파트너스 숏츠로 이번 주 8만원 정산 인증 (주방 수전 편)",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 211,
+      "hot": 60,
+      "comments": 64,
+      "views": 2260,
+      "keywords": [
+        "쿠팡 파트너스 정산",
+        "쇼핑 숏츠",
+        "수전"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 173,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_c6310d0a6c",
+      "cat": "apptech",
+      "source": "뽐뿌",
+      "title": "오늘의집 11월 할인 정보 모음 — 냉장고·건조기 실제 체감가 비교",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 200,
+      "hot": 57,
+      "comments": 45,
+      "views": 1980,
+      "keywords": [
+        "오늘의집 할인",
+        "블랙프라이데이",
+        "가전 핫딜"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 340,
+        "variant": 0
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_07d9063aee",
+      "cat": "mom",
+      "source": "네이버카페",
+      "title": "월드컵공원 숲해설 토요일 10시반반, 이번 주 날씨에 진행될까요?",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 194,
+      "hot": 56,
+      "comments": 41,
+      "views": 1540,
+      "keywords": [
+        "월드컵공원 숲해설",
+        "서울월드컵숲",
+        "주말 숲체험"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 177,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_840dec8c1e",
+      "cat": "build",
+      "source": "네이버카페",
+      "title": "나라장터 소규모 건축설계 용역 공고, 11월 3주차 한 번에 정리했습니다",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 187,
+      "hot": 54,
+      "comments": 33,
+      "views": 1120,
+      "keywords": [
+        "나라장터 공고",
+        "건축설계 용역",
+        "입찰 일정"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 10,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_c72b5a0482",
+      "cat": "comm",
+      "source": "실시간베스트",
+      "source_key": "dcbest",
+      "title": "수능 다시 부활중인 미국 근황",
+      "url": "https://gall.dcinside.com/board/view/?id=dcbest&no=480624",
+      "published": "",
+      "time": "최근",
+      "rise": 183,
+      "hot": 53,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "실시간베스트"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 300,
+        "variant": 0
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_de49742dbd",
+      "cat": "comm",
+      "source": "실시간베스트",
+      "source_key": "dcbest",
+      "title": "된장찌개에 들어가면 ㄹㅇ 좆같은 재료",
+      "url": "https://gall.dcinside.com/board/view/?id=dcbest&no=480682",
+      "published": "",
+      "time": "최근",
+      "rise": 183,
+      "hot": 53,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "실시간베스트"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 158,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_ef0fbfea0f",
+      "cat": "comm",
+      "source": "실시간베스트",
+      "source_key": "dcbest",
+      "title": "싱글벙글 밖에서 사먹기 아까운 음식 Top 1",
+      "url": "https://gall.dcinside.com/board/view/?id=dcbest&no=480632",
+      "published": "",
+      "time": "최근",
+      "rise": 183,
+      "hot": 53,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "실시간베스트"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 82,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_5db316166e",
+      "cat": "comm",
+      "source": "톡커들의 선택",
+      "source_key": "natepann",
+      "title": "장원영줌들 카리나 견제하는거ㅋㅋ",
+      "url": "https://pann.nate.com/talk/375729016",
+      "published": "",
+      "time": "최근",
+      "rise": 183,
+      "hot": 53,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "톡커들의 선택"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 158,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_5d959ffec4",
+      "cat": "comm",
+      "source": "톡커들의 선택",
+      "source_key": "natepann",
+      "title": "견제.....? 어떤건제..?",
+      "url": "https://pann.nate.com/talk/375729016",
+      "published": "",
+      "time": "최근",
+      "rise": 183,
+      "hot": 53,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "톡커들의 선택"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 9,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_997683fef1",
+      "cat": "comm",
+      "source": "톡커들의 선택",
+      "source_key": "natepann",
+      "title": "마마 예측 1위 팀 대놓고 8위 팀한테 상 주는건 태어...",
+      "url": "https://pann.nate.com/talk/375728947",
+      "published": "",
+      "time": "최근",
+      "rise": 183,
+      "hot": 53,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "톡커들의 선택"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 54,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_c1ea0a32fa",
+      "cat": "build",
+      "source": "클리앙",
+      "title": "공동수급 분담이행 실적증명, 지분율 표기에서 자주 틀리는 부분",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 183,
+      "hot": 53,
+      "comments": 28,
+      "views": 940,
+      "keywords": [
+        "분담이행",
+        "실적증명",
+        "지분율"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 299,
+        "variant": 3
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_88c4a5c287",
+      "cat": "build",
+      "source": "나라장터",
+      "title": "2027년 공공건축 설계공모 일정 미리 보기 — 상반기 몰리는 달",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 179,
+      "hot": 53,
+      "comments": 22,
+      "views": 780,
+      "keywords": [
+        "설계공모 일정",
+        "공공건축",
+        "2027 공모"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 24,
+        "variant": 0
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_4527720a59",
+      "cat": "comm",
+      "source": "더쿠",
+      "source_key": "theqoo",
+      "title": "존박 인스타그램 입장문 (데블스플랜3 관련)",
+      "url": "https://theqoo.net/hot/4414029051",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "더쿠"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 326,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_5f4ee6e548",
+      "cat": "comm",
+      "source": "더쿠",
+      "source_key": "theqoo",
+      "title": "운동하고 왔는데 샤워하기는 귀찮고 침대에 눕기에는 너무 더러울 때",
+      "url": "https://theqoo.net/hot/4414002605",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "더쿠"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 25,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_aac80b7830",
+      "cat": "comm",
+      "source": "더쿠",
+      "source_key": "theqoo",
+      "title": "이 남자 왜 까였는지 알겠음?",
+      "url": "https://theqoo.net/hot/4413991032",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "더쿠"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 60,
+        "variant": 0
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_ad79f61c86",
+      "cat": "comm",
+      "source": "보배드림",
+      "source_key": "bobaedream",
+      "title": "카광이 신고로 삭제한 영상/ 그것이알고싶다",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1049240&vdate=",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "보배드림"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 170,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_1118b7ca82",
+      "cat": "comm",
+      "source": "보배드림",
+      "source_key": "bobaedream",
+      "title": "이승기가 20억 기부한 이유",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1049238&vdate=",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "보배드림"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 233,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_c9b38b3c05",
+      "cat": "comm",
+      "source": "보배드림",
+      "source_key": "bobaedream",
+      "title": "쿠폰으로 시킨 치킨 상태",
+      "url": "https://www.bobaedream.co.kr/view?code=best&No=1049236&vdate=",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "보배드림"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 357,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_c5a1eb53e8",
+      "cat": "comm",
+      "source": "개드립",
+      "source_key": "dogdrip",
+      "title": "게임 연재 / 정보 판",
+      "url": "https://www.dogdrip.net/gameserial",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "개드립"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 119,
+        "variant": 3
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_b827f77e50",
+      "cat": "comm",
+      "source": "개드립",
+      "source_key": "dogdrip",
+      "title": "개드립콘 - 주간 인기",
+      "url": "https://www.dogdrip.net/dogcon?sort_index=popular_week",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "개드립"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 283,
+        "variant": 3
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_461c44a412",
+      "cat": "comm",
+      "source": "개드립",
+      "source_key": "dogdrip",
+      "title": "GTA6 초반이 살짝 지루하다는 얘기 나올법한 이유 ㅋㅋㅋㅋ",
+      "url": "https://www.dogdrip.net/dogdrip/735936063?sort_index=popular&amp;page=1",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "개드립"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 222,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_6fd6009411",
+      "cat": "comm",
+      "source": "에펨카리아",
+      "source_key": "fmkorea",
+      "title": "이번 주 해외축구 이적 루머 정리 (팬 시점)",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "에펨카리아"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 190,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_c845bb7402",
+      "cat": "comm",
+      "source": "에펨카리아",
+      "source_key": "fmkorea",
+      "title": "중고거래 사기 예방 체크리스트 공유",
+      "url": "",
+      "published": "",
+      "time": "예시",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "에펨카리아"
+      ],
+      "sample": true,
+      "thumb": {
+        "hue": 149,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_d249186534",
+      "cat": "comm",
+      "source": "루리웹",
+      "source_key": "ruliweb",
+      "title": "호모를 보빔으로 치환하기",
+      "url": "https://bbs.ruliweb.com/community/board/300143/read/77475630",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "루리웹"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 97,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_30f57f0c59",
+      "cat": "comm",
+      "source": "루리웹",
+      "source_key": "ruliweb",
+      "title": "GTA6에서도 마침내 K 컬처의 힘이 퍼졌구나 ㅜㅜㅜ",
+      "url": "https://bbs.ruliweb.com/community/board/300143/read/77475626",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "루리웹"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 169,
+        "variant": 1
+      },
+      "cross": 1
+    },
+    {
+      "id": "c_445e9e6d8c",
+      "cat": "comm",
+      "source": "루리웹",
+      "source_key": "ruliweb",
+      "title": "미니 김치냉장고의 또 다른 용도",
+      "url": "https://bbs.ruliweb.com/community/board/300143/read/77475623",
+      "published": "",
+      "time": "최근",
+      "rise": 169,
+      "hot": 50,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "루리웹"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 140,
+        "variant": 0
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_0876a0964e",
+      "cat": "ai",
+      "source": "GeekNews",
+      "title": "OpenAI, 내부 연구 모델이 DNS 설정 오류로 인터넷에 접근해 최상위 모델 학습을 11일간 중단",
+      "url": "https://news.hada.io/topic?id=37575&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "published": "",
+      "time": "1시간 전",
+      "rise": 162,
+      "hot": 49,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "GeekNews",
+        "AI·개발"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 295,
+        "variant": 3
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_f90656a84f",
+      "cat": "ai",
+      "source": "GeekNews",
+      "title": "방문한 링크는 보라색",
+      "url": "https://news.hada.io/topic?id=37574&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "published": "",
+      "time": "1시간 전",
+      "rise": 162,
+      "hot": 49,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "GeekNews",
+        "AI·개발"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 104,
+        "variant": 0
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_567f6a9c35",
+      "cat": "ai",
+      "source": "GeekNews",
+      "title": "Ask HN: 미국에서 경력 15년인데 2년째 실업 상태입니다. 어떻게 해야 할까요?",
+      "url": "https://news.hada.io/topic?id=37571&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "published": "",
+      "time": "2시간 전",
+      "rise": 162,
+      "hot": 49,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "GeekNews",
+        "AI·개발"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 322,
+        "variant": 2
+      },
+      "cross": 1
+    },
+    {
+      "id": "s_b4975a4fdc",
+      "cat": "ai",
+      "source": "GeekNews",
+      "title": "Show GN: Claude로 만든 디스코드 개인 비서 — 결제 문자 자동 가계부까지 (MIT, 무료 서버로 운영)",
+      "url": "https://news.hada.io/topic?id=37569&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "published": "",
+      "time": "3시간 전",
+      "rise": 162,
+      "hot": 49,
+      "comments": 0,
+      "views": 0,
+      "keywords": [
+        "GeekNews",
+        "AI·개발"
+      ],
+      "sample": false,
+      "thumb": {
+        "hue": 178,
+        "variant": 2
+      },
+      "cross": 1
+    }
   ],
   "news": [
-   {
-    "k": "헤드라인",
-    "r": 400
-   },
-   {
-    "k": "성리",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "굴",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "류효영",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "산불",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "은지원",
-    "r": 110,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "삼성전자 tsmc 중국 반도체 출하 중단 및",
-    "r": 110,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   }
+    {
+      "id": "n_4727b9b496",
+      "section": "경제·증시",
+      "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/society/12215346",
+      "published": "2026-11-21T21:44:41+09:00",
+      "time": "40분 전",
+      "fresh": 0.983,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 85,
+      "rise": 260,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 9,
+        "variant": 1
+      }
+    },
+    {
+      "id": "n_1b7398c451",
+      "section": "경제·증시",
+      "title": "쏘렌토값에도 이젠 중국차?…한국서 누가 샀나, 돈없는 2030 오빠 아닌 4050 아빠 [최기성의 허브車]",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/business/12215344",
+      "published": "2026-11-21T21:28:45+09:00",
+      "time": "56분 전",
+      "fresh": 0.976,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 84,
+      "rise": 254,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 250,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_f8054ba8c7",
+      "section": "경제·증시",
+      "title": "[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 19, 29, 40, 45’",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/society/12215342",
+      "published": "2026-11-21T20:55:30+09:00",
+      "time": "1시간 전",
+      "fresh": 0.962,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 83,
+      "rise": 248,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 306,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_4b280b57d5",
+      "section": "경제·증시",
+      "title": "“사실상 지금이 홍콩 여행하기 가장 좋은 시절” 홍콩 LCC의 달콤한 구애 [여행人터뷰]",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/business/12215341",
+      "published": "2026-11-21T20:44:29+09:00",
+      "time": "1시간 전",
+      "fresh": 0.958,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 82,
+      "rise": 242,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 92,
+        "variant": 0
+      }
+    },
+    {
+      "id": "n_a00448686c",
+      "section": "경제·증시",
+      "title": "“비에 흠뻑 젖어도 좋아” 온천 성지서 웰니스에 푹 빠진 사람들",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/culture/12215340",
+      "published": "2026-11-21T20:44:17+09:00",
+      "time": "1시간 전",
+      "fresh": 0.958,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 81,
+      "rise": 236,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 176,
+        "variant": 0
+      }
+    },
+    {
+      "id": "n_17d90e876c",
+      "section": "경제·증시",
+      "title": "“나이아가라는 한국의 한상차림 같다” 매일 폭포수 맞는 남자 [여행人터뷰]",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/culture/12215339",
+      "published": "2026-11-21T20:43:55+09:00",
+      "time": "1시간 전",
+      "fresh": 0.958,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 80,
+      "rise": 230,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 218,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_93f8767aa0",
+      "section": "경제·증시",
+      "title": "[속보] 코레일 “22일 첫차부터 경부선 일반열차 운행 재개”",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/society/12215329",
+      "published": "2026-11-21T19:42:44+09:00",
+      "time": "2시간 전",
+      "fresh": 0.932,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 79,
+      "rise": 224,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 303,
+        "variant": 3
+      }
+    },
+    {
+      "id": "n_2838f90c72",
+      "section": "경제·증시",
+      "title": "“내년엔 조금 더 좋아질 것”…이재명 대통령, 울산 전통시장서 민생 점검",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/politics/12215328",
+      "published": "2026-11-21T19:41:43+09:00",
+      "time": "2시간 전",
+      "fresh": 0.932,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 78,
+      "rise": 218,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 86,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_95c372b15a",
+      "section": "경제·증시",
+      "title": "“앤트로픽 상장했는데 내 주식도 오를까”…수혜주 살펴보니",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/stock/12215326",
+      "published": "2026-11-21T19:12:12+09:00",
+      "time": "3시간 전",
+      "fresh": 0.919,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 77,
+      "rise": 212,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 144,
+        "variant": 0
+      }
+    },
+    {
+      "id": "n_ed6580e494",
+      "section": "IT·AI",
+      "title": "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
+      "source": "AI타임스",
+      "url": "https://www.aitimes.com/news/articleView.html?idxno=217650",
+      "published": "2026-11-21T18:55:59+09:00",
+      "time": "3시간 전",
+      "fresh": 0.913,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 76,
+      "rise": 206,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 66,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_e2eb5faee3",
+      "section": "IT·AI",
+      "title": "AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
+      "source": "AI타임스",
+      "url": "https://www.aitimes.com/news/articleView.html?idxno=217649",
+      "published": "2026-11-21T18:20:47+09:00",
+      "time": "4시간 전",
+      "fresh": 0.898,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 75,
+      "rise": 200,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 333,
+        "variant": 1
+      }
+    },
+    {
+      "id": "n_b3b4d60f8d",
+      "section": "IT·AI",
+      "title": "울산 SK AI데이터센터 찾은 李…“韓 AX는 AI 고속도로가 열 것”",
+      "source": "전자신문",
+      "url": "https://www.etnews.com/20261121000052",
+      "published": "2026-11-21T18:08:24+09:00",
+      "time": "4시간 전",
+      "fresh": 0.893,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 74,
+      "rise": 194,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 24,
+        "variant": 0
+      }
+    },
+    {
+      "id": "n_e8f9e94889",
+      "section": "IT·AI",
+      "title": "韓 조선업계 산재 사고 줄고 질병 늘었다…지난해 질병재해 1900명 육박",
+      "source": "전자신문",
+      "url": "https://www.etnews.com/20261120000253",
+      "published": "2026-11-21T18:00:00+09:00",
+      "time": "4시간 전",
+      "fresh": 0.889,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 73,
+      "rise": 188,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 173,
+        "variant": 1
+      }
+    },
+    {
+      "id": "n_bdfc06e268",
+      "section": "IT·AI",
+      "title": "[ET시선] 공공 클라우드 전환, 보안·개방 해법 찾아야",
+      "source": "전자신문",
+      "url": "https://www.etnews.com/20261120000265",
+      "published": "2026-11-21T17:00:00+09:00",
+      "time": "5시간 전",
+      "fresh": 0.864,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 72,
+      "rise": 182,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 161,
+        "variant": 1
+      }
+    },
+    {
+      "id": "n_c001a1588e",
+      "section": "IT·AI",
+      "title": "AI 커닝 안걸렸다고 끝?…“수능장 와이파이·블루투스는 당신이 한 일을 기억하고 있다”",
+      "source": "전자신문",
+      "url": "https://www.etnews.com/20261121000039",
+      "published": "2026-11-21T16:50:00+09:00",
+      "time": "5시간 전",
+      "fresh": 0.86,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 71,
+      "rise": 176,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 51,
+        "variant": 3
+      }
+    },
+    {
+      "id": "n_798070f9b1",
+      "section": "IT·AI",
+      "title": "200만 건 주문 폭주했는데 상품은 사라졌다…中 쇼핑몰의 수상한 '2원 잠옷'",
+      "source": "전자신문",
+      "url": "https://www.etnews.com/20261120000310",
+      "published": "2026-11-21T16:50:00+09:00",
+      "time": "5시간 전",
+      "fresh": 0.86,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 70,
+      "rise": 170,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 250,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_2758b83dbe",
+      "section": "IT·AI",
+      "title": "구글, 제미나이 앱에 GIF 생성 기능 출시…오픈AI 이어 도입",
+      "source": "AI타임스",
+      "url": "https://www.aitimes.com/news/articleView.html?idxno=217648",
+      "published": "2026-11-21T16:39:48+09:00",
+      "time": "5시간 전",
+      "fresh": 0.856,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 69,
+      "rise": 164,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 7,
+        "variant": 3
+      }
+    },
+    {
+      "id": "n_14b752c1c2",
+      "section": "IT·AI",
+      "title": "수능 시험장에 지우개가 안왔다…“내 책임이여” 교장이 내린 결단은",
+      "source": "전자신문",
+      "url": "https://www.etnews.com/20261121000038",
+      "published": "2026-11-21T12:53:03+09:00",
+      "time": "9시간 전",
+      "fresh": 0.761,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 68,
+      "rise": 158,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 135,
+        "variant": 3
+      }
+    },
+    {
+      "id": "n_f7ab6d9b39",
+      "section": "부동산·정책",
+      "title": "보험사 해외부동산 투자 30.8조…금융권 전체의 55%",
+      "source": "구글뉴스 부동산",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0xOTNKeWs2cjZRWW9WamZrLW5lNGROT00yMjVqWTdlNGpuMjhDV0ExWmZ6TzRZNXY4YVhRcDRDalptYmVnWWpGY3hMU3UtQW9OZ2RUVEFnX3dvcGdsZXJ1elpJMWNENUxi?oc=5",
+      "published": "2026-11-21T10:31:53+09:00",
+      "time": "11시간 전",
+      "fresh": 0.703,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 67,
+      "rise": 152,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 113,
+        "variant": 1
+      }
+    },
+    {
+      "id": "n_0c9c7f3d49",
+      "section": "부동산·정책",
+      "title": "[펜앤인터뷰] 李 부동산 대책 몇 점? 최경환 \"경제 조금이라도 알면 이런 짓 못해\"",
+      "source": "구글뉴스 부동산",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9GTUFmMVVVZ1U2MUFCeVFFVUdBM1pHbExHVjhfazVmSEFFU1BrTzREQlVoSGRIOFFPNDJuRmZsU2pqNE5pck9VS2pkcENUUW1sbl9YMmRBWXdyVUUtZ2gyWHNCYTFRcXZpejVV0gFvQVVfeXFMTVpfXzlLZTBRV0ZvZmx2QklETkNWdGRFbDYzT3l4UHhPc1NkMUxEZDN4dnNrOUdvOGVLd1MtVGRmMi1nZnBoeC1EeGFUb3Q2VmxCdUtrY3NXTG9tZWFIRGJnZWhSOUVNUXp3RXROV2Vn?oc=5",
+      "published": "2026-11-21T06:23:10+09:00",
+      "time": "16시간 전",
+      "fresh": 0.599,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 66,
+      "rise": 146,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 340,
+        "variant": 0
+      }
+    },
+    {
+      "id": "n_d3fe261f38",
+      "section": "부동산·정책",
+      "title": "[이재명 부동산정책 분석] ③수도권 집중 해소, 성공할 것인가",
+      "source": "구글뉴스 부동산",
+      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTFBqa25PeEc1ZGZYcVNwYUhDelQxTDR3alUwUERwYmVDRDVPT3c5YXVYbWZjdlJKUHlmMXZxekZyWXA0RHM?oc=5",
+      "published": "2026-11-20T02:14:00+09:00",
+      "time": "1일 전",
+      "fresh": 0.2,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 65,
+      "rise": 140,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 114,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_0fc3e109e8",
+      "section": "부동산·정책",
+      "title": "부동산 정책 몇달만에 잇단 조정…시장은 '예측가능성' 우려",
+      "source": "구글뉴스 부동산",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBfWk9JTkx3bzVQMFJIZzNpcHR5Z0QyalJ5LWFrNlBEaGdmdk5UTWstQmJSXzNsYUdieTU1SVBhWDMweHdRNTlacUF4NVJ6Z0dyRlZJNGhSa1JLOEnSAWBBVV95cUxNNThhZmd4RkRHWU5VbmZnRnpqcUxJNEFkbWJZejJVcEdjVzdLZWxmV01KaURUalNSZTl2RkpOeVQzcFJVdUVlclp0NjhidXBaMTZHV240aDJjU2Z1a2NwcEM?oc=5",
+      "published": "2026-09-20T07:00:00+09:00",
+      "time": "09.20",
+      "fresh": 0.2,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 64,
+      "rise": 134,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 15,
+        "variant": 3
+      }
+    },
+    {
+      "id": "n_06eea6bd12",
+      "section": "부동산·정책",
+      "title": "[브릿지 칼럼] 토지공개념의 부활… 위협받는 재산권",
+      "source": "구글뉴스 부동산",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE8za2NTNXEycTAxbHVfNGVBb2dCaHBjaWYwYmV4ZURBTVFKTjFhQ0dsMUtaNHpybTFJZFlGWTVrM01LZTd0ZWlJbkJ6MXI3NHNaS2QzQ1BIbnplZw?oc=5",
+      "published": "2026-11-18T12:00:00+09:00",
+      "time": "3일 전",
+      "fresh": 0.2,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 63,
+      "rise": 128,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 267,
+        "variant": 3
+      }
+    },
+    {
+      "id": "n_4d740836e6",
+      "section": "부동산·정책",
+      "title": "李대통령, \"부동산 정상화, 지금은 견디는 중…국민주권정부는 한다\"",
+      "source": "구글뉴스 부동산",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1tb2tkcmp1dENZMUtzS0JPWVNPdjQwVDhybzFLWk0xVm13ZGd3MWszMUhtZ2lLbE14dXBWX0lQY0FxQ0wtYzZOR1hPZVktMkJNd2Y4Q3JnSFBRNjBKMlFqUExHVTZLbVIxVXZMUWFDMTk?oc=5",
+      "published": "2026-10-31T07:00:00+09:00",
+      "time": "10.31",
+      "fresh": 0.2,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 62,
+      "rise": 122,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 315,
+        "variant": 3
+      }
+    },
+    {
+      "id": "n_1c4111c81c",
+      "section": "부동산·정책",
+      "title": "李 지지율 40%…부정평가 이유 1위 ‘부동산’서 ‘경제·민생’으로[갤럽]",
+      "source": "구글뉴스 부동산",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZmRCdHJHRWg3VGdFa0F1dzF2YUdEUXA5M0VpMkxjdXdpQjJjQkppMHN6bWtvUFJhRkxTRUlsbnpSbHdma1djdjkwRDl1X1BmVlBGcFpvQmNwa2dTeDktejJIazBSNXZsSUVldjJrVFZGenpkcEFXTzh0YlJ4SjBrZw?oc=5",
+      "published": "2026-11-20T02:43:37+09:00",
+      "time": "1일 전",
+      "fresh": 0.2,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 61,
+      "rise": 116,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 183,
+        "variant": 3
+      }
+    },
+    {
+      "id": "n_c2eff455fc",
+      "section": "부동산·정책",
+      "title": "고동진 의원, 이재명 정부의 부동산 세제개편안 관련 강남구민 의견 국회에 전달",
+      "source": "구글뉴스 부동산",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1BWW9URzFQSURrQ3RaRGVXWE1XeUM3LXhqTXZVNDB3WHRkaUxNMURkNnNHczh5ei1yU0VNU2FHYjNwQWRjN2pEQnV1Q3dDWll4Vjh4czlhLU1ZZndIdXpfQTNaTkU1ZXdH?oc=5",
+      "published": "2026-11-19T05:50:07+09:00",
+      "time": "2일 전",
+      "fresh": 0.2,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 60,
+      "rise": 110,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 210,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_f4e21c3941",
+      "section": "부동산·정책",
+      "title": "부동산정책, 국민 대토론회에서 제안해보세요! - 정책뉴스 | 뉴스",
+      "source": "구글뉴스 부동산",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9YdkpPWmJibUsxQUN3Z3VmdS13UkZVcDU1VTk4WGxQVWhTajhkNjh6WDJaajFxTWFTMGt2LWNLQ0VwX3Utb0NSOWdxOEhRMDFPb2ZrSC1pa1duQ3FnRGpZSkNEZm03V2RTMkpRSQ?oc=5",
+      "published": "2026-07-15T07:00:00+09:00",
+      "time": "07.15",
+      "fresh": 0.2,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 59,
+      "rise": 104,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 5,
+        "variant": 1
+      }
+    },
+    {
+      "id": "n_0f5f0189fa",
+      "section": "사회·생활",
+      "title": "국가자격시험 중 무작위 전화 걸자 벨소리…부정행위 6건 적발",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261121051700530",
+      "published": "2026-11-21T22:05:07+09:00",
+      "time": "20분 전",
+      "fresh": 0.991,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 58,
+      "rise": 98,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 113,
+        "variant": 1
+      }
+    },
+    {
+      "id": "n_199f82e650",
+      "section": "사회·생활",
+      "title": "해남 두륜산서 50대 등산객 10ｍ 아래 추락해 중상",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261121051300054",
+      "published": "2026-11-21T21:17:18+09:00",
+      "time": "1시간 전",
+      "fresh": 0.972,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 57,
+      "rise": 92,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 337,
+        "variant": 1
+      }
+    },
+    {
+      "id": "n_1a0a11c510",
+      "section": "사회·생활",
+      "title": "제주도 산지 대설주의보 해제",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261121051200527",
+      "published": "2026-11-21T21:03:06+09:00",
+      "time": "1시간 전",
+      "fresh": 0.966,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 56,
+      "rise": 90,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 348,
+        "variant": 0
+      }
+    },
+    {
+      "id": "n_90dc0b473a",
+      "section": "사회·생활",
+      "title": "전남 서해 먼바다 풍랑주의보 해제",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261121051100527",
+      "published": "2026-11-21T21:02:25+09:00",
+      "time": "1시간 전",
+      "fresh": 0.965,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 55,
+      "rise": 90,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 242,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_4c861f9b51",
+      "section": "사회·생활",
+      "title": "홍대입구역에서 3중 추돌사고로 버스 인도 돌진…6명 경상(종합)",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261121049151004",
+      "published": "2026-11-21T20:49:25+09:00",
+      "time": "1시간 전",
+      "fresh": 0.96,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 54,
+      "rise": 90,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 134,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_dd676dd48c",
+      "section": "사회·생활",
+      "title": "1251회 로또 1등 14명…당첨금 각 20억7천만원(종합)",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261121050800002",
+      "published": "2026-11-21T20:48:43+09:00",
+      "time": "1시간 전",
+      "fresh": 0.96,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 53,
+      "rise": 90,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 307,
+        "variant": 3
+      }
+    },
+    {
+      "id": "n_55eb082a83",
+      "section": "사회·생활",
+      "title": "1251회 로또 1등 '14, 18, 19, 29, 40, 45'",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261121050700002",
+      "published": "2026-11-21T20:44:54+09:00",
+      "time": "1시간 전",
+      "fresh": 0.958,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 52,
+      "rise": 90,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 102,
+        "variant": 2
+      }
+    },
+    {
+      "id": "n_475b1d0558",
+      "section": "사회·생활",
+      "title": "빅뱅부터 코르티스까지…과거와 미래 이은 '2026 마마 어워즈'",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261121049700073",
+      "published": "2026-11-21T20:33:48+09:00",
+      "time": "1시간 전",
+      "fresh": 0.953,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 51,
+      "rise": 90,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 329,
+        "variant": 1
+      }
+    },
+    {
+      "id": "n_f88afa1a2c",
+      "section": "사회·생활",
+      "title": "충북 진천서 전자발찌 훼손하고 도주한 50대 성범죄자 공개수배",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261121050400061",
+      "published": "2026-11-21T20:17:34+09:00",
+      "time": "2시간 전",
+      "fresh": 0.947,
+      "keywords": [],
+      "noise": false,
+      "sample": false,
+      "cat": "news",
+      "hot": 50,
+      "rise": 90,
+      "comments": 0,
+      "views": 0,
+      "thumb": {
+        "hue": 351,
+        "variant": 3
+      }
+    }
   ],
-  "youtube": [
-   {
-    "k": "성리",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "굴",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "류효영",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "산불",
-    "r": 125,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "은지원",
-    "r": 110,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "삼성전자 tsmc 중국 반도체 출하 중단 및",
-    "r": 110,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   },
-   {
-    "k": "멜라니아 트럼프",
-    "r": 105,
-    "url": "https://trends.google.com/trending/rss?geo=KR"
-   }
+  "videos": [
+    {
+      "id": "y_5e23233f8f",
+      "rank": 1,
+      "kind": "long",
+      "title": "스파이 증거 '0건'…젠슨 황 몰락의 '수상한 내막' [에디터픽] / YTN",
+      "channel": "YTN",
+      "views": 0,
+      "likes": 0,
+      "published": "2026-11-21T12:33:48+00:00",
+      "time": "51분 전",
+      "url": "https://www.youtube.com/watch?v=O3Ao_ZQVdx4",
+      "sample": false,
+      "cat": "youtube",
+      "source": "YTN",
+      "hot": 75,
+      "rise": 245,
+      "comments": 0,
+      "keywords": [
+        "유튜브",
+        "long"
+      ]
+    },
+    {
+      "id": "y_4f6620f362",
+      "rank": 2,
+      "kind": "long",
+      "title": "AI 커닝 막으려면 결국 원시시대로?...첨단 시험의 역설 [이슈톺] / YTN",
+      "channel": "YTN",
+      "views": 0,
+      "likes": 0,
+      "published": "2026-11-21T11:19:53+00:00",
+      "time": "2시간 전",
+      "url": "https://www.youtube.com/watch?v=-c5E5Gc4Yf8",
+      "sample": false,
+      "cat": "youtube",
+      "source": "YTN",
+      "hot": 74,
+      "rise": 240,
+      "comments": 0,
+      "keywords": [
+        "유튜브",
+        "long"
+      ]
+    },
+    {
+      "id": "y_95b937fe15",
+      "rank": 3,
+      "kind": "long",
+      "title": "개인 펜 금지에 앞치마까지...대학 논술도 'AI 비상' / YTN",
+      "channel": "YTN",
+      "views": 0,
+      "likes": 0,
+      "published": "2026-11-21T11:07:30+00:00",
+      "time": "2시간 전",
+      "url": "https://www.youtube.com/watch?v=gxKkPhZMEF0",
+      "sample": false,
+      "cat": "youtube",
+      "source": "YTN",
+      "hot": 73,
+      "rise": 235,
+      "comments": 0,
+      "keywords": [
+        "유튜브",
+        "long"
+      ]
+    },
+    {
+      "id": "y_8bf028f08f",
+      "rank": 4,
+      "kind": "long",
+      "title": "푸틴 \"더는 봐주지 않겠다\"…러 대규모 공습에 유럽 '불똥' [이슈픽] / YTN",
+      "channel": "YTN",
+      "views": 0,
+      "likes": 0,
+      "published": "2026-11-21T06:06:14+00:00",
+      "time": "7시간 전",
+      "url": "https://www.youtube.com/watch?v=reKUqszBUSQ",
+      "sample": false,
+      "cat": "youtube",
+      "source": "YTN",
+      "hot": 72,
+      "rise": 230,
+      "comments": 0,
+      "keywords": [
+        "유튜브",
+        "long"
+      ]
+    },
+    {
+      "id": "y_1524100a4a",
+      "rank": 5,
+      "kind": "long",
+      "title": "Groundhog Day is not a documentary 😭 | Long Story Short",
+      "channel": "SBS News",
+      "views": 0,
+      "likes": 0,
+      "published": "2026-11-20T21:01:09+00:00",
+      "time": "16시간 전",
+      "url": "https://www.youtube.com/shorts/5hZf2dZhqxw",
+      "sample": false,
+      "cat": "youtube",
+      "source": "SBS News",
+      "hot": 71,
+      "rise": 225,
+      "comments": 0,
+      "keywords": [
+        "유튜브",
+        "long"
+      ]
+    },
+    {
+      "id": "y_9ca7309c3f",
+      "rank": 6,
+      "kind": "long",
+      "title": "Evidence that rocked the Kumanjayi Walker inquest",
+      "channel": "SBS News",
+      "views": 0,
+      "likes": 0,
+      "published": "2026-11-20T05:30:35+00:00",
+      "time": "1일 전",
+      "url": "https://www.youtube.com/shorts/XoKwW6xQdMM",
+      "sample": false,
+      "cat": "youtube",
+      "source": "SBS News",
+      "hot": 70,
+      "rise": 220,
+      "comments": 0,
+      "keywords": [
+        "유튜브",
+        "long"
+      ]
+    },
+    {
+      "id": "y_392c5c3351",
+      "rank": 7,
+      "kind": "long",
+      "title": "The jury selection | 2.6 Seconds: Death in the Outback",
+      "channel": "SBS News",
+      "views": 0,
+      "likes": 0,
+      "published": "2026-11-20T05:00:49+00:00",
+      "time": "1일 전",
+      "url": "https://www.youtube.com/shorts/0ir6qwScpUA",
+      "sample": false,
+      "cat": "youtube",
+      "source": "SBS News",
+      "hot": 69,
+      "rise": 215,
+      "comments": 0,
+      "keywords": [
+        "유튜브",
+        "long"
+      ]
+    },
+    {
+      "id": "y_efbe1f22d5",
+      "rank": 8,
+      "kind": "long",
+      "title": "You Really Can’t Please Everyone | Tea with Mussolini",
+      "channel": "SBS News",
+      "views": 0,
+      "likes": 0,
+      "published": "2026-11-18T23:49:29+00:00",
+      "time": "2일 전",
+      "url": "https://www.youtube.com/shorts/zyTAd7ayU4s",
+      "sample": false,
+      "cat": "youtube",
+      "source": "SBS News",
+      "hot": 68,
+      "rise": 210,
+      "comments": 0,
+      "keywords": [
+        "유튜브",
+        "long"
+      ]
+    },
+    {
+      "id": "y_63dffa99c0",
+      "rank": 9,
+      "kind": "long",
+      "title": "My MTV",
+      "channel": "JTBC",
+      "views": 0,
+      "likes": 0,
+      "published": "2006-03-05T17:02:50+00:00",
+      "time": "03.06",
+      "url": "https://www.youtube.com/watch?v=5hu2g5hRXCg",
+      "sample": false,
+      "cat": "youtube",
+      "source": "JTBC",
+      "hot": 67,
+      "rise": 205,
+      "comments": 0,
+      "keywords": [
+        "유튜브",
+        "long"
+      ]
+    }
   ],
-  "mom": [
-   {
-    "k": "겨울방학 숲체험",
-    "r": 237
-   },
-   {
-    "k": "유아숲체험",
-    "r": 164
-   },
-   {
-    "k": "서울 숲체험",
-    "r": 164
-   },
-   {
-    "k": "숲놀이 후기",
-    "r": 162
-   },
-   {
-    "k": "초등 방과후",
-    "r": 162
-   },
-   {
-    "k": "월드컵공원 숲해설",
-    "r": 160
-   },
-   {
-    "k": "서울월드컵숲",
-    "r": 160
-   }
+  "blogs": [
+    {
+      "id": "b_0876a0964e",
+      "title": "OpenAI, 내부 연구 모델이 DNS 설정 오류로 인터넷에 접근해 최상위 모델 학습을 11일간 중단",
+      "source": "GeekNews",
+      "url": "https://news.hada.io/topic?id=37575&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "time": "1시간 전",
+      "desc": "OpenAI가 모델 학습, 내부 배포, 외부 배포 단계마다 거치는 안전 게이트를 설명한 글 감시 시스템이 내부 연구 모델이 DNS 설정 오류를 이용해 제한적으로 인터넷에 접근한 것을 탐지했고, 이 일로 9월 20일부터 10월 1일까지 가장 성능이 높은 모델들의 학습과 평가를 중단했다고 처음 공개 Control Room: ",
+      "keywords": [],
+      "sample": false
+    },
+    {
+      "id": "b_f90656a84f",
+      "title": "방문한 링크는 보라색",
+      "source": "GeekNews",
+      "url": "https://news.hada.io/topic?id=37574&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "time": "1시간 전",
+      "desc": "개인 블로그의 <main> 본문 링크 에 방문 여부에 따른 스타일을 적용해, 방문한 링크를 보라색으로 표시함 Wikipedia와 MDN은 파란색에서 보라색 으로 방문 여부를 구분하며, GOV.UK 디자인 시스템도 방문한 링크 스타일을 지원함 WCAG 2.2 는 방문 전후 링크를 구분하도록 요구하지 않지만, 방문한 링크도 ",
+      "keywords": [],
+      "sample": false
+    },
+    {
+      "id": "b_567f6a9c35",
+      "title": "Ask HN: 미국에서 경력 15년인데 2년째 실업 상태입니다. 어떻게 해야 할까요?",
+      "source": "GeekNews",
+      "url": "https://news.hada.io/topic?id=37571&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "time": "2시간 전",
+      "desc": "미국 DMV 지역의 경력 15년 선임 소프트웨어 엔지니어 로, Fortune 50+ 기업과 여러 중견기업에서 일했지만 2년째 개발 일자리를 구하지 못한 상황임. 모아 둔 저축을 거의 소진해 가계를 유지할 여력이 4~5개월 정도 남았으며, 현재 수학 과외를 하고 피자 가게 관리자로 일하는 것도 곧 시작할 가능성이 있음 직원",
+      "keywords": [],
+      "sample": false
+    },
+    {
+      "id": "b_b4975a4fdc",
+      "title": "Show GN: Claude로 만든 디스코드 개인 비서 — 결제 문자 자동 가계부까지 (MIT, 무료 서버로 운영)",
+      "source": "GeekNews",
+      "url": "https://news.hada.io/topic?id=37569&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "time": "3시간 전",
+      "desc": "안녕하세요. 혼자 쓰려고 만든 디스코드 개인 비서를 정리해서 공개합니다. 디스코드 채널에 말을 걸면 Claude가 일정·메일·할 일·지출을 대신 챙겨 주는 봇이에요. ■ 기능 대화로 질문·검색·요약 (\"이번 주 날씨 어때?\", \"이 메일 요약해줘\") 매일 아침 브리핑: 오늘 일정, 할 일, 날씨를 한 번에 !out — 지",
+      "keywords": [],
+      "sample": false
+    },
+    {
+      "id": "b_9a212ba9c7",
+      "title": "비급여로 돈 버는 병원, 값 싸고 질 좋은 의료 서비스가 한계에 봉착했다는 사실을 인정해야 한다.",
+      "source": "슬로우뉴스",
+      "url": "https://slownews.kr/169912",
+      "time": "5시간 전",
+      "desc": "장부승(51·일본 간사이외국어대 교수) 인터뷰 마지막 편이다. 한국 의료 공급 체계의 가장 큰 특징 가운데 하나는 ‘요양기관 당연지정제’다. 모든 의료기관을 국민건강보험 요양기관에 강제 편입시킨 제도로 막강한 국가 동원 체제였던 유신의 산물이다. 덕분에 한국 국민은 기초적 의료서비스로 지정된 급여 대상 의료 행위에 대해서",
+      "keywords": [
+        "김도연 인터뷰.",
+        "경제",
+        "통찰."
+      ],
+      "sample": false
+    },
+    {
+      "id": "b_0184f156da",
+      "title": "블루 쓰나미, 그 뿌리는 감당할 수 없었던 삶",
+      "source": "슬로우뉴스",
+      "url": "https://slownews.kr/169587",
+      "time": "1일 전",
+      "desc": "인터뷰어 서문: 부분과 전체 지난 미국 중간선거를 분석해 달라는 내 질문에 AI는 “장바구니 물가가 이념을 꺾었다”라는 제목으로 리포트를 생성했다. 이런 AI 같으니라고. 세상은 그렇게 단순하게 굴러가지 않는다고 캡콜드(김낙호 드렉셀 대학교 교수)는 말했다. 동의한다. 세상은 때론 아주 단순해 보이지만, 그렇게 ‘보여지는",
+      "keywords": [
+        "정치",
+        "국제",
+        "민노인터뷰."
+      ],
+      "sample": false
+    },
+    {
+      "id": "b_ec7b1da833",
+      "title": "Slow Letter: November 20, 2026.",
+      "source": "슬로우뉴스",
+      "url": "https://slownews.kr/169904",
+      "time": "1일 전",
+      "desc": "Han Duck-soo’s Retrial: Nothing Fundamentally Changed. Nine Majority Opinions, Three Dissenting Voices. A Ruling That Seemed Determined to Reduce the Sentence. What Matters Now. “H",
+      "keywords": [
+        "slowletter_english_version",
+        "경제"
+      ],
+      "sample": false
+    },
+    {
+      "id": "b_16051eaaed",
+      "title": "1.5조 달러, 앤트로픽 상장 첫날 17% 급등: 슬로우레터 11월20일.",
+      "source": "슬로우뉴스",
+      "url": "https://slownews.kr/169867",
+      "time": "1일 전",
+      "desc": "🎧 한덕수 파기환송, 본질적으로 달라진 건 없다. 9명의 다수 의견과 3명의 소수 의견. “형량을 깎아주려 작정한 판결.” 쟁점과 현안. “역사적 반역”, 조희대 탄핵으로 가나. 위급재난문자 세 번에, 98명 적발. AI 시대, 시험이라는 재난. 리트 만점자, 공개 검증받겠다더니 자살. 앤트로픽, 사상 최대 규모 IPO에",
+      "keywords": [
+        "컨텍스트 레터.",
+        "경제"
+      ],
+      "sample": false
+    },
+    {
+      "id": "b_f69d037804",
+      "title": "쿤텍 “AI 에이전트 보안, 전주기 연결해 대응 시간 줄여야”",
+      "source": "바이라인네트워크",
+      "url": "https://byline.network/2026/11/19-692/",
+      "time": "1일 전",
+      "desc": "기업이 인공지능(AI) 에이전트를 도입할 때는 어떤 모델과 도구를 사용하는지를 알아야 한다. 만약 기업이 보유한 서버와 소프트웨어조차 정확히 파악하지 못한다면 AI 에이전트의 위험을 관리하기는 더 어려워진다. 어떤 시스템에 문제가 있는지 알아야 취약점을 찾아 대응할 수 있기 때문이다. 융합 보안 전문기업 쿤텍은 AI 에이",
+      "keywords": [
+        "AI",
+        "기사",
+        "기획"
+      ],
+      "sample": false
+    },
+    {
+      "id": "b_59caec53ed",
+      "title": "병원도 해킹 비상…보건복지부, 보안관제 확대 검토",
+      "source": "바이라인네트워크",
+      "url": "https://byline.network/2026/11/20-681/",
+      "time": "1일 전",
+      "desc": "잇단 병원 침해사고에 보건복지부가 보안관제 범위 확대를 검토하고 있다. 김재민 보건복지부 정보보호팀장은 19일 서울 광진구 세종대학교 광개토관에서 열린 ‘2026 병원 의료정보보호 컨퍼런스’에서 “병원급 의료기관의 보안관제를 넓히는 방안을 검토하고 있다”고 말했다.",
+      "keywords": [
+        "AI",
+        "기사",
+        "엔터프라이즈 IT"
+      ],
+      "sample": false
+    }
   ],
-  "estate": [
-   {
-    "k": "전세 심리지수",
-    "r": 164
-   },
-   {
-    "k": "이사 시즌",
-    "r": 164
-   },
-   {
-    "k": "전세 시장",
-    "r": 164
-   },
-   {
-    "k": "강변 테크노마트",
-    "r": 162
-   },
-   {
-    "k": "소형 사무실",
-    "r": 162
-   },
-   {
-    "k": "광진구 사무실",
-    "r": 162
-   },
-   {
-    "k": "소형 상가 경매",
-    "r": 161
-   }
+  "deals": [
+    {
+      "id": "d_7a006b2706",
+      "name": "준앤코 3WAY 폭포수 수전 KF302",
+      "off": 64,
+      "price": 39800,
+      "original": 109000,
+      "store": "쿠팡",
+      "note": "05편 실물 일치 소재로 재사용",
+      "url": "https://search.shopping.naver.com/search/all?query=%ED%8F%AD%ED%8F%AC%EC%88%98%20%EC%88%98%EC%A0%84",
+      "sample": true
+    },
+    {
+      "id": "d_dfbab99ec5",
+      "name": "샤오미 미지아 무선 진공청소기 2세대",
+      "off": 52,
+      "price": 89000,
+      "original": 189000,
+      "store": "쿠팡",
+      "note": "살림 꿀템 · 언박싱 숏츠",
+      "url": "https://search.shopping.naver.com/search/all?query=%EB%AC%B4%EC%84%A0%20%EC%B2%AD%EC%86%8C%EA%B8%B0",
+      "sample": false
+    },
+    {
+      "id": "d_09475e9d79",
+      "name": "북유럽 원목 3단 수납장",
+      "off": 41,
+      "price": 129000,
+      "original": 219000,
+      "store": "오늘의집",
+      "note": "집꾸미기 롱폼 소재",
+      "url": "https://search.shopping.naver.com/search/all?query=3%EB%8B%A8%20%EC%88%98%EB%82%A9%EC%9E%A5",
+      "sample": false
+    },
+    {
+      "id": "d_adbe815b4f",
+      "name": "비스포크 살균 건조기 19kg",
+      "off": 38,
+      "price": 1249000,
+      "original": 1990000,
+      "store": "네이버플러스",
+      "note": "고가 · 비교 리뷰형",
+      "url": "https://search.shopping.naver.com/search/all?query=%EA%B1%B4%EC%A1%B0%EA%B8%B0%2019kg",
+      "sample": false
+    },
+    {
+      "id": "d_1042946f93",
+      "name": "알리 스테인리스 진공 텀블러 900ml",
+      "off": 67,
+      "price": 6900,
+      "original": 21000,
+      "store": "알리",
+      "note": "가성비 텀 · 3초 훅",
+      "url": "https://search.shopping.naver.com/search/all?query=%EC%A7%84%EA%B3%B5%20%ED%85%80%EB%B8%94%EB%9F%AC",
+      "sample": false
+    },
+    {
+      "id": "d_0d8ee40d1a",
+      "name": "김장 매트 2.5m (미끄럼 방지)",
+      "off": 55,
+      "price": 12900,
+      "original": 28900,
+      "store": "쿠팡",
+      "note": "계절 키워드 ‘김장’ 연동",
+      "url": "https://search.shopping.naver.com/search/all?query=%EA%B9%80%EC%9E%A5%EB%A7%A4%ED%8A%B8",
+      "sample": false
+    },
+    {
+      "id": "d_8e4966426f",
+      "name": "캠핑 접이식 소파 베드",
+      "off": 47,
+      "price": 45900,
+      "original": 87000,
+      "store": "뽐뿌",
+      "note": "커뮤니티 핫딜 반응 좋음",
+      "url": "https://search.shopping.naver.com/search/all?query=%EC%A0%91%EC%9D%B4%EC%8B%9D%20%EC%86%8C%ED%8C%8C",
+      "sample": false
+    },
+    {
+      "id": "d_b361806807",
+      "name": "주방 실리콘 조리도구 12종 세트",
+      "off": 58,
+      "price": 15900,
+      "original": 38000,
+      "store": "알구몬",
+      "note": "살림 숏츠 3종 세트",
+      "url": "https://search.shopping.naver.com/search/all?query=%EC%8B%A4%EB%A6%AC%EC%BD%98%20%EC%A1%B0%EB%A6%AC%EB%8F%84%EA%B5%AC",
+      "sample": false
+    }
   ],
-  "ai": [
-   {
-    "k": "클로드 코드",
-    "r": 165
-   },
-   {
-    "k": "바이브코딩",
-    "r": 165
-   },
-   {
-    "k": "부동산 대시보드",
-    "r": 165
-   },
-   {
-    "k": "바이브코딩 수익",
-    "r": 163
-   },
-   {
-    "k": "앱 부업",
-    "r": 163
-   },
-   {
-    "k": "광고 수익",
-    "r": 163
-   },
-   {
-    "k": "X 수익화",
-    "r": 162
-   }
+  "opensource": [
+    {
+      "id": "o_013200e995",
+      "repo": "elementalsouls/Claude-BugHunter",
+      "stars": 15228,
+      "desc": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identi",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "sample": false
+    },
+    {
+      "id": "o_1e49a71d3f",
+      "repo": "obra/superpowers",
+      "stars": 323355,
+      "desc": "An agentic skills framework & software development methodology that works.",
+      "url": "https://github.com/obra/superpowers",
+      "sample": false
+    },
+    {
+      "id": "o_400cd7896a",
+      "repo": "HKUDS/CLI-Anything",
+      "stars": 61776,
+      "desc": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "sample": false
+    },
+    {
+      "id": "o_e3acf9ef67",
+      "repo": "jingyaogong/minimind",
+      "stars": 67956,
+      "desc": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "url": "https://github.com/jingyaogong/minimind",
+      "sample": false
+    },
+    {
+      "id": "o_07a8bcfbd9",
+      "repo": "cursor/plugins",
+      "stars": 17972,
+      "desc": "Cursor plugin specification and official plugins",
+      "url": "https://github.com/cursor/plugins",
+      "sample": false
+    },
+    {
+      "id": "o_9c1a78a903",
+      "repo": "firecrawl/firecrawl",
+      "stars": 205762,
+      "desc": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "sample": false
+    }
   ],
-  "apptech": [
-   {
-    "k": "토스 행운퀴즈",
-    "r": 163
-   },
-   {
-    "k": "앱테크 정답",
-    "r": 163
-   },
-   {
-    "k": "오늘의 퀴즈",
-    "r": 163
-   },
-   {
-    "k": "쿠팡 파트너스 정산",
-    "r": 161
-   },
-   {
-    "k": "쇼핑 숏츠",
-    "r": 161
-   },
-   {
-    "k": "수전",
-    "r": 161
-   },
-   {
-    "k": "오늘의집 할인",
-    "r": 160
-   }
+  "apps": [
+    {
+      "id": "g_16a9efea48",
+      "platform": "스팀 게임",
+      "rank": 1,
+      "name": "Counter-Strike 2",
+      "category": "게임",
+      "publisher": "동시접속 1,201,500",
+      "url": "https://store.steampowered.com/app/730",
+      "sample": false
+    },
+    {
+      "id": "g_4260e7eabc",
+      "platform": "스팀 게임",
+      "rank": 2,
+      "name": "Dota 2",
+      "category": "게임",
+      "publisher": "동시접속 821,299",
+      "url": "https://store.steampowered.com/app/570",
+      "sample": false
+    },
+    {
+      "id": "g_fcfc8b7784",
+      "platform": "스팀 게임",
+      "rank": 3,
+      "name": "PUBG: BATTLEGROUNDS",
+      "category": "게임",
+      "publisher": "동시접속 747,070",
+      "url": "https://store.steampowered.com/app/578080",
+      "sample": false
+    },
+    {
+      "id": "g_72c3d26e36",
+      "platform": "스팀 게임",
+      "rank": 4,
+      "name": "Wallpaper Engine",
+      "category": "게임",
+      "publisher": "동시접속 116,339",
+      "url": "https://store.steampowered.com/app/431960",
+      "sample": false
+    },
+    {
+      "id": "g_5329a62166",
+      "platform": "스팀 게임",
+      "rank": 5,
+      "name": "Steam App 4262460",
+      "category": "게임",
+      "publisher": "동시접속 481,348",
+      "url": "https://store.steampowered.com/app/4262460",
+      "sample": false
+    },
+    {
+      "id": "g_79ef753577",
+      "platform": "스팀 게임",
+      "rank": 6,
+      "name": "Steam App 1422450",
+      "category": "게임",
+      "publisher": "동시접속 190,852",
+      "url": "https://store.steampowered.com/app/1422450",
+      "sample": false
+    }
   ],
-  "build": [
-   {
-    "k": "나라장터 공고",
-    "r": 159
-   },
-   {
-    "k": "건축설계 용역",
-    "r": 159
-   },
-   {
-    "k": "입찰 일정",
-    "r": 159
-   },
-   {
-    "k": "분담이행",
-    "r": 159
-   },
-   {
-    "k": "실적증명",
-    "r": 159
-   },
-   {
-    "k": "지분율",
-    "r": 159
-   },
-   {
-    "k": "설계공모 일정",
-    "r": 159
-   }
-  ]
- },
- "brief": {
-  "no": "No.01",
-  "date": "2026-11-21",
-  "label": "11.21",
-  "title": "머스크 “나는 열렬한 중국 팬…‘중국산 장난감’ 가진 아들도  · AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전 · [펜앤인터뷰] 李 부동산 대책 몇 점? 최경환 \"경제 조금이라",
-  "lead": "오늘은 '머스크 “나는 열렬한 중국 팬…‘중국산 장난감’ 가진 아들도 ', 'AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전' 등이 눈에 띕니다. 이 밖에 부동산·정책 쪽에서 '[펜앤인터뷰] 李 부동산 대책 몇 점? 최경환 \"경제 조금이라' 흐름이 이어졌습니다. 수집된 75건 가운데 분야별로 7개 이슈를 골랐습니다.",
-  "metrics": {
-   "deep": 7,
-   "analysis": 4,
-   "cross": 0
+  "hackathons": [
+    {
+      "id": "h_405ade3c5e",
+      "name": "DevFest Münster 2026: Agentic AI Hackathon",
+      "host": "GDG Münster",
+      "prize": "$ 0",
+      "deadline": "Nov 21, 2026",
+      "dday": "D-0",
+      "url": "https://devfest-ai-hackathon.devpost.com/",
+      "sample": false
+    },
+    {
+      "id": "h_aee410ec7e",
+      "name": "TUM XR Value Creation Hackathon 2026",
+      "host": "Technical University of Munich",
+      "prize": "€ 0",
+      "deadline": "Nov 19 - 21, 2026",
+      "dday": "D-0",
+      "url": "https://tum-xr-hackathon-2026.devpost.com/",
+      "sample": false
+    },
+    {
+      "id": "h_7c959ca340",
+      "name": "WoHack",
+      "host": "Queen Mary Computer Science Society",
+      "prize": "$ 0",
+      "deadline": "Nov 21, 2026",
+      "dday": "D-0",
+      "url": "https://wohack.devpost.com/",
+      "sample": false
+    },
+    {
+      "id": "h_69d2f47956",
+      "name": "Creators AI Winter Challenge ",
+      "host": "Creators AI",
+      "prize": "$ 0",
+      "deadline": "Nov 19 - 21, 2026",
+      "dday": "D-0",
+      "url": "https://creators-ai-winter-challenge.devpost.com/",
+      "sample": false
+    },
+    {
+      "id": "h_9144a6e5ee",
+      "name": "Teens Hack Houston Hackathon",
+      "host": "HackClub ✓⃝",
+      "prize": "$ 300",
+      "deadline": "Nov 14 - 21, 2026",
+      "dday": "D-0",
+      "url": "https://tripleh.devpost.com/",
+      "sample": false
+    },
+    {
+      "id": "h_f9b94c55f6",
+      "name": "Tech For Community 2026",
+      "host": "TecNurtur",
+      "prize": "$CAD 0",
+      "deadline": "Nov 21, 2026",
+      "dday": "D-0",
+      "url": "https://tfc26.devpost.com/",
+      "sample": false
+    }
+  ],
+  "benchmarks": {
+    "metric": "지능",
+    "rows": [
+      {
+        "rank": 1,
+        "model": "Gemini 2.5 Flash",
+        "vendor": "Google",
+        "score": 74,
+        "note": "무료 티어 · 요약/속도 균형"
+      },
+      {
+        "rank": 2,
+        "model": "Claude Sonnet 4.5",
+        "vendor": "Anthropic",
+        "score": 73,
+        "note": "문장 품질"
+      },
+      {
+        "rank": 3,
+        "model": "GPT-5",
+        "vendor": "OpenAI",
+        "score": 71,
+        "note": "범용"
+      },
+      {
+        "rank": 4,
+        "model": "Qwen3 32B",
+        "vendor": "Alibaba",
+        "score": 64,
+        "note": "오픈웨이트"
+      },
+      {
+        "rank": 5,
+        "model": "Llama 4 70B",
+        "vendor": "Meta",
+        "score": 61,
+        "note": "로컬 실행 가능"
+      }
+    ],
+    "source": "수동 큐레이션(월 1회 갱신) · 벤치마크 점수는 참고용"
   },
-  "sections": [
-   {
-    "key": "econ",
-    "label": "경제·증시",
-    "emoji": "📈",
-    "title": "머스크 “나는 열렬한 중국 팬…‘중국산 장난감’ 가진 아들도 사랑하는 나라”",
-    "body": "오늘 매일경제 등에서 다룬 소식입니다. 머스크 “나는 열렬한 중국 팬…‘중국산 장난감’ 가진 아들도 사랑하는 나라” 이어서 '졸업 미루며 대기업만 노리는 청년들…“첫 단추 잘못 꿰면 인생 꼬일 수도', '‘갤럭시 S펜’ 핵심기술 보유한 日와콤, MBK가 1조원대 인수'도 함께 보도됐습니다.",
-    "points": [
-     "매일경제 · 머스크 “나는 열렬한 중국 팬…‘중국산 장난감’ 가진 아들도 사랑하는 나라”",
-     "매일경제 · 졸업 미루며 대기업만 노리는 청년들…“첫 단추 잘못 꿰면 인생 꼬일 수도”",
-     "매일경제 · ‘갤럭시 S펜’ 핵심기술 보유한 日와콤, MBK가 1조원대 인수"
+  "indie": [
+    {
+      "id": "i1",
+      "tab": "meta",
+      "cat": "메타버스 · 종교",
+      "emoji": "🏯",
+      "name": "산사 · 온라인 절",
+      "desc": "청연당에서 함께 절하고 합장하며 염주를 굴려요. 연등 산책길과 연꽃 연못, 달빛 마당도 둘러볼 수 있어요.",
+      "likes": 0,
+      "maker": "인디 사례",
+      "url": "",
+      "detail": {
+        "문제": "오프라인 절 체험을 온라인에서 가볍게 경험하고 싶다는 수요.",
+        "기능": "가상 공간 산책 · 절하기 인터랙션 · 연등/연못 배경.",
+        "스택": "웹 3D · 정적 호스팅",
+        "시간": "사례"
+      }
+    },
+    {
+      "id": "i2",
+      "tab": "meta",
+      "cat": "메타버스 · 놀이",
+      "emoji": "❄️",
+      "name": "눈 오는 마을 · 크리스마스 마켓",
+      "desc": "눈 내리는 마을을 함께 걷고 선물 상자를 찾거나 썰매를 타요. 마켓에서 부스를 구경하고 도장도 모을 수 있어요.",
+      "likes": 0,
+      "maker": "인디 사례",
+      "url": "",
+      "detail": {
+        "문제": "겨울 시즌 이벤트를 웹에서 가볍게 열고 싶은 소규모 팀.",
+        "기능": "마을 산책 · 선물 찾기 · 도장 모으기.",
+        "스택": "웹 3D",
+        "시간": "사례"
+      }
+    },
+    {
+      "id": "i3",
+      "tab": "game",
+      "cat": "웹 게임 · 퍼즐",
+      "emoji": "🎸",
+      "name": "KÖTTBULLAR METAL",
+      "desc": "이케아 제품 이름으로 만든 데스메탈 가사. 15분 모시핏을 버틸 수 있나요?",
+      "likes": 0,
+      "maker": "인디 사례",
+      "url": "",
+      "detail": {
+        "문제": "짧은 시간에 웃음 터지는 미니게임.",
+        "기능": "리듬·서바이벌 게임 루프.",
+        "스택": "웹 게임",
+        "시간": "사례"
+      }
+    },
+    {
+      "id": "i4",
+      "tab": "game",
+      "cat": "웹 게임 · 시뮬",
+      "emoji": "🍔",
+      "name": "BUNGR INC.",
+      "desc": "버거를 만들어 자유를 얻는 경영 시뮬레이션.",
+      "likes": 0,
+      "maker": "인디 사례",
+      "url": "",
+      "detail": {
+        "문제": "탭 몇 번으로 즐기는 경영 게임.",
+        "기능": "재료 조합 · 판매 · 성장.",
+        "스택": "웹 게임",
+        "시간": "사례"
+      }
+    },
+    {
+      "id": "i5",
+      "tab": "life",
+      "cat": "생활 · 앱테크",
+      "emoji": "🌿",
+      "name": "숲놀이 사진 자동 정리함",
+      "desc": "현장 사진을 날짜·프로그램별로 폴더 정리하고 아이 얼굴 영역을 자동으로 흐리게 만드는 1인용 웹툴.",
+      "likes": 128,
+      "maker": "노리짱 · 클로드 코드",
+      "url": "",
+      "detail": {
+        "문제": "사진 수백 장 분류·얼굴 가리기에 매번 2시간 이상.",
+        "기능": "자동 폴더 분류 · 얼굴 블러 · 썸네일 생성.",
+        "스택": "HTML + JS + 얼굴 감지",
+        "시간": "3시간 20분"
+      }
+    },
+    {
+      "id": "i6",
+      "tab": "util",
+      "cat": "웹 유틸",
+      "emoji": "🔗",
+      "name": "쿠팡 링크 + 고지문 생성기",
+      "desc": "상품 링크를 넣으면 추적 링크와 공정위 고지 문구 3종을 한 번에 만들어 주는 유틸.",
+      "likes": 143,
+      "maker": "노리짱 · 클로드 코드",
+      "url": "",
+      "detail": {
+        "문제": "고지 문구를 세 번 따로 붙여넣다 빠뜨림.",
+        "기능": "링크 정규화 · 고지문 3종 복사 · 체크리스트.",
+        "스택": "단일 HTML + JS",
+        "시간": "1시간 30분"
+      }
+    }
+  ],
+  "ranks": {
+    "all": [
+      {
+        "k": "man city vs fulham",
+        "r": 150,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "แมนซิตี พบ ฟูลัม",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "로또1251",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "npl",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "전투기 조종사",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "이정후",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "김세의",
+        "r": 110,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      }
+    ],
+    "comm": [
+      {
+        "k": "실시간베스트",
+        "r": 298
+      },
+      {
+        "k": "톡커들의 선택",
+        "r": 298
+      },
+      {
+        "k": "더쿠",
+        "r": 296
+      },
+      {
+        "k": "보배드림",
+        "r": 296
+      },
+      {
+        "k": "개드립",
+        "r": 296
+      },
+      {
+        "k": "루리웹",
+        "r": 296
+      },
+      {
+        "k": "에펨카리아",
+        "r": 227
+      }
+    ],
+    "news": [
+      {
+        "k": "헤드라인",
+        "r": 400
+      },
+      {
+        "k": "man city vs fulham",
+        "r": 150,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "แมนซิตี พบ ฟูลัม",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "로또1251",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "npl",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "전투기 조종사",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "이정후",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      }
+    ],
+    "youtube": [
+      {
+        "k": "man city vs fulham",
+        "r": 150,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "แมนซิตี พบ ฟูลัม",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "로또1251",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "npl",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "전투기 조종사",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "이정후",
+        "r": 125,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      },
+      {
+        "k": "김세의",
+        "r": 110,
+        "url": "https://trends.google.com/trending/rss?geo=KR"
+      }
+    ],
+    "mom": [
+      {
+        "k": "겨울방학 숲체험",
+        "r": 237
+      },
+      {
+        "k": "유아숲체험",
+        "r": 164
+      },
+      {
+        "k": "서울 숲체험",
+        "r": 164
+      },
+      {
+        "k": "숲놀이 후기",
+        "r": 162
+      },
+      {
+        "k": "초등 방과후",
+        "r": 162
+      },
+      {
+        "k": "월드컵공원 숲해설",
+        "r": 160
+      },
+      {
+        "k": "서울월드컵숲",
+        "r": 160
+      }
+    ],
+    "estate": [
+      {
+        "k": "전세 심리지수",
+        "r": 164
+      },
+      {
+        "k": "이사 시즌",
+        "r": 164
+      },
+      {
+        "k": "전세 시장",
+        "r": 164
+      },
+      {
+        "k": "강변 테크노마트",
+        "r": 162
+      },
+      {
+        "k": "소형 사무실",
+        "r": 162
+      },
+      {
+        "k": "광진구 사무실",
+        "r": 162
+      },
+      {
+        "k": "소형 상가 경매",
+        "r": 161
+      }
+    ],
+    "ai": [
+      {
+        "k": "클로드 코드",
+        "r": 165
+      },
+      {
+        "k": "바이브코딩",
+        "r": 165
+      },
+      {
+        "k": "부동산 대시보드",
+        "r": 165
+      },
+      {
+        "k": "바이브코딩 수익",
+        "r": 163
+      },
+      {
+        "k": "앱 부업",
+        "r": 163
+      },
+      {
+        "k": "광고 수익",
+        "r": 163
+      },
+      {
+        "k": "X 수익화",
+        "r": 162
+      }
+    ],
+    "apptech": [
+      {
+        "k": "토스 행운퀴즈",
+        "r": 163
+      },
+      {
+        "k": "앱테크 정답",
+        "r": 163
+      },
+      {
+        "k": "오늘의 퀴즈",
+        "r": 163
+      },
+      {
+        "k": "쿠팡 파트너스 정산",
+        "r": 161
+      },
+      {
+        "k": "쇼핑 숏츠",
+        "r": 161
+      },
+      {
+        "k": "수전",
+        "r": 161
+      },
+      {
+        "k": "오늘의집 할인",
+        "r": 160
+      }
+    ],
+    "build": [
+      {
+        "k": "나라장터 공고",
+        "r": 159
+      },
+      {
+        "k": "건축설계 용역",
+        "r": 159
+      },
+      {
+        "k": "입찰 일정",
+        "r": 159
+      },
+      {
+        "k": "분담이행",
+        "r": 159
+      },
+      {
+        "k": "실적증명",
+        "r": 159
+      },
+      {
+        "k": "지분율",
+        "r": 159
+      },
+      {
+        "k": "설계공모 일정",
+        "r": 159
+      }
     ]
-   },
-   {
-    "key": "ai",
-    "label": "IT·AI",
-    "emoji": "🤖",
-    "title": "AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
-    "body": "오늘 AI타임스·전자신문 등에서 다룬 소식입니다. AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\" 이어서 '韓 조선업계 산재 사고 줄고 질병 늘었다…지난해 질병재해 1900명 육박', '[ET시선] 공공 클라우드 전환, 보안·개방 해법 찾아야'도 함께 보도됐습니다.",
-    "points": [
-     "AI타임스 · AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
-     "전자신문 · 韓 조선업계 산재 사고 줄고 질병 늘었다…지난해 질병재해 1900명 육박",
-     "전자신문 · [ET시선] 공공 클라우드 전환, 보안·개방 해법 찾아야"
+  },
+  "brief": {
+    "no": "No.02",
+    "date": "2026-11-21",
+    "label": "11.21",
+    "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 · 머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 · 보험사 해외부동산 투자 30.8조…금융권 전체의 55%",
+    "lead": "오늘은 '로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억', '머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입' 등이 눈에 띕니다. 이 밖에 부동산·정책 쪽에서 '보험사 해외부동산 투자 30.8조…금융권 전체의 55%' 흐름이 이어졌습니다. 수집된 75건 가운데 분야별로 7개 이슈를 골랐습니다.",
+    "metrics": {
+      "deep": 7,
+      "analysis": 4,
+      "cross": 0
+    },
+    "sections": [
+      {
+        "key": "econ",
+        "label": "경제·증시",
+        "emoji": "📈",
+        "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
+        "body": "오늘 매일경제 등에서 다룬 소식입니다. 로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다 이어서 '쏘렌토값에도 이젠 중국차?…한국서 누가 샀나, 돈없는 2030 오빠 아닌', '[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 1'도 함께 보도됐습니다.",
+        "points": [
+          "매일경제 · 로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
+          "매일경제 · 쏘렌토값에도 이젠 중국차?…한국서 누가 샀나, 돈없는 2030 오빠 아닌 4050 ",
+          "매일경제 · [속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 19, 29,"
+        ]
+      },
+      {
+        "key": "ai",
+        "label": "IT·AI",
+        "emoji": "🤖",
+        "title": "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
+        "body": "오늘 AI타임스·전자신문 등에서 다룬 소식입니다. 머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\" 이어서 'AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"', '울산 SK AI데이터센터 찾은 李…“韓 AX는 AI 고속도로가 열 것”'도 함께 보도됐습니다.",
+        "points": [
+          "AI타임스 · 머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
+          "AI타임스 · AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
+          "전자신문 · 울산 SK AI데이터센터 찾은 李…“韓 AX는 AI 고속도로가 열 것”"
+        ]
+      },
+      {
+        "key": "estate",
+        "label": "부동산·정책",
+        "emoji": "🏢",
+        "title": "보험사 해외부동산 투자 30.8조…금융권 전체의 55%",
+        "body": "오늘 구글뉴스 부동산 등에서 다룬 소식입니다. 보험사 해외부동산 투자 30.8조…금융권 전체의 55% 이어서 '[펜앤인터뷰] 李 부동산 대책 몇 점? 최경환 \"경제 조금이라도 알면 이', '[이재명 부동산정책 분석] ③수도권 집중 해소, 성공할 것인가'도 함께 보도됐습니다.",
+        "points": [
+          "구글뉴스 부동산 · 보험사 해외부동산 투자 30.8조…금융권 전체의 55%",
+          "구글뉴스 부동산 · [펜앤인터뷰] 李 부동산 대책 몇 점? 최경환 \"경제 조금이라도 알면 이런 짓 못해",
+          "구글뉴스 부동산 · [이재명 부동산정책 분석] ③수도권 집중 해소, 성공할 것인가"
+        ]
+      },
+      {
+        "key": "social",
+        "label": "사회·생활",
+        "emoji": "🧾",
+        "title": "국가자격시험 중 무작위 전화 걸자 벨소리…부정행위 6건 적발",
+        "body": "오늘 연합뉴스 등에서 다룬 소식입니다. 국가자격시험 중 무작위 전화 걸자 벨소리…부정행위 6건 적발 이어서 '해남 두륜산서 50대 등산객 10ｍ 아래 추락해 중상', '제주도 산지 대설주의보 해제'도 함께 보도됐습니다.",
+        "points": [
+          "연합뉴스 · 국가자격시험 중 무작위 전화 걸자 벨소리…부정행위 6건 적발",
+          "연합뉴스 · 해남 두륜산서 50대 등산객 10ｍ 아래 추락해 중상",
+          "연합뉴스 · 제주도 산지 대설주의보 해제"
+        ]
+      },
+      {
+        "key": "mom",
+        "label": "맘카페·육아",
+        "emoji": "🌿",
+        "title": "겨울방학 유아 숲체험 프로그램 어디가 좋아요? 서울 서북권 위주로 아시는 곳",
+        "body": "맘스홀릭에서 '겨울방학 유아 숲체험 프로그램 어디가 좋아요? 서울 서북권 위주로 아시는 곳' 글이 반응을 얻고 있습니다. 레몬테라스에서도 비슷한 흐름의 글이 올라왔습니다.",
+        "points": [
+          "맘스홀릭 · 겨울방학 유아 숲체험 프로그램 어디가 좋아요? 서울 서북권 위주로 아시는 곳",
+          "레몬테라스 · 초1 아이 방과후로 숲놀이 12주 등록했는데 만족도 후기 (사진 많이 넣었어요)"
+        ]
+      },
+      {
+        "key": "apptech",
+        "label": "앱테크·핫딜",
+        "emoji": "💰",
+        "title": "토스 행운퀴즈 11/21 정답 모음 (오전 9시 기준, 계속 업데이트)",
+        "body": "뽐뿌에서 '토스 행운퀴즈 11/21 정답 모음 (오전 9시 기준, 계속 업데이트)' 글이 반응을 얻고 있습니다. 네이버카페에서도 비슷한 흐름의 글이 올라왔습니다.",
+        "points": [
+          "뽐뿌 · 토스 행운퀴즈 11/21 정답 모음 (오전 9시 기준, 계속 업데이트)",
+          "네이버카페 · 쿠팡 파트너스 숏츠로 이번 주 8만원 정산 인증 (주방 수전 편)"
+        ]
+      }
+    ],
+    "engine": "rule-based",
+    "past": []
+  },
+  "visits": {
+    "source": "sample",
+    "days": [
+      {
+        "d": "11.15",
+        "wd": "일",
+        "v": 1660,
+        "iso": "2026-11-15"
+      },
+      {
+        "d": "11.16",
+        "wd": "월",
+        "v": 1410,
+        "iso": "2026-11-16"
+      },
+      {
+        "d": "11.17",
+        "wd": "화",
+        "v": 1520,
+        "iso": "2026-11-17"
+      },
+      {
+        "d": "11.18",
+        "wd": "수",
+        "v": 1460,
+        "iso": "2026-11-18"
+      },
+      {
+        "d": "11.19",
+        "wd": "목",
+        "v": 1290,
+        "iso": "2026-11-19"
+      },
+      {
+        "d": "11.20",
+        "wd": "금",
+        "v": 1340,
+        "iso": "2026-11-20"
+      },
+      {
+        "d": "11.21",
+        "wd": "토",
+        "v": 1180,
+        "iso": "2026-11-21"
+      }
     ]
-   },
-   {
-    "key": "estate",
-    "label": "부동산·정책",
-    "emoji": "🏢",
-    "title": "[펜앤인터뷰] 李 부동산 대책 몇 점? 최경환 \"경제 조금이라도 알면 이런 짓 못해\"",
-    "body": "오늘 구글뉴스 부동산 등에서 다룬 소식입니다. [펜앤인터뷰] 李 부동산 대책 몇 점? 최경환 \"경제 조금이라도 알면 이런 짓 못해\" 이어서 '[이재명 부동산정책 분석] ③수도권 집중 해소, 성공할 것인가', '부동산 정책 몇달만에 잇단 조정…시장은 '예측가능성' 우려'도 함께 보도됐습니다.",
-    "points": [
-     "구글뉴스 부동산 · [펜앤인터뷰] 李 부동산 대책 몇 점? 최경환 \"경제 조금이라도 알면 이런 짓 못해",
-     "구글뉴스 부동산 · [이재명 부동산정책 분석] ③수도권 집중 해소, 성공할 것인가",
-     "구글뉴스 부동산 · 부동산 정책 몇달만에 잇단 조정…시장은 '예측가능성' 우려"
-    ]
-   },
-   {
-    "key": "social",
-    "label": "사회·생활",
-    "emoji": "🧾",
-    "title": "추미애 \"조희대 대법원장 탄핵 실행, 좌고우면 안 돼\"",
-    "body": "오늘 연합뉴스 등에서 다룬 소식입니다. 추미애 \"조희대 대법원장 탄핵 실행, 좌고우면 안 돼\" 이어서 '구글, 인도네시아 친정부 유튜브 채널 대량 삭제…당국 반발', '평창서 공기총 사격 연습 중 60대 행인 맞아 숨져(종합)'도 함께 보도됐습니다.",
-    "points": [
-     "연합뉴스 · 추미애 \"조희대 대법원장 탄핵 실행, 좌고우면 안 돼\"",
-     "연합뉴스 · 구글, 인도네시아 친정부 유튜브 채널 대량 삭제…당국 반발",
-     "연합뉴스 · 평창서 공기총 사격 연습 중 60대 행인 맞아 숨져(종합)"
-    ]
-   },
-   {
-    "key": "mom",
-    "label": "맘카페·육아",
-    "emoji": "🌿",
-    "title": "겨울방학 유아 숲체험 프로그램 어디가 좋아요? 서울 서북권 위주로 아시는 곳",
-    "body": "맘스홀릭에서 '겨울방학 유아 숲체험 프로그램 어디가 좋아요? 서울 서북권 위주로 아시는 곳' 글이 반응을 얻고 있습니다. 레몬테라스에서도 비슷한 흐름의 글이 올라왔습니다.",
-    "points": [
-     "맘스홀릭 · 겨울방학 유아 숲체험 프로그램 어디가 좋아요? 서울 서북권 위주로 아시는 곳",
-     "레몬테라스 · 초1 아이 방과후로 숲놀이 12주 등록했는데 만족도 후기 (사진 많이 넣었어요)"
-    ]
-   },
-   {
-    "key": "apptech",
-    "label": "앱테크·핫딜",
-    "emoji": "💰",
-    "title": "토스 행운퀴즈 11/21 정답 모음 (오전 9시 기준, 계속 업데이트)",
-    "body": "뽐뿌에서 '토스 행운퀴즈 11/21 정답 모음 (오전 9시 기준, 계속 업데이트)' 글이 반응을 얻고 있습니다. 네이버카페에서도 비슷한 흐름의 글이 올라왔습니다.",
-    "points": [
-     "뽐뿌 · 토스 행운퀴즈 11/21 정답 모음 (오전 9시 기준, 계속 업데이트)",
-     "네이버카페 · 쿠팡 파트너스 숏츠로 이번 주 8만원 정산 인증 (주방 수전 편)"
-    ]
-   }
+  },
+  "collect_log": [
+    {
+      "source": "실시간베스트",
+      "kind": "community",
+      "status": "ok",
+      "count": 8,
+      "error": ""
+    },
+    {
+      "source": "톡커들의 선택",
+      "kind": "community",
+      "status": "ok",
+      "count": 8,
+      "error": ""
+    },
+    {
+      "source": "더쿠",
+      "kind": "community",
+      "status": "ok",
+      "count": 8,
+      "error": ""
+    },
+    {
+      "source": "보배드림",
+      "kind": "community",
+      "status": "ok",
+      "count": 8,
+      "error": ""
+    },
+    {
+      "source": "개드립",
+      "kind": "community",
+      "status": "ok",
+      "count": 8,
+      "error": ""
+    },
+    {
+      "source": "에펨카리아",
+      "kind": "",
+      "status": "skip",
+      "count": 0,
+      "error": "차단/접속 실패: HTTP Error 430: Unknown"
+    },
+    {
+      "source": "루리웹",
+      "kind": "community",
+      "status": "ok",
+      "count": 8,
+      "error": ""
+    },
+    {
+      "source": "클리앙",
+      "kind": "community",
+      "status": "ok",
+      "count": 1,
+      "error": ""
+    },
+    {
+      "source": "인스티즈",
+      "kind": "community",
+      "status": "skip",
+      "count": 0,
+      "error": "제목 패턴 미검출"
+    },
+    {
+      "source": "Google News 경제",
+      "kind": "news",
+      "status": "ok",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "source": "한국경제",
+      "kind": "news",
+      "status": "error",
+      "count": 0,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "매일경제",
+      "kind": "news",
+      "status": "ok",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "source": "Google News IT",
+      "kind": "news",
+      "status": "ok",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "source": "전자신문",
+      "kind": "news",
+      "status": "ok",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "source": "AI타임스",
+      "kind": "news",
+      "status": "ok",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "source": "Google News 부동산",
+      "kind": "news",
+      "status": "ok",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "source": "Google News 사회",
+      "kind": "news",
+      "status": "ok",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "source": "연합뉴스",
+      "kind": "news",
+      "status": "ok",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "source": "YouTube · SBS News",
+      "kind": "youtube",
+      "status": "ok",
+      "count": 4,
+      "error": ""
+    },
+    {
+      "source": "YouTube · YTN",
+      "kind": "youtube",
+      "status": "ok",
+      "count": 4,
+      "error": ""
+    },
+    {
+      "source": "YouTube · JTBC",
+      "kind": "youtube",
+      "status": "ok",
+      "count": 1,
+      "error": ""
+    },
+    {
+      "source": "GeekNews",
+      "kind": "blog",
+      "status": "ok",
+      "count": 4,
+      "error": ""
+    },
+    {
+      "source": "슬로우뉴스",
+      "kind": "blog",
+      "status": "ok",
+      "count": 4,
+      "error": ""
+    },
+    {
+      "source": "바이라인네트워크",
+      "kind": "blog",
+      "status": "ok",
+      "count": 4,
+      "error": ""
+    },
+    {
+      "source": "네이버 blog",
+      "kind": "api",
+      "status": "key-missing",
+      "count": 0,
+      "error": "NAVER_CLIENT_ID/SECRET 미설정"
+    },
+    {
+      "source": "네이버 shop",
+      "kind": "api",
+      "status": "key-missing",
+      "count": 0,
+      "error": "NAVER_CLIENT_ID/SECRET 미설정"
+    },
+    {
+      "source": "GitHub Trending",
+      "kind": "opensource",
+      "status": "ok",
+      "count": 6,
+      "error": ""
+    },
+    {
+      "source": "Apple 앱스토어 RSS",
+      "kind": "apps",
+      "status": "error",
+      "count": 0,
+      "error": "The read operation timed out"
+    },
+    {
+      "source": "Steam 최다 플레이",
+      "kind": "apps",
+      "status": "ok",
+      "count": 6,
+      "error": ""
+    },
+    {
+      "source": "Devpost 해커톤",
+      "kind": "hackathon",
+      "status": "ok",
+      "count": 6,
+      "error": ""
+    },
+    {
+      "source": "나라장터 입찰공고",
+      "kind": "build",
+      "status": "key-missing",
+      "count": 0,
+      "error": "DATA_GO_KR_KEY 미설정"
+    },
+    {
+      "source": "Google Trends KR",
+      "kind": "trend",
+      "status": "ok",
+      "count": 10,
+      "error": ""
+    }
   ],
-  "engine": "rule-based",
-  "past": []
- },
- "visits": {
-  "source": "sample",
-  "days": [
-   {
-    "d": "11.15",
-    "wd": "일",
-    "v": 1660,
-    "iso": "2026-11-15"
-   },
-   {
-    "d": "11.16",
-    "wd": "월",
-    "v": 1410,
-    "iso": "2026-11-16"
-   },
-   {
-    "d": "11.17",
-    "wd": "화",
-    "v": 1520,
-    "iso": "2026-11-17"
-   },
-   {
-    "d": "11.18",
-    "wd": "수",
-    "v": 1460,
-    "iso": "2026-11-18"
-   },
-   {
-    "d": "11.19",
-    "wd": "목",
-    "v": 1290,
-    "iso": "2026-11-19"
-   },
-   {
-    "d": "11.20",
-    "wd": "금",
-    "v": 1340,
-    "iso": "2026-11-20"
-   },
-   {
-    "d": "11.21",
-    "wd": "토",
-    "v": 1180,
-    "iso": "2026-11-21"
-   }
-  ]
- },
- "collect_log": [
-  {
-   "source": "실시간베스트",
-   "kind": "community",
-   "status": "ok",
-   "count": 8,
-   "error": ""
-  },
-  {
-   "source": "톡커들의 선택",
-   "kind": "community",
-   "status": "ok",
-   "count": 8,
-   "error": ""
-  },
-  {
-   "source": "더쿠",
-   "kind": "community",
-   "status": "ok",
-   "count": 8,
-   "error": ""
-  },
-  {
-   "source": "보배드림",
-   "kind": "community",
-   "status": "ok",
-   "count": 8,
-   "error": ""
-  },
-  {
-   "source": "개드립",
-   "kind": "",
-   "status": "skip",
-   "count": 0,
-   "error": "차단/접속 실패: HTTP Error 403: Forbidden"
-  },
-  {
-   "source": "에펨카리아",
-   "kind": "",
-   "status": "skip",
-   "count": 0,
-   "error": "차단/접속 실패: HTTP Error 430: Unknown"
-  },
-  {
-   "source": "루리웹",
-   "kind": "",
-   "status": "skip",
-   "count": 0,
-   "error": "차단/접속 실패: <urlopen error timed out>"
-  },
-  {
-   "source": "클리앙",
-   "kind": "community",
-   "status": "ok",
-   "count": 1,
-   "error": ""
-  },
-  {
-   "source": "인스티즈",
-   "kind": "community",
-   "status": "skip",
-   "count": 0,
-   "error": "제목 패턴 미검출"
-  },
-  {
-   "source": "Google News 경제",
-   "kind": "news",
-   "status": "ok",
-   "count": 12,
-   "error": ""
-  },
-  {
-   "source": "한국경제",
-   "kind": "news",
-   "status": "error",
-   "count": 0,
-   "error": "HTTP Error 403: Forbidden"
-  },
-  {
-   "source": "매일경제",
-   "kind": "news",
-   "status": "ok",
-   "count": 12,
-   "error": ""
-  },
-  {
-   "source": "Google News IT",
-   "kind": "news",
-   "status": "ok",
-   "count": 12,
-   "error": ""
-  },
-  {
-   "source": "전자신문",
-   "kind": "news",
-   "status": "ok",
-   "count": 12,
-   "error": ""
-  },
-  {
-   "source": "AI타임스",
-   "kind": "news",
-   "status": "ok",
-   "count": 12,
-   "error": ""
-  },
-  {
-   "source": "Google News 부동산",
-   "kind": "news",
-   "status": "ok",
-   "count": 12,
-   "error": ""
-  },
-  {
-   "source": "Google News 사회",
-   "kind": "news",
-   "status": "ok",
-   "count": 12,
-   "error": ""
-  },
-  {
-   "source": "연합뉴스",
-   "kind": "news",
-   "status": "ok",
-   "count": 12,
-   "error": ""
-  },
-  {
-   "source": "YouTube · SBS News",
-   "kind": "youtube",
-   "status": "ok",
-   "count": 4,
-   "error": ""
-  },
-  {
-   "source": "YouTube · YTN",
-   "kind": "youtube",
-   "status": "ok",
-   "count": 4,
-   "error": ""
-  },
-  {
-   "source": "YouTube · JTBC",
-   "kind": "youtube",
-   "status": "ok",
-   "count": 1,
-   "error": ""
-  },
-  {
-   "source": "GeekNews",
-   "kind": "blog",
-   "status": "ok",
-   "count": 4,
-   "error": ""
-  },
-  {
-   "source": "슬로우뉴스",
-   "kind": "blog",
-   "status": "ok",
-   "count": 4,
-   "error": ""
-  },
-  {
-   "source": "바이라인네트워크",
-   "kind": "blog",
-   "status": "ok",
-   "count": 4,
-   "error": ""
-  },
-  {
-   "source": "네이버 blog",
-   "kind": "api",
-   "status": "key-missing",
-   "count": 0,
-   "error": "NAVER_CLIENT_ID/SECRET 미설정"
-  },
-  {
-   "source": "네이버 shop",
-   "kind": "api",
-   "status": "key-missing",
-   "count": 0,
-   "error": "NAVER_CLIENT_ID/SECRET 미설정"
-  },
-  {
-   "source": "GitHub Trending",
-   "kind": "opensource",
-   "status": "ok",
-   "count": 6,
-   "error": ""
-  },
-  {
-   "source": "Apple 앱스토어 RSS",
-   "kind": "apps",
-   "status": "ok",
-   "count": 8,
-   "error": ""
-  },
-  {
-   "source": "Steam 최다 플레이",
-   "kind": "apps",
-   "status": "ok",
-   "count": 6,
-   "error": ""
-  },
-  {
-   "source": "Devpost 해커톤",
-   "kind": "hackathon",
-   "status": "ok",
-   "count": 6,
-   "error": ""
-  },
-  {
-   "source": "나라장터 입찰공고",
-   "kind": "build",
-   "status": "key-missing",
-   "count": 0,
-   "error": "DATA_GO_KR_KEY 미설정"
-  },
-  {
-   "source": "Google Trends KR",
-   "kind": "trend",
-   "status": "ok",
-   "count": 10,
-   "error": ""
+  "notes": [
+    "posts 중 sample=true 는 실수집이 아닌 예시 데이터입니다(화면에는 ‘예시’ 표시).",
+    "rise 값은 최신성·댓글·조회·교차 출처를 합산한 추정치입니다.",
+    "뉴스·유튜브·오픈소스·앱·해커톤은 공개 RSS/API 실데이터입니다."
+  ],
+  "summary_meta": {
+    "engine": "rule-based",
+    "model": "",
+    "at": "2026-11-21T22:26:04+09:00",
+    "post_summaries": 0
   }
- ],
- "notes": [
-  "posts 중 sample=true 는 실수집이 아닌 예시 데이터입니다(화면에는 ‘예시’ 표시).",
-  "rise 값은 최신성·댓글·조회·교차 출처를 합산한 추정치입니다.",
-  "뉴스·유튜브·오픈소스·앱·해커톤은 공개 RSS/API 실데이터입니다."
- ],
- "summary_meta": {
-  "engine": "rule-based",
-  "model": "",
-  "at": "2026-11-21T18:48:42+09:00",
-  "post_summaries": 0
- }
 }
