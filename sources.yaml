@@ -1,116 +1,95 @@
-# 노리짱 트래픽센트 v2 · 수집 소스 정의
+# 트렌드픽 TrendPick v3 · 수집 소스 정의
 # ---------------------------------------------------------------
 # collector.py 가 읽는 소스 목록입니다. (collector 는 표준 라이브러리만 사용)
-#  · type: rss | html | api | manual
+#  · type: rss | html | api
 #  · key : 필요한 환경변수 (없으면 자동으로 skip + collect_log 기록)
-#  · 이 파일은 문서이자 설정입니다. PyYAML 이 설치되어 있으면 collector 가
-#    feeds 항목을 이 파일에서 덮어쓰고, 없으면 내장 기본값으로 동작합니다.
+#  · v3 는 제목·이미지가 실제로 잡히는 소스만 남기고, 막힌 소스는 대체 피드로 정리했습니다.
 # ---------------------------------------------------------------
 
 meta:
-  schema: nori-traffic-scent/2
+  schema: trendpick/3
+  service_name: "트렌드픽 (TrendPick)"
   timezone: Asia/Seoul
   schedule: "07:00 / 19:00 KST (cron 0 22 * * * , 0 10 * * *)"
-  user_agent: "Mozilla/5.0 (compatible; NoriTrafficScent/2.0)"
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
   request_policy:
     timeout_sec: 15
-    retries: 1
+    og_image_timeout_sec: 6
+    og_image_concurrency: 8
     per_host_requests_per_run: 1
-    respect_robots: true
     skip_on_block: true
 
-# ── 1. 일반 커뮤니티 인기글 (9곳) ─────────────────────────────
+# ── 1. 커뮤니티 인기글 (공개 목록 1회 요청) ──────────────────
 community:
-  - name: 실시간베스트
-    type: html
-    url: https://m.dcinside.com/board/dcbest
-    note: 디시인사이드 실시간 베스트 · 공개 목록 1회 요청
-  - name: 톡커들의 선택
+  - name: 네이트판
     type: html
     url: https://pann.nate.com/talk/ranking
-  - name: 개드립
-    type: html
-    url: https://www.dogdrip.net/dogdrip
-    note: 403 차단 시 자동 skip
-  - name: 보배드림
-    type: html
-    url: https://www.bobaedream.co.kr/list?code=best
-  - name: 에펨카리아
-    type: html
-    url: https://www.fmkorea.com/best
-    note: 430 차단 시 자동 skip
+    pattern: "/talk/\\d+"
+    note: 톡커들의 선택 · 일부 글만 대표 이미지가 있습니다
   - name: 더쿠
     type: html
     url: https://theqoo.net/hot
-  - name: 클리앙
+    pattern: "/hot/\\d+"
+  - name: 보배드림
     type: html
-    url: https://www.clien.net/service/board/park
-  - name: 인스티즈
+    url: https://www.bobaedream.co.kr/list?code=best
+    pattern: "view\\?[^\"']*No=\\d+"
+  - name: 82cook
     type: html
-    url: https://www.instiz.net/bbs/list.php?bbs=pt
-  - name: 루리웹
-    type: html
-    url: https://bbs.ruliweb.com/best/board/300143
+    url: https://www.82cook.com/entiz/enti.php?bn=15
+    pattern: "num=\\d+"
+    note: 인스티즈(JS 렌더링) 대체 소스
 
-# ── 2. 실시간 주요 뉴스 ──────────────────────────────────────
+# ── 2. 실시간 뉴스 ─────────────────────────────────────────
+# 한국경제(all-news)는 403 반복 → 매일경제 + 연합뉴스 경제로 대체 (collect_log: replaced)
 news:
-  - name: Google News 경제
-    type: rss
-    section: 경제·증시
-    url: https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ko&gl=KR&ceid=KR:ko
-  - name: Google News IT
-    type: rss
-    section: IT·AI
-    url: https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=ko&gl=KR&ceid=KR:ko
-  - name: Google News 부동산
-    type: rss
-    section: 부동산·정책
-    url: https://news.google.com/rss/search?q=부동산+정책&hl=ko&gl=KR&ceid=KR:ko
-  - name: Google News 사회
-    type: rss
-    section: 사회·생활
-    url: https://news.google.com/rss/headlines/section/topic/NATION?hl=ko&gl=KR&ceid=KR:ko
-  - name: 연합뉴스
-    type: rss
-    section: 사회·생활
-    url: https://www.yna.co.kr/rss/news.xml
-  - name: 한국경제
-    type: rss
-    section: 경제·증시
-    url: https://www.hankyung.com/feed/all-news
   - name: 매일경제
     type: rss
     section: 경제·증시
     url: https://www.mk.co.kr/rss/30000001/
+    note: 종합 피드 · 제목 키워드로 분야 재배정 · media:content 이미지 포함
+  - name: 연합뉴스 경제
+    type: rss
+    section: 경제·증시
+    url: https://www.yna.co.kr/rss/economy.xml
   - name: 전자신문
     type: rss
     section: IT·AI
     url: https://rss.etnews.com/Section901.xml
+    note: 오늘의뉴스(종합) · og:image 로 썸네일 보강
   - name: AI타임스
     type: rss
     section: IT·AI
     url: https://www.aitimes.com/rss/allArticle.xml
-  - name: 네이버 뉴스 검색
-    type: api
-    key: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET
-    url: https://openapi.naver.com/v1/search/news.json
-    note: 키가 있으면 분야별 뉴스를 한 번 더 보강
+  - name: 연합뉴스 산업
+    type: rss
+    section: 부동산·정책
+    url: https://www.yna.co.kr/rss/industry.xml
+  - name: 연합뉴스 정치
+    type: rss
+    section: 부동산·정책
+    url: https://www.yna.co.kr/rss/politics.xml
+  - name: 연합뉴스 사회
+    type: rss
+    section: 사회·생활
+    url: https://www.yna.co.kr/rss/society.xml
+  - name: 조선일보
+    type: rss
+    section: 사회·생활
+    url: https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml
 
-# ── 3. 유튜브 ────────────────────────────────────────────────
+# ── 3. 유튜브 ────────────────────────────────────────────
 youtube:
   api:
     type: api
     key: YOUTUBE_API_KEY
     endpoint: https://www.googleapis.com/youtube/v3/videos
     params: part=snippet,statistics&chart=mostPopular&regionCode=KR&maxResults=12
-    quota_note: videos.list(chart=mostPopular) 1회 = 1 unit, search.list 1회 = 100 units
+    quota_note: videos.list 1회 = 1 unit
+  thumbnail_rule: "https://i.ytimg.com/vi/{video_id}/hqdefault.jpg (video_id 는 watch?v= · youtu.be/ · /shorts/ 에서 추출)"
   channels:
-    - name: 노리짱
-      channel_id: UCRKzHmHb1o2KyxcLwr3MI8Q
-      type: rss
-      url: https://www.youtube.com/feeds/videos.xml?channel_id=UCRKzHmHb1o2KyxcLwr3MI8Q
-    - name: SBS News
-      channel_id: UCupDOc54HJbIPtgLjhABOZw
+    - name: SBS 뉴스
+      channel_id: UCkinYTS9IHqOEwR1Sze2JTw
       type: rss
     - name: YTN
       channel_id: UChlgI3UHCOnwUGzWzbJ3H5w
@@ -119,7 +98,7 @@ youtube:
       channel_id: UCKCr4I-_ttdIhKVesomSKaQ
       type: rss
 
-# ── 4. 블로그 · 글감 ─────────────────────────────────────────
+# ── 4. 블로그 · 글감 ─────────────────────────────────────
 blogs:
   - name: GeekNews
     type: rss
@@ -134,94 +113,72 @@ blogs:
     type: api
     key: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET
     url: https://openapi.naver.com/v1/search/blog.json
-  - name: 내 블로그 RSS (선택)
-    type: rss
-    url: https://rss.blog.naver.com/{blogId}.xml
-    note: blogId 를 채우면 내 블로그 최신 글이 함께 들어옵니다
 
-# ── 5. 핫딜 ─────────────────────────────────────────────────
+# ── 5. 핫딜 ──────────────────────────────────────────────
 deals:
   - name: 네이버 쇼핑 최저가
     type: api
     key: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET
     url: https://openapi.naver.com/v1/search/shop.json
-  - name: 쿠팡 파트너스
-    type: manual
-    note: 파트너스 Open API 는 승인 후 사용. 미승인 상태에서는 큐레이션 목록 사용
-  - name: 뽐뿌 · 알구몬
-    type: manual
-    note: 공개 RSS 미제공 → 수집 제목 매칭 또는 수동 큐레이션
+    note: 키가 없으면 가짜 가격을 만들지 않고, 수집된 할인·특가 뉴스로 섹션을 채우거나 접습니다
 
-# ── 6. 오픈소스 ─────────────────────────────────────────────
+# ── 6. 오픈소스 ──────────────────────────────────────────
 opensource:
   - name: GitHub Trending (daily)
     type: html
     url: https://github.com/trending?since=daily
+    thumbnail_rule: "https://opengraph.githubassets.com/1/{owner}/{repo}"
 
-# ── 7. 앱 · 게임 순위 ───────────────────────────────────────
+# ── 7. 앱 · 게임 순위 ────────────────────────────────────
 apps:
-  - name: Apple App Store 무료 앱
+  - name: iTunes 앱 순위 (1차)
     type: api
-    url: https://rss.applemarketingtools.com/api/v2/kr/apps/top-free/10/apps.json
+    url: https://itunes.apple.com/kr/rss/topfreeapplications/limit=12/json
+    note: 앱 아이콘(artworkUrl) 포함 · 빠름
+  - name: Apple 마케팅 RSS (2차)
+    type: api
+    url: https://rss.applemarketingtools.com/api/v2/kr/apps/top-free/12/apps.json
   - name: Steam 최다 플레이
     type: api
     url: https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/
+    thumbnail_rule: "https://cdn.cloudflare.steamstatic.com/steam/apps/{appid}/header.jpg"
 
-# ── 8. 해커톤 · 공모전 ──────────────────────────────────────
+# ── 8. 해커톤 · 공모전 ───────────────────────────────────
 hackathons:
   - name: Devpost Open Hackathons
     type: api
     url: https://devpost.com/api/hackathons?status[]=open&order_by=deadline
-  - name: 국내 공모전(위비티·링커리어)
-    type: manual
-    note: 로그인·차단 정책상 자동 수집 제외 → 필요 시 수동 입력
 
-# ── 9. 특화 5분야 보강 ──────────────────────────────────────
-specialized:
-  - cat: build
-    name: 나라장터 입찰공고(건축설계)
-    type: api
-    key: DATA_GO_KR_KEY
-    url: https://apis.data.go.kr/1230000/BidPublicInfoService04/getBidPblancListInfoServc
-  - cat: estate
-    name: 국토부 아파트 매매 실거래가
-    type: api
-    key: DATA_GO_KR_KEY
-    url: https://apis.data.go.kr/1613000/RTMSDataSvcAptTradeDev/getRTMSDataSvcAptTradeDev
-    note: LAWDI 코드(예 11140) + 계약월 조합으로 조회
-  - cat: mom
-    name: 네이버 카페·블로그 검색
-    type: api
-    key: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET
-    url: https://openapi.naver.com/v1/search/cafearticle.json
-  - cat: apptech
-    name: 네이버 쇼핑·블로그 검색
-    type: api
-    key: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET
-  - cat: ai
-    name: GeekNews · AI 뉴스
-    type: rss
-    url: https://news.hada.io/rss/news
-
-# ── 10. 급상승 키워드 ──────────────────────────────────────
+# ── 9. 급상승 키워드 ─────────────────────────────────────
 trends:
   - name: Google Trends KR 급상승
     type: rss
     url: https://trends.google.co.kr/trending/rss?geo=KR
-  - name: 네이버 데이터랩 (선택)
-    type: api
-    key: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET
-    note: 검색어 트렌드 API 는 별도 신청
+    note: ht:picture 이미지 · 스포츠 대진은 감점, 수집 제목 키워드와 합산해 TOP 10
 
-# ── 11. AI 요약 ────────────────────────────────────────────
+# ── 10. 주제 분류 (수집 결과를 5개 주제로 태깅) ───────────
+topics:
+  mom: [숲, 유아, 초등, 육아, 어린이, 유치원, 어린이집, 방학, 숲놀이, 학부모, 엄마, 아동, 보육, 급식, 돌봄, 교사]
+  estate: [부동산, 아파트, 전세, 매매, 청약, 임대, 집값, 재건축, 경매, 상가, 오피스텔, 중개, 분양, 주택, 월세, 공시가격, 토지, 재개발, 입주]
+  ai: [AI, 인공지능, 챗GPT, 클로드, 제미나이, 반도체, 데이터센터, 로봇, LLM, 생성형, 알고리즘, 엔비디아, GPU, 오픈AI, 앤트로픽, 자동화]
+  apptech: [핫딜, 할인, 특가, 쿠폰, 리워드, 앱테크, 포인트, 최저가, 세일, 블랙프라이데이, 반값, 이벤트, 경품, 무료, 구독, 체험단]
+  build: [건축, 설계, 입찰, 나라장터, 시공, 공모, 감리, 인테리어, 도시, 용역, 공사, 리모델링, 조경, 철골, 안전진단]
+
+# ── 11. AI 요약 ──────────────────────────────────────────
 summary:
   provider: Google Gemini
   model: gemini-2.5-flash
   key: GEMINI_API_KEY
   free_tier: "Gemini API 무료 티어 (Flash 계열) · 하루 2회 호출"
-  fallback: 규칙 기반 요약 (summarize.py 내장 · 키 없이도 data.json 생성)
+  fallback: 규칙 기반 브리프 (collector.py 내장 · 키 없이도 화면 완성)
 
-# ── 12. 벤치마크 (수동 큐레이션) ────────────────────────────
-benchmarks:
-  metric_labels: [지능, 속도, 가성비]
-  note: 공개 벤치마크 점수를 참고해 월 1회 손으로 갱신합니다.
+# ── 12. 수익화 (화면 광고 슬롯) ──────────────────────────
+ads:
+  config: "src/app.js 상단 TRENDPICK_ADS"
+  slots:
+    - top: "리더보드 728×90 (모바일 320×100)"
+    - feed: "피드 인라인 (반응형)"
+    - side: "사이드바 300×250"
+    - bottom: "하단 배너 728×90 (모바일 320×100)"
+  networks: [구글 애드센스(adsbygoogle), 카카오 애드핏(kakao_ad_area)]
+  preview: "?ad_preview=1 또는 푸터 [📢 광고 자리 미리보기]"

@@ -1,163 +1,210 @@
-# 노리짱 트래픽센트 v2 · GitHub 배포팩
+# 트렌드픽 TrendPick v3 · GitHub 배포팩
 
-주요 커뮤니티 · 일간 트렌드 리포트 · 실시간 뉴스 · 유튜브 · 블로그 · 핫딜 · 인디 프로젝트 ·
-오픈소스 · 앱·게임 순위 · 해커톤 · AI 벤치마크 · 방문 추이 · 문의 및 제안을 한 화면에서 보는
-**노리짱 전용 트래픽 레이더**입니다.
+커뮤니티 인기글 · 주요 뉴스 · 유튜브 · 블로그 · 특가 소식 · 오픈소스 · 앱·게임 순위 · 해커톤을
+한 화면에서 보는 **트렌드 큐레이션 포털**입니다. 매일 두 번 자동 수집한 **실제 데이터만** 보여 줍니다.
 
+- 라이브: **https://econature7-lab.github.io/nori-traffic-scent/**
 - 서버비 **0원** (GitHub Actions + GitHub Pages 무료)
 - 수집 **하루 2회** (`07:00` / `19:00` KST)
-- AI 요약 **Gemini Flash 무료 티어** (PC 클로드 한도 사용 안 함)
-- 화면은 **단일 HTML** (외부 CDN·웹폰트·외부 이미지 0건, 오프라인에서도 열림)
+- 화면은 **단일 HTML** (외부 CDN·웹폰트 0건 · `file://` 에서도 열림)
+- 저장소 이름(`nori-traffic-scent`)은 기존 링크가 깨지지 않도록 그대로 두고,
+  **화면·문서·데이터의 서비스명만 「트렌드픽」으로 전면 교체**했습니다.
 
 ---
 
-## 1. 폴더 구성
+## 1. 화면 구성
+
+| 영역 | 내용 |
+|---|---|
+| **DAILY BRIEF** | 오늘의 대표 헤드라인 + 요약 + **클릭 가능한 핫픽 3선**(서로 다른 분야 우선) + 수집 현황 |
+| **실시간 급상승 TOP 10** | Google Trends + 수집 제목 키워드. 키워드를 누르면 아래 피드가 즉시 필터 |
+| **오늘의 픽 탐색** | 분야 칩(커뮤니티·뉴스·유튜브·블로그·맘카페·부동산·AI·앱테크·건축) + 실시간 검색 + 정렬(인기/급상승/최신) + **⭐ 저장한 픽(localStorage)** |
+| 실시간 뉴스 | 분야 탭, 썸네일 카드 |
+| 지금 뜨는 영상 | 유튜브 최신 업로드(썸네일 100%) |
+| 특가 · 핫딜 | (네이버 쇼핑 키 연결 시) 실제 최저가 / 키가 없으면 오늘 수집된 할인 소식, 없으면 섹션 자동 접힘 |
+| 오픈소스 · 앱·게임 | GitHub 트렌딩, 앱스토어·스팀 순위(앱 아이콘 포함) |
+| 해커톤 · 공모전 | Devpost 마감 임박 순 |
+| 광고 슬롯 | 상단 리더보드 · 피드 인라인 · 사이드바 · 하단 배너 (4곳, ID만 넣으면 노출) |
+
+디자인은 연한 회백색 파스텔 카드가 아니라 **웜 아이보리 캔버스 + 페이퍼 카드 + 헤어라인 + 딥 미드나잇 잉크**의
+에디토리얼 톤입니다. 포인트 컬러는 시그니처 **코랄-로즈 `#E11D48`** 와 **틸 `#0D9488`**, 로고는 커스텀 SVG 마크입니다.
+
+```
+--canvas #F7F6F2   --surface #FFFFFF   --line #E6E4DD   --ink #111827
+--coral  #E11D48   --teal    #0D9488   --night #101418
+```
+
+---
+
+## 2. 폴더 구성
 
 ```
 .
-├── index.html                     # 화면 (data.json 이 없으면 내장 데이터로 동작)
-├── data.json                      # 수집 결과 (자동 커밋됨)
-├── collector.py                   # 수집·정규화·중복제거·스코어링 (표준 라이브러리만 사용)
-├── summarize.py                   # Gemini Flash 요약 + 규칙 기반 대체
+├── index.html                     # 화면 (data.json 이 없으면 내장 스냅샷으로 동작)
+├── og.png                         # 공유 미리보기 이미지(1200×630)
+├── data.json                      # 수집 결과 (Actions 가 자동 커밋)
+├── collector.py                   # 수집·썸네일·정규화·중복제거·스코어링 (표준 라이브러리만)
+├── summarize.py                   # (선택) Gemini Flash 요약 + 규칙 기반 대체
+├── build.py                       # src/ → index.html 한 파일로 합치기
+├── check_visual.py                # Playwright 화면 검증(데스크톱·모바일·광고 미리보기)
 ├── sources.yaml                   # 수집 소스 정의서 (문서 + 설정)
-├── requirements.txt               # 선택 패키지 (비어 있어도 동작)
-├── build.py                       # src/ 를 index.html 한 파일로 합치는 빌드 스크립트
 ├── src/
-│   ├── shell.html                 # 화면 뼈대
-│   ├── app.css                    # 디자인
-│   └── app.js                     # 렌더·필터·검색·스크랩·문의
+│   ├── shell.html                 # 화면 뼈대 · SEO/OG 메타 · SVG 파비콘
+│   ├── app.css                    # 디자인 시스템
+│   └── app.js                     # 렌더 · 필터 · 검색 · 저장 · 광고 슬롯
 ├── data/
-│   ├── issue.json                 # 발행 호수 카운터 (자동)
-│   ├── history/YYYY-MM-DD.json    # 지난 호 보관 (자동)
-│   └── visits.json                # (선택) 방문 추이 실측값
-└── .github/workflows/collect.yml  # 07:00 / 19:00 KST 자동 실행
+│   ├── issue.json                 # 발행 호수 카운터
+│   └── history/YYYY-MM-DD.json    # 지난 호 보관
+└── .github/workflows/collect.yml  # 07:00 / 19:00 KST 자동 수집 · 빌드 · 커밋
 ```
 
 ---
 
-## 2. 10분 설정 (처음 한 번만)
+## 3. 광고 붙이는 방법 (ID만 넣으면 끝)
 
-### ① 공개 저장소 만들기
-1. GitHub → **New repository**
-2. 이름 예: `nori-traffic-scent`
-3. **Public** 선택 (Pages 무료 조건) → **Create repository**
+`src/app.js` 맨 위 **`TRENDPICK_ADS`** 한 곳만 고치면 됩니다.
 
-### ② 파일 올리기
-- 이 폴더의 파일 **전체**를 그대로 올립니다. (`.github/workflows/collect.yml` 포함)
-- 웹에서 올릴 때: **Add file → Upload files** → 폴더째 드래그 → Commit
-- 터미널을 쓸 때:
-  ```bash
-  git init && git add . && git commit -m "init: 노리짱 트래픽센트 v2"
-  git branch -M main
-  git remote add origin https://github.com/<아이디>/nori-traffic-scent.git
-  git push -u origin main
-  ```
+```js
+var TRENDPICK_ADS = {
+  enabled: true,
+  adsense: {
+    client: 'ca-pub-0000000000000000',
+    slots: { top: '1111111111', feed: '2222222222', side: '3333333333', bottom: '4444444444' }
+  },
+  kakao: { unit: 'DAN-xxxxxxxx', width: '320', height: '100' },
+  preview: false
+};
+```
 
-### ③ GitHub Pages 켜기
-**Settings → Pages → Source: Deploy from a branch → Branch: `main` / `(root)` → Save**
-1~2분 뒤 `https://<아이디>.github.io/nori-traffic-scent/` 가 열립니다.
+- **구글 애드센스**: `client` + 슬롯별 `data-ad-slot` 값을 넣으면 해당 자리에 `adsbygoogle` 코드가 나갑니다.
+- **카카오 애드핏**: `unit` 을 넣으면 `kakao_ad_area` 영역이 나갑니다(피드 인라인 제외).
+- **아무 값도 없으면**: 광고 상자는 화면에서 **완전히 사라집니다**(빈 상자 없음).
+- **위치 확인**: 푸터의 **[📢 광고 자리 미리보기]** 버튼 또는 주소에 `?ad_preview=1` 을 붙이면
+  실제 크기(728×90 / 320×100 / 300×250 / 인피드)대로 자리만 표시됩니다. 미리보기에서는 외부 스크립트를 부르지 않습니다.
+- 수정 후 `python build.py` → `index.html` 재생성 → 커밋.
 
-### ④ Actions 쓰기 권한 주기 (data.json 자동 커밋용)
-**Settings → Actions → General → Workflow permissions → `Read and write permissions` → Save**
-
-### ⑤ (선택) API 키 등록
-**Settings → Secrets and variables → Actions → New repository secret**
-| 이름 | 어디서 발급 | 없으면 |
-|---|---|---|
-| `GEMINI_API_KEY` | https://aistudio.google.com/apikey | 규칙 기반 요약으로 대체 |
-| `NAVER_CLIENT_ID` / `NAVER_CLIENT_SECRET` | https://developers.naver.com → 애플리케이션 등록 (검색 API) | 네이버 뉴스·블로그·쇼핑·카페 수집 생략 |
-| `YOUTUBE_API_KEY` | Google Cloud Console → YouTube Data API v3 사용 설정 → API 키 | 채널 RSS(최신 업로드)로 대체 |
-| `DATA_GO_KR_KEY` | https://www.data.go.kr (나라장터 입찰공고·실거래가 활용 신청) | 건축·입찰 피드는 예시 유지 |
-
-> 키가 없어도 **화면은 정상 동작**합니다. 없는 소스만 `collect_log` 에 `key-missing` 으로 남고 나머지는 계속 수집합니다.
-
-### ⑥ 첫 수집 실행
-**Actions → collect → Run workflow → Run workflow**
-- 1~2분 뒤 초록 체크가 뜨면 `data.json` 이 새로 커밋됩니다.
-- Pages 주소를 새로 고치면 헤더 배지가 **`실데이터 연결됨`** 으로 바뀝니다.
+자세한 운영 절차·수익화 체크리스트는 **`downloads/트렌드픽_수익화_운영가이드.md`** 참고.
 
 ---
 
-## 3. 매일 자동으로 도는 일
+## 4. 썸네일 정책과 실측
 
-| 시각(KST) | 무엇을 |
+1. RSS `media:group > media:thumbnail` · `media:content(medium=image)` · `enclosure` · 본문 `<img>` 를 먼저 읽습니다.
+2. 유튜브는 URL 에서 `video_id` 를 뽑아 `https://i.ytimg.com/vi/{id}/hqdefault.jpg` 를 **항상** 보장합니다.
+3. 이미지가 없는 기사는 `og:image` / `twitter:image` 를 짧은 타임아웃(6초)·동시성 8로 추출하고,
+   연속 실패한 호스트는 그 실행에서 건너뜁니다.
+4. GitHub 저장소는 `opengraph.githubassets.com`, 앱은 iTunes 아이콘, 스팀은 `header.jpg` 를 씁니다.
+5. 그래도 이미지가 없거나 `onerror` 가 나면 **깨진 이미지 대신 카테고리별 커스텀 SVG 일러스트**가 나옵니다
+   (`loading="lazy"`, `referrerpolicy="no-referrer"`, `aspect-ratio:16/9` 통일).
+
+2026-11-22 실측 (`python collector.py` 로그 그대로):
+
+| 구분 | 결과 |
 |---|---|
-| 07:00 / 19:00 | `collector.py` → 공개 RSS·공개 API 수집 |
-| 이어서 | `summarize.py` → Gemini Flash 요약(없으면 규칙 기반) |
-| 이어서 | `data.json` 자동 커밋 → Pages 즉시 반영 |
-
-- cron 은 UTC 기준입니다: `0 22 * * *` = 07:00 KST, `0 10 * * *` = 19:00 KST.
-- 수집 항목이 25건 미만이면 **직전 data.json 을 덮어쓰지 않습니다**(빈 화면 방지).
-
----
-
-## 4. 로컬에서 돌려보기
-
-```bash
-python3 collector.py      # data.json 생성
-python3 summarize.py      # 요약 채우기 (GEMINI_API_KEY 없으면 규칙 기반)
-python3 build.py          # src/ → index.html 재빌드
-python3 -m http.server 8000
-# 브라우저에서 http://localhost:8000/index.html
-```
-
-`index.html` 을 파일로 바로 열어도(=`file://`) 내장 데이터로 화면이 뜹니다.
-이때 배지는 `샘플 데이터` 로 표시됩니다.
+| 유튜브 | **11/11 (100%)** |
+| 뉴스 | **32/32 (100%)** |
+| 블로그 | 10/10 (100%) |
+| 오픈소스·해커톤 | 12/12 (100%) |
+| 앱·게임 | 16/16 (100%) |
+| 커뮤니티 | 8/16 (50% — 네이트판·더쿠는 대표 이미지가 없는 글) |
+| **전체** | **83/97 (86%)** |
 
 ---
 
-## 5. 수집 소스 상태 (2026-11-21 실측)
+## 5. 수집 소스 상태 (2026-11-22 실측)
 
 | 영역 | 소스 | 키 | 상태 |
 |---|---|---|---|
-| 커뮤니티 | 디시 실시간베스트 · 네이트판 톡커들의 선택 · 더쿠 · 보배드림 | 불필요 | ✅ 수집 |
-| 커뮤니티 | 개드립 · 에펨카리아 · 루리웹 · 인스티즈 | 불필요 | ⚠️ 403/차단 → 자동 skip |
-| 뉴스 | Google News KR(경제·IT·부동산·사회) · 연합뉴스 · 매일경제 · 전자신문 · AI타임스 | 불필요 | ✅ 수집 |
-| 뉴스 | 한국경제 RSS | 불필요 | ⚠️ 403 (skip) |
-| 유튜브 | SBS News · YTN · JTBC 채널 RSS | 불필요 | ✅ 수집 |
+| 커뮤니티 | 네이트판 톡커들의 선택 · 더쿠 · 보배드림 · 82cook | 불필요 | ✅ 수집 |
+| 뉴스 | 매일경제 · 연합뉴스(경제/산업/정치/사회) · 전자신문 · AI타임스 · 조선일보 | 불필요 | ✅ 수집 |
+| 유튜브 | SBS 뉴스 · YTN · JTBC 채널 RSS | 불필요 | ✅ 수집 |
 | 유튜브 | 실시간 인기 급상승 | `YOUTUBE_API_KEY` | 키 있으면 인기순 |
 | 블로그 | GeekNews · 슬로우뉴스 · 바이라인네트워크 | 불필요 | ✅ 수집 |
-| 핫딜 | 네이버 쇼핑 최저가 + 큐레이션 | `NAVER_*` | 키 없으면 예시 가격 |
 | 오픈소스 | GitHub Trending | 불필요 | ✅ 수집 |
-| 앱·게임 | Steam 최다 플레이 · Apple 앱스토어 RSS | 불필요 | ✅ 수집 |
+| 앱·게임 | iTunes 앱 순위(아이콘 포함) · Steam 최다 플레이 | 불필요 | ✅ 수집 |
 | 해커톤 | Devpost Open Hackathons | 불필요 | ✅ 수집 |
+| 핫딜 | 네이버 쇼핑 최저가 | `NAVER_*` | 키 필요(없으면 섹션 자동 접힘) |
 | 건축·입찰 | 나라장터 입찰공고 | `DATA_GO_KR_KEY` | 키 필요 |
-| AI·부업 | GeekNews · 수집 제목 | 불필요 | ✅ 부분 수집 |
-| 맘카페·부동산·앱테크 | 네이버 카페·블로그 검색 | `NAVER_*` | 키 없으면 ‘예시’ 라벨 |
 
-**‘예시’ 배지**는 실제 수집이 아니라 화면 확인용 샘플이라는 표시입니다. 키를 넣으면 하나씩 실데이터로 바뀝니다.
+**정리한 소스 (v3)**
+
+- **한국경제 RSS (403)**: 데이터센터 IP·반복 요청에서 403 이 계속되어 **매일경제 + 연합뉴스 경제**로 대체했습니다(둘 다 대표 이미지 포함). `collect_log` 에 `replaced` 로 기록됩니다.
+- **Apple 앱스토어 RSS 타임아웃**: 1차를 **iTunes 순위 JSON**(아이콘 포함 · 0.3초)으로 바꾸고 마케팅 RSS 는 예비로 두었습니다.
+- **인스티즈 제목 미검출**: 목록이 JS 로 그려져 HTML 에 제목이 없습니다. **82cook** 으로 교체했습니다.
+- 개드립(403) · 에펨코리아(430) · 루리웹(타임아웃) · 클리앙(JS) · 뽐뿌(403)도 같은 이유로 제외했습니다.
+- **예시(샘플) 데이터는 전부 제거**했습니다. 수집이 없는 날은 섹션이 접히거나 빈 상태 문구가 나옵니다.
 
 ---
 
-## 6. 무료 한도 계산
+## 6. 10분 설정 (처음 한 번만)
 
-| 서비스 | 무료 한도 | 이 프로젝트 사용량 |
+1. **저장소**: `econature7-lab/nori-traffic-scent` (Public, Pages 무료 조건)
+2. **파일 올리기**: 이 폴더의 파일 전체 업로드 (`.github/workflows/collect.yml` 포함)
+3. **Pages**: Settings → Pages → Deploy from a branch → `main` / `(root)`
+4. **Actions 권한**: Settings → Actions → General → Workflow permissions → `Read and write`
+5. **(선택) API 키**: Settings → Secrets and variables → Actions
+
+| 이름 | 어디서 | 없으면 |
 |---|---|---|
-| GitHub Actions | 공개 저장소 무료 | 하루 2회 × 2~3분 ≈ 월 180분 이하 |
-| GitHub Pages | 공개 저장소 무료 | 정적 1페이지 |
-| Gemini Flash | 무료 티어 (모델별 RPM/RPD) | 하루 2회 호출 |
-| 네이버 검색 API | 일 25,000 콜 | 하루 10~20 콜 |
-| YouTube Data API v3 | 일 10,000 units | `videos.list`(1 unit) 사용 시 여유 / `search.list`(100 units)도 하루 2회면 200 units |
-| 공공데이터포털 | 활용 신청별 일일 한도 | 하루 2~4 콜 |
+| `GEMINI_API_KEY` | https://aistudio.google.com/apikey | 규칙 기반 브리프 |
+| `NAVER_CLIENT_ID` / `NAVER_CLIENT_SECRET` | https://developers.naver.com (검색 API) | 네이버 뉴스·블로그·쇼핑 생략 |
+| `YOUTUBE_API_KEY` | Google Cloud Console → YouTube Data API v3 | 채널 RSS |
+| `DATA_GO_KR_KEY` | https://www.data.go.kr | 나라장터 생략 |
+
+6. **첫 수집**: Actions → collect → Run workflow
 
 ---
 
-## 7. 자주 막히는 곳
+## 7. 매일 자동으로 도는 일
+
+| 시각(KST) | 무엇을 |
+|---|---|
+| 07:00 / 19:00 | `collector.py` → 공개 RSS·API 수집 (썸네일 보강 포함, 약 40초) |
+| 이어서 | `summarize.py` → Gemini 요약(없으면 규칙 기반 그대로) |
+| 이어서 | `build.py` → `index.html` 재생성 |
+| 이어서 | `data.json` · `data/` · `index.html` 자동 커밋 → Pages 반영 |
+
+수집 항목이 25건 미만이면 **직전 data.json 을 덮어쓰지 않습니다**(빈 화면 방지).
+
+---
+
+## 8. 로컬에서 돌려보기
+
+```bash
+python3 collector.py      # data.json 생성 (약 40초)
+python3 summarize.py      # (선택) 요약
+python3 build.py          # src/ → index.html
+python3 -m http.server 8000
+# http://localhost:8000/index.html
+```
+
+검증(로컬 Chromium):
+
+```bash
+python3 check_visual.py   # 데스크톱 1440×900 · 모바일 390×844 · ?ad_preview=1
+```
+
+---
+
+## 9. 검증 결과 (2026-11-22)
+
+| 항목 | 데스크톱 1440×900 | 모바일 390×844 |
+|---|---|---|
+| 콘솔 오류 | 0건 | 0건 |
+| 페이지 오류 | 0건 | 0건 |
+| 깨진 이미지(`naturalWidth===0`) | 0건 (51장 전부 로드) | 0건 (51장 전부 로드) |
+| 가로 넘침 | 0건 | 0건 |
+| 광고 미리보기 | 슬롯 3 + 인피드 1 표시 | 동일 |
+
+---
+
+## 10. 자주 막히는 곳
 
 | 증상 | 원인 · 해결 |
 |---|---|
-| Actions 가 `data.json` 커밋에서 실패 | Settings → Actions → Workflow permissions 를 `Read and write` 로 |
-| Pages 가 404 | Settings → Pages 의 Branch 가 `main` / `(root)` 인지, 첫 배포가 끝났는지 확인 |
-| 배지가 계속 `샘플 데이터` | Pages 주소로 열었는지(`file://` 아님), `data.json` 이 저장소 루트에 있는지 확인 |
-| 특정 소스가 계속 비어 있음 | `data.json` 의 `collect_log` 에서 `status` 확인 (`skip`/`error`/`key-missing`) |
-| 커뮤니티 글이 너무 적음 | 사이트가 봇을 막는 경우입니다. 차단을 우회하지 않고 skip 하도록 설계했습니다 |
-| 요약이 짧고 투박함 | `GEMINI_API_KEY` 를 넣으면 문장 요약으로 대체됩니다 |
-
----
-
-## 8. 문의 및 제안
-
-화면 하단 **💬 문의 및 제안** 에서 유형(오류 제보 / 기능 제안 / 소스 추가 요청)과 내용을 저장하면
-이 브라우저의 `localStorage` 에 기록되고, **📋 내용 복사** 로 메일·메시지에 붙여 넣을 수 있습니다.
-저장소 주소(`site.repo`)가 채워져 있으면 **🐙 GitHub Issue로 등록** 버튼이 바로 이슈 작성 화면을 엽니다.
-(GitHub Actions 에서 실행되면 `GITHUB_REPOSITORY` 가 자동으로 들어갑니다.)
+| Actions 가 커밋에서 실패 | Settings → Actions → Workflow permissions `Read and write` |
+| Pages 404 | Settings → Pages 의 Branch `main` / `(root)`, 첫 배포 완료 여부 |
+| 썸네일이 일부 안 보임 | 그 기사에 대표 이미지가 없는 경우입니다. 일러스트 카드로 대체됩니다 |
+| 특정 소스가 계속 비어 있음 | `data.json` 의 `collect_log` 에서 `status` 확인 |
+| 광고가 안 나옴 | `TRENDPICK_ADS` 에 client/unit 과 슬롯 ID를 넣고 `build.py` 재실행 |
+| 검색이 안 됨 | `index.html` 을 `file://` 로 열면 data.json 을 못 읽습니다 → 로컬 서버 또는 Pages 주소 사용 |

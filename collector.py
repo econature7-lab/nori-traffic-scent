@@ -1,33 +1,38 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-노리짱 트래픽센트 v2 · collector.py
+트렌드픽(TrendPick) v3 · collector.py
 =====================================
 공개 RSS / 공개 HTML / 선택적 API 키를 읽어 data.json 하나로 정리합니다.
 (표준 라이브러리만으로 동작 · pip install 없이 실행 가능)
 
 수집 영역
-  1) 일반 커뮤니티 인기글   : 디시 실시간베스트, 네이트판 톡커들의 선택, 더쿠, 보배드림 …
-  2) 실시간 주요 뉴스       : Google News KR RSS(주제·검색) + 연합뉴스·한국경제·매일경제·전자신문·AI타임스
-  3) 유튜브 인기/트렌드     : YOUTUBE_API_KEY 있으면 Data API v3, 없으면 채널 공개 RSS
-  4) 블로그 글감            : GeekNews·슬로우뉴스·바이라인 + (키 있으면) 네이버 블로그 검색 API
-  5) 핫딜                   : (키 있으면) 네이버 쇼핑 검색 API + sources.yaml 큐레이션
-  6) 오픈소스               : GitHub Trending (공개 HTML 1회)
-  7) 앱·게임 순위           : Apple App Store 공개 RSS + Steam 가장 많이 플레이한 게임(공개 API)
-  8) 해커톤·공모전          : Devpost 공개 API
-  9) 특화 5분야             : 맘카페·육아 / 부동산·경매 / AI·부업 / 앱테크·핫딜 / 건축·입찰
-     (네이버 API·공공데이터포털·나라장터 키가 있으면 실데이터, 없으면 '예시' 라벨로 채움)
-  10) 급상승 키워드          : Google Trends KR 급상승 RSS + 수집 제목 빈도
+  1) 커뮤니티 인기글 : 네이트판 · 더쿠 · 보배드림 · 82cook (공개 목록 1회 요청)
+  2) 실시간 뉴스     : 매일경제 · 연합뉴스(경제·산업·정치·사회) · 전자신문 · AI타임스 · 조선일보
+  3) 유튜브          : (키 있으면) Data API 인기 급상승, 없으면 채널 공개 RSS
+  4) 블로그 글감     : GeekNews · 슬로우뉴스 · 바이라인네트워크 (+ 네이버 블로그 API)
+  5) 핫딜            : (키 있으면) 네이버 쇼핑 최저가 — 없으면 화면은 실수집 '특가·할인' 소식으로 대체
+  6) 오픈소스        : GitHub Trending + 저장소 오픈그래프 이미지
+  7) 앱·게임 순위    : Apple 앱스토어 RSS(실패 시 iTunes JSON) + Steam 최다 플레이
+  8) 해커톤·공모전   : Devpost 공개 API
+  9) 급상승 키워드   : Google Trends KR + 수집 제목 키워드 (TOP 10)
+ 10) 주제 분류       : 수집 결과를 맘카페·육아 / 부동산·경매 / AI·부업 / 앱테크·핫딜 / 건축·입찰 로 태깅
+
+v3 썸네일 원칙 (실제 이미지 우선)
+  - RSS media:group > media:thumbnail / media:content / enclosure / 본문 <img> 를 먼저 읽습니다.
+  - 유튜브는 URL 에서 video_id 를 뽑아 https://i.ytimg.com/vi/{id}/hqdefault.jpg 를 100% 보장합니다.
+  - 이미지가 없는 기사는 og:image / twitter:image 를 짧은 타임아웃(6초)·동시성 8로 추출하며,
+    연속 실패한 호스트는 이번 실행에서 건너뜁니다.
+  - 이미지가 끝내 없으면 화면이 카테고리별 SVG 일러스트로 대체합니다(깨진 이미지 없음).
 
 원칙
-  - 외부 사이트에는 1회 요청, UA 표기, 15초 타임아웃, 실패는 예외 없이 skip 로그.
+  - 외부 사이트에는 1회 요청, UA 표기, 타임아웃, 실패는 예외 없이 skip 로그.
   - 수집 실패·키 미설정은 data.json 의 collect_log 에 남기고 나머지는 계속 진행.
-  - 모든 항목은 출처와 URL을 함께 남기고, 실데이터가 아닌 항목은 "sample": true 로 표시.
+  - 실데이터가 아닌 항목은 만들지 않습니다(‘예시’ 카드 없음).
 
 사용법
   python collector.py                 # work/nori-traffic-scent/data.json 생성
   python collector.py --out custom.json
-  GEMINI 요약은 summarize.py 가 담당합니다.
 """
 from __future__ import annotations
 
@@ -42,6 +47,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
@@ -49,12 +55,25 @@ from xml.etree import ElementTree as ET
 
 KST = timezone(timedelta(hours=9))
 ROOT = Path(__file__).resolve().parent
-UA = ("Mozilla/5.0 (compatible; NoriTrafficScent/2.0; +https://github.com/) "
-      "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36")
+SCHEMA = "trendpick/3"
+
+# 실제 브라우저 UA. (봇 표기를 붙이면 한국경제·개드립 등에서 403 이 나므로 표준 UA 사용)
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
 TIMEOUT = 15
+OG_TIMEOUT = 6
 MAX_PER_FEED = 12
 
 COLLECT_LOG: list[dict] = []
+
+MRSS = "http://search.yahoo.com/mrss/"
+NS = {
+    "atom": "http://www.w3.org/2005/Atom",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "ht": "https://trends.google.com/trending/rss",
+    "media": MRSS,
+    "yt": "http://www.youtube.com/xml/schemas/2015",
+}
 
 
 # ----------------------------------------------------------------------------
@@ -69,12 +88,13 @@ def log(msg: str) -> None:
 
 
 def note(source: str, status: str, count: int = 0, error: str = "", kind: str = "") -> None:
-    """수집 결과를 남깁니다. status: ok | skip | key-missing | error | sample"""
+    """수집 결과를 남깁니다. status: ok | skip | key-missing | error | replaced"""
     COLLECT_LOG.append({
         "source": source, "kind": kind, "status": status,
         "count": int(count), "error": str(error)[:180],
     })
-    mark = {"ok": "OK  ", "skip": "SKIP", "key-missing": "KEY ", "error": "ERR ", "sample": "SMPL"}.get(status, "----")
+    mark = {"ok": "OK  ", "skip": "SKIP", "key-missing": "KEY ", "error": "ERR ",
+            "replaced": "SWAP"}.get(status, "----")
     line = f"  {mark} {source:<22} {count:>3}건"
     if error:
         line += f"  ({str(error)[:90]})"
@@ -84,7 +104,8 @@ def note(source: str, status: str, count: int = 0, error: str = "", kind: str = 
 def http_get(url: str, timeout: int = TIMEOUT) -> bytes:
     req = urllib.request.Request(url, headers={
         "User-Agent": UA,
-        "Accept": "application/rss+xml, application/atom+xml, application/xml, application/json, text/html;q=0.8, */*;q=0.5",
+        "Accept": ("application/rss+xml, application/atom+xml, application/xml, application/json, "
+                   "text/html;q=0.8, */*;q=0.5"),
         "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.6",
     })
     with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -101,7 +122,8 @@ def clean_text(raw: str) -> str:
 
 
 def strip_source_suffix(title: str) -> str:
-    return re.sub(r"\s+-\s+[^-]{2,25}$", "", title).strip()
+    """'제목 - 매체명' 형태의 RSS 접미사 제거 (구글뉴스·일부 피드)."""
+    return re.sub(r"\s+-\s+[^-]{2,22}$", "", title).strip()
 
 
 def mk_id(prefix: str, key: str) -> str:
@@ -130,24 +152,101 @@ def freshness(dt: datetime | None) -> float:
     return max(0.05, 1.0 - min(hours, 32) / 40.0)
 
 
-def thumb_for(cat: str, source: str, title: str) -> dict:
-    """외부 이미지 없이 그릴 수 있도록 색상(hue)·모양 단서만 만듭니다."""
-    h = int(hashlib.sha1((source + title).encode("utf-8")).hexdigest()[:4], 16)
-    return {"hue": h % 360, "variant": h % 4}
+# ----------------------------------------------------------------------------
+# 이미지 유틸
+# ----------------------------------------------------------------------------
+IMG_EXT = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif", ".bmp")
+IMG_BAD_BITS = ("1x1", "pixel.gif", "blank.gif", "spacer.gif", "transparent.gif",
+                "logo_default", "no_image", "noimage", "default_thumb",
+                "og-talk.png", "og_default", "default_og", "og_image.png")
+# og:image 로는 쓰이지만 실제 이미지가 아닌(링크 미리보기) 호스트
+NON_IMAGE_HOSTS = {"social.news.hada.io"}
+
+
+def _norm_img(url: str, base: str = "") -> str:
+    if not url:
+        return ""
+    u = html_mod.unescape(url.strip())
+    if u.startswith("//"):
+        u = "https:" + u
+    elif u.startswith("/") and base:
+        u = urllib.parse.urljoin(base, u)
+    elif base and not u.startswith("http"):
+        u = urllib.parse.urljoin(base, u)
+    if not u.startswith("http"):
+        return ""
+    low = u.lower()
+    if urllib.parse.urlparse(low).netloc in NON_IMAGE_HOSTS:
+        return ""
+    if any(b in low for b in IMG_BAD_BITS):
+        return ""
+    if low.startswith("data:"):
+        return ""
+    return u
+
+
+def _first_img_in_html(fragment: str, base: str = "") -> str:
+    if not fragment:
+        return ""
+    for m in re.finditer(r"<img[^>]+(?:src|data-src)=[\"']([^\"']+)[\"']", fragment, re.I):
+        u = _norm_img(m.group(1), base)
+        if u:
+            return u
+    return ""
+
+
+def pick_feed_image(item_el, entry_url: str = "") -> str:
+    """RSS/Atom item 에서 대표 이미지 URL 을 고릅니다 (media > enclosure > 본문 img 순)."""
+    # 1) media:group / media:thumbnail / media:content(medium=image)
+    for tag in ("thumbnail", "content"):
+        for node in item_el.iter("{%s}%s" % (MRSS, tag)):
+            medium = (node.get("medium") or "").lower()
+            mtype = (node.get("type") or "").lower()
+            if tag == "content" and not (medium == "image" or mtype.startswith("image")):
+                continue
+            u = _norm_img(node.get("url") or "", entry_url)
+            if u:
+                return u
+    # 2) <enclosure type="image/jpeg" url="...">
+    for node in item_el.iter("enclosure"):
+        if (node.get("type") or "").lower().startswith("image"):
+            u = _norm_img(node.get("url") or "", entry_url)
+            if u:
+                return u
+    for node in item_el.findall("atom:link", NS):
+        if (node.get("rel") or "") == "enclosure" and (node.get("type") or "").startswith("image"):
+            u = _norm_img(node.get("href") or "", entry_url)
+            if u:
+                return u
+    # 3) 본문 안의 <img> (description / content / summary)
+    for path in ("description", "atom:content", "atom:summary", "content"):
+        node = item_el.find(path, NS)
+        if node is None:
+            continue
+        raw = node.text or ""
+        if not raw:
+            raw = ET.tostring(node, encoding="unicode")
+        u = _first_img_in_html(raw, entry_url)
+        if u:
+            return u
+    return ""
+
+
+def yt_video_id(url: str) -> str:
+    if not url:
+        return ""
+    m = re.search(r"(?:v=|youtu\.be/|/shorts/|/embed/|/live/)([A-Za-z0-9_-]{11})", url)
+    return m.group(1) if m else ""
+
+
+def yt_thumb(video_id: str) -> str:
+    """유튜브 썸네일은 hqdefault 가 사실상 항상 존재합니다(100% 보장용)."""
+    return f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg" if video_id else ""
 
 
 # ----------------------------------------------------------------------------
 # RSS / Atom 파서
 # ----------------------------------------------------------------------------
-NS = {
-    "atom": "http://www.w3.org/2005/Atom",
-    "dc": "http://purl.org/dc/elements/1.1/",
-    "ht": "https://trends.google.com/trending/rss",
-    "media": "http://search.yahoo.com/mrss/",
-    "yt": "http://www.youtube.com/xml/schemas/2015",
-}
-
-
 def _find_text(el, *paths) -> str:
     for p in paths:
         found = el.find(p, NS)
@@ -175,7 +274,7 @@ def _parse_dt(text: str) -> datetime | None:
 
 
 def parse_feed(xml_bytes: bytes) -> list[dict]:
-    """RSS 2.0 / Atom 1.0 을 공통 dict 리스트로 변환."""
+    """RSS 2.0 / Atom 1.0 을 공통 dict 리스트로 변환 (대표 이미지 포함)."""
     items: list[dict] = []
     try:
         root = ET.fromstring(xml_bytes)
@@ -185,16 +284,22 @@ def parse_feed(xml_bytes: bytes) -> list[dict]:
     if root.tag.endswith("rss") or root.find("channel", NS) is not None:
         for it in root.iter("item"):
             title = clean_text(_find_text(it, "title"))
-            link = _find_text(it, "link") or _find_text(it, "guid")
+            link = html_mod.unescape(_find_text(it, "link") or _find_text(it, "guid"))
             desc = clean_text(_find_text(it, "description"))
             pub = _parse_dt(_find_text(it, "pubDate", "dc:date"))
             traffic = _find_text(it, "ht:approx_traffic")
             keywords = [clean_text(k.text or "") for k in it.findall("category")]
             if not title:
                 continue
-            items.append({"title": strip_source_suffix(title), "url": link, "desc": desc,
-                          "published": pub, "traffic": traffic,
-                          "tags": [k for k in keywords if k]})
+            items.append({
+                "title": strip_source_suffix(title), "url": link, "desc": desc,
+                "published": pub, "traffic": traffic,
+                "tags": [k for k in keywords if k],
+                "img": pick_feed_image(it, link),
+                "picture": _norm_img(_find_text(it, "ht:picture"), link),
+                "news_url": html_mod.unescape(_find_text(it, "ht:news_item_url")),
+                "news_source": clean_text(_find_text(it, "ht:news_item_source")),
+            })
     else:
         for it in root.iter("{http://www.w3.org/2005/Atom}entry"):
             title = clean_text(_find_text(it, "atom:title"))
@@ -206,90 +311,171 @@ def parse_feed(xml_bytes: bytes) -> list[dict]:
             pub = _parse_dt(_find_text(it, "atom:published", "atom:updated"))
             if not title:
                 continue
-            items.append({"title": title, "url": link, "desc": desc,
-                          "published": pub, "traffic": "", "tags": []})
+            vid = _find_text(it, "yt:videoId")
+            items.append({
+                "title": title, "url": link, "desc": desc,
+                "published": pub, "traffic": "", "tags": [],
+                "img": pick_feed_image(it, link),
+                "video_id": vid or yt_video_id(link),
+                "picture": "", "news_url": "", "news_source": "",
+            })
     return items
 
 
-def collect_feed(name: str, url: str, kind: str = "news", limit: int = MAX_PER_FEED) -> list[dict]:
-    try:
-        data = http_get(url)
-        items = parse_feed(data)[:limit]
-        note(name, "ok" if items else "skip", len(items), kind=kind)
-        for it in items:
-            it["source_name"] = name
-        return items
-    except Exception as exc:  # noqa: BLE001 - 어떤 실패도 수집 중단 사유가 되지 않게
-        note(name, "error", 0, str(exc), kind=kind)
-        return []
+def collect_feed(name: str, url: str, kind: str = "news", limit: int = MAX_PER_FEED,
+                 fallbacks: tuple[str, ...] = ()) -> list[dict]:
+    for candidate in (url,) + tuple(fallbacks):
+        try:
+            data = http_get(candidate)
+            items = parse_feed(data)[:limit]
+            if not items:
+                raise ValueError("항목 0건")
+            note(name, "ok", len(items), kind=kind)
+            for it in items:
+                it["source_name"] = name
+            return items
+        except Exception as exc:  # noqa: BLE001 - 어떤 실패도 수집 중단 사유가 되지 않게
+            last = exc
+    note(name, "error", 0, str(last), kind=kind)
+    return []
 
 
 # ----------------------------------------------------------------------------
-# 1) 일반 커뮤니티 (공개 HTML 1회 요청 · 실패는 skip)
+# og:image 보강 (이미지 없는 기사만 · 짧은 타임아웃 · 동시성 제한)
 # ----------------------------------------------------------------------------
-COMMUNITY_SCRAPE = [
-    ("실시간베스트", "https://m.dcinside.com/board/dcbest", "dcbest"),
-    ("톡커들의 선택", "https://pann.nate.com/talk/ranking", "natepann"),
-    ("더쿠", "https://theqoo.net/hot", "theqoo"),
-    ("보배드림", "https://www.bobaedream.co.kr/list?code=best", "bobaedream"),
-    ("개드립", "https://www.dogdrip.net/dogdrip", "dogdrip"),
-    ("에펨카리아", "https://www.fmkorea.com/best", "fmkorea"),
-    ("루리웹", "https://bbs.ruliweb.com/best/board/300143", "ruliweb"),
-    ("클리앙", "https://www.clien.net/service/board/park", "clien"),
-    ("인스티즈", "https://www.instiz.net/bbs/list.php?bbs=pt", "instiz"),
-]
-
-# 커뮤니티 페이지에서 제목이 아닌 고정 문구
-# 차단(403/430)으로 실수집이 안 되는 커뮤니티는 '예시' 카드로 자리를 지킵니다.
-# (화면에 '예시' 배지가 붙고, title 은 실제 게시글이 아닌 일반적인 글 예시입니다)
-COMMUNITY_SAMPLE = {
-    "dogdrip": [("개드립", "요즘 화제라는 그 짤 원본 찾아봤습니다"),
-                ("개드립", "월급날 가장 무서운 순간 TOP3")],
-    "fmkorea": [("에펨카리아", "이번 주 해외축구 이적 루머 정리 (팬 시점)"),
-                ("에펨카리아", "중고거래 사기 예방 체크리스트 공유")],
-    "ruliweb": [("루리웹", "올해 가장 오래 붙잡고 있는 게임 뭐야"),
-                ("루리웹", "패치 이후 달라진 점 정리해봤습니다")],
-    "instiz": [("인스티즈", "요즘 아이돌 무대 중 계속 돌려보는 것"),
-               ("인스티즈", "이번 주 옷장 정리하면서 정리한 팁")],
-    "clien": [("클리앙", "재택 늘고 나서 사무실 자리 어떻게 쓰시나요"),
-              ("클리앙", "가성비 모니터 암 추천 부탁드립니다")],
+_HOST_FAIL: dict[str, int] = {}
+OG_SKIP_HOSTS = {
+    "news.google.com", "www.google.com", "google.com", "localhost",
+    "www.dcinside.com", "gall.dcinside.com", "m.dcinside.com",
+    "www.fmkorea.com", "www.dogdrip.net", "www.instiz.net",
+    "bbs.ruliweb.com", "www.ppomppu.co.kr", "www.todayhumor.co.kr",
 }
+_HOST_LAST = {"t": 0.0}
+
+
+def og_image(page_url: str) -> str:
+    """기사 페이지의 og:image / twitter:image / link[rel=image_src] 를 읽습니다."""
+    parsed = urllib.parse.urlparse(page_url)
+    host = parsed.netloc.lower()
+    if not host or host in OG_SKIP_HOSTS:
+        return ""
+    if _HOST_FAIL.get(host, 0) >= 2:
+        return ""
+    try:
+        raw = http_get(page_url, timeout=OG_TIMEOUT)
+    except Exception:  # noqa: BLE001
+        _HOST_FAIL[host] = _HOST_FAIL.get(host, 0) + 1
+        return ""
+    head = raw[:400000].decode("utf-8", "replace")
+    patterns = (
+        r'<meta[^>]+(?:property|name)=["\']og:image(?::url)?["\'][^>]*content=["\']([^"\']+)["\']',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\']og:image(?::url)?["\']',
+        r'<meta[^>]+name=["\']twitter:image(?::src)?["\'][^>]*content=["\']([^"\']+)["\']',
+        r'<link[^>]+rel=["\']image_src["\'][^>]*href=["\']([^"\']+)["\']',
+    )
+    for pat in patterns:
+        m = re.search(pat, head, re.I)
+        if not m:
+            continue
+        u = _norm_img(m.group(1), page_url)
+        if not u:
+            continue
+        # og:image 가 기사 URL 자체나 페이지 링크를 가리키는 경우는 제외
+        if u.rstrip("/") == page_url.rstrip("/"):
+            continue
+        return u
+    return ""
+
+
+def enrich_images(items: list[dict], budget_sec: float = 45.0, workers: int = 8,
+                  limit: int = 60) -> int:
+    """이미지 없는 항목에 og:image 를 채웁니다. 반환값은 새로 채운 개수."""
+    seen: set[str] = set()
+    targets: list[dict] = []
+    for it in items:
+        if it.get("img"):
+            continue
+        u = (it.get("url") or "").strip()
+        if not u.startswith("http") or u in seen:
+            continue
+        seen.add(u)
+        targets.append(it)
+    targets = targets[:limit]
+    if not targets:
+        return 0
+    filled = 0
+    started = time.time()
+    pool = ThreadPoolExecutor(max_workers=workers)
+    try:
+        futures = {pool.submit(og_image, it["url"]): it for it in targets}
+        try:
+            for fut in as_completed(futures, timeout=budget_sec):
+                it = futures[fut]
+                try:
+                    img = fut.result()
+                except Exception:  # noqa: BLE001
+                    img = ""
+                if img and not it.get("img"):
+                    it["img"] = img
+                    filled += 1
+        except Exception:  # noqa: BLE001 - 예산 초과분은 버립니다
+            pass
+    finally:
+        pool.shutdown(wait=False, cancel_futures=True)
+    log(f"  og:image 보강 {filled}/{len(targets)}건 · {time.time() - started:.1f}s")
+    return filled
+
+
+# ----------------------------------------------------------------------------
+# 1) 커뮤니티 인기글 (공개 목록 1회 요청)
+# ----------------------------------------------------------------------------
+# (이름, URL, 키, 게시글 URL 패턴)
+# 개드립(403) · 에펨코리아(430) · 루리웹(타임아웃) · 클리앙/인스티즈(JS 렌더링) · 뽐뿌(403)는
+# 제목이 HTML 에 없어 v3 에서 제외하고, 실제로 수집되는 목록으로 교체했습니다.
+COMMUNITY_SCRAPE = [
+    ("네이트판", "https://pann.nate.com/talk/ranking", "natepann", r"/talk/\d+"),
+    ("더쿠", "https://theqoo.net/hot", "theqoo", r"/hot/\d+"),
+    ("보배드림", "https://www.bobaedream.co.kr/list?code=best", "bobaedream", r"view\?[^\"']*No=\d+"),
+    ("82cook", "https://www.82cook.com/entiz/enti.php?bn=15", "82cook", r"num=\d+"),
+]
 
 NAV_NOISE = {
     "주요메뉴로 바로가기", "오늘의 자동차 바로가기", "하단정보로 바로가기", "시승기·배틀·목격담",
     "토픽필터", "아이디 · 비밀번호 찾기", "제보 및 기타 제안", "내가 본 글 기능 안내",
     "책임의 한계와 법적고지", "실시간 베스트 갤러리", "톡커들의 선택 명예의 전당",
     "클리앙 공식 앱 출시 안내 -1.1.9 업데이트", "모두의공원 게시판 이용규칙",
+    "회원가입", "로그인", "검색", "이용규칙", "개인정보처리방침", "광고/제휴", "이용 문의",
 }
+NOISE_BITS = ("바로가기", "이용규칙", "업데이트 안내", "개인정보", "명예의 전당", "즐겨찾기",
+              "비밀번호", "회원가입", "로그인", "앱 설치", "앱 버전", "저작권", "고객센터")
 
 
-def scrape_community(name: str, url: str, key: str) -> list[dict]:
+def scrape_community(name: str, url: str, key: str, pattern: str) -> list[dict]:
     try:
         page = http_get(url).decode("utf-8", "replace")
     except Exception as exc:  # noqa: BLE001
         note(name, "skip", 0, f"차단/접속 실패: {exc}")
         return []
 
-    anchors = re.findall(r"<a\b([^>]*)>([^<>]{12,110})</a>", page)
-    seen: set[str] = set()
     out: list[dict] = []
-    for attrs, raw in anchors:
-        hm = re.search(r'href="([^"]*)"', attrs)
-        href = hm.group(1) if hm else ""
+    seen: set[str] = set()
+    rx = re.compile(r'<a\b[^>]*href="([^"]*' + pattern + r'[^"]*)"[^>]*>([^<>]{6,140})</a>', re.I)
+    for href, raw in rx.findall(page):
         title = clean_text(raw)
-        if not title or len(title) < 12 or not re.search(r"[가-힣]", title):
+        href = html_mod.unescape(href)
+        if not title or len(title) < 8 or not re.search(r"[가-힣]", title):
             continue
-        if title in NAV_NOISE or any(n in title for n in ("바로가기", "이용규칙", "업데이트 안내")):
+        if title in NAV_NOISE or any(b in title for b in NOISE_BITS):
             continue
         if title in seen:
             continue
         seen.add(title)
-        link = href if href and href.startswith("http") else urllib.parse.urljoin(url, href or "/")
-        if not href:
-            link = url
-        out.append({"title": title, "url": link, "desc": "", "published": None,
-                    "traffic": "", "tags": [], "source_name": name, "source_key": key})
-        if len(out) >= 8:
+        link = href if href.startswith("http") else urllib.parse.urljoin(url, href)
+        out.append({
+            "title": title, "url": link, "desc": "", "published": None,
+            "traffic": "", "tags": [], "img": "", "source_name": name, "source_key": key,
+        })
+        if len(out) >= 6:
             break
 
     note(name, "ok" if out else "skip", len(out), "" if out else "제목 패턴 미검출", kind="community")
@@ -297,56 +483,81 @@ def scrape_community(name: str, url: str, key: str) -> list[dict]:
 
 
 # ----------------------------------------------------------------------------
-# 2) 실시간 뉴스 (Google News KR + 언론사 RSS)
+# 2) 실시간 뉴스
 # ----------------------------------------------------------------------------
-ENTERTAINMENT_HINTS = ("열애", "결혼", "컴백", "불화", "아이돌", "드라마", "예능", "배우", "가수",
-                       "앨범", "콘서트", "시구", "경기", "승리", "패배", "농구", "야구", "축구", "배구",
-                       "골프", "올림픽", "MAMA", "그래미", "팬미팅")
-PREFERRED_SOURCES = ("구글뉴스", "연합뉴스", "한국경제", "매일경제", "전자신문", "AI타임스")
-
-
-GN = "https://news.google.com/rss"
+# (분야, 매체, URL, 종합 피드 여부)
+# 한국경제 RSS 는 데이터센터 IP·반복 요청에서 403 이 반복되어,
+# 실제로 수집되는 매일경제 + 연합뉴스 경제 피드로 대체했습니다(둘 다 대표 이미지 포함).
 NEWS_FEEDS = [
-    # (섹션, 이름, URL)
-    ("경제·증시", "Google News 경제", f"{GN}/headlines/section/topic/BUSINESS?hl=ko&gl=KR&ceid=KR:ko"),
-    ("경제·증시", "한국경제", "https://www.hankyung.com/feed/all-news"),
-    ("경제·증시", "매일경제", "https://www.mk.co.kr/rss/30000001/"),
-    ("IT·AI", "Google News IT", f"{GN}/headlines/section/topic/TECHNOLOGY?hl=ko&gl=KR&ceid=KR:ko"),
-    ("IT·AI", "전자신문", "https://rss.etnews.com/Section901.xml"),
-    ("IT·AI", "AI타임스", "https://www.aitimes.com/rss/allArticle.xml"),
-    ("부동산·정책", "Google News 부동산", f"{GN}/search?q=%EB%B6%80%EB%8F%99%EC%82%B0+%EC%A0%95%EC%B1%85&hl=ko&gl=KR&ceid=KR:ko"),
-    ("사회·생활", "Google News 사회", f"{GN}/headlines/section/topic/NATION?hl=ko&gl=KR&ceid=KR:ko"),
-    ("사회·생활", "연합뉴스", "https://www.yna.co.kr/rss/news.xml"),
+    ("경제·증시", "매일경제", "https://www.mk.co.kr/rss/30000001/", True),
+    ("경제·증시", "연합뉴스 경제", "https://www.yna.co.kr/rss/economy.xml", False),
+    ("IT·AI", "전자신문", "https://rss.etnews.com/Section901.xml", True),
+    ("IT·AI", "AI타임스", "https://www.aitimes.com/rss/allArticle.xml", False),
+    ("부동산·정책", "연합뉴스 산업", "https://www.yna.co.kr/rss/industry.xml", False),
+    ("부동산·정책", "연합뉴스 정치", "https://www.yna.co.kr/rss/politics.xml", False),
+    ("사회·생활", "연합뉴스 사회", "https://www.yna.co.kr/rss/society.xml", False),
+    ("사회·생활", "조선일보", "https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml", True),
 ]
-
 NEWS_SECTION_ORDER = ["경제·증시", "IT·AI", "부동산·정책", "사회·생활"]
+
+ENTERTAINMENT_HINTS = ("열애", "결혼", "컴백", "불화", "아이돌", "드라마", "예능", "배우", "가수",
+                       "앨범", "콘서트", "시구", "승리", "패배", "농구", "야구", "축구", "배구",
+                       "골프", "올림픽", "MAMA", "그래미", "팬미팅")
+PREFERRED_SOURCES = ("연합뉴스", "매일경제", "전자신문", "AI타임스", "조선일보")
+
+
+def section_rules(title: str, default: str) -> str:
+    """종합 피드(예: 매일경제 all-news)의 기사를 제목 키워드로 분야에 배정합니다."""
+    t = title
+    rules = [
+        ("IT·AI", ("AI", "인공지능", "반도체", "IT", "스마트폰", "클라우드", "로봇", "플랫폼",
+                   "게임", "통신", "넥사", "데이터센터", "소프트웨어", "보안", "삼성전자", "LG",
+                   "SK", "네이버", "카카오", "구글", "애플", "배터리", "디스플레이", "메타버스",
+                   "디지털", "5G", "온라인", "앱", "챗봇", "자율주행")),
+        ("부동산·정책", ("부동산", "아파트", "전세", "청약", "집값", "재건축", "국토부", "주택",
+                       "분양", "임대", "금리", "대통령", "국회", "정부", "정책", "세제")),
+        ("경제·증시", ("증시", "코스피", "코스닥", "주가", "환율", "수출", "물가", "실적", "투자",
+                       "기업", "매출", "영업이익", "반값", "로또", "경제")),
+        ("사회·생활", ("사고", "검찰", "경찰", "재판", "의료", "교육", "수능", "날씨", "사건",
+                       "논란", "지역", "병원", "화재", "부정행위", "선거")),
+    ]
+    for section, words in rules:
+        if any(w.lower() in t.lower() for w in words):
+            return section
+    return default
 
 
 def collect_news() -> list[dict]:
+    note("한국경제 RSS", "replaced", 0,
+         "403 차단 반복 → 매일경제 · 연합뉴스 경제(둘 다 대표 이미지 포함)로 대체", kind="news")
     out: list[dict] = []
-    for section, name, url in NEWS_FEEDS:
+    for section, name, url, general in NEWS_FEEDS:
+        default = "사회·생활" if general else section
         for it in collect_feed(name, url, kind="news"):
+            if re.match(r"\s*\[(사진|포토|화보|영상|그래픽)\]", it["title"]):
+                continue  # 사진 캡션 기사는 트렌드 카드로 가치가 낮아 제외
             out.append({
                 "id": mk_id("n", it["title"]),
-                "section": section,
+                "section": section_rules(it["title"], default),
+                "feed_section": section,
                 "title": it["title"],
-                "source": name.replace("Google News ", "구글뉴스 "),
+                "source": name,
                 "url": it["url"],
                 "published": it["published"].isoformat() if it["published"] else "",
                 "time": rel_time(it["published"]),
                 "fresh": round(freshness(it["published"]), 3),
                 "keywords": it["tags"][:3],
                 "noise": any(h in it["title"] for h in ENTERTAINMENT_HINTS),
+                "img": it.get("img", ""),
                 "sample": False,
             })
     out = dedupe_items(out, key="title")
-    # 분야별 균형 유지: 한 분야가 다른 분야를 밀어내지 않도록 9건씩
     per_section: dict[str, list[dict]] = {s: [] for s in NEWS_SECTION_ORDER}
     for n in out:
         per_section.setdefault(n["section"], []).append(n)
     balanced: list[dict] = []
     for sec in NEWS_SECTION_ORDER:
-        rows = sorted(per_section.get(sec, []), key=lambda x: -x["fresh"])[:9]
+        rows = sorted(per_section.get(sec, []), key=lambda x: -x["fresh"])[:8]
         balanced.extend(rows)
     for sec, rows in per_section.items():
         if sec not in NEWS_SECTION_ORDER:
@@ -355,14 +566,23 @@ def collect_news() -> list[dict]:
 
 
 # ----------------------------------------------------------------------------
-# 3) 유튜브 (API 키 있으면 Data API v3, 없으면 채널 공개 RSS)
+# 3) 유튜브
 # ----------------------------------------------------------------------------
+# 공개 RSS 로 영상이 확인된 채널만 둡니다(각 채널 최신 5건).
 YT_CHANNELS = [
-    # (채널명, 채널ID) — 공개 RSS로 영상이 확인된 채널
-    ("SBS News", "UCupDOc54HJbIPtgLjhABOZw"),
+    ("SBS 뉴스", "UCkinYTS9IHqOEwR1Sze2JTw"),
     ("YTN", "UChlgI3UHCOnwUGzWzbJ3H5w"),
     ("JTBC", "UCKCr4I-_ttdIhKVesomSKaQ"),
 ]
+
+
+def clean_video_title(title: str) -> str:
+    """유튜브 제목의 대괄호 태그와 채널 접미사를 정리합니다."""
+    t = clean_text(title)
+    t = re.sub(r"^\[[^\]]{1,14}\]\s*", "", t)          # [🔴이슈] [돌발영상] 등
+    t = re.sub(r"\s*[/|]\s*(YTN|SBS|JTBC|KBS|MBC|연합뉴스TV)\s*$", "", t)
+    t = re.sub(r"\s*-\s*(SBS|YTN|JTBC|KBS|MBC)(\s*뉴스)?\s*(다시보기)?\s*$", "", t)
+    return re.sub(r"\s+", " ", t).strip() or clean_text(title)
 
 
 def collect_youtube() -> list[dict]:
@@ -385,9 +605,10 @@ def collect_youtube() -> list[dict]:
                     "title": clean_text(sn.get("title", "")),
                     "channel": sn.get("channelTitle", ""),
                     "views": int(st.get("viewCount", 0) or 0),
-                    "likes": int(st.get("likeCount", 0) or 0),
                     "published": sn.get("publishedAt", ""),
+                    "time": rel_time(_parse_dt(sn.get("publishedAt", ""))),
                     "url": f"https://www.youtube.com/watch?v={vid}",
+                    "img": yt_thumb(vid),
                     "sample": False,
                 })
             note("YouTube Data API", "ok" if out else "skip", len(out), kind="youtube")
@@ -398,35 +619,38 @@ def collect_youtube() -> list[dict]:
         for channel, cid in YT_CHANNELS:
             items = collect_feed(f"YouTube · {channel}",
                                  f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}",
-                                 kind="youtube", limit=4)
+                                 kind="youtube", limit=5)
             for it in items:
-                views = 0
-                m = re.search(r"([\d,]+)\s*views", it.get("desc", ""))
-                if m:
-                    views = int(m.group(1).replace(",", ""))
+                vid = it.get("video_id") or yt_video_id(it.get("url", ""))
+                vurl = it["url"] or (f"https://www.youtube.com/watch?v={vid}" if vid else "")
+                kind = "shorts" if "/shorts/" in (vurl or "") else "long"
                 out.append({
-                    "id": mk_id("y", it["title"]),
+                    "id": mk_id("y", vid or it["title"]),
                     "rank": 0,
-                    "kind": "long",
-                    "title": it["title"],
+                    "kind": kind,
+                    "title": clean_video_title(it["title"]),
                     "channel": channel,
-                    "views": views,
-                    "likes": 0,
+                    "views": 0,
                     "published": it["published"].isoformat() if it["published"] else "",
                     "time": rel_time(it["published"]),
-                    "url": it["url"],
+                    "url": vurl,
+                    # RSS media:thumbnail 이 있으면 그대로, 없으면 video_id 기반 hqdefault 로 100% 보장
+                    "img": it.get("img") or yt_thumb(vid),
                     "sample": False,
                 })
+        # 채널별 최신 업로드 순. 쇼츠/롱폼이 섞이도록 정렬만 유지합니다.
         out.sort(key=lambda x: x.get("published", ""), reverse=True)
         for i, v in enumerate(out, 1):
             v["rank"] = i
+        for i, v in enumerate(out, 1):
+            v["rank"] = i
     if not out:
-        note("유튜브", "skip", 0, "API 키 없음 + 채널 RSS 실패 → 예시 유지", kind="youtube")
+        note("유튜브", "skip", 0, "API 키 없음 + 채널 RSS 실패", kind="youtube")
     return out[:12]
 
 
 # ----------------------------------------------------------------------------
-# 4) 블로그 (공개 피드 + 네이버 블로그 검색 API)
+# 4) 블로그 · 글감
 # ----------------------------------------------------------------------------
 BLOG_FEEDS = [
     ("GeekNews", "https://news.hada.io/rss/news"),
@@ -461,7 +685,8 @@ def collect_blogs() -> list[dict]:
             out.append({
                 "id": mk_id("b", it["title"]), "title": it["title"], "source": name,
                 "url": it["url"], "time": rel_time(it["published"]),
-                "desc": it["desc"][:180], "keywords": it["tags"][:3], "sample": False,
+                "desc": it["desc"][:180], "keywords": it["tags"][:3],
+                "img": it.get("img", ""), "sample": False,
             })
 
     data = _naver_api("blog", {"query": "살림 아이디어", "display": 6, "sort": "sim"})
@@ -474,8 +699,10 @@ def collect_blogs() -> list[dict]:
             out.append({
                 "id": mk_id("b", it.get("link", title)), "title": title,
                 "source": "네이버 블로그", "url": it.get("link", ""),
-                "time": rel_time(_parse_dt(it.get("postdate", ""))), "desc": clean_text(it.get("description", ""))[:180],
-                "keywords": [clean_text(it.get("bloggername", ""))], "sample": False,
+                "time": rel_time(_parse_dt(it.get("postdate", ""))),
+                "desc": clean_text(it.get("description", ""))[:180],
+                "keywords": [clean_text(it.get("bloggername", ""))],
+                "img": it.get("image", ""), "sample": False,
             })
             n += 1
         note("네이버 블로그 API", "ok" if n else "skip", n, kind="api")
@@ -483,58 +710,28 @@ def collect_blogs() -> list[dict]:
 
 
 # ----------------------------------------------------------------------------
-# 5) 핫딜 (네이버 쇼핑 API + 큐레이션)
+# 5) 핫딜 (네이버 쇼핑 API — 키 없으면 빈 배열, 화면은 실수집 특가 소식으로 대체)
 # ----------------------------------------------------------------------------
-DEAL_SEED = [
-    {"name": "준앤코 3WAY 폭포수 수전 KF302", "off": 64, "price": 39800, "original": 109000,
-     "store": "쿠팡", "note": "05편 실물 일치 소재로 재사용", "query": "폭포수 수전"},
-    {"name": "샤오미 미지아 무선 진공청소기 2세대", "off": 52, "price": 89000, "original": 189000,
-     "store": "쿠팡", "note": "살림 꿀템 · 언박싱 숏츠", "query": "무선 청소기"},
-    {"name": "북유럽 원목 3단 수납장", "off": 41, "price": 129000, "original": 219000,
-     "store": "오늘의집", "note": "집꾸미기 롱폼 소재", "query": "3단 수납장"},
-    {"name": "비스포크 살균 건조기 19kg", "off": 38, "price": 1249000, "original": 1990000,
-     "store": "네이버플러스", "note": "고가 · 비교 리뷰형", "query": "건조기 19kg"},
-    {"name": "알리 스테인리스 진공 텀블러 900ml", "off": 67, "price": 6900, "original": 21000,
-     "store": "알리", "note": "가성비 텀 · 3초 훅", "query": "진공 텀블러"},
-    {"name": "김장 매트 2.5m (미끄럼 방지)", "off": 55, "price": 12900, "original": 28900,
-     "store": "쿠팡", "note": "계절 키워드 ‘김장’ 연동", "query": "김장매트"},
-    {"name": "캠핑 접이식 소파 베드", "off": 47, "price": 45900, "original": 87000,
-     "store": "뽐뿌", "note": "커뮤니티 핫딜 반응 좋음", "query": "접이식 소파"},
-    {"name": "주방 실리콘 조리도구 12종 세트", "off": 58, "price": 15900, "original": 38000,
-     "store": "알구몬", "note": "살림 숏츠 3종 세트", "query": "실리콘 조리도구"},
-]
-
-
 def collect_deals() -> list[dict]:
     out: list[dict] = []
-    data = _naver_api("shop", {"query": "핫딜 특가", "display": 6, "sort": "asc"})
+    data = _naver_api("shop", {"query": "핫딜 특가", "display": 8, "sort": "asc"})
     if data:
-        n = 0
         for i, it in enumerate(data.get("items", [])):
             price = int(it.get("lprice", 0) or 0)
             if price <= 0:
                 continue
-            original = int(price * 1.55)
+            mall = clean_text(it.get("mallName", "") or "네이버쇼핑")
             out.append({
                 "id": mk_id("d", it.get("link", it.get("title", "")) + str(i)),
-                "name": clean_text(it.get("title", "")), "off": 35,
-                "price": price, "original": original, "store": "네이버쇼핑",
-                "note": "네이버 쇼핑 최저가 검색", "url": it.get("link", ""), "sample": False,
+                "name": clean_text(it.get("title", "")),
+                "price": price,
+                "store": mall,
+                "url": it.get("link", ""),
+                "img": it.get("image", ""),
+                "sample": False,
             })
-            n += 1
-        note("네이버 쇼핑 API", "ok" if n else "skip", n, kind="api")
-
-    for d in DEAL_SEED:
-        out.append({
-            "id": mk_id("d", d["query"]), "name": d["name"], "off": d["off"],
-            "price": d["price"], "original": d["original"], "store": d["store"],
-            "note": d["note"],
-            "url": "https://search.shopping.naver.com/search/all?query=" + urllib.parse.quote(d["query"]),
-            "sample": not bool(out),
-        })
-    if not any(not x["sample"] for x in out):
-        note("핫딜 큐레이션", "sample", len(out), "API 키 없음 → 예시 가격 유지", kind="deal")
-    return out[:10]
+        note("네이버 쇼핑 API", "ok" if out else "skip", len(out), kind="deal")
+    return out[:8]
 
 
 # ----------------------------------------------------------------------------
@@ -554,11 +751,17 @@ def collect_opensource() -> list[dict]:
             star_m = (re.search(r'aria-label="(\d[\d,]*) users starred', b)
                       or re.search(r'stargazers"[\s\S]{0,900}?</svg>\s*([\d,]+)\s*</a>', b))
             stars = int(star_m.group(1).replace(",", "")) if star_m else 0
+            lang_m = re.search(r'itemprop="programmingLanguage">([^<]+)<', b)
+            today_m = re.search(r"([\d,]+)\s+stars today", b)
             out.append({
                 "id": mk_id("o", repo), "repo": repo,
                 "stars": stars,
+                "today": int(today_m.group(1).replace(",", "")) if today_m else 0,
+                "lang": clean_text(lang_m.group(1)) if lang_m else "",
                 "desc": clean_text(desc_m.group(1))[:200] if desc_m else "",
-                "url": "https://github.com/" + repo, "sample": False,
+                "url": "https://github.com/" + repo,
+                "img": f"https://opengraph.githubassets.com/1/{repo}",
+                "sample": False,
             })
         note("GitHub Trending", "ok" if out else "skip", len(out), kind="opensource")
         return out
@@ -568,51 +771,97 @@ def collect_opensource() -> list[dict]:
 
 
 # ----------------------------------------------------------------------------
-# 7) 앱·게임 순위 (Apple RSS · Steam 공개 API)
+# 7) 앱 · 게임 순위
 # ----------------------------------------------------------------------------
 STEAM_NAMES = {730: "Counter-Strike 2", 570: "Dota 2", 578080: "PUBG: BATTLEGROUNDS",
                271590: "GTA V", 1172470: "Apex Legends", 252490: "Rust", 440: "Team Fortress 2",
-               1085660: "Destiny 2", 359550: "R6 Siege", 1245620: "ELDEN RING", 1966720: "Lethal Company",
-               431960: "Wallpaper Engine", 413150: "Stardew Valley", 1091500: "Cyberpunk 2077",
-               292030: "The Witcher 3", 236390: "War Thunder", 553850: "Helldivers 2"}
+               1085660: "Destiny 2", 359550: "R6 Siege", 1245620: "ELDEN RING",
+               1966720: "Lethal Company", 431960: "Wallpaper Engine", 413150: "Stardew Valley",
+               1091500: "Cyberpunk 2077", 292030: "The Witcher 3", 236390: "War Thunder",
+               553850: "Helldivers 2", 2358720: "Black Myth: Wukong", 2246340: "Monster Hunter Wilds"}
+
+
+def _apple_apps() -> list[dict]:
+    """1차: iTunes JSON(앱 아이콘 포함 · 빠름), 2차: Apple 공개 RSS(아이콘 없음)."""
+    try:
+        data = json.loads(http_get("https://itunes.apple.com/kr/rss/topfreeapplications/limit=12/json",
+                                   timeout=20))
+        entries = data["feed"]["entry"]
+        rows = []
+        for i, e in enumerate(entries[:10], 1):
+            imgs = e.get("im:image") or []
+            icon = ""
+            if imgs:
+                icon = (imgs[-1].get("label") or "").replace("/100x100bb", "/200x200bb")
+                icon = icon.replace("/170x170bb", "/200x200bb")
+            rows.append({
+                "id": mk_id("a", e.get("id", {}).get("label", str(i))),
+                "platform": "앱스토어",
+                "rank": i,
+                "name": e.get("im:name", {}).get("label", ""),
+                "category": (e.get("category", {}).get("attributes", {}) or {}).get("label", "앱"),
+                "publisher": e.get("im:artist", {}).get("label", ""),
+                "url": (e.get("id", {}) or {}).get("label", ""),
+                "img": _norm_img(icon),
+                "sample": False,
+            })
+        if rows:
+            note("iTunes 앱 순위 JSON", "ok", len(rows), kind="apps")
+            return rows
+    except Exception as exc:  # noqa: BLE001
+        note("iTunes 앱 순위 JSON", "error", 0, str(exc)[:90], kind="apps")
+
+    try:
+        data = json.loads(http_get("https://rss.applemarketingtools.com/api/v2/kr/apps/top-free/12/apps.json",
+                                   timeout=25))
+        rows = []
+        for i, app in enumerate(data["feed"]["results"][:10], 1):
+            rows.append({
+                "id": mk_id("a", app.get("name", str(i))), "platform": "앱스토어",
+                "rank": i, "name": app.get("name", ""),
+                "category": (app.get("genres") or [{}])[0].get("name", "앱") if app.get("genres") else "앱",
+                "publisher": app.get("artistName", ""), "url": app.get("url", ""),
+                "img": "", "sample": False,
+            })
+        note("Apple 앱스토어 RSS", "ok" if rows else "skip", len(rows), kind="apps")
+        return rows
+    except Exception as exc:  # noqa: BLE001
+        note("Apple 앱스토어 RSS", "error", 0, str(exc)[:90], kind="apps")
+        return []
 
 
 def collect_apps() -> list[dict]:
-    out: list[dict] = []
+    out = _apple_apps()
     try:
-        data = json.loads(http_get("https://rss.applemarketingtools.com/api/v2/kr/apps/top-free/10/apps.json", timeout=25))
-        for i, app in enumerate(data["feed"]["results"][:8], 1):
-            out.append({"id": mk_id("a", app.get("name", str(i))), "platform": "앱스토어",
-                        "rank": i, "name": app.get("name", ""),
-                        "category": (app.get("genres") or [{}])[0].get("name", "앱") if app.get("genres") else "앱",
-                        "publisher": app.get("artistName", ""), "url": app.get("url", ""), "sample": False})
-        note("Apple 앱스토어 RSS", "ok" if out else "skip", len(out), kind="apps")
-    except Exception as exc:  # noqa: BLE001
-        note("Apple 앱스토어 RSS", "error", 0, str(exc), kind="apps")
-
-    try:
-        data = json.loads(http_get("https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/", timeout=25))
+        data = json.loads(http_get("https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/",
+                                   timeout=20))
         ranks = data.get("response", {}).get("ranks", [])[:6]
         s_out = []
         for r in ranks:
-            name = STEAM_NAMES.get(r["appid"], f"Steam App {r['appid']}")
-            s_out.append({"id": mk_id("g", str(r["appid"])), "platform": "스팀 게임",
-                          "rank": int(r["rank"]), "name": name, "category": "게임",
-                          "publisher": f"동시접속 {int(r.get('peak_in_game', 0)):,}",
-                          "url": f"https://store.steampowered.com/app/{r['appid']}", "sample": False})
+            appid = r["appid"]
+            s_out.append({
+                "id": mk_id("g", str(appid)), "platform": "스팀 게임",
+                "rank": int(r["rank"]), "name": STEAM_NAMES.get(appid, f"Steam App {appid}"),
+                "category": "게임",
+                "publisher": f"동시접속 {int(r.get('peak_in_game', 0)):,}",
+                "url": f"https://store.steampowered.com/app/{appid}",
+                "img": f"https://cdn.cloudflare.steamstatic.com/steam/apps/{appid}/header.jpg",
+                "sample": False,
+            })
         out.extend(s_out)
         note("Steam 최다 플레이", "ok" if s_out else "skip", len(s_out), kind="apps")
     except Exception as exc:  # noqa: BLE001
-        note("Steam 최다 플레이", "error", 0, str(exc), kind="apps")
+        note("Steam 최다 플레이", "error", 0, str(exc)[:90], kind="apps")
     return out
 
 
 # ----------------------------------------------------------------------------
-# 8) 해커톤 · 공모전 (Devpost 공개 API)
+# 8) 해커톤 · 공모전
 # ----------------------------------------------------------------------------
 def collect_hackathons() -> list[dict]:
     try:
-        data = json.loads(http_get("https://devpost.com/api/hackathons?status[]=open&order_by=deadline", timeout=25))
+        data = json.loads(http_get("https://devpost.com/api/hackathons?status[]=open&order_by=deadline",
+                                   timeout=20))
         out: list[dict] = []
         for h in data.get("hackathons", [])[:6]:
             deadline = h.get("submission_period_dates", "")
@@ -620,7 +869,8 @@ def collect_hackathons() -> list[dict]:
             m = re.search(r"([A-Z][a-z]{2}) (\d{1,2})", deadline or "")
             if m:
                 try:
-                    dt = datetime.strptime(f"{m.group(1)} {m.group(2)} {now_kst().year}", "%b %d %Y").replace(tzinfo=KST)
+                    dt = datetime.strptime(f"{m.group(1)} {m.group(2)} {now_kst().year}",
+                                           "%b %d %Y").replace(tzinfo=KST)
                     if dt < now_kst() - timedelta(days=200):
                         dt = dt.replace(year=dt.year + 1)
                     dday = f"D-{max(0, (dt - now_kst()).days)}"
@@ -631,7 +881,9 @@ def collect_hackathons() -> list[dict]:
                 "host": clean_text(h.get("organization_name", "") or "Devpost"),
                 "prize": clean_text(h.get("prize_amount", "") or ""),
                 "deadline": deadline, "dday": dday or "모집중",
-                "url": h.get("url", ""), "sample": False,
+                "url": h.get("url", ""),
+                "img": _norm_img(h.get("thumbnail_url") or ""),
+                "sample": False,
             })
         note("Devpost 해커톤", "ok" if out else "skip", len(out), kind="hackathon")
         return out
@@ -641,81 +893,53 @@ def collect_hackathons() -> list[dict]:
 
 
 # ----------------------------------------------------------------------------
-# 9) 공공데이터 (나라장터 입찰공고 · 실거래가는 키 필요)
+# 9) 급상승 키워드 TOP 10
 # ----------------------------------------------------------------------------
-def collect_build_bids() -> list[dict]:
-    key = os.environ.get("DATA_GO_KR_KEY", "").strip()
-    if not key:
-        note("나라장터 입찰공고", "key-missing", 0, "DATA_GO_KR_KEY 미설정", kind="build")
-        return []
-    try:
-        q = urllib.parse.urlencode({
-            "serviceKey": key, "pageNo": 1, "numOfRows": 10, "type": "json",
-            "inqryDiv": 1, "inqryBgnDt": now_kst().strftime("%Y%m%d") + "0000",
-            "inqryEndDt": (now_kst() + timedelta(days=7)).strftime("%Y%m%d") + "2359",
-            "bidNtceNm": "건축설계",
-        })
-        data = json.loads(http_get("https://apis.data.go.kr/1230000/BidPublicInfoService04/getBidPblancListInfoServc?" + q, timeout=25))
-        body = data.get("response", {}).get("body", {})
-        items = body.get("items", [])
-        if isinstance(items, dict):
-            items = items.get("item", [])
-        out = []
-        for i, it in enumerate(items[:8]):
-            title = clean_text(it.get("bidNtceNm", ""))
-            if not title:
-                continue
-            out.append({"id": mk_id("p", title), "cat": "build", "source": "나라장터",
-                        "title": title, "url": it.get("bidNtceDtlUrl", "https://www.g2b.go.kr"),
-                        "time": rel_time(_parse_dt(it.get("bidNtceDt", ""))), "fresh": 0.8,
-                        "keywords": ["나라장터", "건축설계"], "sample": False,
-                        "meta": {"기관": it.get("ntceInsttNm", ""), "마감": it.get("bidClseDt", "")}})
-        note("나라장터 입찰공고", "ok" if out else "skip", len(out), kind="build")
-        return out
-    except Exception as exc:  # noqa: BLE001
-        note("나라장터 입찰공고", "error", 0, str(exc), kind="build")
-        return []
+def collect_trends() -> list[dict]:
+    items = collect_feed("Google Trends KR", "https://trends.google.co.kr/trending/rss?geo=KR",
+                         kind="trend", limit=12)
+    for it in items:
+        if not it.get("img"):
+            it["img"] = it.get("picture", "")
+        if it.get("news_url") and it.get("news_source"):
+            it["source"] = it["news_source"]
+    return items
 
 
 # ----------------------------------------------------------------------------
-# 특화 5분야 예시 (실데이터가 모자랄 때만 · sample=true 로 명시)
+# 주제 태깅 (수집 결과를 5개 주제로 분류 — 예시 데이터 없이 실제 글만)
 # ----------------------------------------------------------------------------
-SPECIAL_SAMPLE = [
-    {"cat": "mom", "source": "맘스홀릭", "title": "겨울방학 유아 숲체험 프로그램 어디가 좋아요? 서울 서북권 위주로 아시는 곳",
-     "comments": 128, "views": 4210, "keywords": ["겨울방학 숲체험", "유아숲체험", "서울 숲체험"], "rise": 312},
-    {"cat": "mom", "source": "레몬테라스", "title": "초1 아이 방과후로 숲놀이 12주 등록했는데 만족도 후기 (사진 많이 넣었어요)",
-     "comments": 96, "views": 3180, "keywords": ["숲놀이 후기", "초등 방과후", "겨울방학 숲체험"], "rise": 268},
-    {"cat": "mom", "source": "네이버카페", "title": "월드컵공원 숲해설 토요일 10시반반, 이번 주 날씨에 진행될까요?",
-     "comments": 41, "views": 1540, "keywords": ["월드컵공원 숲해설", "서울월드컵숲", "주말 숲체험"], "rise": 190},
-    {"cat": "estate", "source": "부동산스터디", "title": "전세 심리지수 3주 연속 상승 기사 봤는데, 내년 1월 이사 계획 있으면 지금 움직여야 하나요",
-     "comments": 112, "views": 5140, "keywords": ["전세 심리지수", "이사 시즌", "전세 시장"], "rise": 340},
-    {"cat": "estate", "source": "부동산스터디", "title": "광진구 강변 테크노마트 근처 10평 사무실, 요즘 실매물 시세 얼마까지 부르나요",
-     "comments": 88, "views": 3920, "keywords": ["강변 테크노마트", "소형 사무실", "광진구 사무실"], "rise": 287},
-    {"cat": "estate", "source": "호갱노노", "title": "서울 소형 상가 경매 낙찰가율, 11월 들어 확 올랐다는 기사 보셨나요",
-     "comments": 57, "views": 2780, "keywords": ["소형 상가 경매", "낙찰가율", "법원경매"], "rise": 205},
-    {"cat": "ai", "source": "모두의AI실험실", "title": "클로드 코드로 3시간 만에 만든 부동산 실거래가 대시보드 — 만든 과정 그대로 공유",
-     "comments": 143, "views": 6320, "keywords": ["클로드 코드", "바이브코딩", "부동산 대시보드"], "rise": 356},
-    {"cat": "ai", "source": "모두의AI실험실", "title": "바이브코딩으로 만든 앱 첫 달 수익 공개 — 광고 12만원, 비용은 0원",
-     "comments": 98, "views": 4720, "keywords": ["바이브코딩 수익", "앱 부업", "광고 수익"], "rise": 198},
-    {"cat": "ai", "source": "X(트위터)", "title": "X 수익화 프로그램 개편 이후 노출 회복된 계정들, 공통 패턴만 정리해봤습니다",
-     "comments": 71, "views": 3410, "keywords": ["X 수익화", "노출 복구", "트위터 알고리즘"], "rise": 241},
-    {"cat": "apptech", "source": "뽐뿌", "title": "토스 행운퀴즈 11/21 정답 모음 (오전 9시 기준, 계속 업데이트)",
-     "comments": 87, "views": 5880, "keywords": ["토스 행운퀴즈", "앱테크 정답", "오늘의 퀴즈"], "rise": 285},
-    {"cat": "apptech", "source": "네이버카페", "title": "쿠팡 파트너스 숏츠로 이번 주 8만원 정산 인증 (주방 수전 편)",
-     "comments": 64, "views": 2260, "keywords": ["쿠팡 파트너스 정산", "쇼핑 숏츠", "수전"], "rise": 212},
-    {"cat": "apptech", "source": "뽐뿌", "title": "오늘의집 11월 할인 정보 모음 — 냉장고·건조기 실제 체감가 비교",
-     "comments": 45, "views": 1980, "keywords": ["오늘의집 할인", "블랙프라이데이", "가전 핫딜"], "rise": 156},
-    {"cat": "build", "source": "네이버카페", "title": "나라장터 소규모 건축설계 용역 공고, 11월 3주차 한 번에 정리했습니다",
-     "comments": 33, "views": 1120, "keywords": ["나라장터 공고", "건축설계 용역", "입찰 일정"], "rise": 118},
-    {"cat": "build", "source": "클리앙", "title": "공동수급 분담이행 실적증명, 지분율 표기에서 자주 틀리는 부분",
-     "comments": 28, "views": 940, "keywords": ["분담이행", "실적증명", "지분율"], "rise": 104},
-    {"cat": "build", "source": "나라장터", "title": "2027년 공공건축 설계공모 일정 미리 보기 — 상반기 몰리는 달",
-     "comments": 22, "views": 780, "keywords": ["설계공모 일정", "공공건축", "2027 공모"], "rise": 97},
-]
+TOPIC_RULES = {
+    "mom": ("숲", "유아", "초등", "육아", "어린이", "유치원", "어린이집",
+            "방학", "숲놀이", "학부모", "엄마", "아동", "보육", "급식", "돌봄", "교사"),
+    "estate": ("부동산", "아파트", "전세", "매매", "청약", "임대", "집값", "재건축", "경매",
+               "상가", "오피스텔", "중개", "분양", "주택", "월세", "공시가격", "토지",
+               "재개발", "입주"),
+    "ai": ("AI", "인공지능", "챗GPT", "챗gpt", "클로드", "제미나이", "반도체", "데이터센터",
+           "로봇", "LLM", "생성형", "알고리즘", "엔비디아", "GPU", "오픈AI", "앤트로픽",
+           "모델", "자동화"),
+    "apptech": ("핫딜", "할인", "특가", "쿠폰", "리워드", "앱테크", "포인트", "최저가", "세일",
+                "블랙프라이데이", "반값", "이벤트", "경품", "무료", "구독", "체험단"),
+    "build": ("건축", "설계", "입찰", "나라장터", "시공", "공모", "감리", "인테리어", "도시",
+              "용역", "공사", "리모델링", "조경", "철골", "안전진단"),
+}
 
-CAT_LABEL = {"mom": "맘카페·육아", "estate": "부동산·경매", "ai": "AI·부업",
-             "apptech": "앱테크·핫딜", "build": "건축·입찰", "comm": "일반커뮤니티",
-             "news": "실시간뉴스", "youtube": "유튜브"}
+SECTION_TOPIC = {"부동산·정책": "estate", "IT·AI": "ai"}
+
+
+def topic_tags(text: str, section: str = "") -> list[str]:
+    """제목 키워드 + 뉴스 분야로 주제 태그를 만듭니다(수집 글만 대상 · 예시 없음)."""
+    hits: list[str] = []
+    low = text.lower()
+    for cat, words in TOPIC_RULES.items():
+        for w in words:
+            if w.lower() in low:
+                hits.append(cat)
+                break
+    sec_tag = SECTION_TOPIC.get(section)
+    if sec_tag and sec_tag not in hits:
+        hits.append(sec_tag)
+    return hits
 
 
 # ----------------------------------------------------------------------------
@@ -735,186 +959,219 @@ def dedupe_items(items: list[dict], key: str = "title", threshold: float = 0.85)
     return kept
 
 
-def cross_source_counts(items: list[dict], threshold: float = 0.8) -> dict[str, int]:
-    """제목이 비슷한 항목을 묶어 출처 종류 수를 셉니다 (교차 출처 지표)."""
-    groups: list[dict] = []
-    for it in items:
-        for g in groups:
-            if similar(it["title"], g["title"]) >= threshold:
-                g["sources"].add(it.get("source", ""))
-                break
-        else:
-            groups.append({"title": it["title"], "sources": {it.get("source", "")}})
-    return {g["title"]: len(g["sources"]) for g in groups}
-
-
 def score_posts(items: list[dict]) -> None:
-    """인기(hot) 0~100 · 급상승(rise) % 추정치."""
+    """인기(hot) 0~100 · 급상승(rise) % 추정치 (최신성 + 반응)."""
     for it in items:
         f = it.get("fresh", 0.5)
         comments = it.get("comments", 0)
         views = it.get("views", 0)
-        cross = it.get("cross", 1)
         engagement = min(1.0, (comments / 150.0) * 0.6 + (views / 6000.0) * 0.4)
-        base = 0.45 * f + 0.4 * engagement + 0.15 * min(1.0, cross / 3.0)
-        it["hot"] = int(round(30 + base * 68))
-        it["rise"] = int(round(80 + base * 300))
+        base = 0.6 * f + 0.4 * engagement if (comments or views) else 0.55 * f + 0.15
+        it["hot"] = int(round(30 + min(1.0, base) * 68))
+        it["rise"] = int(round(80 + min(1.0, base) * 300))
         it.pop("fresh", None)
 
 
-def build_ranks(all_posts: list[dict], trends: list[dict]) -> dict:
-    """분야별 급상승 키워드 1~7위. Google Trends + 제목 키워드 빈도·최신성."""
-    ranks: dict[str, list[dict]] = {}
+def build_ranks(feed_items: list[dict], trends: list[dict]) -> dict:
+    """TOP 10 급상승 키워드. Google Trends 실시간 + 수집 제목 키워드 빈도를 합쳐 정렬합니다.
 
-    trend_rows = []
+    Google Trends KR 은 스포츠 경기 대진(‘A 대 B’)이 많이 섞여 나오므로 감점하고,
+    실제 수집 제목에서 자주 등장한 키워드를 함께 올립니다.
+    """
+    rows: list[dict] = []
+    seen: set[str] = set()
+
+    def kw_image(keyword: str) -> str:
+        for item in feed_items:
+            if keyword and keyword.lower() in (item.get("title") or "").lower():
+                if item.get("img"):
+                    return item["img"]
+        return ""
+
     for t in trends:
-        traffic = t.get("traffic", "")
+        k = clean_text(t["title"])[:28]
+        if not k or k.lower() in seen:
+            continue
+        # 수집 기사에 없는 외국어(라틴) 인명·구단명만 있는 항목은 제외
+        if not re.search(r"[가-힣]", k) and not kw_image(k):
+            continue
         num = 0
-        m = re.search(r"([\d,]+)", traffic or "")
+        m = re.search(r"([\d,]+)", t.get("traffic") or "")
         if m:
             num = int(m.group(1).replace(",", ""))
-        # Google Trends 는 검색량 구간(예: 2,000+)을 줍니다 → 상승 지수로 환산
-        r = min(999, 100 + int(num / 20)) if num else 150
-        trend_rows.append({"k": t["title"][:24], "r": r, "url": t.get("url", "")})
-    ranks["all"] = sorted(trend_rows, key=lambda x: -x["r"])[:7]
+        r = min(999, 160 + int(num / 25)) if num else 180
+        # 스포츠 대진·해외 인물명 위주 항목은 감점
+        if re.search(r"\s대\s", k) or re.search(r"\bvs\b", k, re.I):
+            r -= 80
+        # 수집된 기사·영상 제목에 없는 키워드는 관련도 감점
+        if not kw_image(k):
+            r -= 40
+        rows.append({"k": k, "r": max(60, r), "url": t.get("news_url") or "",
+                     "img": t.get("img", "") or kw_image(k), "src": t.get("source", "Google Trends")})
+        seen.add(k.lower())
 
     KEYWORD_NOISE = {"GeekNews", "AI·개발", "유튜브", "long", "shorts", "실시간뉴스",
-                     "구글뉴스", "나라장터", "건축설계", "종합", "속보"}
-    for cat in ["comm", "news", "youtube", "mom", "estate", "ai", "apptech", "build"]:
-        counter: dict[str, float] = {}
-        for p in all_posts:
-            if p.get("cat") != cat:
+                     "구글뉴스", "나라장터", "건축설계", "종합", "속보", "헤드라인", "기자",
+                     "오늘", "내년", "이번", "관련", "발표", "공개", "우리", "지금",
+                     "사진", "영상", "기사", "단독", "인터뷰", "현장", "확인", "가능성",
+                     "예정", "내일", "모두", "위해", "대한", "따라", "지난", "올해", "경우",
+                     "때문", "라며", "밝혀", "전해", "나타", "이어", "이날", "당시", "논란",
+                     "진짜", "이슈", "실시간", "라이브", "뉴스", "오늘의", "주요", "핵심",
+                     "출시", "첫날", "예고", "돌입", "개최", "선정", "돌파", "급등", "급락",
+                     "논의", "추진", "확정", "판매", "인상", "인하", "기록", "상승", "하락",
+                     "공급", "전망", "강조", "요청", "마련", "점검"}
+    # 매체명·채널명은 키워드가 아니므로 제외
+    src_noise: set[str] = set()
+    for item in feed_items:
+        s = clean_text(item.get("source") or "")
+        if s:
+            src_noise.add(s.lower())
+            for w in re.findall(r"[가-힣A-Za-z0-9]{2,12}", s):
+                src_noise.add(w.lower())
+    src_noise |= {"ytn", "sbs", "jtbc", "sbs 뉴스", "유튜브", "네이트판", "더쿠", "보배드림",
+                  "82cook", "매일경제", "연합뉴스", "전자신문", "ai타임스", "조선일보",
+                  "geeknews", "슬로우뉴스", "바이라인네트워크"}
+
+    counter: dict[str, float] = {}
+    for item in feed_items:
+        title = item.get("title", "")
+        for tag in (item.get("keywords") or []):
+            tag = clean_text(tag)
+            if (1 < len(tag) <= 14 and tag not in KEYWORD_NOISE
+                    and tag.lower() not in src_noise):
+                counter[tag] = counter.get(tag, 0) + 1.2
+        for w in re.findall(r"[가-힣A-Za-z0-9]{2,12}", title):
+            if w in KEYWORD_NOISE or w.lower() in src_noise or w.isdigit():
                 continue
-            for kw in p.get("keywords", []):
-                kw = kw.strip()
-                if 1 < len(kw) <= 18 and kw not in KEYWORD_NOISE:
-                    counter[kw] = counter.get(kw, 0) + 1 + p.get("hot", 50) / 200.0
-        rows = [{"k": k, "r": int(min(400, 90 + v * 55))} for k, v in counter.items()]
-        rows.sort(key=lambda x: -x["r"])
-        if len(rows) < 7:
-            for extra in ranks.get("all", []):
-                if len(counter) >= 7:
-                    break
-                if extra["k"] not in [r["k"] for r in rows]:
-                    rows.append(extra)
-        if rows:
-            ranks[cat] = rows[:7]
-    fallback = ranks.get("all") or [{"k": "실시간 트렌드", "r": 120}]
-    for cat in CAT_LABEL:
-        ranks.setdefault(cat, fallback[:7])
-    return ranks
+            if len(w) <= 3 and w[-1] in "엔는을를이가은도게만에로와과의":
+                continue
+            counter[w] = counter.get(w, 0) + 0.6
+
+    for k, v in sorted(counter.items(), key=lambda x: -x[1])[:30]:
+        if len(rows) >= 22:
+            break
+        if k.lower() in seen or k.lower() in src_noise:
+            continue
+        rows.append({"k": k, "r": int(min(420, 120 + v * 24)), "url": "",
+                     "img": kw_image(k), "src": "트렌드픽 수집"})
+        seen.add(k.lower())
+
+    rows.sort(key=lambda x: -x["r"])
+    return {"all": rows[:10], "updated_at": now_kst().isoformat(timespec="seconds")}
 
 
 # ----------------------------------------------------------------------------
-# 방문 추이 (data/visits.json 이 있으면 실값, 없으면 직전 값 유지 + 샘플)
-# ----------------------------------------------------------------------------
-def build_visits() -> dict:
-    path = ROOT / "data" / "visits.json"
-    today = now_kst().date()
-    series: list[dict] = []
-    source = "sample"
-    if path.exists():
-        try:
-            raw = json.loads(path.read_text(encoding="utf-8"))
-            series = [r for r in raw.get("days", []) if r.get("d")]
-            source = raw.get("source", "manual")
-        except Exception:  # noqa: BLE001
-            series = []
-    by_day = {r["d"]: int(r.get("v", 0)) for r in series if isinstance(r.get("v"), int)}
-    demo = {0: 1180, 1: 1340, 2: 1290, 3: 1460, 4: 1520, 5: 1410, 6: 1660}
-    days = []
-    for i in range(6, -1, -1):
-        d = today - timedelta(days=i)
-        key = d.isoformat()
-        val = by_day.get(key, demo[i] if source == "sample" else 0)
-        days.append({"d": d.strftime("%m.%d"), "wd": "월화수목금토일"[d.weekday()], "v": val, "iso": key})
-    return {"source": source, "days": days}
-
-
-# ----------------------------------------------------------------------------
-# 규칙 기반 브리프 (Gemini 없이도 화면이 완성되게)
+# 브리프 (규칙 기반 — 키 없이도 완성)
 # ----------------------------------------------------------------------------
 def news_importance(n: dict) -> float:
-    """브리프 헤드라인용 중요도: 분야 가중치 + 통신/주요 매체 + 연예·스포츠 감점."""
     section_weight = {"경제·증시": 1.0, "IT·AI": 0.96, "부동산·정책": 0.94, "사회·생활": 0.8}
     score = section_weight.get(n.get("section", ""), 0.6)
     if any(s in n.get("source", "") for s in PREFERRED_SOURCES):
-        score += 0.22
+        score += 0.18
     if any(h in n.get("title", "") for h in ENTERTAINMENT_HINTS):
         score -= 0.55
     if len(n.get("title", "")) < 12:
         score -= 0.1
-    score += n.get("fresh", 0.5) * 0.18
+    score += n.get("fresh", 0.5) * 0.2
     return score
 
 
-def rule_brief(news: list[dict], posts: list[dict], issue_no: int) -> dict:
-    """키 없이도 읽히는 브리프. 분야별 상위 기사 + 특화 분야 인기글을 묶습니다."""
+TOPIC_PLAN = [("mom", "맘카페·육아", "🌿"), ("estate", "부동산·경매", "🏢"),
+              ("ai", "AI·부업", "🤖"), ("apptech", "앱테크·핫딜", "💰"),
+              ("build", "건축·입찰", "📐")]
+
+
+def rule_brief(news: list[dict], feed: list[dict], issue_no: int) -> dict:
     ranked = sorted(news, key=lambda n: -news_importance(n))
     by_section: dict[str, list[dict]] = {}
     for n in ranked:
         by_section.setdefault(n["section"], []).append(n)
 
-    plan = [
-        ("econ", "경제·증시", "📈", "경제·증시"),
-        ("ai", "IT·AI", "🤖", "IT·AI"),
-        ("estate", "부동산·정책", "🏢", "부동산·정책"),
-        ("social", "사회·생활", "🧾", "사회·생활"),
-    ]
-    sections = []
-    for key, label, emoji, section in plan:
+    sections: list[dict] = []
+    for section in NEWS_SECTION_ORDER:
         items = by_section.get(section, [])[:3]
         if not items:
             continue
-        sources = []
+        sources: list[str] = []
         for i in items:
             if i["source"] not in sources:
                 sources.append(i["source"])
         lead = items[0]["title"]
-        rest = [i["title"] for i in items[1:3]]
-        body = f"오늘 {'·'.join(sources[:3])} 등에서 다룬 소식입니다. {lead}"
-        if rest:
-            body += " 이어서 " + ", ".join(f"'{t[:40]}'" for t in rest) + "도 함께 보도됐습니다."
-        points = [f"{i['source']} · {i['title'][:46]}" for i in items]
-        sections.append({"key": key, "label": label, "emoji": emoji,
-                         "title": lead[:90], "body": body[:420], "points": points})
+        body = f"{'·'.join(sources[:3])} 등이 전한 {section} 흐름입니다. {lead}"
+        if len(items) > 1:
+            body += " 이어서 " + ", ".join(f"'{i['title'][:40]}'" for i in items[1:]) + "도 함께 다뤄졌습니다."
+        sections.append({
+            "key": section, "label": section, "emoji": "📰", "title": lead[:90], "body": body[:420],
+            "points": [{"text": f"{i['title'][:60]}", "source": i["source"], "url": i.get("url", "")}
+                       for i in items],
+        })
 
-    # 특화 5분야: 오늘 인기글 1~2건씩
-    spec_plan = [("mom", "맘카페·육아", "🌿"), ("estate", "부동산·경매", "🏢"),
-                 ("ai", "AI·부업", "🤖"), ("apptech", "앱테크·핫딜", "💰"),
-                 ("build", "건축·입찰", "📐")]
-    for cat, label, emoji in spec_plan:
-        rows = [p for p in posts if p.get("cat") == cat][:2]
+    # 실제 수집 글에서 주제별 대표 1~2건 (이미 뉴스 섹션에 나온 글은 제외)
+    used_titles = {p["text"] for s in sections for p in s["points"]}
+    for cat, label, emoji in TOPIC_PLAN:
+        rows = [p for p in feed if cat in (p.get("topics_kw") or [])
+                and p["title"][:60] not in used_titles][:2]
         if not rows:
             continue
-        if any(x["key"] == cat for x in sections):
-            continue
-        points = [f"{r['source']} · {r['title'][:46]}" for r in rows]
-        sections.append({"key": cat, "label": label, "emoji": emoji,
-                         "title": rows[0]["title"][:90],
-                         "body": f"{rows[0]['source']}에서 '{rows[0]['title'][:60]}' 글이 반응을 얻고 있습니다." +
-                                 (f" {rows[1]['source']}에서도 비슷한 흐름의 글이 올라왔습니다." if len(rows) > 1 else ""),
-                         "points": points})
+        used_titles.update(r["title"][:60] for r in rows)
+        sections.append({
+            "key": cat, "label": label, "emoji": emoji,
+            "title": rows[0]["title"][:90],
+            "body": (f"{rows[0]['source']}에서 '{rows[0]['title'][:56]}' 글이 올라왔습니다."
+                     + (f" {rows[1]['source']}에서도 비슷한 흐름의 글이 함께 수집됐습니다."
+                        if len(rows) > 1 else "")),
+            "points": [{"text": r["title"][:60], "source": r["source"], "url": r.get("url", "")}
+                       for r in rows],
+        })
 
     if not sections:
         sections = [{"key": "comm", "label": "커뮤니티", "emoji": "💬",
                      "title": "오늘 수집된 인기글", "body": "수집 결과가 적은 날입니다.",
-                     "points": [p["title"][:50] for p in posts[:3]]}]
+                     "points": [{"text": p["title"][:50], "source": p["source"], "url": p.get("url", "")}
+                                for p in feed[:3]]}]
+
+    picks = []
+    used_sections: set[str] = set()
+    for n in ranked:
+        if len(picks) >= 5:
+            break
+        if n["section"] in used_sections:
+            continue
+        used_sections.add(n["section"])
+        picks.append({"rank": len(picks) + 1, "label": n["section"], "title": n["title"],
+                      "source": n["source"], "url": n.get("url", ""), "img": n.get("img", "")})
+    for n in ranked:  # 분야가 모자란 날은 같은 분야로 채움 (첫 항목 = 대표 헤드라인, 나머지 = 핫픽 3선)
+        if len(picks) >= 5:
+            break
+        if any(p["title"] == n["title"] for p in picks):
+            continue
+        picks.append({"rank": len(picks) + 1, "label": n["section"], "title": n["title"],
+                      "source": n["source"], "url": n.get("url", ""), "img": n.get("img", "")})
 
     heads = [x["title"] for x in sections[:3]]
-    lead = "오늘은 " + ", ".join(f"'{h[:34]}'" for h in heads[:2]) + " 등이 눈에 띕니다. "
-    if len(heads) > 2:
-        lead += f"이 밖에 {sections[2]['label']} 쪽에서 '{heads[2][:34]}' 흐름이 이어졌습니다. "
-    lead += f"수집된 {len(news) + len(posts)}건 가운데 분야별로 {len(sections)}개 이슈를 골랐습니다."
+    labels = [x["label"] for x in sections[:4]]
+    lead = ""
+    if heads:
+        # 첫 항목은 화면 상단 헤드라인으로 쓰이므로, 본문은 2·3번 이슈로 요약합니다.
+        parts = []
+        if len(heads) > 1:
+            second = heads[1][:26] + ("…" if len(heads[1]) > 26 else "")
+            parts.append(f"{sections[1]['label']}에서는 '{second}' 흐름이 이어졌습니다")
+        if len(heads) > 2:
+            third = heads[2][:24] + ("…" if len(heads[2]) > 24 else "")
+            parts.append(f"{sections[2]['label']} 쪽에서도 '{third}' 소식이 눈에 띕니다")
+        lead = ". ".join(parts) + ". " if parts else ""
+        lead += f"오늘 수집한 {len(news) + len(feed)}건에서 {'·'.join(dict.fromkeys(labels))} 분야 {len(sections)}개 이슈를 골랐습니다."
 
     return {
         "no": f"No.{issue_no:02d}",
         "date": now_kst().strftime("%Y-%m-%d"),
         "label": now_kst().strftime("%m.%d"),
-        "title": " · ".join(h[:34] for h in heads[:3]) or "오늘의 트렌드 리포트",
+        "weekday": "월화수목금토일"[now_kst().weekday()],
+        "title": " · ".join(h[:34] for h in heads[:3]) or "오늘의 트렌드픽 브리프",
         "lead": lead[:600],
-        "metrics": {"deep": len(sections), "analysis": max(1, len(news) // 8),
-                    "cross": sum(1 for p in posts if p.get("cross", 1) > 1)},
+        "picks": picks,
+        "metrics": {"topics": len(sections), "news": len(news), "items": len(feed) + len(news)},
         "sections": sections[:6],
         "engine": "rule-based",
         "past": [],
@@ -922,7 +1179,7 @@ def rule_brief(news: list[dict], posts: list[dict], issue_no: int) -> dict:
 
 
 def attach_history(payload: dict) -> None:
-    """오늘 브리프를 data/history/YYYY-MM-DD.json 으로 남기고, 최근 5회를 지난 호로 붙입니다."""
+    """오늘 브리프를 data/history/YYYY-MM-DD.json 으로 남기고 최근 5회를 지난 호로 붙입니다."""
     hist_dir = ROOT / "data" / "history"
     hist_dir.mkdir(parents=True, exist_ok=True)
     today = now_kst().strftime("%Y-%m-%d")
@@ -932,8 +1189,7 @@ def attach_history(payload: dict) -> None:
     (hist_dir / f"{today}.json").write_text(json.dumps(snap, ensure_ascii=False, indent=2), encoding="utf-8")
 
     past = []
-    files = sorted(hist_dir.glob("????-??-??.json"), reverse=True)
-    for f in files[:6]:
+    for f in sorted(hist_dir.glob("????-??-??.json"), reverse=True):
         if f.stem == today:
             continue
         try:
@@ -962,53 +1218,50 @@ def issue_number() -> int:
     return n
 
 
-def collect_trends() -> list[dict]:
-    items = collect_feed("Google Trends KR", "https://trends.google.co.kr/trending/rss?geo=KR",
-                         kind="trend", limit=10)
-    return items
+def thumb_stats(payload: dict) -> dict:
+    groups = {
+        "news": payload.get("news", []),
+        "community": payload.get("posts", []),
+        "youtube": payload.get("videos", []),
+        "blog": payload.get("blogs", []),
+        "deals": payload.get("deals", []),
+        "opensource": payload.get("opensource", []),
+        "apps": payload.get("apps", []),
+        "hackathons": payload.get("hackathons", []),
+    }
+    out = {}
+    total = have = 0
+    for name, rows in groups.items():
+        n = len(rows)
+        m = sum(1 for r in rows if r.get("img"))
+        out[name] = {"total": n, "with_image": m,
+                     "rate": round(m / n, 3) if n else 0.0}
+        total += n
+        have += m
+    out["all"] = {"total": total, "with_image": have,
+                  "rate": round(have / total, 3) if total else 0.0}
+    return out
 
 
 def build_payload() -> dict:
     started = time.time()
-    log("수집 시작 · 노리짱 트래픽센트 v2")
+    log("수집 시작 · 트렌드픽 v3")
     issue_no = issue_number()
 
     # --- 커뮤니티
-    comm_posts: list[dict] = []
-    for name, url, key in COMMUNITY_SCRAPE:
-        rows = scrape_community(name, url, key)
-        for i, r in enumerate(rows):
-            comm_posts.append({
+    posts: list[dict] = []
+    for name, url, key, pattern in COMMUNITY_SCRAPE:
+        for r in scrape_community(name, url, key, pattern):
+            posts.append({
                 "id": mk_id("c", r["title"]),
                 "cat": "comm", "source": name, "source_key": key,
                 "title": r["title"], "url": r["url"],
-                "published": "", "time": "최근", "rise": 120, "hot": 60,
-                "comments": 0, "views": 0,
+                "published": "", "time": "최근",
+                "img": r.get("img", ""),
                 "keywords": [name], "sample": False,
-                "thumb": thumb_for("comm", name, r["title"]),
+                "fresh": 0.62,
             })
-    # 실수집 0건인 소스는 예시 카드로 채워 '커뮤니티 9곳'이 화면에서 빠지지 않게
-    got_keys = {p["source_key"] for p in comm_posts}
-    for key, rows in COMMUNITY_SAMPLE.items():
-        if key in got_keys:
-            continue
-        for name, title in rows:
-            comm_posts.append({
-                "id": mk_id("c", name + title), "cat": "comm", "source": name, "source_key": key,
-                "title": title, "url": "", "published": "", "time": "예시",
-                "rise": 130, "hot": 55, "comments": 0, "views": 0,
-                "keywords": [name], "sample": True, "thumb": thumb_for("comm", name, title),
-            })
-    # 소스별 3건씩 균형 있게 (한 커뮤니티가 화면을 독차지하지 않도록)
-    by_src: dict[str, list[dict]] = {}
-    for post in comm_posts:
-        by_src.setdefault(post["source_key"], []).append(post)
-    balanced: list[dict] = []
-    for _, _, key in COMMUNITY_SCRAPE:
-        balanced.extend(by_src.get(key, [])[:3])
-    comm_posts = dedupe_items(balanced)[:20]
-    for p in comm_posts:
-        p["fresh"] = 0.55 + (0.1 if p["source_key"] in ("dcbest", "natepann") else 0)
+    posts = dedupe_items(posts)[:16]
 
     # --- 뉴스 · 유튜브 · 블로그 · 핫딜 · 오픈소스 · 앱 · 해커톤
     news = collect_news()
@@ -1018,74 +1271,57 @@ def build_payload() -> dict:
     opensource = collect_opensource()
     apps = collect_apps()
     hackathons = collect_hackathons()
-    build_posts = collect_build_bids()
     trends = collect_trends()
 
-    # --- 특화 5분야 (실데이터 + 예시 보충)
-    special: list[dict] = []
-    for s in SPECIAL_SAMPLE:
-        post = {
-            "id": mk_id("s", s["title"]), "cat": s["cat"], "source": s["source"],
-            "title": s["title"], "url": "", "published": "",
-            "time": "예시", "rise": s["rise"], "hot": 70,
-            "comments": s["comments"], "views": s["views"],
-            "keywords": s["keywords"], "sample": True,
-            "thumb": thumb_for(s["cat"], s["source"], s["title"]),
-        }
-        special.append(post)
-    special.extend(build_posts)
-
-    # GeekNews(개발/스타트업)를 AI·부업 인기글로 활용
-    for i, b in enumerate(blogs[:4]):
-        if b["source"] == "GeekNews":
-            special.append({
-                "id": mk_id("s", b["title"]), "cat": "ai", "source": "GeekNews",
-                "title": b["title"], "url": b["url"], "published": "",
-                "time": b["time"], "rise": 150 - i * 8, "hot": 72 - i * 3,
-                "comments": 0, "views": 0, "keywords": ["GeekNews", "AI·개발"],
-                "sample": False, "thumb": thumb_for("ai", "GeekNews", b["title"]),
-            })
-
-    all_posts = comm_posts + special
-    cross = cross_source_counts(news + all_posts)
-    for p in all_posts:
-        p["cross"] = max(1, cross.get(p["title"], 1))
-        p.setdefault("fresh", 0.5)
-    score_posts(all_posts)
-
-    # --- 뉴스 카드에도 인기 지표 부여 (통합 피드에서 같은 카드로 보이도록)
+    # --- 통합 피드용 뉴스 카드
     for i, n in enumerate(news):
         n["cat"] = "news"
-        n["hot"] = max(40, 85 - i)
+        n["hot"] = max(40, 88 - i)
         n["rise"] = max(90, 260 - i * 6)
         n["comments"] = 0
         n["views"] = 0
-        n["thumb"] = thumb_for("news", n["source"], n["title"])
         n["sample"] = False
 
     for v in videos:
         v["cat"] = "youtube"
         v["source"] = v.get("channel", "YouTube")
-        v["hot"] = max(42, 76 - int(v.get("rank", 50)))
+        v["hot"] = max(42, 78 - int(v.get("rank", 50)))
         v["rise"] = max(95, 250 - int(v.get("rank", 50)) * 5)
         v["comments"] = 0
         v["time"] = v.get("time") or "최근"
         v["keywords"] = ["유튜브", v.get("kind", "long")]
 
-    all_posts.sort(key=lambda x: -x["hot"])
-    visited_sources = ({p["source"] for p in comm_posts} | {n["source"] for n in news}
-                       | {v.get("channel", "YouTube") for v in videos} | {b["source"] for b in blogs})
+    for b in blogs:
+        b["cat"] = "web"
+        b["hot"] = 62
+        b["rise"] = 140
+        b["sample"] = False
+
+    # --- 주제 태깅 + og:image 보강 (이미지 없는 항목만)
+    all_items = posts + news + videos + blogs
+    for it in all_items:
+        text = it.get("title", "") + " " + (it.get("source") or "")
+        it["topics_kw"] = topic_tags(it.get("title", ""))
+        it["topics"] = topic_tags(text, it.get("section", ""))
+    enrich_images([it for it in all_items if not it.get("img")], budget_sec=45.0, workers=8, limit=50)
+
+    score_posts(posts)
+    all_items.sort(key=lambda x: -x.get("hot", 0))
+
+    visited_sources = ({p["source"] for p in posts} | {n["source"] for n in news}
+                       | {v.get("channel", "YouTube") for v in videos} | {b["source"] for b in blogs}
+                       | {o["repo"].split("/")[0] for o in opensource})
     stats = {
         "sources": len(visited_sources),
-        "collected": len(all_posts) + len(news) + len(videos) + len(blogs) + len(deals),
-        "cross_sources": sum(1 for p in all_posts if p.get("cross", 1) > 1),
+        "collected": len(all_items) + len(deals) + len(opensource) + len(apps) + len(hackathons),
         "live_sources": sum(1 for r in COLLECT_LOG if r["status"] == "ok"),
         "skipped_sources": sum(1 for r in COLLECT_LOG if r["status"] in ("skip", "error", "key-missing")),
         "elapsed_sec": round(time.time() - started, 1),
     }
 
+    brief = rule_brief(news, all_items, issue_no)
     payload = {
-        "schema": "nori-traffic-scent/2",
+        "schema": SCHEMA,
         "generated_at": now_kst().isoformat(timespec="seconds"),
         "issue": {"no": issue_no, "label": f"No.{issue_no:02d} ({now_kst():%m.%d})",
                   "date": now_kst().strftime("%Y-%m-%d")},
@@ -1093,12 +1329,15 @@ def build_payload() -> dict:
         "sources": sorted(visited_sources),
         "youtube_mode": "api" if os.environ.get("YOUTUBE_API_KEY", "").strip() else "channel-rss",
         "site": {
-            "repo": os.environ.get("GITHUB_REPOSITORY", "").strip(),
-            "pages_url": ("https://" + os.environ.get("GITHUB_REPOSITORY", "").split("/")[0].lower()
-                          + ".github.io/" + os.environ.get("GITHUB_REPOSITORY", "").split("/")[-1]
-                          + "/") if os.environ.get("GITHUB_REPOSITORY", "").strip() else "",
+            "repo": os.environ.get("GITHUB_REPOSITORY", "").strip() or "econature7-lab/nori-traffic-scent",
+            "pages_url": (("https://" + os.environ.get("GITHUB_REPOSITORY", "econature7-lab/nori-traffic-scent")
+                           .split("/")[0].lower() + ".github.io/"
+                           + os.environ.get("GITHUB_REPOSITORY", "econature7-lab/nori-traffic-scent")
+                           .split("/")[-1] + "/")
+                          if os.environ.get("GITHUB_REPOSITORY", "").strip()
+                          else "https://econature7-lab.github.io/nori-traffic-scent/"),
         },
-        "posts": all_posts,
+        "posts": posts,
         "news": news,
         "videos": videos,
         "blogs": blogs,
@@ -1106,65 +1345,22 @@ def build_payload() -> dict:
         "opensource": opensource,
         "apps": apps,
         "hackathons": hackathons,
-        "benchmarks": BENCHMARKS,
-        "indie": INDIE,
-        "ranks": build_ranks(all_posts + news, trends),
-        "brief": rule_brief(news, all_posts, issue_no),
-        "visits": build_visits(),
+        "ranks": build_ranks(all_items, trends),
+        "brief": brief,
         "collect_log": COLLECT_LOG,
         "notes": [
-            "posts 중 sample=true 는 실수집이 아닌 예시 데이터입니다(화면에는 ‘예시’ 표시).",
-            "rise 값은 최신성·댓글·조회·교차 출처를 합산한 추정치입니다.",
-            "뉴스·유튜브·오픈소스·앱·해커톤은 공개 RSS/API 실데이터입니다.",
+            "posts/news/videos/blogs 는 모두 공개 RSS·API 에서 실제로 수집한 항목입니다(예시 데이터 없음).",
+            "rise 값은 최신성·반응을 합산한 상승 지수 추정치입니다.",
+            "이미지가 없는 항목은 화면에서 카테고리 일러스트 카드로 대체됩니다.",
         ],
     }
+    payload["thumbs"] = thumb_stats(payload)
     attach_history(payload)
     return payload
 
 
-# --- 수동 큐레이션 (sources.yaml benchmarks 와 같은 내용 · 키 없이도 화면 유지)
-BENCHMARKS = {
-    "metric": "지능",
-    "rows": [
-        {"rank": 1, "model": "Gemini 2.5 Flash", "vendor": "Google", "score": 74, "note": "무료 티어 · 요약/속도 균형"},
-        {"rank": 2, "model": "Claude Sonnet 4.5", "vendor": "Anthropic", "score": 73, "note": "문장 품질"},
-        {"rank": 3, "model": "GPT-5", "vendor": "OpenAI", "score": 71, "note": "범용"},
-        {"rank": 4, "model": "Qwen3 32B", "vendor": "Alibaba", "score": 64, "note": "오픈웨이트"},
-        {"rank": 5, "model": "Llama 4 70B", "vendor": "Meta", "score": 61, "note": "로컬 실행 가능"},
-    ],
-    "source": "수동 큐레이션(월 1회 갱신) · 벤치마크 점수는 참고용",
-}
-
-INDIE = [
-    {"id": "i1", "tab": "meta", "cat": "메타버스 · 종교", "emoji": "🏯", "name": "산사 · 온라인 절",
-     "desc": "청연당에서 함께 절하고 합장하며 염주를 굴려요. 연등 산책길과 연꽃 연못, 달빛 마당도 둘러볼 수 있어요.",
-     "likes": 0, "maker": "인디 사례", "url": "",
-     "detail": {"문제": "오프라인 절 체험을 온라인에서 가볍게 경험하고 싶다는 수요.", "기능": "가상 공간 산책 · 절하기 인터랙션 · 연등/연못 배경.", "스택": "웹 3D · 정적 호스팅", "시간": "사례"}},
-    {"id": "i2", "tab": "meta", "cat": "메타버스 · 놀이", "emoji": "❄️", "name": "눈 오는 마을 · 크리스마스 마켓",
-     "desc": "눈 내리는 마을을 함께 걷고 선물 상자를 찾거나 썰매를 타요. 마켓에서 부스를 구경하고 도장도 모을 수 있어요.",
-     "likes": 0, "maker": "인디 사례", "url": "",
-     "detail": {"문제": "겨울 시즌 이벤트를 웹에서 가볍게 열고 싶은 소규모 팀.", "기능": "마을 산책 · 선물 찾기 · 도장 모으기.", "스택": "웹 3D", "시간": "사례"}},
-    {"id": "i3", "tab": "game", "cat": "웹 게임 · 퍼즐", "emoji": "🎸", "name": "KÖTTBULLAR METAL",
-     "desc": "이케아 제품 이름으로 만든 데스메탈 가사. 15분 모시핏을 버틸 수 있나요?",
-     "likes": 0, "maker": "인디 사례", "url": "",
-     "detail": {"문제": "짧은 시간에 웃음 터지는 미니게임.", "기능": "리듬·서바이벌 게임 루프.", "스택": "웹 게임", "시간": "사례"}},
-    {"id": "i4", "tab": "game", "cat": "웹 게임 · 시뮬", "emoji": "🍔", "name": "BUNGR INC.",
-     "desc": "버거를 만들어 자유를 얻는 경영 시뮬레이션.",
-     "likes": 0, "maker": "인디 사례", "url": "",
-     "detail": {"문제": "탭 몇 번으로 즐기는 경영 게임.", "기능": "재료 조합 · 판매 · 성장.", "스택": "웹 게임", "시간": "사례"}},
-    {"id": "i5", "tab": "life", "cat": "생활 · 앱테크", "emoji": "🌿", "name": "숲놀이 사진 자동 정리함",
-     "desc": "현장 사진을 날짜·프로그램별로 폴더 정리하고 아이 얼굴 영역을 자동으로 흐리게 만드는 1인용 웹툴.",
-     "likes": 128, "maker": "노리짱 · 클로드 코드", "url": "",
-     "detail": {"문제": "사진 수백 장 분류·얼굴 가리기에 매번 2시간 이상.", "기능": "자동 폴더 분류 · 얼굴 블러 · 썸네일 생성.", "스택": "HTML + JS + 얼굴 감지", "시간": "3시간 20분"}},
-    {"id": "i6", "tab": "util", "cat": "웹 유틸", "emoji": "🔗", "name": "쿠팡 링크 + 고지문 생성기",
-     "desc": "상품 링크를 넣으면 추적 링크와 공정위 고지 문구 3종을 한 번에 만들어 주는 유틸.",
-     "likes": 143, "maker": "노리짱 · 클로드 코드", "url": "",
-     "detail": {"문제": "고지 문구를 세 번 따로 붙여넣다 빠뜨림.", "기능": "링크 정규화 · 고지문 3종 복사 · 체크리스트.", "스택": "단일 HTML + JS", "시간": "1시간 30분"}},
-]
-
-
 def main() -> int:
-    ap = argparse.ArgumentParser(description="노리짱 트래픽센트 v2 수집기")
+    ap = argparse.ArgumentParser(description="트렌드픽 v3 수집기")
     ap.add_argument("--out", default=str(ROOT / "data.json"))
     args = ap.parse_args()
 
@@ -1182,6 +1378,10 @@ def main() -> int:
     log(f"data.json 저장 · {out_path} ({out_path.stat().st_size:,} bytes)")
     log(f"항목 수: 커뮤니티 {len(payload['posts'])} · 뉴스 {len(payload['news'])} · "
         f"유튜브 {len(payload['videos'])} · 블로그 {len(payload['blogs'])} · 핫딜 {len(payload['deals'])}")
+    th = payload["thumbs"]
+    log(f"썸네일: 전체 {th['all']['with_image']}/{th['all']['total']} ({th['all']['rate'] * 100:.0f}%) · "
+        f"유튜브 {th['youtube']['with_image']}/{th['youtube']['total']} · "
+        f"뉴스 {th['news']['with_image']}/{th['news']['total']}")
     ok = sum(1 for r in payload["collect_log"] if r["status"] == "ok")
     skip = sum(1 for r in payload["collect_log"] if r["status"] in ("skip", "error"))
     keyless = sum(1 for r in payload["collect_log"] if r["status"] == "key-missing")
