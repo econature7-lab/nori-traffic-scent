@@ -1,0 +1,276 @@
+{
+  "date": "2026-11-22",
+  "issue": {
+    "no": 3,
+    "label": "No.03 (11.22)",
+    "date": "2026-11-22"
+  },
+  "generated_at": "2026-11-22T01:00:36+09:00",
+  "brief": {
+    "no": "No.03",
+    "date": "2026-11-22",
+    "label": "11.22",
+    "weekday": "일",
+    "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 · 주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12 · 김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(",
+    "lead": "IT·AI에서는 '주식만 떨어진 게 아니네…美 AI투자 지연 우려…' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '김민석 \"민주당 큰 고민 중 하나는 청년…더…' 소식이 눈에 띕니다. 오늘 수집한 101건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 6개 이슈를 골랐습니다.",
+    "picks": [
+      {
+        "rank": 1,
+        "label": "경제·증시",
+        "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/society/12215346",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261121.250059205dae4659a8362acc7f3b548e_R.png"
+      },
+      {
+        "rank": 2,
+        "label": "IT·AI",
+        "title": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/stock/12215325",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261120.5b6bff9dcbbe475787b166cfa6ac67d1_R.png"
+      },
+      {
+        "rank": 3,
+        "label": "부동산·정책",
+        "title": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
+        "source": "연합뉴스 정치",
+        "url": "https://www.yna.co.kr/view/AKR20261121040151001",
+        "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/21/PYH2026112103430001300_P2.jpg"
+      },
+      {
+        "rank": 4,
+        "label": "사회·생활",
+        "title": "“은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동]",
+        "source": "조선일보",
+        "url": "https://www.chosun.com/sports/sports_general/2026/11/22/GIZTCOJXMVSDMM3CMQYGKYJSGI/",
+        "img": "https://www.chosun.com/resizer/v2/ME2TOMRYMUZGGMLBGQZDIYZQMI.jpg?auth=4329669dede183516482cdaebea870813dffa4ccdd45469b0792c5f4db41615e&smart=true&width=530&height=706"
+      },
+      {
+        "rank": 5,
+        "label": "경제·증시",
+        "title": "[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 19, 29, 40, 45’",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/society/12215342",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261121.3547d2bec587414f9b5bf8a7ae8d69f5_R.png"
+      }
+    ],
+    "metrics": {
+      "topics": 6,
+      "news": 32,
+      "items": 101
+    },
+    "sections": [
+      {
+        "key": "경제·증시",
+        "label": "경제·증시",
+        "emoji": "📰",
+        "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
+        "body": "매일경제·연합뉴스 산업 등이 전한 경제·증시 흐름입니다. 로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다 이어서 '[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 1', 'GTA 6, 출시 첫날 매출 5조원…3천250만장 팔려'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/society/12215346"
+          },
+          {
+            "text": "[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 19, 29, 40, 45’",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/society/12215342"
+          },
+          {
+            "text": "GTA 6, 출시 첫날 매출 5조원…3천250만장 팔려",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261121036200017"
+          }
+        ]
+      },
+      {
+        "key": "IT·AI",
+        "label": "IT·AI",
+        "emoji": "📰",
+        "title": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
+        "body": "매일경제·AI타임스 등이 전한 IT·AI 흐름입니다. 주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’ 이어서 '머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"', 'AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/stock/12215325"
+          },
+          {
+            "text": "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
+            "source": "AI타임스",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217650"
+          },
+          {
+            "text": "AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
+            "source": "AI타임스",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217649"
+          }
+        ]
+      },
+      {
+        "key": "부동산·정책",
+        "label": "부동산·정책",
+        "emoji": "📰",
+        "title": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
+        "body": "연합뉴스 정치·연합뉴스 산업·매일경제 등이 전한 부동산·정책 흐름입니다. 김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합) 이어서 '코레일 \"22일 첫차부터 경부선 일반열차 운행 재개 예정\"', '“내년엔 조금 더 좋아질 것”…이재명 대통령, 울산 전통시장서 민생 점검'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
+            "source": "연합뉴스 정치",
+            "url": "https://www.yna.co.kr/view/AKR20261121040151001"
+          },
+          {
+            "text": "코레일 \"22일 첫차부터 경부선 일반열차 운행 재개 예정\"",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261121048700063"
+          },
+          {
+            "text": "“내년엔 조금 더 좋아질 것”…이재명 대통령, 울산 전통시장서 민생 점검",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/politics/12215328"
+          }
+        ]
+      },
+      {
+        "key": "사회·생활",
+        "label": "사회·생활",
+        "emoji": "📰",
+        "title": "“은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동]",
+        "body": "조선일보 등이 전한 사회·생활 흐름입니다. “은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동] 이어서 '보복 운전 당한 김동현 \"창문 내리니까 덜덜 떨며 인사\"', 'BTS 진, 96억원대 한남동 빌딩 매입…'지니빌딩' 이름 붙여'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "“은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동]",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/sports/sports_general/2026/11/22/GIZTCOJXMVSDMM3CMQYGKYJSGI/"
+          },
+          {
+            "text": "보복 운전 당한 김동현 \"창문 내리니까 덜덜 떨며 인사\"",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/entertainments/2026/11/22/QFUL3JN2GRAN7EWZ3X6XK3PXGI/"
+          },
+          {
+            "text": "BTS 진, 96억원대 한남동 빌딩 매입…'지니빌딩' 이름 붙여",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/entertainments/2026/11/22/CJXM2JVCFJEUDGSBUPEB4ZYEZE/"
+          }
+        ]
+      },
+      {
+        "key": "estate",
+        "label": "부동산·경매",
+        "emoji": "🏢",
+        "title": "신사임당 유투브 \"살다살다 이런 불경기는 처음\" 부동산으로 돈 버는 시대 끝났다",
+        "body": "82cook에서 '신사임당 유투브 \"살다살다 이런 불경기는 처음\" 부동산으로 돈 버는 시대 끝났다' 글이 올라왔습니다.",
+        "points": [
+          {
+            "text": "신사임당 유투브 \"살다살다 이런 불경기는 처음\" 부동산으로 돈 버는 시대 끝났다",
+            "source": "82cook",
+            "url": "https://www.82cook.com/entiz/read.php?num=4261321"
+          }
+        ]
+      },
+      {
+        "key": "ai",
+        "label": "AI·부업",
+        "emoji": "🤖",
+        "title": "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
+        "body": "AI타임스에서 '엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락' 글이 올라왔습니다. 전자신문에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "points": [
+          {
+            "text": "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
+            "source": "AI타임스",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217645"
+          },
+          {
+            "text": "울산 SK AI데이터센터 찾은 李…“韓 AX는 AI 고속도로가 열 것”",
+            "source": "전자신문",
+            "url": "https://www.etnews.com/20261121000052"
+          }
+        ]
+      }
+    ],
+    "engine": "rule-based",
+    "past": []
+  },
+  "stats": {
+    "sources": 22,
+    "collected": 97,
+    "live_sources": 22,
+    "skipped_sources": 3,
+    "elapsed_sec": 37.9
+  },
+  "ranks": [
+    {
+      "k": "AI",
+      "r": 249,
+      "url": "",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261120.5b6bff9dcbbe475787b166cfa6ac67d1_R.png",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "ai 버블",
+      "r": 200,
+      "url": "",
+      "img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTHUnRyOK2iHOsh5EcIfe3ejs0a3BMay8W6tKjVdCHnQ7RU8OcN1Jcne2g82jQ",
+      "src": "Google Trends"
+    },
+    {
+      "k": "울산",
+      "r": 163,
+      "url": "",
+      "img": "https://img.etnews.com/news/article/2026/11/21/rcv.YNA.20261121.PYH2026112102660001300_P1.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "대통령",
+      "r": 163,
+      "url": "",
+      "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/21/PYH2026112102630001300_P2.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "적발",
+      "r": 163,
+      "url": "",
+      "img": "https://i1.ytimg.com/vi/X8xmdyP_ma8/hqdefault.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "앤트로픽",
+      "r": 163,
+      "url": "",
+      "img": "https://i3.ytimg.com/vi/rIm3jO6THRI/hqdefault.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "로또",
+      "r": 148,
+      "url": "",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261121.250059205dae4659a8362acc7f3b548e_R.png",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "AI데이터센터",
+      "r": 148,
+      "url": "",
+      "img": "https://img.etnews.com/news/article/2026/11/21/rcv.YNA.20261121.PYH2026112102660001300_P1.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "보안",
+      "r": 148,
+      "url": "",
+      "img": "https://img.etnews.com/news/article/2025/09/27/news-p.v1.20250927.69bad73c23624cf78a43a23beef06cea_P1.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "상장",
+      "r": 148,
+      "url": "",
+      "img": "https://i3.ytimg.com/vi/rIm3jO6THRI/hqdefault.jpg",
+      "src": "트렌드픽 수집"
+    }
+  ]
+}
