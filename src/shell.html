@@ -3,468 +3,263 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#FCFCFD">
-<title>노리짱 트래픽센트 · 실시간 트래픽 레이더 v2</title>
-<meta name="description" content="주요 커뮤니티 · 일간 트렌드 리포트 · 뉴스 · 유튜브 · 인디 프로젝트 · 핫딜을 한눈에 탐색하는 노리짱 전용 트래픽 레이더">
+<meta name="theme-color" content="#F7F6F2">
+<title>트렌드픽 TrendPick — 오늘의 실시간 트렌드 TOP 10</title>
+<meta name="description" content="커뮤니티 인기글, 주요 뉴스, 유튜브, 앱·게임 순위까지. 오늘 사람들이 가장 많이 찾은 키워드를 한 화면에서 골라 보는 트렌드 큐레이션, 트렌드픽.">
+<meta name="keywords" content="트렌드, 실시간 트렌드, 급상승 키워드, 인기글, 뉴스 요약, 유튜브 인기, 앱 순위, 트렌드픽">
+<meta name="author" content="TrendPick">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://econature7-lab.github.io/nori-traffic-scent/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="트렌드픽 TrendPick">
+<meta property="og:title" content="트렌드픽 — 오늘의 실시간 트렌드 TOP 10">
+<meta property="og:description" content="커뮤니티 인기글 · 주요 뉴스 · 유튜브 · 앱 순위를 한 화면에서. 오늘의 트렌드를 3분 안에 골라 보세요.">
+<meta property="og:url" content="https://econature7-lab.github.io/nori-traffic-scent/">
+<meta property="og:image" content="https://econature7-lab.github.io/nori-traffic-scent/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="트렌드픽 — 오늘의 실시간 트렌드 TOP 10">
+<meta name="twitter:description" content="커뮤니티 인기글 · 주요 뉴스 · 유튜브 · 앱 순위를 한 화면에서.">
+<meta name="twitter:image" content="https://econature7-lab.github.io/nori-traffic-scent/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111827'/%3E%3Cpath d='M8.5 22.5 14 15.4l4 3.4 5.2-8.3' fill='none' stroke='%23E11D48' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='23.4' cy='10.4' r='2.6' fill='%230D9488'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111827'/%3E%3Cpath d='M8.5 22.5 14 15.4l4 3.4 5.2-8.3' fill='none' stroke='%23E11D48' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='23.4' cy='10.4' r='2.6' fill='%230D9488'/%3E%3C/svg%3E">
 <!--
-  노리짱 트래픽센트 v2 · 단일 HTML (외부 CDN·웹폰트·외부 이미지 의존 0건)
-  - http(s) 환경에서 ./data.json 이 있으면 자동 로드하고, 없거나 file:// 이면 내장 데이터로 즉시 동작합니다.
-  - 스크랩·글감 메모·문의 기록은 이 브라우저 localStorage 에만 저장됩니다.
+  트렌드픽 TrendPick · 단일 HTML (외부 CDN · 웹폰트 의존 0건)
+  · http(s) 로 열면 ./data.json 을 읽어 최신 수집 결과로 그립니다. 없으면 내장 스냅샷으로 동작합니다.
+  · 저장한 픽(⭐)은 이 브라우저 localStorage 에만 남습니다.
+  · 광고 자리는 src/app.js 상단 TRENDPICK_ADS 설정에 ID만 넣으면 바로 노출됩니다.
 -->
 <style>
 {{CSS}}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"트렌드픽","alternateName":"TrendPick","url":"https://econature7-lab.github.io/nori-traffic-scent/","description":"커뮤니티 인기글·주요 뉴스·유튜브·앱 순위를 한 화면에서 골라 보는 트렌드 큐레이션","inLanguage":"ko-KR"}
+</script>
 </head>
 <body>
+<a class="skip" href="#explore">본문으로 바로가기</a>
 
-<header class="topbar" id="top">
-  <div class="topbar-inner">
-    <a class="brand" href="#top" aria-label="노리짱 트래픽센트 홈">
+<header class="mast" id="top">
+  <div class="mast-in">
+    <a class="brand" href="#top" aria-label="트렌드픽 홈">
       <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M13.4 2 5 13.2h5.1L9.2 22 19 10.2h-5.4L13.4 2Z" fill="#F59E0B"/></svg>
+        <svg viewBox="0 0 32 32" width="30" height="30" role="img">
+          <rect width="32" height="32" rx="9" fill="#111827"/>
+          <path d="M8.5 22.5 14 15.4l4 3.4 5.2-8.3" fill="none" stroke="#E11D48" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="23.4" cy="10.4" r="2.6" fill="#0D9488"/>
+        </svg>
       </span>
-      <span class="brand-text"><strong>노리짱 트래픽센트</strong><small>Nori Traffic Scent</small></span>
+      <span class="brand-txt"><b>트렌드픽</b><i>TRENDPICK</i></span>
     </a>
 
-    <div class="searchwrap">
-      <span class="search-icon" aria-hidden="true">🔍</span>
-      <label class="sr-only" for="searchInput">통합 검색</label>
-      <input id="searchInput" class="search-input" type="search" autocomplete="off"
-             placeholder="지금 뜨는 키워드, 커뮤니티, 뉴스를 검색해보세요" data-testid="search-input">
-      <span class="search-kbd" aria-hidden="true"><kbd>⌘</kbd><kbd>K</kbd></span>
-      <button id="searchClear" class="search-clear" type="button" aria-label="검색어 지우기" hidden>✕</button>
-    </div>
+    <nav class="nav" aria-label="주요 섹션">
+      <a href="#brief">브리프</a>
+      <a href="#top10">TOP 10</a>
+      <a href="#explore">탐색</a>
+      <a href="#news">뉴스</a>
+      <a href="#youtube">유튜브</a>
+      <a href="#apps">앱·게임</a>
+    </nav>
 
-    <div class="topbar-actions">
-      <span id="dataBadge" class="pill pill-amber" data-testid="data-badge" title="데이터 상태">샘플 데이터</span>
-      <button id="openSearchBtn" class="icon-btn only-narrow" type="button" aria-label="검색 열기">
-        <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
-      <button id="langPill" class="pill pill-ghost" type="button" title="표시 언어 · 시간대" data-testid="lang-pill">🇰🇷 KO</button>
-      <button id="openScrapTop" class="btn btn-sm hide-sm" type="button" data-testid="open-scrap-box">
-        <span aria-hidden="true">⭐</span><span>스크랩함</span><span id="scrapCount" class="pill pill-count">0</span>
-      </button>
-      <button id="openArchTop" class="btn btn-sm btn-dark hide-sm" type="button" data-testid="arch-open">
-        <span aria-hidden="true">⚙️</span><span>수집 구조</span>
-      </button>
-      <button id="openMenu" class="icon-btn" type="button" aria-label="메뉴 열기" aria-expanded="false" data-testid="menu-open">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="mast-tools">
+      <div class="search" id="searchWrap">
+        <svg class="search-ico" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="11" cy="11" r="6.6" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M15.9 15.9 20 20" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+        <label class="sr-only" for="q">제목·매체·키워드 검색</label>
+        <input id="q" type="search" autocomplete="off" placeholder="키워드 · 매체 · 제목 검색" data-testid="search-input">
+        <kbd class="search-kbd" aria-hidden="true">⌘K</kbd>
+        <button class="search-x" id="qClear" type="button" aria-label="검색어 지우기" hidden>✕</button>
+      </div>
+      <button class="saved-btn" id="savedBtn" type="button" aria-pressed="false" data-testid="saved-filter">
+        <span aria-hidden="true">⭐</span><span class="saved-lbl">저장한 픽</span><b id="savedN">0</b>
       </button>
     </div>
   </div>
 </header>
 
-<div class="menu-sheet" id="menuSheet" hidden>
-  <div class="menu-backdrop" data-menu-close></div>
-  <div class="menu-panel" role="dialog" aria-modal="true" aria-labelledby="menuTitle">
-    <div class="menu-head">
-      <strong id="menuTitle">빠른 메뉴</strong>
-      <button class="icon-btn" type="button" data-menu-close aria-label="메뉴 닫기">✕</button>
-    </div>
-    <div class="menu-search">
-      <input id="menuSearch" type="search" placeholder="키워드로 바로 찾기" aria-label="메뉴 검색">
-      <button class="btn btn-sm btn-amber" type="button" id="menuSearchGo">검색</button>
-    </div>
-    <div class="menu-grid">
-      <button class="menu-item" type="button" data-goto="community">💬 커뮤니티</button>
-      <button class="menu-item" type="button" data-goto="brief">📋 리포트</button>
-      <button class="menu-item" type="button" data-goto="news">📰 뉴스</button>
-      <button class="menu-item" type="button" data-goto="youtube">▶️ 유튜브</button>
-      <button class="menu-item" type="button" data-goto="blog">✏️ 블로그</button>
-      <button class="menu-item" type="button" data-goto="deal">🏷️ 핫딜</button>
-      <button class="menu-item" type="button" data-goto="indie">🧩 인디</button>
-      <button class="menu-item" type="button" data-goto="opensource">🐙 오픈소스</button>
-      <button class="menu-item" type="button" data-goto="apps">📱 앱·게임</button>
-      <button class="menu-item" type="button" data-goto="hackathon">🏆 해커톤</button>
-      <button class="menu-item" type="button" data-goto="benchmark">✨ 벤치마크</button>
-      <button class="menu-item" type="button" data-goto="contact">💬 문의하기</button>
-    </div>
-    <div class="menu-actions">
-      <button class="btn" type="button" id="menuScrap">⭐ 내 스크랩함 (<span id="scrapCount3">0</span>)</button>
-      <button class="btn" type="button" id="menuArch">⚙️ 수집·요약 구조</button>
-      <button class="btn" type="button" id="menuExport">⬇ JSON 백업</button>
-      <button class="btn" type="button" id="menuImport">⬆ JSON 복원</button>
-    </div>
-    <p class="menu-note">이 화면은 <b>data.json</b> 을 읽어 그립니다. 스크랩·메모·문의는 이 브라우저에만 저장됩니다.</p>
+<main class="wrap">
+
+  <!-- ================= DAILY BRIEF + TOP 10 ================= -->
+  <section class="hero" aria-labelledby="bTitle">
+    <article class="brief" id="brief">
+      <div class="spine" aria-hidden="true">
+        <span class="sp-label">DAILY<br>BRIEF</span>
+        <span class="sp-rule"></span>
+        <span class="sp-no" id="bNo">No.00</span>
+        <span class="sp-date" id="bDate">--.--</span>
+        <span class="sp-live"><i></i>LIVE</span>
+      </div>
+      <div class="brief-body">
+        <p class="eyebrow" id="bEyebrow">오늘의 트렌드픽 브리프</p>
+        <h1 class="brief-h" id="bTitle">오늘의 브리프를 준비하고 있습니다</h1>
+        <p class="brief-lead" id="bLead"></p>
+        <ol class="picks" id="bPicks"></ol>
+        <div class="brief-foot">
+          <button class="btn btn-ink" id="bOpen" type="button" data-testid="brief-open">브리프 전문 <span aria-hidden="true">→</span></button>
+          <button class="btn btn-line" id="bPast" type="button" data-testid="brief-past">지난 호</button>
+          <span class="brief-meta micro" id="bMeta"></span>
+        </div>
+      </div>
+    </article>
+
+    <aside class="top10" id="top10" aria-labelledby="top10Title">
+      <div class="block-head tight">
+        <h2 id="top10Title"><span class="dot"></span>실시간 급상승 <em>TOP 10</em></h2>
+        <span class="micro" data-testid="top10-time">LIVE</span>
+      </div>
+      <ol class="top10-list" id="top10List" data-testid="top10-list"></ol>
+      <p class="micro-note">키워드를 누르면 아래 탐색 피드가 그 키워드로 바로 필터됩니다.</p>
+    </aside>
+  </section>
+
+  <!-- 광고 슬롯 1 · 상단 리더보드 (728×90 / 320×100) -->
+  <div class="ad-wrap">
+    <div class="ad-slot" data-ad="top" data-size="728 × 90 / 320 × 100" aria-label="광고"></div>
   </div>
-</div>
 
-<main class="page">
-  <div class="wrap layout">
-
-    <!-- ================= 히어로 ================= -->
-    <section class="hero area-hero" aria-labelledby="heroTitle">
-      <button class="hero-pill" type="button" id="heroIssueBtn" data-testid="hero-issue">
-        <span class="dot-live" aria-hidden="true"></span>
-        <span class="hp-a">실시간 트렌드 포털</span>
-        <span class="hp-sep" aria-hidden="true">|</span>
-        <span class="hp-b" id="heroIssueNo">No.01 (11.21)</span>
-        <span class="hp-arrow" aria-hidden="true">→</span>
-      </button>
-
-      <div class="hero-brand">
-        <span class="hero-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="34" height="34"><path d="M13.4 2 5 13.2h5.1L9.2 22 19 10.2h-5.4L13.4 2Z" fill="#F59E0B"/></svg>
-        </span>
-        <h1 class="hero-title" id="heroTitle">노리짱 <span>트래픽센트</span></h1>
-      </div>
-      <p class="hero-sub">주요 커뮤니티 · 일간 트렌드 리포트 · 뉴스 · 유튜브 · 인디 프로젝트 ·<br class="br-m"> 핫딜을 한눈에 탐색하세요</p>
-
-      <div class="portal-grid" id="portalGrid" role="navigation" aria-label="포털 메뉴">
-        <!-- JS 렌더 -->
-      </div>
-
-      <div class="hero-stats" id="heroStats"></div>
-    </section>
-
-    <div class="col-main">
-
-    <!-- ================= 커뮤니티 (통합 피드) ================= -->
-    <section class="card section area-comm" id="community" aria-labelledby="commTitle">
-      <div class="sec-head">
-        <button class="sec-title-btn" type="button" data-goto="community">
-          <span class="sec-ico amber" aria-hidden="true">💬</span>
-          <h2 class="sec-title" id="commTitle">커뮤니티</h2>
-          <span class="sec-arrow" aria-hidden="true">›</span>
-        </button>
-        <div class="sec-tools">
-          <div class="seg" role="group" aria-label="정렬 방식">
-            <button type="button" id="sortHot" aria-pressed="true" data-testid="sort-hot">인기글</button>
-            <button type="button" id="sortRising" aria-pressed="false" data-testid="sort-rising">급상승</button>
-          </div>
-          <button class="btn btn-sm btn-ghost" type="button" id="openFeedAll" data-testid="feed-all">전체보기</button>
+  <!-- ================= 탐색 ================= -->
+  <section class="explore" id="explore" aria-labelledby="exploreTitle">
+    <div class="explore-main">
+      <div class="block-head">
+        <h2 id="exploreTitle"><span class="dot"></span>오늘의 픽 탐색</h2>
+        <div class="seg" role="group" aria-label="정렬">
+          <button type="button" id="sortHot" aria-pressed="true" data-testid="sort-hot">인기</button>
+          <button type="button" id="sortRise" aria-pressed="false" data-testid="sort-rise">급상승</button>
+          <button type="button" id="sortNew" aria-pressed="false" data-testid="sort-new">최신</button>
         </div>
       </div>
 
-      <div class="chips" id="catChips" role="tablist" aria-label="분야 필터"></div>
+      <div class="chips" id="catChips" role="tablist" aria-label="분야"></div>
 
       <div class="filterbar">
-        <span class="filter-note" id="resultNote"></span>
-        <span class="kw-chip" id="kwChip" hidden><span id="kwChipText"></span>
-          <button type="button" id="kwChipClear" aria-label="키워드 필터 해제">✕</button></span>
+        <span class="micro" id="resultNote" data-testid="result-note">불러오는 중…</span>
+        <button class="kwchip" id="kwChip" type="button" hidden data-testid="kw-chip">
+          <span>#<b id="kwText"></b></span><span class="x" aria-hidden="true">✕</span>
+        </button>
+        <button class="savedchip" id="savedChip" type="button" hidden data-testid="saved-chip">⭐ 저장한 픽만 보기 ✕</button>
       </div>
 
-      <div class="card-grid" id="feedGrid" data-testid="feed-grid"></div>
-      <div class="list-more"><button class="btn btn-sm" type="button" id="moreBtn" data-testid="more-btn">더 보기</button></div>
-    </section>
+      <div class="feed" id="feedGrid" data-testid="feed-grid" aria-live="polite"></div>
+      <div class="more"><button class="btn btn-wide" id="moreBtn" type="button" data-testid="more-btn">더 보기</button></div>
+    </div>
 
-    <!-- ================= DAILY BRIEF ================= -->
-    <section class="card dark brief area-brief" id="brief" aria-labelledby="briefTitle">
-      <div class="brief-thumb" aria-hidden="true">
-        <div class="bt-top"><span class="bt-label">DAILY BRIEF</span><span class="bt-no" id="briefNo">No.01</span></div>
-        <div class="bt-mid"><div class="bt-issue" id="briefDate">11.21</div><div class="bt-sub">NORI TREND REPORT</div></div>
-        <div class="bt-metrics" id="briefThumbMetrics"></div>
-      </div>
-      <div class="brief-main">
-        <p class="eyebrow" id="briefEyebrow">오늘의 트렌드 리포트</p>
-        <h2 class="brief-h" id="briefTitle">오늘의 트렌드 리포트</h2>
-        <p class="brief-sum" id="briefLead"></p>
-        <div class="brief-chips" id="briefChips"></div>
-        <div class="brief-metrics-row" id="briefMetrics"></div>
-        <div class="brief-foot">
-          <button class="btn btn-amber" type="button" id="openBrief" data-testid="brief-open">▶ 전문 읽기</button>
-          <button class="btn btn-line" type="button" id="openPast" data-testid="brief-past">지난 호 보기</button>
-          <span class="spacer"></span>
-          <span class="brief-engine" id="briefEngine"></span>
-        </div>
-      </div>
-    </section>
+    <aside class="side">
+      <!-- 광고 슬롯 2 · 우측 사이드바 (300×250) -->
+      <div class="ad-slot" data-ad="side" data-size="300 × 250" aria-label="광고"></div>
 
-    <!-- ================= 실시간 뉴스 ================= -->
-    <section class="card section area-news" id="news" aria-labelledby="newsTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico blue" aria-hidden="true">📰</span>
-          <div>
-            <h2 class="sec-title" id="newsTitle">실시간 뉴스</h2>
-            <p class="sec-sub">경제·증시 · IT·AI · 부동산·정책 · 사회·생활</p>
-          </div>
-        </div>
-        <div class="sec-tools">
-          <button class="btn btn-sm btn-ghost" type="button" id="openNewsAll" data-testid="news-all">전체보기</button>
-        </div>
+      <div class="side-card">
+        <div class="side-head"><h3>⭐ 저장한 픽</h3><span class="count" id="savedN2">0</span></div>
+        <div id="savedMini" class="saved-mini"></div>
+        <p class="micro-note">이 브라우저에만 저장됩니다. 관심 소재를 모아 두면 다음 방문 때도 그대로 있습니다.</p>
       </div>
-      <div class="chips" id="newsTabs" role="tablist" aria-label="뉴스 분야"></div>
-      <ul class="news-list" id="newsList" data-testid="news-list"></ul>
-    </section>
 
-    <!-- ================= 유튜브 ================= -->
-    <section class="card section area-youtube" id="youtube" aria-labelledby="ytTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico red" aria-hidden="true">▶️</span>
-          <div>
-            <h2 class="sec-title" id="ytTitle">유튜브 인기 · 트렌드</h2>
-            <p class="sec-sub" id="ytSub">실시간 인기 급상승 · 롱폼 · 쇼츠</p>
-          </div>
-        </div>
-        <div class="sec-tools">
-          <div class="seg" role="group" aria-label="영상 구분">
-            <button type="button" data-yt="all" aria-pressed="true">전체</button>
-            <button type="button" data-yt="long" aria-pressed="false">롱폼</button>
-            <button type="button" data-yt="shorts" aria-pressed="false">쇼츠</button>
-          </div>
-        </div>
+      <div class="side-card">
+        <div class="side-head"><h3>수집 현황</h3><span class="count" id="statLive">0</span></div>
+        <dl class="stat-list" id="statList"></dl>
+        <p class="micro-note" id="statNote"></p>
       </div>
-      <div class="yt-list" id="ytList" data-testid="yt-list"></div>
-    </section>
+    </aside>
+  </section>
 
-    <!-- ================= 블로그 ================= -->
-    <section class="card section area-blog" id="blog" aria-labelledby="blogTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico sky" aria-hidden="true">✏️</span>
-          <div>
-            <h2 class="sec-title" id="blogTitle">블로그 · 글감</h2>
-            <p class="sec-sub">IT·개발·에세이 블로그 최신 글 (네이버 블로그는 키 연결 시)</p>
-          </div>
-        </div>
-      </div>
-      <div class="blog-grid" id="blogGrid" data-testid="blog-grid"></div>
-    </section>
+  <!-- ================= 뉴스 ================= -->
+  <section class="block" id="news" aria-labelledby="newsTitle">
+    <div class="block-head">
+      <h2 id="newsTitle"><span class="dot"></span>실시간 뉴스</h2>
+      <div class="chips inline" id="newsTabs" role="tablist" aria-label="뉴스 분야"></div>
+    </div>
+    <div class="news-grid" id="newsList" data-testid="news-list"></div>
+  </section>
 
-    <!-- ================= 핫딜 ================= -->
-    <section class="card section area-deal" id="deal" aria-labelledby="dealTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico rose" aria-hidden="true">🏷️</span>
-          <div>
-            <h2 class="sec-title" id="dealTitle">오늘의 핫딜</h2>
-            <p class="sec-sub">쿠팡 · 오늘의집 · 네이버 · 알리 · 뽐뿌 · 알구몬</p>
-          </div>
-        </div>
-        <div class="sec-tools deal-nav">
-          <button class="nav-btn" type="button" id="dealPrev" aria-label="이전 핫딜">‹</button>
-          <button class="nav-btn" type="button" id="dealNext" aria-label="다음 핫딜">›</button>
-        </div>
-      </div>
-      <div class="deal-track" id="dealTrack" data-testid="deal-track"></div>
-      <p class="micro-note">가격·할인율은 수집 시점 기준이며 실제 구매가와 다를 수 있습니다. ‘쿠팡 숏츠 소재로 스크랩’을 누르면 스크랩함에 담깁니다.</p>
-    </section>
+  <!-- ================= 유튜브 ================= -->
+  <section class="block" id="youtube" aria-labelledby="ytTitle">
+    <div class="block-head">
+      <h2 id="ytTitle"><span class="dot"></span>지금 뜨는 영상</h2>
+      <span class="micro" id="ytNote">유튜브 · 최신 업로드</span>
+    </div>
+    <div class="rail" id="ytRail" data-testid="yt-rail"></div>
+  </section>
 
-    <!-- ================= 인디 프로젝트 ================= -->
-    <section class="card section area-indie" id="indie" aria-labelledby="indieTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico violet" aria-hidden="true">🧩</span>
-          <div>
-            <h2 class="sec-title" id="indieTitle">인디 프로젝트</h2>
-            <p class="sec-sub">메타버스 · 웹 게임 · 바이브코딩 사례</p>
-          </div>
-        </div>
-        <div class="sec-tools">
-          <button class="btn btn-sm btn-ghost" type="button" id="openIndieAll">전체보기</button>
-        </div>
-      </div>
-      <div class="chips" id="indieTabs" role="tablist" aria-label="인디 분류"></div>
-      <div class="indie-grid" id="indieGrid" data-testid="indie-grid"></div>
-    </section>
+  <!-- ================= 특가·핫딜 ================= -->
+  <section class="block" id="deal" aria-labelledby="dealTitle">
+    <div class="block-head">
+      <h2 id="dealTitle"><span class="dot"></span>특가 · 핫딜</h2>
+      <span class="micro" id="dealNote">할인 소식</span>
+    </div>
+    <div class="deal-grid" id="dealGrid" data-testid="deal-grid"></div>
+  </section>
 
+  <div class="two-col">
     <!-- ================= 오픈소스 ================= -->
-    <section class="card section area-os" id="opensource" aria-labelledby="osTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico green" aria-hidden="true">🐙</span>
-          <div>
-            <h2 class="sec-title" id="osTitle">오픈소스 큐레이션</h2>
-            <p class="sec-sub">GitHub 트렌딩 · 오늘의 저장소</p>
-          </div>
-        </div>
+    <section class="block" id="opensource" aria-labelledby="osTitle">
+      <div class="block-head">
+        <h2 id="osTitle"><span class="dot"></span>오픈소스</h2>
+        <span class="micro">GitHub 트렌딩</span>
       </div>
-      <ul class="os-list" id="osList" data-testid="os-list"></ul>
+      <div class="os-list" id="osList" data-testid="os-list"></div>
     </section>
 
-    <!-- ================= 앱 · 게임 순위 ================= -->
-    <section class="card section area-apps" id="apps" aria-labelledby="appsTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico indigo" aria-hidden="true">📱</span>
-          <div>
-            <h2 class="sec-title" id="appsTitle">앱 · 게임 순위</h2>
-            <p class="sec-sub">앱스토어 무료 앱 · 스팀 최다 플레이</p>
-          </div>
-        </div>
+    <!-- ================= 앱·게임 ================= -->
+    <section class="block" id="apps" aria-labelledby="appsTitle">
+      <div class="block-head">
+        <h2 id="appsTitle"><span class="dot"></span>앱·게임 순위</h2>
+        <div class="chips inline" id="appTabs" role="tablist" aria-label="스토어"></div>
       </div>
-      <div class="chips" id="appTabs" role="tablist" aria-label="스토어"></div>
-      <ul class="app-list" id="appList" data-testid="app-list"></ul>
+      <div class="app-list" id="appList" data-testid="app-list"></div>
     </section>
-
-    <!-- ================= 해커톤 · 공모전 ================= -->
-    <section class="card section area-hack" id="hackathon" aria-labelledby="hackTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico gold" aria-hidden="true">🏆</span>
-          <div>
-            <h2 class="sec-title" id="hackTitle">해커톤 · 공모전</h2>
-            <p class="sec-sub">AI · 개발 · 창업 공모 일정</p>
-          </div>
-        </div>
-      </div>
-      <ul class="hack-list" id="hackList" data-testid="hack-list"></ul>
-    </section>
-
-    <!-- ================= AI 벤치마크 ================= -->
-    <section class="card section area-bench" id="benchmark" aria-labelledby="benchTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico mint" aria-hidden="true">✨</span>
-          <div>
-            <h2 class="sec-title" id="benchTitle">AI 벤치마크</h2>
-            <p class="sec-sub">요약·글쓰기용 모델 비교 (참고 지표)</p>
-          </div>
-        </div>
-        <div class="sec-tools">
-          <div class="seg" role="group" aria-label="지표" id="benchTabs">
-            <button type="button" data-bench="지능" aria-pressed="true">지능</button>
-            <button type="button" data-bench="속도" aria-pressed="false">속도</button>
-            <button type="button" data-bench="가성비" aria-pressed="false">가성비</button>
-          </div>
-        </div>
-      </div>
-      <div class="bench-list" id="benchList" data-testid="bench-list"></div>
-      <p class="micro-note" id="benchNote"></p>
-    </section>
-
-    <!-- ================= 방문 추이 ================= -->
-    <section class="card section area-chart" id="chart" aria-labelledby="chartTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico amber" aria-hidden="true">📊</span>
-          <div>
-            <h2 class="sec-title" id="chartTitle">일별 방문 추이</h2>
-            <p class="sec-sub">최근 7일 · <span id="chartSrc">샘플</span></p>
-          </div>
-        </div>
-        <div class="chart-num"><b id="chartTotal">0</b><span>방문</span><span class="trend-up" id="chartTrend"></span></div>
-      </div>
-      <div class="plot"><div class="bars" id="chartBars" data-testid="chart-bars" role="group" aria-label="최근 7일 방문수 막대 차트"></div></div>
-      <div class="axis" id="chartAxis"></div>
-    </section>
-
-    <!-- ================= 문의 및 제안 ================= -->
-    <section class="card section area-contact" id="contact" aria-labelledby="contactTitle">
-      <div class="sec-head">
-        <div class="sec-title-wrap">
-          <span class="sec-ico mint" aria-hidden="true">💬</span>
-          <div>
-            <h2 class="sec-title" id="contactTitle">문의 및 제안</h2>
-            <p class="sec-sub">오류 제보나 기능 제안을 남겨주시면 검토 후 답변드립니다.</p>
-          </div>
-        </div>
-      </div>
-      <div class="contact-wrap">
-        <form class="contact-form" id="contactForm" data-testid="contact-form">
-          <div class="field-row">
-            <label for="contactType">유형</label>
-            <select id="contactType" data-testid="contact-type">
-              <option value="오류 제보">오류 제보</option>
-              <option value="기능 제안">기능 제안</option>
-              <option value="소스 추가 요청">소스 추가 요청</option>
-            </select>
-          </div>
-          <div class="field-row">
-            <label for="contactTitleInput">제목</label>
-            <input id="contactTitleInput" type="text" maxlength="80" placeholder="예) 부동산 실거래가 소스가 보고 싶어요" data-testid="contact-title">
-          </div>
-          <div class="field-row">
-            <label for="contactBody">내용</label>
-            <textarea id="contactBody" rows="4" maxlength="1200" placeholder="어느 화면에서 무엇이 불편했는지 적어주세요. 링크가 있으면 함께 붙여주세요." data-testid="contact-body"></textarea>
-          </div>
-          <div class="contact-actions">
-            <button class="btn btn-amber" type="submit" data-testid="contact-submit">제안 저장</button>
-            <button class="btn" type="button" id="contactCopy" data-testid="contact-copy">📋 내용 복사</button>
-            <button class="btn" type="button" id="contactIssue" data-testid="contact-issue">🐙 GitHub Issue로 등록</button>
-            <span class="spacer"></span>
-            <span class="micro-note" id="contactHint">저장하면 이 브라우저의 <b>내 제안 기록</b>에 남습니다.</span>
-          </div>
-        </form>
-        <aside class="contact-log">
-          <div class="cl-head"><strong>내 제안 기록</strong><span class="pill pill-count" id="inqCount">0</span></div>
-          <div id="inqList" data-testid="contact-list"></div>
-        </aside>
-      </div>
-    </section>
-
-    </div>
-
-    <div class="col-side">
-    <!-- ================= 사이드: 급상승 키워드 ================= -->
-    <aside class="card aside rank area-rank" id="rank" aria-labelledby="rankTitle">
-      <div class="aside-head">
-        <h2 id="rankTitle">📈 급상승 키워드</h2>
-        <span class="pill pill-amber">LIVE</span>
-      </div>
-      <div class="rank-tabs" id="rankTabs" role="tablist" aria-label="급상승 키워드 분야"></div>
-      <ol class="rank-list" id="rankList" data-testid="rank-list"></ol>
-      <div class="rank-foot">
-        <span>키워드를 누르면 통합 피드가 필터됩니다</span>
-      </div>
-      <div class="rank-extra">
-        <p class="re-head">많이 읽는 글</p>
-        <div id="rankExtra"></div>
-      </div>
-    </aside>
-
-    <!-- ================= 사이드: 스크랩 · 구조 ================= -->
-    <aside class="card aside area-scrap" id="scrapBox" aria-labelledby="scrapTitle">
-      <div class="aside-head"><h2 id="scrapTitle">⭐ 내 스크랩함</h2><span class="pill pill-count" id="scrapCount2">0</span></div>
-      <div class="scrap-list" id="scrapPreview"></div>
-      <div class="aside-foot">
-        <button class="btn btn-sm" type="button" id="openScrapBox">모두 보기</button>
-        <button class="btn btn-sm" type="button" id="exportTop">JSON 백업</button>
-      </div>
-      <p class="micro-note">이 브라우저에만 저장됩니다(localStorage). 기기를 바꾸면 JSON으로 옮겨 주세요.</p>
-      <input type="file" id="importFile" accept="application/json,.json" hidden>
-    </aside>
-
-    <aside class="card aside area-struct" id="struct" aria-labelledby="structTitle">
-      <div class="aside-head"><h2 id="structTitle">⚙️ 수집·요약 구조</h2></div>
-      <div class="pipe" aria-hidden="true">
-        <div class="pipe-row"><span>1</span><b>수집</b><i>GitHub Actions 07:00 / 19:00</i></div>
-        <div class="pipe-row"><span>2</span><b>정규화·중복 제거</b><i>제목 유사도 0.85</i></div>
-        <div class="pipe-row"><span>3</span><b>AI 요약</b><i>Gemini Flash 무료 티어</i></div>
-        <div class="pipe-row"><span>4</span><b>data.json</b><i>GitHub Pages 배포</i></div>
-      </div>
-      <span class="zero-badge">💰 서버비 0원 · 공개 저장소</span>
-      <button class="btn btn-dark btn-block" type="button" id="openArch2" data-testid="arch-open-2">구조 자세히 보기</button>
-    </aside>
-
-    </div>
-
   </div>
+
+  <!-- ================= 해커톤 ================= -->
+  <section class="block" id="hackathon" aria-labelledby="hackTitle">
+    <div class="block-head">
+      <h2 id="hackTitle"><span class="dot"></span>해커톤 · 공모전</h2>
+      <span class="micro">마감 임박 순</span>
+    </div>
+    <div class="hack-grid" id="hackList" data-testid="hack-list"></div>
+  </section>
+
+  <!-- 광고 슬롯 3 · 하단 배너 -->
+  <div class="ad-wrap">
+    <div class="ad-slot" data-ad="bottom" data-size="728 × 90 / 320 × 100" aria-label="광고"></div>
+  </div>
+
 </main>
 
-<footer class="footer">
-  <div class="wrap footer-inner">
-    <div class="foot-note">
-      <b>노리짱 트래픽센트 v2</b> — 주요 커뮤니티 · 실시간 뉴스 · 유튜브 · 블로그 · 핫딜 · 인디 · 오픈소스 · 앱·게임 · 해커톤 · 벤치마크를 한 화면에서.<br>
-      수집 데이터는 공개 RSS·공개 API 결과이며, <b>‘예시’ 배지가 붙은 항목</b>은 실제 수집이 아닌 화면 확인용 샘플입니다.
-      스크랩·글감 메모·문의 기록은 이 브라우저(localStorage)에만 저장되고 외부로 전송되지 않습니다.
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <span class="brand-mark small" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="24" height="24"><rect width="32" height="32" rx="9" fill="#111827"/><path d="M8.5 22.5 14 15.4l4 3.4 5.2-8.3" fill="none" stroke="#E11D48" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23.4" cy="10.4" r="2.6" fill="#0D9488"/></svg>
+      </span>
+      <div>
+        <b>트렌드픽</b>
+        <p class="micro-note">공개 RSS · 공개 API 로 수집한 실제 데이터만 보여 줍니다.<br>기사 저작권은 각 매체에 있으며, 모든 카드는 원문으로 연결됩니다.</p>
+      </div>
     </div>
     <div class="foot-links">
-      <button type="button" id="footArch">⚙️ 수집·요약 구조</button>
-      <button type="button" id="footContact" data-goto="contact">💬 문의 및 제안</button>
-      <span>화면 <code>index.html</code> · 데이터 <code>data.json</code></span>
-      <span>© 2026 Nori Traffic Scent · 만수르 비서실 제작</span>
+      <button type="button" id="adPreviewBtn" data-testid="ad-preview">📢 광고 자리 미리보기</button>
+      <a id="repoLink" href="https://github.com/econature7-lab/nori-traffic-scent" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://econature7-lab.github.io/nori-traffic-scent/" target="_blank" rel="noopener">사이트 주소</a>
+      <span class="micro" id="footStamp">© 2026 TrendPick</span>
     </div>
   </div>
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<div class="modal-root" id="modalRoot" hidden>
-  <div class="modal-backdrop" data-close></div>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal" id="modal" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
     <div class="modal-head">
-      <div><p class="modal-eyebrow" id="modalEyebrow"></p><h2 class="modal-title" id="modalTitle"></h2></div>
+      <div><p class="eyebrow" id="mEyebrow"></p><h2 id="mTitle"></h2></div>
       <button class="modal-x" type="button" data-close aria-label="닫기" data-testid="modal-close">✕</button>
     </div>
-    <div class="modal-body" id="modalBody"></div>
-    <div class="modal-foot" id="modalFoot"></div>
+    <div class="modal-body" id="mBody"></div>
+    <div class="modal-foot" id="mFoot"></div>
   </div>
 </div>
 
-<noscript><p style="padding:24px;text-align:center">이 화면은 자바스크립트가 필요합니다.</p></noscript>
+<noscript><p style="padding:32px;text-align:center;font-family:sans-serif">이 화면은 자바스크립트가 필요합니다.</p></noscript>
 
 <script id="embeddedData" type="application/json">{{DATA_JSON}}</script>
 <script>
