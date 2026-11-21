@@ -1,7 +1,7 @@
 name: collect
 
-# 노리짱 트래픽센트 v2 · 하루 2회 자동 수집 (07:00 / 19:00 KST)
-# GitHub Actions cron 은 UTC 기준입니다 → 22:00 UTC = 07:00 KST(다음날), 10:00 UTC = 19:00 KST
+# 트렌드픽 TrendPick v3 · 하루 2회 자동 수집 (07:00 / 19:00 KST)
+# GitHub Actions cron 은 UTC 기준입니다 → 22:00 UTC = 07:00 KST, 10:00 UTC = 19:00 KST
 on:
   schedule:
     - cron: '0 22 * * *'   # 07:00 KST
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:        # 수동 실행 버튼
 
 permissions:
-  contents: write           # data.json 자동 커밋
+  contents: write           # data.json · index.html 자동 커밋
 
 concurrency:
   group: collect
@@ -35,7 +35,7 @@ jobs:
 
       - name: 수집 (collector.py)
         env:
-          # 필요한 키만 GitHub 저장소 Settings → Secrets 에 넣으면 자동 사용되고,
+          # 필요한 키만 Settings → Secrets 에 넣으면 자동 사용되고,
           # 없으면 해당 소스만 안전하게 건너뜁니다.
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
@@ -44,21 +44,24 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python collector.py
 
-      - name: AI 요약 (summarize.py)
+      - name: AI 요약 (summarize.py · 키 없으면 규칙 기반 유지)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-2.5-flash
         run: python summarize.py
 
-      - name: data.json 자동 커밋
+      - name: 화면 재빌드 (build.py)
+        run: python build.py
+
+      - name: data.json · index.html 자동 커밋
         run: |
-          git config user.name  "nori-traffic-scent[bot]"
+          git config user.name  "trendpick[bot]"
           git config user.email "actions@users.noreply.github.com"
-          git add data.json data/ 2>/dev/null || git add data.json
+          git add data.json data/ index.html
           if git diff --cached --quiet; then
             echo "변경 없음 · 커밋 생략"
           else
-            git commit -m "data: auto collect $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            git commit -m "data: trendpick auto collect $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
             git push
           fi
 
@@ -75,10 +78,13 @@ jobs:
           d = json.loads(p.read_text(encoding="utf-8"))
           print("generated_at:", d.get("generated_at"))
           print("posts:", len(d.get("posts", [])), "news:", len(d.get("news", [])),
-                "videos:", len(d.get("videos", [])))
+                "videos:", len(d.get("videos", [])), "blogs:", len(d.get("blogs", [])))
+          th = d.get("thumbs", {}).get("all", {})
+          print("thumbnail:", th.get("with_image"), "/", th.get("total"),
+                f"({round((th.get('rate') or 0) * 100)}%)")
           ok = [r for r in d.get("collect_log", []) if r["status"] == "ok"]
           skip = [r for r in d.get("collect_log", []) if r["status"] != "ok"]
-          print("성공 소스:", len(ok), "/ 건너뜀:", len(skip))
+          print("성공 소스:", len(ok), "/ 기타:", len(skip))
           for r in skip:
               print("  -", r["source"], r["status"], r.get("error", "")[:60])
           PY
