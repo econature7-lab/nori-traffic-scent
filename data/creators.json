@@ -1,13 +1,13 @@
 {
   "schema": "trendpick/creators/1",
-  "generated_at": "2026-11-22T01:00:36+09:00",
+  "generated_at": "2026-11-22T21:05:24+09:00",
   "site": {
     "repo": "econature7-lab/nori-traffic-scent",
     "pages_url": "https://econature7-lab.github.io/nori-traffic-scent/"
   },
   "issue": {
-    "no": 3,
-    "label": "No.03 (11.22)",
+    "no": 5,
+    "label": "No.05 (11.22)",
     "date": "2026-11-22"
   },
   "schedule": {
@@ -20,240 +20,240 @@
   "top10": [
     {
       "rank": 1,
-      "keyword": "AI",
-      "rise": 249,
-      "source": "트렌드픽 수집",
+      "keyword": "남진",
+      "rise": 320,
+      "source": "Google Trends",
       "url": ""
     },
     {
       "rank": 2,
-      "keyword": "ai 버블",
+      "keyword": "AI",
+      "rise": 235,
+      "source": "트렌드픽 수집",
+      "url": ""
+    },
+    {
+      "rank": 3,
+      "keyword": "무디스",
       "rise": 200,
       "source": "Google Trends",
       "url": ""
     },
     {
-      "rank": 3,
-      "keyword": "울산",
-      "rise": 163,
-      "source": "트렌드픽 수집",
-      "url": ""
-    },
-    {
       "rank": 4,
-      "keyword": "대통령",
+      "keyword": "준비",
       "rise": 163,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 5,
-      "keyword": "적발",
-      "rise": 163,
-      "source": "트렌드픽 수집",
+      "keyword": "한전on",
+      "rise": 160,
+      "source": "Google Trends",
       "url": ""
     },
     {
       "rank": 6,
-      "keyword": "앤트로픽",
-      "rise": 163,
+      "keyword": "시장",
+      "rise": 148,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 7,
-      "keyword": "로또",
+      "keyword": "증안펀드",
       "rise": 148,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 8,
-      "keyword": "AI데이터센터",
+      "keyword": "중국",
       "rise": 148,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 9,
-      "keyword": "보안",
+      "keyword": "확보",
       "rise": 148,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 10,
-      "keyword": "상장",
+      "keyword": "수능",
       "rise": 148,
       "source": "트렌드픽 수집",
       "url": ""
     }
   ],
   "brief": {
-    "no": "No.03",
+    "no": "No.05",
     "date": "2026-11-22",
     "label": "11.22",
-    "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 · 주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12 · 김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(",
-    "lead": "IT·AI에서는 '주식만 떨어진 게 아니네…美 AI투자 지연 우려…' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '김민석 \"민주당 큰 고민 중 하나는 청년…더…' 소식이 눈에 띕니다. 오늘 수집한 101건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 6개 이슈를 골랐습니다.",
+    "title": "\"증시 방어 총력전\"… 불법 공매도 3개월간 특별감시 · “중국 경제 비관하면 허망할 것” 큰소리쳤는데…AI 주식서 2 · 정부, 증안펀드 즉시가동 준비 돌입",
+    "lead": "IT·AI에서는 '“중국 경제 비관하면 허망할 것” 큰소리쳤는데……' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '정부, 증안펀드 즉시가동 준비 돌입' 소식이 눈에 띕니다. 오늘 수집한 102건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 8개 이슈를 골랐습니다.",
     "engine": "rule-based",
     "picks": [
       {
         "rank": 1,
         "label": "경제·증시",
-        "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
+        "title": "\"증시 방어 총력전\"… 불법 공매도 3개월간 특별감시",
         "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/society/12215346"
+        "url": "https://www.mk.co.kr/news/stock/12215737"
       },
       {
         "rank": 2,
         "label": "IT·AI",
-        "title": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
+        "title": "“중국 경제 비관하면 허망할 것” 큰소리쳤는데…AI 주식서 2289조 증발?",
         "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/stock/12215325"
+        "url": "https://www.mk.co.kr/news/world/12215746"
       },
       {
         "rank": 3,
         "label": "부동산·정책",
-        "title": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
-        "source": "연합뉴스 정치",
-        "url": "https://www.yna.co.kr/view/AKR20261121040151001"
+        "title": "정부, 증안펀드 즉시가동 준비 돌입",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/stock/12215738"
       },
       {
         "rank": 4,
         "label": "사회·생활",
-        "title": "“은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동]",
-        "source": "조선일보",
-        "url": "https://www.chosun.com/sports/sports_general/2026/11/22/GIZTCOJXMVSDMM3CMQYGKYJSGI/"
+        "title": "[속보] 유엔기후총회, 화석연료 이견에 결렬…합의문 채택 불발",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/world/12215747"
       },
       {
         "rank": 5,
         "label": "경제·증시",
-        "title": "[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 19, 29, 40, 45’",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/society/12215342"
+        "title": "토스, 캐나다 현지 법인 설립…인허가·금융사 제휴 준비",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261122044700017"
       }
     ],
     "sections": [
       {
         "key": "경제·증시",
         "label": "경제·증시",
-        "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
-        "body": "매일경제·연합뉴스 산업 등이 전한 경제·증시 흐름입니다. 로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다 이어서 '[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 1', 'GTA 6, 출시 첫날 매출 5조원…3천250만장 팔려'도 함께 다뤄졌습니다.",
+        "title": "\"증시 방어 총력전\"… 불법 공매도 3개월간 특별감시",
+        "body": "매일경제·연합뉴스 경제 등이 전한 경제·증시 흐름입니다. \"증시 방어 총력전\"… 불법 공매도 3개월간 특별감시 이어서 '토스, 캐나다 현지 법인 설립…인허가·금융사 제휴 준비', 'F4 \"시장 상황 따라 증안펀드 바로 가동할 수 있게 준비 착수\"'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
+            "text": "\"증시 방어 총력전\"… 불법 공매도 3개월간 특별감시",
             "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/society/12215346"
+            "url": "https://www.mk.co.kr/news/stock/12215737"
           },
           {
-            "text": "[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 19, 29, 40, 45’",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/society/12215342"
+            "text": "토스, 캐나다 현지 법인 설립…인허가·금융사 제휴 준비",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261122044700017"
           },
           {
-            "text": "GTA 6, 출시 첫날 매출 5조원…3천250만장 팔려",
-            "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261121036200017"
+            "text": "F4 \"시장 상황 따라 증안펀드 바로 가동할 수 있게 준비 착수\"",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261122044300002"
           }
         ]
       },
       {
         "key": "IT·AI",
         "label": "IT·AI",
-        "title": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
-        "body": "매일경제·AI타임스 등이 전한 IT·AI 흐름입니다. 주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’ 이어서 '머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"', 'AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"'도 함께 다뤄졌습니다.",
+        "title": "“중국 경제 비관하면 허망할 것” 큰소리쳤는데…AI 주식서 2289조 증발?",
+        "body": "매일경제·연합뉴스 산업 등이 전한 IT·AI 흐름입니다. “중국 경제 비관하면 허망할 것” 큰소리쳤는데…AI 주식서 2289조 증발? 이어서 '앨리스 황 AI칩 밀반입에 캄보디아 범죄조직 연루', ''게임과 AI·모빌리티 융합' 지스타 폐막…20만1천명 방문'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
+            "text": "“중국 경제 비관하면 허망할 것” 큰소리쳤는데…AI 주식서 2289조 증발?",
             "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/stock/12215325"
+            "url": "https://www.mk.co.kr/news/world/12215746"
           },
           {
-            "text": "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217650"
+            "text": "앨리스 황 AI칩 밀반입에 캄보디아 범죄조직 연루",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/world/12215741"
           },
           {
-            "text": "AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217649"
+            "text": "'게임과 AI·모빌리티 융합' 지스타 폐막…20만1천명 방문",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261122045400017"
           }
         ]
       },
       {
         "key": "부동산·정책",
         "label": "부동산·정책",
-        "title": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
-        "body": "연합뉴스 정치·연합뉴스 산업·매일경제 등이 전한 부동산·정책 흐름입니다. 김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합) 이어서 '코레일 \"22일 첫차부터 경부선 일반열차 운행 재개 예정\"', '“내년엔 조금 더 좋아질 것”…이재명 대통령, 울산 전통시장서 민생 점검'도 함께 다뤄졌습니다.",
+        "title": "정부, 증안펀드 즉시가동 준비 돌입",
+        "body": "매일경제·연합뉴스 정치 등이 전한 부동산·정책 흐름입니다. 정부, 증안펀드 즉시가동 준비 돌입 이어서 '멀어지는 보수 대통합…張韓갈등 격화에 吳張·吳韓 기류도 미묘(종합)', '李대통령, 최교진 면직안 재가…靑 \"다음 인선 절차대로 진행\"(종합2보)'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
-            "source": "연합뉴스 정치",
-            "url": "https://www.yna.co.kr/view/AKR20261121040151001"
-          },
-          {
-            "text": "코레일 \"22일 첫차부터 경부선 일반열차 운행 재개 예정\"",
-            "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261121048700063"
-          },
-          {
-            "text": "“내년엔 조금 더 좋아질 것”…이재명 대통령, 울산 전통시장서 민생 점검",
+            "text": "정부, 증안펀드 즉시가동 준비 돌입",
             "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/politics/12215328"
+            "url": "https://www.mk.co.kr/news/stock/12215738"
+          },
+          {
+            "text": "멀어지는 보수 대통합…張韓갈등 격화에 吳張·吳韓 기류도 미묘(종합)",
+            "source": "연합뉴스 정치",
+            "url": "https://www.yna.co.kr/view/AKR20261121050251001"
+          },
+          {
+            "text": "李대통령, 최교진 면직안 재가…靑 \"다음 인선 절차대로 진행\"(종합2보)",
+            "source": "연합뉴스 정치",
+            "url": "https://www.yna.co.kr/view/AKR20261122024052001"
           }
         ]
       },
       {
         "key": "사회·생활",
         "label": "사회·생활",
-        "title": "“은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동]",
-        "body": "조선일보 등이 전한 사회·생활 흐름입니다. “은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동] 이어서 '보복 운전 당한 김동현 \"창문 내리니까 덜덜 떨며 인사\"', 'BTS 진, 96억원대 한남동 빌딩 매입…'지니빌딩' 이름 붙여'도 함께 다뤄졌습니다.",
+        "title": "[속보] 유엔기후총회, 화석연료 이견에 결렬…합의문 채택 불발",
+        "body": "매일경제·조선일보·연합뉴스 사회 등이 전한 사회·생활 흐름입니다. [속보] 유엔기후총회, 화석연료 이견에 결렬…합의문 채택 불발 이어서 '야노시호, ♥추성훈 은퇴에 \"남편 인생 파란만장…한국 덕분에 빛났다\" [', ''실종 7명' 해광호 수중수색 돌입…선체 진입로 확보 나서'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "“은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동]",
-            "source": "조선일보",
-            "url": "https://www.chosun.com/sports/sports_general/2026/11/22/GIZTCOJXMVSDMM3CMQYGKYJSGI/"
+            "text": "[속보] 유엔기후총회, 화석연료 이견에 결렬…합의문 채택 불발",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/world/12215747"
           },
           {
-            "text": "보복 운전 당한 김동현 \"창문 내리니까 덜덜 떨며 인사\"",
+            "text": "야노시호, ♥추성훈 은퇴에 \"남편 인생 파란만장…한국 덕분에 빛났다\" [전문]",
             "source": "조선일보",
-            "url": "https://www.chosun.com/entertainments/2026/11/22/QFUL3JN2GRAN7EWZ3X6XK3PXGI/"
+            "url": "https://www.chosun.com/entertainments/broadcast/2026/11/22/MYYGINTEME3DEZLFMRSTKMTFG4/"
           },
           {
-            "text": "BTS 진, 96억원대 한남동 빌딩 매입…'지니빌딩' 이름 붙여",
-            "source": "조선일보",
-            "url": "https://www.chosun.com/entertainments/2026/11/22/CJXM2JVCFJEUDGSBUPEB4ZYEZE/"
+            "text": "'실종 7명' 해광호 수중수색 돌입…선체 진입로 확보 나서",
+            "source": "연합뉴스 사회",
+            "url": "https://www.yna.co.kr/view/AKR20261122050100063"
           }
         ]
       },
       {
         "key": "estate",
         "label": "부동산·경매",
-        "title": "신사임당 유투브 \"살다살다 이런 불경기는 처음\" 부동산으로 돈 버는 시대 끝났다",
-        "body": "82cook에서 '신사임당 유투브 \"살다살다 이런 불경기는 처음\" 부동산으로 돈 버는 시대 끝났다' 글이 올라왔습니다.",
+        "title": "아파트서 아기 안고 추락한 40대 여성 숨져…생후 5개월 아기는 다행히도",
+        "body": "매일경제에서 '아파트서 아기 안고 추락한 40대 여성 숨져…생후 5개월 아기는 다행히도' 글이 올라왔습니다.",
         "points": [
           {
-            "text": "신사임당 유투브 \"살다살다 이런 불경기는 처음\" 부동산으로 돈 버는 시대 끝났다",
-            "source": "82cook",
-            "url": "https://www.82cook.com/entiz/read.php?num=4261321"
+            "text": "아파트서 아기 안고 추락한 40대 여성 숨져…생후 5개월 아기는 다행히도",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/society/12215732"
           }
         ]
       },
       {
         "key": "ai",
         "label": "AI·부업",
-        "title": "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
-        "body": "AI타임스에서 '엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락' 글이 올라왔습니다. 전자신문에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "title": "안민석 교육감 \"AI 시대 수명 다한 수능…교육·평가 새판 짜야\"",
+        "body": "연합뉴스 산업에서 '안민석 교육감 \"AI 시대 수명 다한 수능…교육·평가 새판 짜야\"' 글이 올라왔습니다. 블랙컴뱃에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
         "points": [
           {
-            "text": "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217645"
+            "text": "안민석 교육감 \"AI 시대 수명 다한 수능…교육·평가 새판 짜야\"",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261122044000061"
           },
           {
-            "text": "울산 SK AI데이터센터 찾은 李…“韓 AX는 AI 고속도로가 열 것”",
-            "source": "전자신문",
-            "url": "https://www.etnews.com/20261121000052"
+            "text": "추성훈 vs 크리스 리벤 [Official Trailer]",
+            "source": "블랙컴뱃",
+            "url": "https://www.youtube.com/watch?v=pVFdva-Ifns"
           }
         ]
       }
@@ -265,89 +265,89 @@
       "count": 13,
       "items": [
         {
-          "title": "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
-          "source": "AI타임스",
-          "url": "https://www.aitimes.com/news/articleView.html?idxno=217645",
-          "kind": "news",
-          "time": "14시간 전",
-          "hot": 82
-        },
-        {
-          "title": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
+          "title": "“중국 경제 비관하면 허망할 것” 큰소리쳤는데…AI 주식서 2289조 증발?",
           "source": "매일경제",
-          "url": "https://www.mk.co.kr/news/stock/12215325",
+          "url": "https://www.mk.co.kr/news/world/12215746",
           "kind": "news",
-          "time": "5시간 전",
+          "time": "12분 전",
           "hot": 80
         },
         {
-          "title": "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
-          "source": "AI타임스",
-          "url": "https://www.aitimes.com/news/articleView.html?idxno=217650",
+          "title": "앨리스 황 AI칩 밀반입에 캄보디아 범죄조직 연루",
+          "source": "매일경제",
+          "url": "https://www.mk.co.kr/news/world/12215741",
           "kind": "news",
-          "time": "6시간 전",
+          "time": "1시간 전",
           "hot": 79
         },
         {
-          "title": "AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
-          "source": "AI타임스",
-          "url": "https://www.aitimes.com/news/articleView.html?idxno=217649",
+          "title": "'게임과 AI·모빌리티 융합' 지스타 폐막…20만1천명 방문",
+          "source": "연합뉴스 산업",
+          "url": "https://www.yna.co.kr/view/AKR20261122045400017",
           "kind": "news",
-          "time": "6시간 전",
+          "time": "1시간 전",
           "hot": 78
         },
         {
-          "title": "울산 SK AI데이터센터 찾은 李…“韓 AX는 AI 고속도로가 열 것”",
-          "source": "전자신문",
-          "url": "https://www.etnews.com/20261121000052",
+          "title": "안민석 교육감 \"AI 시대 수명 다한 수능…교육·평가 새판 짜야\"",
+          "source": "연합뉴스 산업",
+          "url": "https://www.yna.co.kr/view/AKR20261122044000061",
           "kind": "news",
-          "time": "6시간 전",
+          "time": "2시간 전",
           "hot": 77
+        },
+        {
+          "title": "[카카오 리부트]〈상〉브라이언이 돌아왔다…사법 족쇄 벗고 재도약 시동",
+          "source": "전자신문",
+          "url": "https://www.etnews.com/20261120000270",
+          "kind": "news",
+          "time": "3시간 전",
+          "hot": 76
         }
       ]
     },
     "estate": {
       "label": "부동산·경매",
-      "count": 9,
+      "count": 8,
       "items": [
         {
-          "title": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
-          "source": "연합뉴스 정치",
-          "url": "https://www.yna.co.kr/view/AKR20261121040151001",
+          "title": "정부, 증안펀드 즉시가동 준비 돌입",
+          "source": "매일경제",
+          "url": "https://www.mk.co.kr/news/stock/12215738",
           "kind": "news",
-          "time": "4시간 전",
+          "time": "1시간 전",
           "hot": 72
         },
         {
-          "title": "코레일 \"22일 첫차부터 경부선 일반열차 운행 재개 예정\"",
-          "source": "연합뉴스 산업",
-          "url": "https://www.yna.co.kr/view/AKR20261121048700063",
+          "title": "멀어지는 보수 대통합…張韓갈등 격화에 吳張·吳韓 기류도 미묘(종합)",
+          "source": "연합뉴스 정치",
+          "url": "https://www.yna.co.kr/view/AKR20261121050251001",
           "kind": "news",
-          "time": "5시간 전",
+          "time": "1시간 전",
           "hot": 71
         },
         {
-          "title": "“내년엔 조금 더 좋아질 것”…이재명 대통령, 울산 전통시장서 민생 점검",
-          "source": "매일경제",
-          "url": "https://www.mk.co.kr/news/politics/12215328",
+          "title": "李대통령, 최교진 면직안 재가…靑 \"다음 인선 절차대로 진행\"(종합2보)",
+          "source": "연합뉴스 정치",
+          "url": "https://www.yna.co.kr/view/AKR20261122024052001",
           "kind": "news",
-          "time": "5시간 전",
+          "time": "1시간 전",
           "hot": 70
         },
         {
-          "title": "한병도, 국힘 대구 장외집회에 \"민생 팽개친 길바닥 정치\" 비판",
-          "source": "연합뉴스 정치",
-          "url": "https://www.yna.co.kr/view/AKR20261121046100001",
+          "title": "아파트서 아기 안고 추락한 40대 여성 숨져…생후 5개월 아기는 다행히도",
+          "source": "매일경제",
+          "url": "https://www.mk.co.kr/news/society/12215732",
           "kind": "news",
-          "time": "6시간 전",
+          "time": "1시간 전",
           "hot": 69
         },
         {
-          "title": "추미애 \"조희대 대법원장 탄핵 실행, 좌고우면 안 돼\"",
-          "source": "연합뉴스 정치",
-          "url": "https://www.yna.co.kr/view/AKR20261121045800061",
+          "title": "한전, 고객 등 개인정보 152만여건 유출…주민·계좌번호 포함(종합)",
+          "source": "연합뉴스 산업",
+          "url": "https://www.yna.co.kr/view/AKR20261122042851003",
           "kind": "news",
-          "time": "6시간 전",
+          "time": "1시간 전",
           "hot": 68
         }
       ]
@@ -359,13 +359,39 @@
     },
     "apptech": {
       "label": "앱테크·핫딜",
-      "count": 0,
-      "items": []
+      "count": 2,
+      "items": [
+        {
+          "title": "사내 설치형 Git 서버·CI/CD 비교 – GitLab·Gitea·OneDev·GitHub Enterprise Server, 무료판에서 되는 ...",
+          "source": "GeekNews",
+          "url": "https://news.hada.io/topic?id=37621&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+          "kind": "blog",
+          "time": "2시간 전",
+          "hot": 62
+        },
+        {
+          "title": "배민의 ‘구조적 상생’, 무료배달 다음 전장은 ‘사장님 마음’",
+          "source": "바이라인네트워크",
+          "url": "https://byline.network/2026/11/20_29182737-2/",
+          "kind": "blog",
+          "time": "5시간 전",
+          "hot": 62
+        }
+      ]
     },
     "build": {
       "label": "건축·입찰",
-      "count": 0,
-      "items": []
+      "count": 1,
+      "items": [
+        {
+          "title": "DL이앤씨, 성수2지구 시공권 확보…공사비 2조137억원",
+          "source": "연합뉴스 경제",
+          "url": "https://www.yna.co.kr/view/AKR20261122023000003",
+          "kind": "news",
+          "time": "8시간 전",
+          "hot": 81
+        }
+      ]
     }
   },
   "note": "트렌드픽이 하루 두 번 만드는 경량 피드입니다. 출처 URL을 함께 보관하고, 원문 확인 후 인용하세요."
