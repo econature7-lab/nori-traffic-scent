@@ -1,62 +1,62 @@
 {
   "date": "2026-11-22",
   "issue": {
-    "no": 3,
-    "label": "No.03 (11.22)",
+    "no": 4,
+    "label": "No.04 (11.22)",
     "date": "2026-11-22"
   },
-  "generated_at": "2026-11-22T01:00:36+09:00",
+  "generated_at": "2026-11-22T10:58:08+09:00",
   "brief": {
-    "no": "No.03",
+    "no": "No.04",
     "date": "2026-11-22",
     "label": "11.22",
     "weekday": "일",
-    "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 · 주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12 · 김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(",
-    "lead": "IT·AI에서는 '주식만 떨어진 게 아니네…美 AI투자 지연 우려…' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '김민석 \"민주당 큰 고민 중 하나는 청년…더…' 소식이 눈에 띕니다. 오늘 수집한 101건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 6개 이슈를 골랐습니다.",
+    "title": "[연합뉴스 이 시각 헤드라인] · \"잘하는애 옆에 잘하는애\" K-파라탁구.세계선수권서 中만리장성 · 정점식 \"정부, 블랙먼데이 가능성 대비 긴급조치 준비해야\"",
+    "lead": "IT·AI에서는 '\"잘하는애 옆에 잘하는애\" K-파라탁구.세계선수…' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '정점식 \"정부, 블랙먼데이 가능성 대비 긴급…' 소식이 눈에 띕니다. 오늘 수집한 101건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 8개 이슈를 골랐습니다.",
     "picks": [
       {
         "rank": 1,
         "label": "경제·증시",
-        "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/society/12215346",
-        "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261121.250059205dae4659a8362acc7f3b548e_R.png"
+        "title": "[연합뉴스 이 시각 헤드라인]",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261122017400011",
+        "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/21/PYH2026112102340001300_P2.jpg"
       },
       {
         "rank": 2,
         "label": "IT·AI",
-        "title": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/stock/12215325",
-        "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261120.5b6bff9dcbbe475787b166cfa6ac67d1_R.png"
+        "title": "\"잘하는애 옆에 잘하는애\" K-파라탁구.세계선수권서 中만리장성 깨고 종합1위 쾌거! 윤지유X김현욱X서수연 2관왕[ITTF파타야세계선수권]",
+        "source": "조선일보",
+        "url": "https://www.chosun.com/sports/sports_general/2026/11/21/GI4TANTBHFSWCMDGGJTDAYJZMU/",
+        "img": "https://www.chosun.com/resizer/v2/GFTDOMJSGRSWENRVGZRGENLDHA.jpg?auth=cc2acc05922b2e8d2cf0bd783b81be8163bd660179b754c80138daa5fbed01b8&smart=true&width=700&height=525"
       },
       {
         "rank": 3,
         "label": "부동산·정책",
-        "title": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
-        "source": "연합뉴스 정치",
-        "url": "https://www.yna.co.kr/view/AKR20261121040151001",
-        "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/21/PYH2026112103430001300_P2.jpg"
+        "title": "정점식 \"정부, 블랙먼데이 가능성 대비 긴급조치 준비해야\"",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261122016800001",
+        "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/19/PYH2026111908920001300_P2.jpg"
       },
       {
         "rank": 4,
         "label": "사회·생활",
-        "title": "“은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동]",
-        "source": "조선일보",
-        "url": "https://www.chosun.com/sports/sports_general/2026/11/22/GIZTCOJXMVSDMM3CMQYGKYJSGI/",
-        "img": "https://www.chosun.com/resizer/v2/ME2TOMRYMUZGGMLBGQZDIYZQMI.jpg?auth=4329669dede183516482cdaebea870813dffa4ccdd45469b0792c5f4db41615e&smart=true&width=530&height=706"
+        "title": "“그 선생님 정말…” 단톡방서 담임 헐뜯은 학부모들 명예훼손 혐의 ‘무죄’",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/society/12215443",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/22/news-p.v1.20261122.31a2189fa5a34fb4ab86b73251ea2dca_R.png"
       },
       {
         "rank": 5,
         "label": "경제·증시",
-        "title": "[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 19, 29, 40, 45’",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/society/12215342",
-        "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261121.3547d2bec587414f9b5bf8a7ae8d69f5_R.png"
+        "title": "대구시, 내년부터 미취업 청년 시험 응시료 연 최대 12만원 지원",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261122015400053",
+        "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/22/AKR20261122015400053_01_i_P2.jpg"
       }
     ],
     "metrics": {
-      "topics": 6,
+      "topics": 8,
       "news": 32,
       "items": 101
     },
@@ -65,23 +65,23 @@
         "key": "경제·증시",
         "label": "경제·증시",
         "emoji": "📰",
-        "title": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
-        "body": "매일경제·연합뉴스 산업 등이 전한 경제·증시 흐름입니다. 로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다 이어서 '[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 1', 'GTA 6, 출시 첫날 매출 5조원…3천250만장 팔려'도 함께 다뤄졌습니다.",
+        "title": "[연합뉴스 이 시각 헤드라인]",
+        "body": "연합뉴스 경제·연합뉴스 산업 등이 전한 경제·증시 흐름입니다. [연합뉴스 이 시각 헤드라인] 이어서 '대구시, 내년부터 미취업 청년 시험 응시료 연 최대 12만원 지원', '쿠팡, 전북 중소기업 47개사 상품 품평회…우수상품 입점 지원'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "로또 2등, 판매점 한곳서 ‘10장’ 쏟아졌다…동일인이면 5억 받는다",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/society/12215346"
+            "text": "[연합뉴스 이 시각 헤드라인]",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261122017400011"
           },
           {
-            "text": "[속보] 로또 제1251회 1등 14명, 20억 대박…‘14, 18, 19, 29, 40, 45’",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/society/12215342"
+            "text": "대구시, 내년부터 미취업 청년 시험 응시료 연 최대 12만원 지원",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261122015400053"
           },
           {
-            "text": "GTA 6, 출시 첫날 매출 5조원…3천250만장 팔려",
+            "text": "쿠팡, 전북 중소기업 47개사 상품 품평회…우수상품 입점 지원",
             "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261121036200017"
+            "url": "https://www.yna.co.kr/view/AKR20261122014400030"
           }
         ]
       },
@@ -89,23 +89,23 @@
         "key": "IT·AI",
         "label": "IT·AI",
         "emoji": "📰",
-        "title": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
-        "body": "매일경제·AI타임스 등이 전한 IT·AI 흐름입니다. 주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’ 이어서 '머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"', 'AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"'도 함께 다뤄졌습니다.",
+        "title": "\"잘하는애 옆에 잘하는애\" K-파라탁구.세계선수권서 中만리장성 깨고 종합1위 쾌거! 윤지유X김현욱X서수연 2관왕[ITTF파타야세계선수권]",
+        "body": "조선일보·매일경제 등이 전한 IT·AI 흐름입니다. \"잘하는애 옆에 잘하는애\" K-파라탁구.세계선수권서 中만리장성 깨고 종합1위 쾌거! 윤지유X김현욱X서수연 2관왕[ITTF파타야세계선수권] 이어서 '반도체 호황에도… “12월 제조업 경기 악화” 전망', 'AI 안경 부정행위, 반지가 리모컨이었다…“이미 이런 일 있었는데 왜 또'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "주식만 떨어진 게 아니네…美 AI투자 지연 우려에 고점서 12% 넘게 빠진 ‘이것’",
+            "text": "\"잘하는애 옆에 잘하는애\" K-파라탁구.세계선수권서 中만리장성 깨고 종합1위 쾌거! 윤지유X김현욱X서수연 2",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/sports/sports_general/2026/11/21/GI4TANTBHFSWCMDGGJTDAYJZMU/"
+          },
+          {
+            "text": "반도체 호황에도… “12월 제조업 경기 악화” 전망",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/economy/economy_general/2026/11/22/GI2DAY3EGBSWIOJXGQ3TKMTFME/"
+          },
+          {
+            "text": "AI 안경 부정행위, 반지가 리모컨이었다…“이미 이런 일 있었는데 왜 또”",
             "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/stock/12215325"
-          },
-          {
-            "text": "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217650"
-          },
-          {
-            "text": "AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217649"
+            "url": "https://www.mk.co.kr/news/society/12215433"
           }
         ]
       },
@@ -113,23 +113,23 @@
         "key": "부동산·정책",
         "label": "부동산·정책",
         "emoji": "📰",
-        "title": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
-        "body": "연합뉴스 정치·연합뉴스 산업·매일경제 등이 전한 부동산·정책 흐름입니다. 김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합) 이어서 '코레일 \"22일 첫차부터 경부선 일반열차 운행 재개 예정\"', '“내년엔 조금 더 좋아질 것”…이재명 대통령, 울산 전통시장서 민생 점검'도 함께 다뤄졌습니다.",
+        "title": "정점식 \"정부, 블랙먼데이 가능성 대비 긴급조치 준비해야\"",
+        "body": "연합뉴스 경제·연합뉴스 산업 등이 전한 부동산·정책 흐름입니다. 정점식 \"정부, 블랙먼데이 가능성 대비 긴급조치 준비해야\" 이어서 '한국 참여 컨소시엄, 5천600억원 규모 베트남 고속철 설계 수주', 'HD건설기계, 인도네시아에 통합제품센터 준공…동남아 공략 거점'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "김민석 \"민주당 큰 고민 중 하나는 청년…더 함께하고 싶다\"(종합)",
-            "source": "연합뉴스 정치",
-            "url": "https://www.yna.co.kr/view/AKR20261121040151001"
+            "text": "정점식 \"정부, 블랙먼데이 가능성 대비 긴급조치 준비해야\"",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261122016800001"
           },
           {
-            "text": "코레일 \"22일 첫차부터 경부선 일반열차 운행 재개 예정\"",
+            "text": "한국 참여 컨소시엄, 5천600억원 규모 베트남 고속철 설계 수주",
             "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261121048700063"
+            "url": "https://www.yna.co.kr/view/AKR20261122017700003"
           },
           {
-            "text": "“내년엔 조금 더 좋아질 것”…이재명 대통령, 울산 전통시장서 민생 점검",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/politics/12215328"
+            "text": "HD건설기계, 인도네시아에 통합제품센터 준공…동남아 공략 거점",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261122015900003"
           }
         ]
       },
@@ -137,23 +137,42 @@
         "key": "사회·생활",
         "label": "사회·생활",
         "emoji": "📰",
-        "title": "“은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동]",
-        "body": "조선일보 등이 전한 사회·생활 흐름입니다. “은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동] 이어서 '보복 운전 당한 김동현 \"창문 내리니까 덜덜 떨며 인사\"', 'BTS 진, 96억원대 한남동 빌딩 매입…'지니빌딩' 이름 붙여'도 함께 다뤄졌습니다.",
+        "title": "“그 선생님 정말…” 단톡방서 담임 헐뜯은 학부모들 명예훼손 혐의 ‘무죄’",
+        "body": "매일경제·조선일보 등이 전한 사회·생활 흐름입니다. “그 선생님 정말…” 단톡방서 담임 헐뜯은 학부모들 명예훼손 혐의 ‘무죄’ 이어서 '與 “사법부 독립 지키려 조희대 탄핵 추진…위헌위법 행위 사유”', '누범 기간 중 또… 초등학교 음악실 불 지른 20대 징역 2년'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "“은퇴 안하면 안되요?” 관중석 가득찬 팬들 응원문구 본 최민정 찐 반응은? [오!쎈 목동]",
-            "source": "조선일보",
-            "url": "https://www.chosun.com/sports/sports_general/2026/11/22/GIZTCOJXMVSDMM3CMQYGKYJSGI/"
+            "text": "“그 선생님 정말…” 단톡방서 담임 헐뜯은 학부모들 명예훼손 혐의 ‘무죄’",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/society/12215443"
           },
           {
-            "text": "보복 운전 당한 김동현 \"창문 내리니까 덜덜 떨며 인사\"",
-            "source": "조선일보",
-            "url": "https://www.chosun.com/entertainments/2026/11/22/QFUL3JN2GRAN7EWZ3X6XK3PXGI/"
+            "text": "與 “사법부 독립 지키려 조희대 탄핵 추진…위헌위법 행위 사유”",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/politics/12215442"
           },
           {
-            "text": "BTS 진, 96억원대 한남동 빌딩 매입…'지니빌딩' 이름 붙여",
+            "text": "누범 기간 중 또… 초등학교 음악실 불 지른 20대 징역 2년",
             "source": "조선일보",
-            "url": "https://www.chosun.com/entertainments/2026/11/22/CJXM2JVCFJEUDGSBUPEB4ZYEZE/"
+            "url": "https://www.chosun.com/national/2026/11/22/HCF73PBZ2JBHNJ5MAVSCG3PXGY/"
+          }
+        ]
+      },
+      {
+        "key": "mom",
+        "label": "맘카페·육아",
+        "emoji": "🌿",
+        "title": "[부산소식] 부산해양자연사박물관, 어린이복합문화공간 자원봉사자 모집",
+        "body": "연합뉴스 산업에서 '[부산소식] 부산해양자연사박물관, 어린이복합문화공간 자원봉사자 모집' 글이 올라왔습니다. 더쿠에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "points": [
+          {
+            "text": "[부산소식] 부산해양자연사박물관, 어린이복합문화공간 자원봉사자 모집",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261122012600051"
+          },
+          {
+            "text": "26년에도 아들한테는 라면에 계란 넣어주고 딸한테는 안넣어서 키운 엄마 존재",
+            "source": "더쿠",
+            "url": "https://theqoo.net/hot/4414375493"
           }
         ]
       },
@@ -161,32 +180,18 @@
         "key": "estate",
         "label": "부동산·경매",
         "emoji": "🏢",
-        "title": "신사임당 유투브 \"살다살다 이런 불경기는 처음\" 부동산으로 돈 버는 시대 끝났다",
-        "body": "82cook에서 '신사임당 유투브 \"살다살다 이런 불경기는 처음\" 부동산으로 돈 버는 시대 끝났다' 글이 올라왔습니다.",
+        "title": "서울 집값 93주 연속 상승.. '최대 7억' 재초환에 대출 축소설까지 '시끌' / SBS 실시간 라이브",
+        "body": "SBS 뉴스에서 '서울 집값 93주 연속 상승.. '최대 7억' 재초환에 대출 축소설까지 '시끌' / SBS 실시간 라' 글이 올라왔습니다. 연합뉴스 경제에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
         "points": [
           {
-            "text": "신사임당 유투브 \"살다살다 이런 불경기는 처음\" 부동산으로 돈 버는 시대 끝났다",
-            "source": "82cook",
-            "url": "https://www.82cook.com/entiz/read.php?num=4261321"
-          }
-        ]
-      },
-      {
-        "key": "ai",
-        "label": "AI·부업",
-        "emoji": "🤖",
-        "title": "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
-        "body": "AI타임스에서 '엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락' 글이 올라왔습니다. 전자신문에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
-        "points": [
-          {
-            "text": "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217645"
+            "text": "서울 집값 93주 연속 상승.. '최대 7억' 재초환에 대출 축소설까지 '시끌' / SBS 실시간 라이브",
+            "source": "SBS 뉴스",
+            "url": "https://www.youtube.com/watch?v=a4OzRrnprhU"
           },
           {
-            "text": "울산 SK AI데이터센터 찾은 李…“韓 AX는 AI 고속도로가 열 것”",
-            "source": "전자신문",
-            "url": "https://www.etnews.com/20261121000052"
+            "text": "아파트 옆동 실거래가로 증여세 부과…법원 \"문제 없어\"",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261121025900004"
           }
         ]
       }
@@ -195,82 +200,82 @@
     "past": []
   },
   "stats": {
-    "sources": 22,
+    "sources": 19,
     "collected": 97,
-    "live_sources": 22,
-    "skipped_sources": 3,
-    "elapsed_sec": 37.9
+    "live_sources": 23,
+    "skipped_sources": 2,
+    "elapsed_sec": 18.5
   },
   "ranks": [
     {
       "k": "AI",
       "r": 249,
       "url": "",
-      "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261120.5b6bff9dcbbe475787b166cfa6ac67d1_R.png",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/22/news-p.v1.20261122.328491d6bfab4877ba235c95fa69f498_R.png",
       "src": "트렌드픽 수집"
     },
     {
-      "k": "ai 버블",
+      "k": "수출규제",
       "r": 200,
       "url": "",
-      "img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTHUnRyOK2iHOsh5EcIfe3ejs0a3BMay8W6tKjVdCHnQ7RU8OcN1Jcne2g82jQ",
+      "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSjbM3LMCJRDNN_c9tM94r_iyP0ZBwvDRcCx6JQWLpZta66jHfl6pCWQVetMxI",
       "src": "Google Trends"
     },
     {
-      "k": "울산",
+      "k": "수험",
+      "r": 200,
+      "url": "",
+      "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQbYPuveEWKTbQZNJaxWR6DUKDKLrgfhgM4EbFvU5_DxYk0SyInoiDq5i75RHw",
+      "src": "Google Trends"
+    },
+    {
+      "k": "계속",
+      "r": 177,
+      "url": "",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/22/rcv.NEWSIS.NEWSIS.20261118.NISI20261118_0021537411_R.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "최대",
       "r": 163,
       "url": "",
-      "img": "https://img.etnews.com/news/article/2026/11/21/rcv.YNA.20261121.PYH2026112102660001300_P1.jpg",
+      "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/22/AKR20261122015400053_01_i_P2.jpg",
       "src": "트렌드픽 수집"
     },
     {
-      "k": "대통령",
+      "k": "이미",
       "r": 163,
       "url": "",
-      "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/21/PYH2026112102630001300_P2.jpg",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/22/news-p.v1.20261122.328491d6bfab4877ba235c95fa69f498_R.png",
       "src": "트렌드픽 수집"
     },
     {
-      "k": "적발",
+      "k": "에디터픽",
       "r": 163,
       "url": "",
-      "img": "https://i1.ytimg.com/vi/X8xmdyP_ma8/hqdefault.jpg",
+      "img": "https://i1.ytimg.com/vi/tWJblAIXV3I/hqdefault.jpg",
       "src": "트렌드픽 수집"
     },
     {
-      "k": "앤트로픽",
+      "k": "결혼",
       "r": 163,
       "url": "",
-      "img": "https://i3.ytimg.com/vi/rIm3jO6THRI/hqdefault.jpg",
+      "img": "https://i2.ytimg.com/vi/eMeNY9V3dXM/hqdefault.jpg",
       "src": "트렌드픽 수집"
     },
     {
-      "k": "로또",
-      "r": 148,
+      "k": "도경완",
+      "r": 160,
       "url": "",
-      "img": "https://pimg.mk.co.kr/news/cms/202611/21/news-p.v1.20261121.250059205dae4659a8362acc7f3b548e_R.png",
-      "src": "트렌드픽 수집"
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9im2_BOXLMhkjZTo4XVbS7OusL32bpNe8qJ6F2_55WMLc5e5fFhhC1T5YmpU",
+      "src": "Google Trends"
     },
     {
-      "k": "AI데이터센터",
-      "r": 148,
+      "k": "나경원",
+      "r": 160,
       "url": "",
-      "img": "https://img.etnews.com/news/article/2026/11/21/rcv.YNA.20261121.PYH2026112102660001300_P1.jpg",
-      "src": "트렌드픽 수집"
-    },
-    {
-      "k": "보안",
-      "r": 148,
-      "url": "",
-      "img": "https://img.etnews.com/news/article/2025/09/27/news-p.v1.20250927.69bad73c23624cf78a43a23beef06cea_P1.jpg",
-      "src": "트렌드픽 수집"
-    },
-    {
-      "k": "상장",
-      "r": 148,
-      "url": "",
-      "img": "https://i3.ytimg.com/vi/rIm3jO6THRI/hqdefault.jpg",
-      "src": "트렌드픽 수집"
+      "img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQIURiUTV9VNnKuxPKQFxn0pamqAyRVM8xvsOrZzsrBG2pD0G10gQhPT-UXGsA",
+      "src": "Google Trends"
     }
   ]
 }
