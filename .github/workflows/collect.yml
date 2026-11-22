@@ -1,11 +1,12 @@
 name: collect
 
-# 트렌드픽 TrendPick v3 · 하루 2회 자동 수집 (07:00 / 19:00 KST)
-# GitHub Actions cron 은 UTC 기준입니다 → 22:00 UTC = 07:00 KST, 10:00 UTC = 19:00 KST
+# 트렌드픽 TrendPick v3 · 하루 2회 자동 수집 (07:17 / 19:17 KST)
+# GitHub Actions cron 은 UTC 기준입니다 → 22:17 UTC = 07:17 KST, 10:17 UTC = 19:17 KST
+# (정각은 GitHub 대기열이 몰려 수십 분씩 밀리므로 17분으로 어긋나게 잡았습니다.)
 on:
   schedule:
-    - cron: '0 22 * * *'   # 07:00 KST
-    - cron: '0 10 * * *'   # 19:00 KST
+    - cron: '17 22 * * *'   # 07:17 KST
+    - cron: '17 10 * * *'   # 19:17 KST
   workflow_dispatch:        # 수동 실행 버튼
 
 permissions:
@@ -53,11 +54,13 @@ jobs:
       - name: 화면 재빌드 (build.py)
         run: python build.py
 
-      - name: data.json · index.html 자동 커밋
+      - name: data.json · index.html · 고정 페이지 자동 커밋
         run: |
           git config user.name  "trendpick[bot]"
           git config user.email "actions@users.noreply.github.com"
-          git add data.json data/ index.html
+          git add data.json data/ index.html \
+                  about.html policy.html privacy.html contact.html \
+                  robots.txt sitemap.xml
           if git diff --cached --quiet; then
             echo "변경 없음 · 커밋 생략"
           else
@@ -87,4 +90,9 @@ jobs:
           print("성공 소스:", len(ok), "/ 기타:", len(skip))
           for r in skip:
               print("  -", r["source"], r["status"], r.get("error", "")[:60])
+          c = pathlib.Path("data/creators.json")
+          if c.exists():
+              cc = json.loads(c.read_text(encoding="utf-8"))
+              print("creators.json:", cc.get("generated_at"),
+                    "topics", {k: len(v.get("items", [])) for k, v in cc.get("topics", {}).items()})
           PY
