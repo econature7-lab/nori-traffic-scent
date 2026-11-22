@@ -27,6 +27,27 @@
     preview: false                // true 면 광고 ID 없이도 자리 미리보기
   };
 
+  /* ------------------------------------------------------------------
+     제휴(affiliate) 설정 — 쿠팡 파트너스
+     · #deal(특가·핫딜) 섹션 안에서만 노출됩니다. (뉴스·커뮤니티·광고 영역 미오염)
+     · coupangId 는 파트너스 추적 ID, 실제 수익 링크는 아래 TRENDPICK_DEAL_LINKS 에
+       단축링크(https://link.coupang.com/a/...)를 상품명/키워드와 함께 넣으면 그 링크가 우선 쓰입니다.
+       매핑이 없으면 쿠팡 최저가 비교 검색(/np/search?q=상품명)으로 연결됩니다.
+     · enabled:false 로 두면 고지·링크·검색창이 모두 사라집니다.
+  ------------------------------------------------------------------ */
+  var TRENDPICK_AFFILIATE = {
+    enabled: true,
+    coupangId: 'AF2392399',
+    notice: '이 영역에는 쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 제공받는 제휴 링크가 포함될 수 있습니다.'
+  };
+
+  // 파트너스 단축링크 수동 매핑 슬롯 — 예: '무선 청소기': 'https://link.coupang.com/a/abcd1234'
+  var TRENDPICK_DEAL_LINKS = {
+    // '상품명 또는 키워드': 'https://link.coupang.com/a/단축코드',
+  };
+
+  var SITE_URL = 'https://econature7-lab.github.io/nori-traffic-scent/';
+
   /* ------------------------------ 유틸 ------------------------------ */
   var $ = function (s, el) { return (el || document).querySelector(s); };
   var $$ = function (s, el) { return Array.prototype.slice.call((el || document).querySelectorAll(s)); };
@@ -57,6 +78,33 @@
     t.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function () { t.classList.remove('show'); }, 2300);
+  }
+
+  /* 클립보드 — navigator.clipboard 실패 시 textarea 폴백 */
+  function fallbackCopy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;left:-9999px;top:0;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return !!ok;
+    } catch (e) { return false; }
+  }
+  function copyText(text, okMsg) {
+    function done(ok) {
+      if (ok) toast(okMsg || '복사했습니다 · 붙여넣기만 하면 돼요');
+      else toast('복사가 막혔습니다 · 본문을 길게 눌러 직접 복사해 주세요');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallbackCopy(text)); });
+    } else {
+      done(fallbackCopy(text));
+    }
   }
 
   /* ------------------------------ 데이터 ------------------------------ */
@@ -564,6 +612,8 @@
       '</a>' +
       '<button class="pick-save" type="button" data-save="' + esc(f.id) + '" aria-pressed="' + on + '" ' +
         'aria-label="저장" data-testid="save-' + esc(f.id) + '">★</button>' +
+      '<button class="pick-copy" type="button" data-copy="' + esc(f.id) + '" ' +
+        'aria-label="글감 복사" title="X·블로그 글감으로 복사" data-testid="copy-' + esc(f.id) + '">📋</button>' +
       '<div class="pick-body">' +
         '<h3 class="pick-t"><a href="' + esc(f.url || '#') + '" target="_blank" rel="noopener">' + esc(f.title) + '</a></h3>' +
         '<div class="pick-meta">' + meta.filter(Boolean).map(function (m, i) {
@@ -651,40 +701,329 @@
     }).join('') : '<div class="empty"><b>영상이 없습니다</b>채널 RSS 수집을 확인하세요.</div>';
   }
 
-  /* --------------------------- 특가 · 핫딜 --------------------------- */
+  /* --------------------------- 특가 · 핫딜 (쿠팡 제휴) --------------------------- */
+  var DEAL_ROWS = [];
+
+  function coupangSearch(q) {
+    return 'https://www.coupang.com/np/search?q=' + encodeURIComponent(q || '');
+  }
+  function affiliateUrl(name) {
+    if (!TRENDPICK_AFFILIATE.enabled) return '';
+    var key = String(name || '').trim();
+    if (!key) return '';
+    var map = TRENDPICK_DEAL_LINKS || {};
+    for (var k in map) {
+      if (!Object.prototype.hasOwnProperty.call(map, k)) continue;
+      if (map[k] && key.indexOf(k) >= 0) return map[k];
+    }
+    return coupangSearch(key);
+  }
+  function dealCopyText(d) {
+    var name = d.name || d.title || '';
+    var lines = ['[핫딜] ' + name];
+    if (d.price) lines.push('가격: ' + won(d.price));
+    if (d.store) lines.push('판매처: ' + d.store);
+    if (d.url) lines.push('원문: ' + d.url);
+    var cp = affiliateUrl(name);
+    if (cp) lines.push('쿠팡 최저가 비교: ' + cp);
+    lines.push('');
+    lines.push('※ 쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 받을 수 있습니다.');
+    lines.push('오늘 브리프 더 보기 → ' + SITE_URL);
+    return lines.join('\n');
+  }
+  function dealCard(d, i, kind) {
+    var name = d.name || d.title || '';
+    var aff = affiliateUrl(name);
+    var body = kind === 'deal'
+      ? '<span class="deal-body"><span class="deal-name">' + esc(name) + '</span>' +
+        (d.price ? '<span class="deal-price">' + won(d.price) + '</span>' : '') +
+        '<span class="deal-store">' + esc(d.store || '') + '</span></span>'
+      : '<span class="deal-body"><span class="deal-name">' + esc(name) + '</span>' +
+        '<span class="deal-store">' + esc(d.source || '') + (d.time ? ' · ' + esc(d.time) : '') + '</span></span>';
+    return '<article class="deal-cell">' +
+      '<a class="deal" href="' + esc(d.url || aff || '#') + '" target="_blank" rel="noopener">' +
+        '<span class="deal-thumb">' + artSvg(kind === 'deal' ? 'deal' : 'apptech') +
+          (d.img ? '<img src="' + esc(d.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
+        '</span>' + body + '</a>' +
+      '<div class="deal-acts">' +
+        (aff ? '<a class="deal-coupang" href="' + esc(aff) + '" target="_blank" rel="noopener sponsored" data-testid="coupang-' + i + '">쿠팡 최저가 <span aria-hidden="true">↗</span></a>' : '') +
+        '<button class="deal-copy" type="button" data-deal-copy="' + i + '" data-testid="deal-copy-' + i + '">📋 글감</button>' +
+      '</div></article>';
+  }
+
+  function renderCoupangSearch() {
+    var box = $('#coupangSearch');
+    if (!box) return;
+    if (!TRENDPICK_AFFILIATE.enabled) { box.hidden = true; return; }
+    box.hidden = false;
+    if (box.getAttribute('data-ready') === '1') return;
+    box.innerHTML =
+      '<label class="cp-label" for="cpQ">쿠팡 최저가 비교 검색 <em>제휴</em></label>' +
+      '<form class="cp-row" id="cpForm" role="search">' +
+        '<input id="cpQ" type="search" autocomplete="off" placeholder="상품명을 넣으면 쿠팡 최저가로 바로 갑니다" data-testid="coupang-q">' +
+        '<button class="btn btn-ink" type="submit" data-testid="coupang-go">검색</button>' +
+      '</form>' +
+      '<p class="micro-note">쿠팡 파트너스 제휴 링크입니다. 구매가 이뤄지면 일정액의 수수료를 받을 수 있고, 가격은 쿠팡에서 그대로 확인됩니다.</p>';
+    box.setAttribute('data-ready', '1');
+    $('#cpForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var q = ($('#cpQ').value || '').trim();
+      if (!q) { toast('찾을 상품명을 적어 주세요'); $('#cpQ').focus(); return; }
+      window.open(coupangSearch(q), '_blank', 'noopener');
+    });
+  }
+
   function renderDeals() {
-    var deals = DATA.deals || [];
-    var grid = $('#dealGrid');
-    if (deals.length) {
-      $('#dealNote').textContent = '네이버 쇼핑 최저가 · ' + deals.length + '건';
-      grid.innerHTML = deals.slice(0, 6).map(function (d) {
-        return '<a class="deal" href="' + esc(d.url || '#') + '" target="_blank" rel="noopener">' +
-          '<span class="deal-thumb">' + artSvg('deal') +
-            (d.img ? '<img src="' + esc(d.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
-          '</span><span class="deal-body"><span class="deal-name">' + esc(d.name) + '</span>' +
-          '<span class="deal-price">' + won(d.price) + '</span>' +
-          '<span class="deal-store">' + esc(d.store || '') + '</span></span></a>';
-      }).join('');
-      return;
+    var note = $('#affNote');
+    if (note) {
+      note.textContent = TRENDPICK_AFFILIATE.enabled ? TRENDPICK_AFFILIATE.notice : '';
+      note.hidden = !TRENDPICK_AFFILIATE.enabled;
     }
-    // 네이버 쇼핑 API 키가 없을 때: 가짜 가격 대신 실제 수집된 할인·특가 소식을 보여 줍니다.
-    var rows = FEED.filter(function (f) { return f.cats.indexOf('apptech') >= 0; }).slice(0, 6);
     var section = document.getElementById('deal');
-    if (!rows.length) {
-      // 키도 없고 오늘 수집된 할인 소식도 없으면 빈 상자를 남기지 않고 섹션을 접습니다.
-      if (section) section.hidden = true;
-      return;
+    var grid = $('#dealGrid');
+    var deals = DATA.deals || [];
+
+    if (deals.length) {
+      DEAL_ROWS = deals.slice(0, 6).map(function (d) {
+        return { name: d.name, price: d.price, store: d.store, url: d.url, img: d.img };
+      });
+      $('#dealNote').textContent = '네이버 쇼핑 최저가 · ' + deals.length + '건';
+      grid.innerHTML = DEAL_ROWS.map(function (d, i) { return dealCard(d, i, 'deal'); }).join('');
+    } else {
+      // 네이버 쇼핑 API 키가 없을 때: 가짜 가격 대신 실제 수집된 할인·특가 소식을 그대로 씁니다.
+      var rows = FEED.filter(function (f) { return f.cats.indexOf('apptech') >= 0; }).slice(0, 6);
+      DEAL_ROWS = rows.map(function (f) {
+        return { name: f.title, store: f.source, time: f.time, url: f.url, img: f.img, source: f.source };
+      });
+      if (DEAL_ROWS.length) {
+        $('#dealNote').textContent = '오늘 수집된 할인·특가 소식';
+        grid.innerHTML = DEAL_ROWS.map(function (d, i) { return dealCard(d, i, 'news'); }).join('');
+      } else {
+        DEAL_ROWS = [];
+        $('#dealNote').textContent = '오늘은 할인 소식이 적은 날';
+        grid.innerHTML = '<div class="empty empty-slim" style="grid-column:1/-1"><b>오늘 수집된 할인·특가 소식이 없습니다</b>' +
+          '아래 쿠팡 최저가 검색에서 원하는 상품을 바로 비교해 볼 수 있습니다.</div>';
+      }
     }
-    if (section) section.hidden = false;
-    $('#dealNote').textContent = '오늘 수집된 할인·특가 소식';
-    grid.innerHTML = rows.length ? rows.map(function (f) {
-      return '<a class="deal" href="' + esc(f.url || '#') + '" target="_blank" rel="noopener">' +
-        '<span class="deal-thumb">' + artSvg('apptech') +
-          (f.img ? '<img src="' + esc(f.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
-        '</span><span class="deal-body"><span class="deal-name">' + esc(f.title) + '</span>' +
-        '<span class="deal-store">' + esc(f.source) + ' · ' + esc(f.time || '') + '</span></span></a>';
-    }).join('') : '<div class="empty" style="grid-column:1/-1"><b>오늘은 할인 소식이 적습니다</b>' +
-      '네이버 쇼핑 API 키를 연결하면 실제 최저가 목록이 이 자리에 채워집니다.</div>';
+    if (section) section.hidden = !(TRENDPICK_AFFILIATE.enabled || DEAL_ROWS.length);
+    renderCoupangSearch();
+  }
+
+  /* --------------------------- 글감 키트 (X · 네이버 블로그) --------------------------- */
+  // X(@jilyannori) 금기선 — 건축·부동산·맘카페·숲체험·정치·사건조사는 X 탭에서 자동 제외
+  var X_BLOCK_WORDS = [
+    '건축', '설계', '입찰', '나라장터', '시공', '감리', '인테리어', '공모', '하우재',
+    '부동산', '아파트', '전세', '매매', '청약', '임대', '집값', '재건축', '경매', '상가', '오피스텔',
+    '분양', '주택', '월세', '공시가격', '재개발', '입주', '중개', '노른자',
+    '맘카페', '육아', '유아', '초등', '어린이집', '유치원', '학부모', '보육', '급식', '돌봄',
+    '숲체험', '숲놀이', '그로우스페이스',
+    '대통령', '국회', '여당', '야당', '민주당', '국민의힘', '선거', '장관', '검찰', '재판', '탄핵',
+    '이재명', '윤석열', '한동훈', '청와대', '대통령실', '李',
+    '전쟁', '북한', '미사일', '사망', '시신', '살인', '성폭행', '성매수', '마약', '음주운전', '자살', '도박'
+  ];
+  var X_PREFER = ['AI', '인공지능', '챗GPT', '클로드', '제미나이', '앱', '핫딜', '할인', '유튜브',
+    '맛집', '여행', '생활', '꿀팁', 'IT', '스마트폰', '노트북', '로봇', '자동화', '무료'];
+
+  function hasWord(text, words) {
+    var low = String(text || '').toLowerCase();
+    for (var i = 0; i < words.length; i++) {
+      if (low.indexOf(String(words[i]).toLowerCase()) >= 0) return true;
+    }
+    return false;
+  }
+  function xSafe(c) {
+    return !hasWord([c.raw || c.title, c.source, c.section].join(' '), X_BLOCK_WORDS);
+  }
+  function cleanTitle(t) {
+    var s = String(t || '').replace(/\s+/g, ' ').trim();
+    if (s.length > 70) {
+      var parts = s.split(/\s*[/•|]\s*/).filter(Boolean);
+      if (parts.length > 1 && parts[0].length >= 12) s = parts[0];
+      if (s.length > 92) s = s.slice(0, 90) + '…';
+    }
+    return s;
+  }
+  function xScore(c) {
+    var s = c.hot || 40;
+    if (hasWord(c.title, X_PREFER)) s += 22;
+    if (c.cat === 'ai') s += 18;
+    else if (c.cat === 'apps') s += 10;
+    else if (c.cat === 'youtube') s += 8;
+    return s;
+  }
+  function prettyDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '');
+    if (!m) return iso || '';
+    return Number(m[2]) + '월 ' + Number(m[3]) + '일';
+  }
+  function kitCandidates() {
+    var pool = [];
+    function push(title, source, url, cat, hot, section) {
+      if (!title || !url) return;
+      pool.push({ raw: String(title), title: cleanTitle(title), source: source || '', url: url,
+        cat: cat || 'news', hot: hot || 40, section: section || '' });
+    }
+    FEED.forEach(function (f) { push(f.title, f.source, f.url, f.cat, f.hot, f.section); });
+    (((DATA.brief || {}).sections) || []).forEach(function (s) {
+      (s.points || []).forEach(function (p) {
+        var text = typeof p === 'string' ? p : p.text;
+        var url = typeof p === 'string' ? '' : p.url;
+        push(text, (typeof p === 'string' ? s.label : p.source), url, 'news', 38, s.label);
+      });
+    });
+    var seen = {}, out = [];
+    pool.forEach(function (c) {
+      if (!xSafe(c)) return;
+      var key = c.title.slice(0, 36).replace(/\s+/g, '');      if (seen[key]) return;
+      seen[key] = 1;
+      out.push(c);
+    });
+    out.sort(function (a, b) { return xScore(b) - xScore(a); });
+    return out;
+  }
+  function topicPick(cat) {
+    var sec = (((DATA.brief || {}).sections) || []).filter(function (s) { return s.key === cat; })[0];
+    if (sec) {
+      var p = (sec.points || [])[0];
+      if (p) return {
+        title: typeof p === 'string' ? p : p.text,
+        url: typeof p === 'string' ? '' : p.url,
+        source: typeof p === 'string' ? sec.label : (p.source || sec.label)
+      };
+    }
+    var it = FEED.filter(function (f) { return f.cats.indexOf(cat) >= 0; })[0];
+    return it ? { title: it.title, url: it.url, source: it.source } : null;
+  }
+  function shareIntent(text) {
+    return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(SITE_URL);
+  }
+  var KIT_CACHE = null;
+  function buildKit() {
+    if (KIT_CACHE) return KIT_CACHE;
+    var b = DATA.brief || {};
+    var date = prettyDate(b.date || (DATA.issue && DATA.issue.date) || '');
+    var briefPicks = (b.picks || []).slice(0, 3).map(function (p) {
+      return { title: p.title || '', source: p.source || '', url: p.url || '' };
+    });
+    var picks = kitCandidates().slice(0, 5);
+    var topKw = (((DATA.ranks || {}).all) || [])[0];
+    var kw = topKw ? topKw.k : '오늘의 트렌드';
+    var items = (b.metrics && b.metrics.items) || (DATA.stats && DATA.stats.collected) || 0;
+
+    /* 1) X 스레드 뼈대 — 금기선 제외·출처 URL·저장 유도 질문 */
+    var x = [date + ' 아침에 훑어볼 만한 것만 ' + picks.length + '개 골랐어 👀', ''];
+    picks.forEach(function (p, i) {
+      x.push((i + 1) + '. ' + p.title);
+      if (p.source) x.push('   ' + p.source);
+      x.push('   ' + p.url);
+      x.push('');
+    });
+    x.push('이 중에 뭐가 제일 궁금해? 저장해두고 저녁에 다시 보면 좋아.');
+    x.push('매일 07:17 / 19:17 업데이트 · 트렌드픽 ' + SITE_URL);
+
+    /* 2) 네이버 블로그 초안 — 목차 없이 핵심 3줄 요약 + 소제목 3개 + 유입 링크 */
+    var lead = (briefPicks[0] && briefPicks[0].title ? briefPicks[0] : picks[0]) ||
+      { title: kw, source: '트렌드픽', url: SITE_URL };
+    var sum = (briefPicks.length ? briefPicks : picks).slice(0, 3).map(function (p) {
+      return '> · ' + String(p.title).slice(0, 70);
+    });
+    while (sum.length < 3) sum.push('> · ' + kw);
+    var ai = topicPick('ai');
+    var app = topicPick('apptech');
+    var blogLines = [];
+    blogLines.push('제목: ' + date + ' 3분 브리프 — 오늘 제일 뜬 건 \'' + kw + '\'');
+    blogLines.push('');
+    blogLines.push('> 핵심 3줄 요약');
+    blogLines.push(sum.join('\n'));
+    blogLines.push('');
+    blogLines.push(date + ' 트렌드픽이 공개 RSS·API에서 모은 ' + (items || '오늘') + '건 중에서 많이 읽힌 것부터 정리했습니다.');
+    blogLines.push('');
+    blogLines.push('◆ 오늘 제일 많이 본 이야기');
+    blogLines.push(lead.title);
+    blogLines.push((lead.source ? lead.source + '에서 전한 소식입니다. ' : '') +
+      '원문에서 전체 내용을 확인하고, 아래 트렌드픽에서 오늘 흐름을 한 번에 볼 수 있습니다.');
+    if (lead.url) blogLines.push('원문: ' + lead.url);
+    blogLines.push('');
+    blogLines.push('◆ AI·부업에서 눈에 띈 것');
+    if (ai) {
+      blogLines.push(ai.title);
+      blogLines.push((ai.source ? ai.source + ' · ' : '') + (ai.url || ''));
+    } else {
+      blogLines.push('오늘은 AI·부업 쪽에서 새로 눈에 띈 소식이 적었습니다. 다음 수집에서 다시 채워집니다.');
+    }
+    blogLines.push('');
+    blogLines.push('◆ 지금 챙겨볼 할인·앱테크');
+    if (app) {
+      blogLines.push(app.title);
+      blogLines.push((app.source ? app.source + ' · ' : '') + (app.url || ''));
+    } else {
+      blogLines.push('오늘은 새로 올라온 할인 소식이 적었습니다. 트렌드픽 \'특가·핫딜\'에서 쿠팡 최저가를 바로 비교할 수 있습니다.');
+    }
+    blogLines.push('');
+    blogLines.push('오늘 브리프 전체는 여기서 3분이면 다 볼 수 있어요.');
+    blogLines.push('→ ' + SITE_URL);
+    blogLines.push('매일 07:17 / 19:17 자동 업데이트');
+
+    /* 3) 공유 문구 */
+    var share = '오늘 뜬 이야기, 3분이면 다 볼 수 있게 정리했어 👀\n' +
+      (picks[0] ? picks[0].title + '\n' : '') + SITE_URL;
+
+    KIT_CACHE = {
+      x: x.join('\n'),
+      blog: blogLines.join('\n'),
+      share: share,
+      intent: shareIntent('오늘 뜬 이야기, 3분이면 다 볼 수 있게 정리했어 👀')
+    };
+    return KIT_CACHE;
+  }
+
+  var kitTab = 'x';
+  function kitModal() {
+    var kit = buildKit();
+    kitTab = 'x';
+    openModal({
+      eyebrow: 'CREATOR KIT · ' + ((DATA.brief && DATA.brief.date) || ''),
+      title: '✨ X·블로그 글감 키트',
+      body: '<div class="kit-tabs" role="tablist" aria-label="글감 종류">' +
+        '<button class="kit-tab" type="button" role="tab" data-kit="x" aria-selected="true" data-testid="kit-tab-x">X 스레드 뼈대</button>' +
+        '<button class="kit-tab" type="button" role="tab" data-kit="blog" aria-selected="false" data-testid="kit-tab-blog">네이버 블로그 초안</button>' +
+        '<button class="kit-tab" type="button" role="tab" data-kit="share" aria-selected="false" data-testid="kit-tab-share">공유 문구</button>' +
+        '</div>' +
+        '<div class="kit-pane" data-pane="x"><pre id="kitTextX" data-testid="kit-text-x">' + esc(kit.x) + '</pre></div>' +
+        '<div class="kit-pane" data-pane="blog" hidden><pre id="kitTextBlog" data-testid="kit-text-blog">' + esc(kit.blog) + '</pre></div>' +
+        '<div class="kit-pane" data-pane="share" hidden><pre id="kitTextShare" data-testid="kit-text-share">' + esc(kit.share) + '</pre></div>' +
+        '<p class="kit-hint"><b>X</b> 는 금기선(건축·부동산·맘카페·숲체험·정치) 단어를 걸러낸 IT/AI·생활·앱 소재만 담았어요. ' +
+        '<b>블로그</b>는 목차 없이 핵심 3줄 요약으로 시작하고, 트렌드픽 유입 링크가 들어갑니다.</p>',
+      foot: '<button class="btn btn-ink" type="button" id="kitCopy" data-testid="kit-copy">📋 현재 글감 복사</button>' +
+        '<a class="btn btn-line" id="kitShare" href="' + esc(kit.intent) + '" target="_blank" rel="noopener" data-testid="kit-share">X에 트렌드픽 공유</a>' +
+        '<button class="btn" type="button" data-close>닫기</button>' +
+        '<span style="flex:1"></span><span class="micro">07:17 / 19:17 자동 갱신</span>'
+    });
+    function activeText() {
+      return kitTab === 'x' ? kit.x : kitTab === 'blog' ? kit.blog : kit.share;
+    }
+    $$('#mBody [data-kit]').forEach(function (t) {
+      t.addEventListener('click', function () {
+        kitTab = t.getAttribute('data-kit');
+        $$('#mBody [data-kit]').forEach(function (x) { x.setAttribute('aria-selected', String(x === t)); });
+        $$('#mBody .kit-pane').forEach(function (p) { p.hidden = p.getAttribute('data-pane') !== kitTab; });
+      });
+    });
+    var cp = $('#kitCopy');
+    if (cp) cp.addEventListener('click', function () {
+      copyText(activeText(), '글감을 복사했습니다 · X나 블로그에 붙여넣기만 하면 돼요');
+    });
+  }
+
+  function itemSnippet(f) {
+    var label = CAT[f.cat] ? CAT[f.cat].label : '소식';
+    var lines = ['[' + label + '] ' + f.title];
+    if (f.source) lines.push('출처: ' + f.source + (f.time ? ' · ' + f.time : ''));
+    if (f.url) lines.push('원문: ' + f.url);
+    lines.push('');
+    lines.push('한 줄: ' + String(f.title).slice(0, 60) + ' — 이거 어떻게 생각해?');
+    lines.push('오늘 브리프 더 보기 → ' + SITE_URL);
+    return lines.join('\n');
   }
 
   /* --------------------------- 오픈소스 · 앱 · 해커톤 --------------------------- */
@@ -830,12 +1169,27 @@
       renderFeed();
     });
 
-    // 저장
+    // 저장 · 글감 복사
     $('#feedGrid').addEventListener('click', function (e) {
+      var c = e.target.closest('[data-copy]');
+      if (c) {
+        e.preventDefault(); e.stopPropagation();
+        var item = itemById(c.getAttribute('data-copy'));
+        if (item) copyText(itemSnippet(item), '글감을 복사했습니다 · 바로 붙여넣어 쓰세요');
+        return;
+      }
       var b = e.target.closest('[data-save]');
       if (!b) return;
       e.preventDefault(); e.stopPropagation();
       toggleSaved(b.getAttribute('data-save'));
+    });
+    // 핫딜 글감 복사
+    $('#dealGrid').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-deal-copy]');
+      if (!b) return;
+      e.preventDefault(); e.stopPropagation();
+      var d = DEAL_ROWS[Number(b.getAttribute('data-deal-copy'))];
+      if (d) copyText(dealCopyText(d), '핫딜 글감을 복사했습니다');
     });
     $('#savedBtn').addEventListener('click', function () {
       state.savedOnly = !state.savedOnly;
@@ -859,9 +1213,10 @@
 
     // 브리프
     $('#bOpen').addEventListener('click', briefModal);
+    $('#bKit').addEventListener('click', kitModal);
     $('#bPast').addEventListener('click', pastModal);
     $('#brief').addEventListener('click', function (e) {
-      if (e.target.closest('#bOpen') || e.target.closest('#bPast') || e.target.closest('a')) return;
+      if (e.target.closest('#bOpen') || e.target.closest('#bKit') || e.target.closest('#bPast') || e.target.closest('a')) return;
       var spine = e.target.closest('.spine');
       if (spine) briefModal();
     });
@@ -944,6 +1299,7 @@
           if (!json || !Array.isArray(json.posts) || !json.posts.length) return;
           DATA = Object.assign({}, EMBEDDED, json);
           FEED = normalize();
+          KIT_CACHE = null;          // 새 수집 데이터로 글감 키트를 다시 조합합니다
           MODE = 'live';
           state.limit = 12;
           renderAll();

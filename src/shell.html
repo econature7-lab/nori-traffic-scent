@@ -23,6 +23,14 @@
 <meta name="twitter:title" content="트렌드픽 — 오늘의 실시간 트렌드 TOP 10">
 <meta name="twitter:description" content="커뮤니티 인기글 · 주요 뉴스 · 유튜브 · 앱 순위를 한 화면에서.">
 <meta name="twitter:image" content="https://econature7-lab.github.io/nori-traffic-scent/og.png">
+<link rel="sitemap" type="application/xml" title="sitemap" href="https://econature7-lab.github.io/nori-traffic-scent/sitemap.xml">
+<!-- ── 검색·광고 소유확인 메타 슬롯 ───────────────────────────────
+     다음 단계에서 Google Search Console · 네이버 서치어드바이저 인증 태그와
+     애드센스 사이트 확인용 <meta name="google-adsense-account" ...> 를
+     바로 아래 한 줄에 붙이면 됩니다. (build.py 는 이 주석을 그대로 보존합니다)
+     ─────────────────────────────────────────────────────────── -->
+<!-- VERIFICATION_META -->
+<meta name="google-site-verification" content="8kIaVhpuDBXuhhk_NcNWfQUbEiUAhPjKdB83SEv7VZ4" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111827'/%3E%3Cpath d='M8.5 22.5 14 15.4l4 3.4 5.2-8.3' fill='none' stroke='%23E11D48' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='23.4' cy='10.4' r='2.6' fill='%230D9488'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111827'/%3E%3Cpath d='M8.5 22.5 14 15.4l4 3.4 5.2-8.3' fill='none' stroke='%23E11D48' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='23.4' cy='10.4' r='2.6' fill='%230D9488'/%3E%3C/svg%3E">
 <!--
@@ -97,6 +105,7 @@
         <ol class="picks" id="bPicks"></ol>
         <div class="brief-foot">
           <button class="btn btn-ink" id="bOpen" type="button" data-testid="brief-open">브리프 전문 <span aria-hidden="true">→</span></button>
+          <button class="btn btn-line" id="bKit" type="button" data-testid="kit-open">✨ X·블로그 글감 키트</button>
           <button class="btn btn-line" id="bPast" type="button" data-testid="brief-past">지난 호</button>
           <span class="brief-meta micro" id="bMeta"></span>
         </div>
@@ -186,7 +195,9 @@
       <h2 id="dealTitle"><span class="dot"></span>특가 · 핫딜</h2>
       <span class="micro" id="dealNote">할인 소식</span>
     </div>
+    <p class="aff-note" id="affNote" hidden></p>
     <div class="deal-grid" id="dealGrid" data-testid="deal-grid"></div>
+    <div class="coupang-search" id="coupangSearch" data-testid="coupang-search" hidden></div>
   </section>
 
   <div class="two-col">
@@ -237,11 +248,16 @@
       </div>
     </div>
     <div class="foot-links">
+      <a href="about.html">소개</a>
+      <a href="policy.html">편집원칙</a>
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="contact.html">문의</a>
       <button type="button" id="adPreviewBtn" data-testid="ad-preview">📢 광고 자리 미리보기</button>
       <a id="repoLink" href="https://github.com/econature7-lab/nori-traffic-scent" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://econature7-lab.github.io/nori-traffic-scent/" target="_blank" rel="noopener">사이트 주소</a>
       <span class="micro" id="footStamp">© 2026 TrendPick</span>
     </div>
+    <p class="foot-aff micro-note">트렌드픽은 쿠팡 파트너스·Google 애드센스·카카오 애드핏 등 제휴·광고 프로그램에 참여할 수 있으며,
+      제휴 링크를 통해 구매가 이뤄질 경우 일정액의 수수료를 받을 수 있습니다. 광고와 편집 영역은 구분해 표시합니다.</p>
   </div>
 </footer>
 
