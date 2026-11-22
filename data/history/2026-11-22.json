@@ -1,13 +1,13 @@
 {
   "date": "2026-11-22",
   "issue": {
-    "no": 6,
-    "label": "No.06 (11.22)",
+    "no": 7,
+    "label": "No.07 (11.22)",
     "date": "2026-11-22"
   },
-  "generated_at": "2026-11-22T21:10:40+09:00",
+  "generated_at": "2026-11-22T21:13:06+09:00",
   "brief": {
-    "no": "No.06",
+    "no": "No.07",
     "date": "2026-11-22",
     "label": "11.22",
     "weekday": "일",
@@ -41,10 +41,10 @@
       {
         "rank": 4,
         "label": "사회·생활",
-        "title": "[속보] 유엔기후총회, 화석연료 이견에 결렬…합의문 채택 불발",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/world/12215747",
-        "img": "https://pimg.mk.co.kr/news/cms/202611/22/news-p.v1.20261122.fe81a514671148068caa1bbd71dff9b3_R.jpg"
+        "title": "정형돈, 살 21kg 빼더니 결국 '마운자로' 고백..정재형 \"얼굴 확 좋아져\" 깜짝[핫피플]",
+        "source": "조선일보",
+        "url": "https://www.chosun.com/entertainments/broadcast/2026/11/22/MMZDCZLBMNRTKYZUG44TCOLEGM/",
+        "img": "https://www.chosun.com/resizer/v2/HFSTOZJWGMZTGOJYGZSDIMLEHA.jpg?auth=d2d48e8ab516bdc85fb364a728e6b9e51f73082e1e869fc9df6bfbf1d876f94e&smart=true&width=650&height=368"
       },
       {
         "rank": 5,
@@ -114,7 +114,7 @@
         "label": "부동산·정책",
         "emoji": "📰",
         "title": "한전서 유출된 152만건에 내 개인정보도 담겼나…2차 피해 우려",
-        "body": "연합뉴스 산업·매일경제·연합뉴스 정치 등이 전한 부동산·정책 흐름입니다. 한전서 유출된 152만건에 내 개인정보도 담겼나…2차 피해 우려 이어서 '정부, 증안펀드 즉시가동 준비 돌입', '멀어지는 보수 대통합…張韓갈등 격화에 吳張·吳韓 기류도 미묘(종합)'도 함께 다뤄졌습니다.",
+        "body": "연합뉴스 산업·조선일보·매일경제 등이 전한 부동산·정책 흐름입니다. 한전서 유출된 152만건에 내 개인정보도 담겼나…2차 피해 우려 이어서 '창원 아파트서 5개월 딸 안고 추락한 엄마 사망…아기는 구조', '정부, 증안펀드 즉시가동 준비 돌입'도 함께 다뤄졌습니다.",
         "points": [
           {
             "text": "한전서 유출된 152만건에 내 개인정보도 담겼나…2차 피해 우려",
@@ -122,14 +122,14 @@
             "url": "https://www.yna.co.kr/view/AKR20261122049800003"
           },
           {
+            "text": "창원 아파트서 5개월 딸 안고 추락한 엄마 사망…아기는 구조",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/national/2026/11/22/VDDA67YAPRHTRNU5SUTF7VAUFY/"
+          },
+          {
             "text": "정부, 증안펀드 즉시가동 준비 돌입",
             "source": "매일경제",
             "url": "https://www.mk.co.kr/news/stock/12215738"
-          },
-          {
-            "text": "멀어지는 보수 대통합…張韓갈등 격화에 吳張·吳韓 기류도 미묘(종합)",
-            "source": "연합뉴스 정치",
-            "url": "https://www.yna.co.kr/view/AKR20261121050251001"
           }
         ]
       },
@@ -137,23 +137,23 @@
         "key": "사회·생활",
         "label": "사회·생활",
         "emoji": "📰",
-        "title": "[속보] 유엔기후총회, 화석연료 이견에 결렬…합의문 채택 불발",
-        "body": "매일경제·조선일보 등이 전한 사회·생활 흐름입니다. [속보] 유엔기후총회, 화석연료 이견에 결렬…합의문 채택 불발 이어서 '‘마이큐♥’ 김나영, 4년만 주방 공사 시작..“폭탄 맞은 거 같아” (', '야노시호, ♥추성훈 은퇴에 \"남편 인생 파란만장…한국 덕분에 빛났다\" ['도 함께 다뤄졌습니다.",
+        "title": "정형돈, 살 21kg 빼더니 결국 '마운자로' 고백..정재형 \"얼굴 확 좋아져\" 깜짝[핫피플]",
+        "body": "조선일보·매일경제 등이 전한 사회·생활 흐름입니다. 정형돈, 살 21kg 빼더니 결국 '마운자로' 고백..정재형 \"얼굴 확 좋아져\" 깜짝[핫피플] 이어서 '유엔 기후총회, 화석연료 감축 이견에 최종 합의 무산… 공동선언문 채택 ', '[속보] 유엔기후총회, 화석연료 이견에 결렬…합의문 채택 불발'도 함께 다뤄졌습니다.",
         "points": [
+          {
+            "text": "정형돈, 살 21kg 빼더니 결국 '마운자로' 고백..정재형 \"얼굴 확 좋아져\" 깜짝[핫피플]",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/entertainments/broadcast/2026/11/22/MMZDCZLBMNRTKYZUG44TCOLEGM/"
+          },
+          {
+            "text": "유엔 기후총회, 화석연료 감축 이견에 최종 합의 무산… 공동선언문 채택 불발",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/international/international_general/2026/11/22/GRSTIYRVHAYTENTDHBTDSZBYMY/"
+          },
           {
             "text": "[속보] 유엔기후총회, 화석연료 이견에 결렬…합의문 채택 불발",
             "source": "매일경제",
             "url": "https://www.mk.co.kr/news/world/12215747"
-          },
-          {
-            "text": "‘마이큐♥’ 김나영, 4년만 주방 공사 시작..“폭탄 맞은 거 같아” (노필터TV)",
-            "source": "조선일보",
-            "url": "https://www.chosun.com/entertainments/broadcast/2026/11/22/GAZDAOJWHA2TGMBZGRRTKYRXMM/"
-          },
-          {
-            "text": "야노시호, ♥추성훈 은퇴에 \"남편 인생 파란만장…한국 덕분에 빛났다\" [전문]",
-            "source": "조선일보",
-            "url": "https://www.chosun.com/entertainments/broadcast/2026/11/22/MYYGINTEME3DEZLFMRSTKMTFG4/"
           }
         ]
       },
@@ -199,7 +199,7 @@
     "collected": 98,
     "live_sources": 20,
     "skipped_sources": 3,
-    "elapsed_sec": 38.5
+    "elapsed_sec": 39.0
   },
   "ranks": [
     {
@@ -238,13 +238,6 @@
       "src": "Google Trends"
     },
     {
-      "k": "시장",
-      "r": 148,
-      "url": "",
-      "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/22/PYH2026112206860001300_P2.jpg",
-      "src": "트렌드픽 수집"
-    },
-    {
       "k": "증안펀드",
       "r": 148,
       "url": "",
@@ -263,6 +256,13 @@
       "r": 148,
       "url": "",
       "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/22/AKR20261122023000003_01_i_P2.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "시대",
+      "r": 148,
+      "url": "",
+      "img": "https://img.yna.co.kr/photo/cms/2026/09/04/49/PCM20260904000049990_P2.jpg",
       "src": "트렌드픽 수집"
     },
     {
