@@ -102,7 +102,8 @@ def build_prompt(data: dict) -> str:
     ranks = data.get("ranks", {}).get("all", [])[:7]
 
     news_lines = "\n".join(f"- [{n['section']}] {n['title']} ({n['source']})" for n in news)
-    post_lines = "\n".join(f"- ({p['cat']}) {p['title']} [{p['source']}]" for p in posts)
+    post_lines = "\n".join(f"- ({p['cat']}) {p['title']} [{p['source']}]  id={p['id']}" for p in posts[:10]) + \
+        "\n" + "\n".join(f"- ({p['cat']}) {p['title']} [{p['source']}]" for p in posts[10:])
     kw = ", ".join(r["k"] for r in ranks)
 
     return f"""너는 '트렌드픽(TrendPick)'의 편집자다. 이 화면은 방문자가 오늘 무엇이 화제인지 3분 안에
@@ -113,7 +114,7 @@ def build_prompt(data: dict) -> str:
 - 섹션은 4~6개: 경제·증시 / IT·AI / 부동산·정책 / 사회·생활 중 목록에 있는 것 + 특화 분야(맘카페·AI부업 등).
 - 각 섹션: title(한 문장, 60자 이내), body(2~3문장, 어떤 흐름인지), points(3개, 각 40자 이내 실행 포인트).
 - lead: 3~4문장 종합.
-- post_summaries: 아래 인기글 중 10개에 대해 {{"id": "한 줄 요약(35자 이내)"}} 형태.
+- post_summaries: 아래 인기글 중 10개에 대해 {{"<id>": "한 줄 요약(35자 이내)"}} 형태. id 는 각 줄 끝 `id=c_...` 값을 그대로 쓴다.
 
 반드시 아래 JSON 스키마로만 응답하라(설명·마크다운 없이):
 {{"title":"","lead":"","sections":[{{"key":"econ|ai|estate|social|mom|apptech|build|comm","label":"","emoji":"","title":"","body":"","points":["","",""]}}],"post_summaries":{{}}}}
@@ -132,8 +133,11 @@ def build_prompt(data: dict) -> str:
 def call_gemini(prompt: str, key: str, model: str) -> dict:
     body = json.dumps({
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.4, "maxOutputTokens": 4096,
-                             "responseMimeType": "application/json"},
+        "generationConfig": {"temperature": 0.4, "maxOutputTokens": 8192,
+                             "responseMimeType": "application/json",
+                             # gemini-2.5-flash 는 thinking 이 기본 켜짐 → 생각 토큰이 출력 한도를
+                             # 잡아먹어 JSON 이 중간에 잘립니다. 브리프 요약에는 사고가 필요 없으므로 끕니다.
+                             "thinkingConfig": {"thinkingBudget": 0}},
     }).encode("utf-8")
     req = urllib.request.Request(API.format(model=model, key=urllib.parse.quote(key)), data=body,
                                  headers={"Content-Type": "application/json"}, method="POST")
