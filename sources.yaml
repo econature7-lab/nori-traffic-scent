@@ -10,7 +10,7 @@ meta:
   schema: trendpick/3
   service_name: "트렌드픽 (TrendPick)"
   timezone: Asia/Seoul
-  schedule: "07:00 / 19:00 KST (cron 0 22 * * * , 0 10 * * *)"
+  schedule: "07:17 / 19:17 KST (cron 17 22 * * * , 17 10 * * *)"
   user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
   request_policy:
     timeout_sec: 15

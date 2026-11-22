@@ -5,7 +5,7 @@
 
 - 라이브: **https://econature7-lab.github.io/nori-traffic-scent/**
 - 서버비 **0원** (GitHub Actions + GitHub Pages 무료)
-- 수집 **하루 2회** (`07:00` / `19:00` KST)
+- 수집 **하루 2회** (`07:17` / `19:17` KST)
 - 화면은 **단일 HTML** (외부 CDN·웹폰트 0건 · `file://` 에서도 열림)
 - 저장소 이름(`nori-traffic-scent`)은 기존 링크가 깨지지 않도록 그대로 두고,
   **화면·문서·데이터의 서비스명만 「트렌드픽」으로 전면 교체**했습니다.
@@ -21,7 +21,7 @@
 | **오늘의 픽 탐색** | 분야 칩(커뮤니티·뉴스·유튜브·블로그·맘카페·부동산·AI·앱테크·건축) + 실시간 검색 + 정렬(인기/급상승/최신) + **⭐ 저장한 픽(localStorage)** |
 | 실시간 뉴스 | 분야 탭, 썸네일 카드 |
 | 지금 뜨는 영상 | 유튜브 최신 업로드(썸네일 100%) |
-| 특가 · 핫딜 | (네이버 쇼핑 키 연결 시) 실제 최저가 / 키가 없으면 오늘 수집된 할인 소식, 없으면 섹션 자동 접힘 |
+| 특가 · 핫딜 | (네이버 쇼핑 키 연결 시) 실제 최저가 / 키가 없으면 오늘 수집된 할인 소식 + **쿠팡 최저가 검색·제휴 고지** (섹션 안에서만 노출) |
 | 오픈소스 · 앱·게임 | GitHub 트렌딩, 앱스토어·스팀 순위(앱 아이콘 포함) |
 | 해커톤 · 공모전 | Devpost 마감 임박 순 |
 | 광고 슬롯 | 상단 리더보드 · 피드 인라인 · 사이드바 · 하단 배너 (4곳, ID만 넣으면 노출) |
@@ -42,6 +42,8 @@
 .
 ├── index.html                     # 화면 (data.json 이 없으면 내장 스냅샷으로 동작)
 ├── og.png                         # 공유 미리보기 이미지(1200×630)
+├── about.html · policy.html · privacy.html · contact.html   # 빌드 생성 고정 페이지
+├── robots.txt · sitemap.xml       # 빌드 생성 SEO 파일
 ├── data.json                      # 수집 결과 (Actions 가 자동 커밋)
 ├── collector.py                   # 수집·썸네일·정규화·중복제거·스코어링 (표준 라이브러리만)
 ├── summarize.py                   # (선택) Gemini Flash 요약 + 규칙 기반 대체
@@ -51,11 +53,14 @@
 ├── src/
 │   ├── shell.html                 # 화면 뼈대 · SEO/OG 메타 · SVG 파비콘
 │   ├── app.css                    # 디자인 시스템
-│   └── app.js                     # 렌더 · 필터 · 검색 · 저장 · 광고 슬롯
+│   ├── app.js                     # 렌더 · 필터 · 검색 · 저장 · 광고 슬롯 · 제휴 · 글감 키트
+│   ├── pages.css                  # 고정 페이지 공용 스타일
+│   └── pages/                     # about · policy · privacy · contact 원본(빌드 시 루트로 생성)
 ├── data/
+│   ├── creators.json              # X·블로그 자동화용 경량 JSON (빌드 생성)
 │   ├── issue.json                 # 발행 호수 카운터
 │   └── history/YYYY-MM-DD.json    # 지난 호 보관
-└── .github/workflows/collect.yml  # 07:00 / 19:00 KST 자동 수집 · 빌드 · 커밋
+└── .github/workflows/collect.yml  # 07:17 / 19:17 KST 자동 수집 · 빌드 · 커밋
 ```
 
 ---
@@ -84,6 +89,28 @@ var TRENDPICK_ADS = {
 - 수정 후 `python build.py` → `index.html` 재생성 → 커밋.
 
 자세한 운영 절차·수익화 체크리스트는 **`downloads/트렌드픽_수익화_운영가이드.md`** 참고.
+
+---
+
+## 3-B. 수익화 연결 (애드센스 준비 · 쿠팡 · 글감 키트)
+
+**애드센스 승인용 고정 페이지** — `build.py` 가 `src/pages/` 원본으로 루트에 생성합니다.
+
+| 파일 | 내용 |
+|---|---|
+| `about.html` | 소개 · 하루 두 번(07:17/19:17) 수집 구조 · 다섯 분야 |
+| `policy.html` | 편집·큐레이션 원칙 · 출처/저작권 · AI 요약 검수/정정 · 광고·제휴 분리 |
+| `privacy.html` | 개인정보처리방침 · localStorage · 애드센스/애드핏 쿠키 · 맞춤 광고 해제 · 쿠팡 고지 |
+| `contact.html` | 문의 · Issues · 기사 수정/삭제 절차 · 제휴 문의 |
+| `robots.txt` · `sitemap.xml` | 전체 허용 + 메인·4개 페이지 sitemap |
+
+`src/shell.html` 의 `<!-- VERIFICATION_META -->` 자리에 서치콘솔·애드센스 확인 메타를 바로 넣을 수 있습니다.
+
+**쿠팡 파트너스** — `src/app.js` 의 `TRENDPICK_AFFILIATE`(coupon ID `AF2392399`)와 `TRENDPICK_DEAL_LINKS`(단축링크 매핑 슬롯)만 채우면 됩니다. 특가·핫딜 영역 안에서만 고지·링크·검색창이 노출되고, 뉴스·커뮤니티·광고 영역은 건드리지 않습니다.
+
+**X·블로그 글감 키트** — 브리프의 `✨ X·블로그 글감 키트` 버튼. X 탭은 금기선(건축·부동산·맘카페·숲체험·정치)을 자동 제외한 IT/AI·생활·앱 소재 5건으로 스레드 뼈대를, 블로그 탭은 목차 없이 `핵심 3줄 요약` + 소제목 3개 + 트렌드픽 유입 링크를 만듭니다. 카드의 `📋` 버튼은 그 카드 한 건을 글감으로 복사합니다.
+
+**경량 피드** — `data/creators.json` (top10 · brief · 분야별 상위 5건 `ai`/`estate`/`mom`/`apptech`/`build`). `지연_X`·블로그 자동화가 그대로 읽어 갈 수 있는 정적 JSON입니다.
 
 ---
 
@@ -123,7 +150,7 @@ var TRENDPICK_ADS = {
 | 오픈소스 | GitHub Trending | 불필요 | ✅ 수집 |
 | 앱·게임 | iTunes 앱 순위(아이콘 포함) · Steam 최다 플레이 | 불필요 | ✅ 수집 |
 | 해커톤 | Devpost Open Hackathons | 불필요 | ✅ 수집 |
-| 핫딜 | 네이버 쇼핑 최저가 | `NAVER_*` | 키 필요(없으면 섹션 자동 접힘) |
+| 핫딜 | 네이버 쇼핑 최저가 | `NAVER_*` | 키 필요(없으면 수집된 할인 소식 + 쿠팡 최저가 검색) |
 | 건축·입찰 | 나라장터 입찰공고 | `DATA_GO_KR_KEY` | 키 필요 |
 
 **정리한 소스 (v3)**
@@ -159,10 +186,10 @@ var TRENDPICK_ADS = {
 
 | 시각(KST) | 무엇을 |
 |---|---|
-| 07:00 / 19:00 | `collector.py` → 공개 RSS·API 수집 (썸네일 보강 포함, 약 40초) |
+| 07:17 / 19:17 | `collector.py` → 공개 RSS·API 수집 (썸네일 보강 포함, 약 40초) |
 | 이어서 | `summarize.py` → Gemini 요약(없으면 규칙 기반 그대로) |
-| 이어서 | `build.py` → `index.html` 재생성 |
-| 이어서 | `data.json` · `data/` · `index.html` 자동 커밋 → Pages 반영 |
+| 이어서 | `build.py` → `index.html` + 고정 페이지 4종 + `robots.txt`/`sitemap.xml` + `data/creators.json` |
+| 이어서 | `data.json` · `data/` · `index.html` · 고정 페이지 자동 커밋 → Pages 반영 |
 
 수집 항목이 25건 미만이면 **직전 data.json 을 덮어쓰지 않습니다**(빈 화면 방지).
 
@@ -181,7 +208,8 @@ python3 -m http.server 8000
 검증(로컬 Chromium):
 
 ```bash
-python3 check_visual.py   # 데스크톱 1440×900 · 모바일 390×844 · ?ad_preview=1
+python3 check_visual.py        # 데스크톱 1440×900 · 모바일 390×844 · ?ad_preview=1
+python3 check_monetization.py  # 글감 키트·쿠팡 제휴(픽스처)·고정 페이지 4종·내비 왕복
 ```
 
 ---
@@ -195,6 +223,8 @@ python3 check_visual.py   # 데스크톱 1440×900 · 모바일 390×844 · ?ad_
 | 깨진 이미지(`naturalWidth===0`) | 0건 (51장 전부 로드) | 0건 (51장 전부 로드) |
 | 가로 넘침 | 0건 | 0건 |
 | 광고 미리보기 | 슬롯 3 + 인피드 1 표시 | 동일 |
+| 글감 키트 | X·블로그·공유 탭 전환·복사 정상, 금기어 0건 | 모달 동일 |
+| 고정 페이지 4종 | 200 OK · 오류 0 · 넘침 0 | 390px 넘침 0 |
 
 ---
 
