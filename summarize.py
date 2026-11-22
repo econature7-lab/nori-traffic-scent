@@ -23,6 +23,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -165,17 +166,28 @@ def main() -> int:
 
     if key and not args.dry_run:
         prompt = build_prompt(data)
+        # 503(high demand)·429(quota) 같은 일시 오류는 잠깐 쉬고 다시 부른다.
+        RETRY_STATUS = (429, 500, 502, 503, 504)
         for model in [MODEL] + FALLBACK_MODELS:
-            try:
-                log(f"Gemini 요약 요청 · model={model}")
-                result = call_gemini(prompt, key, model)
-                result["engine"] = f"gemini:{model}"
+            for attempt in range(1, 4):
+                try:
+                    suffix = f" (재시도 {attempt - 1})" if attempt > 1 else ""
+                    log(f"Gemini 요약 요청 · model={model}{suffix}")
+                    result = call_gemini(prompt, key, model)
+                    result["engine"] = f"gemini:{model}"
+                    break
+                except urllib.error.HTTPError as exc:
+                    detail = exc.read().decode("utf-8", "replace")[:200]
+                    log(f"  실패 HTTP {exc.code} · {detail}")
+                    if exc.code in RETRY_STATUS and attempt < 3:
+                        time.sleep(5 * attempt)
+                        continue
+                    break
+                except Exception as exc:  # noqa: BLE001
+                    log(f"  실패 {type(exc).__name__}: {exc}")
+                    break
+            if result:
                 break
-            except urllib.error.HTTPError as exc:
-                detail = exc.read().decode("utf-8", "replace")[:200]
-                log(f"  실패 HTTP {exc.code} · {detail}")
-            except Exception as exc:  # noqa: BLE001
-                log(f"  실패 {type(exc).__name__}: {exc}")
         if result is None:
             log("Gemini 호출 실패 → 규칙 기반 요약으로 대체")
     elif not key:
