@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://econature7-lab/nori-traffic-scent/sitemap.xml
+Sitemap: https://econature7-lab.github.io/nori-traffic-scent/sitemap.xml

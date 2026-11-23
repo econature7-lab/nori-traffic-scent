@@ -1,0 +1,281 @@
+{
+  "date": "2026-11-23",
+  "issue": {
+    "no": 8,
+    "label": "No.08 (11.23)",
+    "date": "2026-11-23"
+  },
+  "generated_at": "2026-11-23T10:43:26+09:00",
+  "brief": {
+    "no": "No.08",
+    "date": "2026-11-23",
+    "label": "11.23",
+    "weekday": "월",
+    "title": "靑재정보좌관 “증시 충격 일시적일 수 있어…비관적으로 안 봐” · 피지컬AI 가 밀어올린 알체라…3분기 누적매출 71억 · 제주항공, 내년 1월부터 일본 센다이에 주3회 신규 취항",
+    "lead": "IT·AI에서는 '피지컬AI 가 밀어올린 알체라…3분기 누적매출 …' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '제주항공, 내년 1월부터 일본 센다이에 주3…' 소식이 눈에 띕니다. 오늘 수집한 102건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 8개 이슈를 골랐습니다.",
+    "picks": [
+      {
+        "rank": 1,
+        "label": "경제·증시",
+        "title": "靑재정보좌관 “증시 충격 일시적일 수 있어…비관적으로 안 봐”",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/stock/12215890",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/23/news-p.v1.20261123.3139b290cfa04507ab7d32b836b412d6_R.jpg"
+      },
+      {
+        "rank": 2,
+        "label": "IT·AI",
+        "title": "피지컬AI 가 밀어올린 알체라…3분기 누적매출 71억",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/it/12215893",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/23/news-p.v1.20261123.17c06973fe9346b3bd2fdee4facfc435_R.jpg"
+      },
+      {
+        "rank": 3,
+        "label": "부동산·정책",
+        "title": "제주항공, 내년 1월부터 일본 센다이에 주3회 신규 취항",
+        "source": "연합뉴스 산업",
+        "url": "https://www.yna.co.kr/view/AKR20261123061900003",
+        "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/23/AKR20261123061900003_01_i_P2.jpg"
+      },
+      {
+        "rank": 4,
+        "label": "사회·생활",
+        "title": "GH, 파주·안성·동두천 산단 16필지 공급…15% 할인도",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/realestate/12215897",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/23/news-p.v1.20261123.93b5588b463e4a56b1d57c0dfc9796c4_R.jpg"
+      },
+      {
+        "rank": 5,
+        "label": "경제·증시",
+        "title": "광주은행 현금입출금기 3년 새 10% 줄어…입출금액도 ↓(종합)",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261123049651054",
+        "img": "https://img.yna.co.kr/photo/cms/2026/09/16/39/PCM20260916000139054_P2.jpg"
+      }
+    ],
+    "metrics": {
+      "topics": 8,
+      "news": 32,
+      "items": 102
+    },
+    "sections": [
+      {
+        "key": "경제·증시",
+        "label": "경제·증시",
+        "emoji": "📰",
+        "title": "靑재정보좌관 “증시 충격 일시적일 수 있어…비관적으로 안 봐”",
+        "body": "매일경제·연합뉴스 경제·조선일보 등이 전한 경제·증시 흐름입니다. 靑재정보좌관 “증시 충격 일시적일 수 있어…비관적으로 안 봐” 이어서 '광주은행 현금입출금기 3년 새 10% 줄어…입출금액도 ↓(종합)', '청년 떠나는 지방마다 처방 달라야...공장 있는 무안은 생활 인프라 채우'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "靑재정보좌관 “증시 충격 일시적일 수 있어…비관적으로 안 봐”",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/stock/12215890"
+          },
+          {
+            "text": "광주은행 현금입출금기 3년 새 10% 줄어…입출금액도 ↓(종합)",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261123049651054"
+          },
+          {
+            "text": "청년 떠나는 지방마다 처방 달라야...공장 있는 무안은 생활 인프라 채우고, 대기업 부족한 대구 수성구는 일",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/economy/economy_general/2026/11/23/A6Y6BYZLTBFTJFMYAHPIQXENMY/"
+          }
+        ]
+      },
+      {
+        "key": "IT·AI",
+        "label": "IT·AI",
+        "emoji": "📰",
+        "title": "피지컬AI 가 밀어올린 알체라…3분기 누적매출 71억",
+        "body": "매일경제·연합뉴스 산업·연합뉴스 경제 등이 전한 IT·AI 흐름입니다. 피지컬AI 가 밀어올린 알체라…3분기 누적매출 71억 이어서 '구미 양파 농사에 자율주행 기계 투입…노동력 69% 절감 기대', 'SK에코플랜트, 설계 맞춤형 AI 플랫폼 '엑센' 도입'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "피지컬AI 가 밀어올린 알체라…3분기 누적매출 71억",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/it/12215893"
+          },
+          {
+            "text": "구미 양파 농사에 자율주행 기계 투입…노동력 69% 절감 기대",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261123057300053"
+          },
+          {
+            "text": "SK에코플랜트, 설계 맞춤형 AI 플랫폼 '엑센' 도입",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261123056300003"
+          }
+        ]
+      },
+      {
+        "key": "부동산·정책",
+        "label": "부동산·정책",
+        "emoji": "📰",
+        "title": "제주항공, 내년 1월부터 일본 센다이에 주3회 신규 취항",
+        "body": "연합뉴스 산업 등이 전한 부동산·정책 흐름입니다. 제주항공, 내년 1월부터 일본 센다이에 주3회 신규 취항 이어서 '[사이테크+] 해왕성 너머에 지구급 행성 있나…\"지구 질량 2배 행성 가', '울주군, 식품안심업소 199곳에 위생용품·종량제봉투 지원'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "제주항공, 내년 1월부터 일본 센다이에 주3회 신규 취항",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261123061900003"
+          },
+          {
+            "text": "[사이테크+] 해왕성 너머에 지구급 행성 있나…\"지구 질량 2배 행성 가능성\"",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261122051900017"
+          },
+          {
+            "text": "울주군, 식품안심업소 199곳에 위생용품·종량제봉투 지원",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261123060900057"
+          }
+        ]
+      },
+      {
+        "key": "사회·생활",
+        "label": "사회·생활",
+        "emoji": "📰",
+        "title": "GH, 파주·안성·동두천 산단 16필지 공급…15% 할인도",
+        "body": "매일경제 등이 전한 사회·생활 흐름입니다. GH, 파주·안성·동두천 산단 16필지 공급…15% 할인도 이어서 '이부진 아들, 엄마 따라 ‘이OO’으로 姓 바꿨다…법원, 성본 변경 허가', '착즙기과 블렌더를 하나로...휴롬 VM200 출시'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "GH, 파주·안성·동두천 산단 16필지 공급…15% 할인도",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/realestate/12215897"
+          },
+          {
+            "text": "이부진 아들, 엄마 따라 ‘이OO’으로 姓 바꿨다…법원, 성본 변경 허가",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/business/12215896"
+          },
+          {
+            "text": "착즙기과 블렌더를 하나로...휴롬 VM200 출시",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/business/12215895"
+          }
+        ]
+      },
+      {
+        "key": "mom",
+        "label": "맘카페·육아",
+        "emoji": "🌿",
+        "title": "엄마가 연애하는거 진짜 너무 싫다",
+        "body": "네이트판에서 '엄마가 연애하는거 진짜 너무 싫다' 글이 올라왔습니다. 네이트판에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "points": [
+          {
+            "text": "엄마가 연애하는거 진짜 너무 싫다",
+            "source": "네이트판",
+            "url": "https://pann.nate.com/talk/375732417"
+          },
+          {
+            "text": "우리엄마 아빠랑 이혼한지 3년됐고 지금은 남자친구 사귄단말이야처음엔 진짜 싫다고 막 울고 그...",
+            "source": "네이트판",
+            "url": "https://pann.nate.com/talk/375732417"
+          }
+        ]
+      },
+      {
+        "key": "ai",
+        "label": "AI·부업",
+        "emoji": "🤖",
+        "title": "'반도체 비관론'에 '내년 주문' 언급한 靑…“AI 혁명은 비가역적 변화”",
+        "body": "전자신문에서 ''반도체 비관론'에 '내년 주문' 언급한 靑…“AI 혁명은 비가역적 변화”' 글이 올라왔습니다. 연합뉴스 정치에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "points": [
+          {
+            "text": "'반도체 비관론'에 '내년 주문' 언급한 靑…“AI 혁명은 비가역적 변화”",
+            "source": "전자신문",
+            "url": "https://www.etnews.com/20261123000152"
+          },
+          {
+            "text": "靑재정보좌관 \"주식시장 충격 일시적…AI혁명 비가역적 변화\"",
+            "source": "연합뉴스 정치",
+            "url": "https://www.yna.co.kr/view/AKR20261123038800001"
+          }
+        ]
+      }
+    ],
+    "engine": "rule-based",
+    "past": []
+  },
+  "stats": {
+    "sources": 32,
+    "collected": 98,
+    "live_sources": 21,
+    "skipped_sources": 2,
+    "elapsed_sec": 22.2
+  },
+  "ranks": [
+    {
+      "k": "김하성",
+      "r": 320,
+      "url": "",
+      "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQatvZ-4js3AAYH8g_B6lqT0nUZHNoO30y-oDWm_Xg6yYsNM54hcl8ePnDLTEo",
+      "src": "Google Trends"
+    },
+    {
+      "k": "정유라",
+      "r": 200,
+      "url": "",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ74dHCpL5sY-rTbHTOfhQFcKXsNwK7cnb2Lp_pClSltIisMYE4gw0l_jJY4UY",
+      "src": "Google Trends"
+    },
+    {
+      "k": "AI",
+      "r": 177,
+      "url": "",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/23/news-p.v1.20261123.17c06973fe9346b3bd2fdee4facfc435_R.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "게임",
+      "r": 163,
+      "url": "",
+      "img": "https://i.ytimg.com/vi/izlRpHOlgFE/hqdefault.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "재정보좌관",
+      "r": 148,
+      "url": "",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/23/news-p.v1.20261123.3139b290cfa04507ab7d32b836b412d6_R.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "충격",
+      "r": 148,
+      "url": "",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/23/news-p.v1.20261123.3139b290cfa04507ab7d32b836b412d6_R.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "개인정보",
+      "r": 148,
+      "url": "",
+      "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/23/AKR20261123062400002_01_i_P2.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "유출",
+      "r": 148,
+      "url": "",
+      "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/23/AKR20261123062400002_01_i_P2.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "지역",
+      "r": 148,
+      "url": "",
+      "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/23/AKR20261123053300054_01_i_P2.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "개발",
+      "r": 148,
+      "url": "",
+      "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/23/AKR20261123060000062_01_i_P2.jpg",
+      "src": "트렌드픽 수집"
+    }
+  ]
+}
