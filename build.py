@@ -30,7 +30,7 @@ SRC = ROOT / "src"
 PAGES_DIR = SRC / "pages"
 OUT_LOCAL = ROOT / "index.html"
 OUT_DOWNLOAD = WS / "downloads" / "트렌드픽_v3.html"
-SITE = "https://econature7-lab/nori-traffic-scent/"
+SITE = "https://econature7-lab.github.io/nori-traffic-scent/"
 REPO = "econature7-lab/nori-traffic-scent"
 KST = timezone(timedelta(hours=9))
 
