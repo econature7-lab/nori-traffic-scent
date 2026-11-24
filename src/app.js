@@ -521,6 +521,7 @@
       closeModal();
       state.filter = 'all'; state.q = ''; state.kw = '';
       $('#q').value = '';
+      syncSearchChip();
       renderChips(); renderFeed();
       document.getElementById('explore').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
@@ -589,12 +590,35 @@
 
   function applyKeyword(kw) {
     state.kw = kw; state.filter = 'all'; state.q = kw; state.limit = 12;
-    var q = $('#q'); if (q) { q.value = kw; $('#qClear').hidden = false; }
-    var chip = $('#kwChip');
-    if (chip) { chip.hidden = false; $('#kwText').textContent = kw; }
-    renderChips(); renderFeed();
-    document.getElementById('explore').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var q = $('#q'); if (q) q.value = kw;
+    renderChips(); syncSearchChip(); renderFeed();
+    scrollToResults();
     toast('‘' + kw + '’ 로 필터했습니다');
+  }
+
+  /* 검색 상태(입력값 · 지우기 버튼 · 결과 칩)를 한 곳에서 맞춥니다. */
+  function syncSearchChip() {
+    var q = $('#q'), term = (state.q || '').trim();
+    var x = $('#qClear'); if (x) x.hidden = !(q && q.value);
+    var chip = $('#qChip');
+    if (chip) {
+      chip.hidden = !term;
+      if (term) { var t = $('#qChipText'); if (t) t.textContent = term; }
+    }
+  }
+
+  function scrollToResults() {
+    var target = document.getElementById('explore');
+    if (!target) return;
+    try { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    catch (e) { target.scrollIntoView(); }
+  }
+
+  function clearSearch(keepFocus) {
+    state.q = ''; state.kw = '';
+    var q = $('#q'); if (q) q.value = '';
+    syncSearchChip(); renderFeed();
+    if (keepFocus && q) q.focus();
   }
 
   /* --------------------------- 칩 · 피드 --------------------------- */
@@ -727,8 +751,10 @@
       (state.savedOnly ? '카드의 ★ 를 눌러 소재를 저장해 보세요.' : '검색어나 분야를 바꿔 보세요.') + '</div>');
 
     var note = $('#resultNote');
+    var qText = (state.q || '').trim();
+    if (note) note.classList.toggle('is-search', !!qText);
     if (state.savedOnly) note.innerHTML = '저장한 픽 <b>' + list.length + '</b>건';
-    else if (state.q) note.innerHTML = '‘' + esc(state.q) + '’ 검색 결과 <b>' + list.length + '</b>건';
+    else if (qText) note.innerHTML = '‘' + esc(qText) + '’ 검색 결과 <b>' + list.length + '</b>건';
     else if (state.filter !== 'all') note.innerHTML = esc(CAT[state.filter].label) + ' <b>' + list.length + '</b>건';
     else note.innerHTML = '전체 <b>' + list.length + '</b>건 · ' +
       (state.sort === 'rise' ? '급상승 순' : state.sort === 'new' ? '최신 순' : '인기 순');
@@ -1206,24 +1232,31 @@
   function bind() {
     // 검색
     var q = $('#q');
+    var qClear = $('#qClear');
     q.addEventListener('input', function () {
       state.q = q.value; state.kw = ''; state.limit = 12;
-      $('#qClear').hidden = !q.value;
-      var chip = $('#kwChip'); if (chip) chip.hidden = !state.kw;
+      syncSearchChip();
       renderFeed();
     });
     q.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); document.getElementById('explore').scrollIntoView({ behavior: 'smooth' }); }
-      if (e.key === 'Escape') { q.value = ''; state.q = ''; $('#qClear').hidden = true; renderFeed(); }
+      if (e.key === 'Escape') { e.preventDefault(); clearSearch(true); }
     });
-    $('#qClear').addEventListener('click', function () {
-      q.value = ''; state.q = ''; state.kw = ''; $('#qClear').hidden = true;
-      $('#kwChip').hidden = true; renderFeed(); q.focus();
-    });
-    $('#kwChip').addEventListener('click', function () {
-      state.kw = ''; state.q = ''; q.value = ''; $('#qClear').hidden = true;
-      this.hidden = true; renderFeed();
-    });
+
+    // 검색 실행 — 버튼 클릭 또는 Enter(submit)에서만 키보드를 닫고 결과로 이동합니다.
+    function runSearch() {
+      var term = (q.value || '').trim();
+      if (!term) { q.focus(); toast('찾고 싶은 키워드를 적어 주세요'); return; }
+      state.q = term; state.kw = ''; state.limit = 12;
+      renderFeed(); syncSearchChip();
+      try { q.blur(); } catch (err) {}          // 모바일 가상 키보드 닫기
+      scrollToResults();
+      var n = visibleList().length;
+      toast(n ? '‘' + term + '’ 검색 결과 ' + n + '건' : '‘' + term + '’에 맞는 픽이 없습니다');
+    }
+    var searchForm = $('#searchWrap');
+    if (searchForm) searchForm.addEventListener('submit', function (e) { e.preventDefault(); runSearch(); });
+    qClear.addEventListener('click', function () { clearSearch(true); });
+    if ($('#qChip')) $('#qChip').addEventListener('click', function () { clearSearch(false); });
 
     // 분야 칩
     $('#catChips').addEventListener('click', function (e) {

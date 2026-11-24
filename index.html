@@ -129,6 +129,18 @@ img.is-broken{display:none !important}
 .search input::-webkit-search-cancel-button{display:none}
 .search-kbd{font-family:var(--mono);font-size:9.5px;color:var(--ink-4);border:1px solid var(--line);border-radius:5px;padding:1px 4px;background:var(--surface-2)}
 .search-x{font-size:11px;color:var(--ink-3);padding:2px}
+.search-x:hover{color:var(--ink)}
+.search-go{
+  flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  height:28px;padding:0 10px;margin-right:-3px;
+  border:0;border-radius:7px;background:var(--ink);color:#fff;
+  font-size:11.5px;font-weight:800;letter-spacing:-.02em;line-height:1;
+  white-space:nowrap;cursor:pointer;
+  transition:background .15s,transform .12s;
+}
+.search-go:hover{background:#1F2937}
+.search-go:active{transform:scale(.96)}
+.search-go:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
 .saved-btn{
   display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 12px;
   border:1px solid var(--line);border-radius:10px;background:var(--surface);
@@ -297,6 +309,10 @@ img.is-broken{display:none !important}
 .chip[aria-selected="true"] em{color:rgba(255,255,255,.55)}
 .chips.inline .chip{height:28px;padding:0 10px;font-size:12px}
 .filterbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0 14px;min-height:22px}
+#resultNote{transition:color .15s}
+#resultNote.is-search{font-size:12.5px;font-weight:700;color:var(--ink)}
+#resultNote.is-search b{color:var(--coral);font-variant-numeric:tabular-nums}
+#explore{scroll-margin-top:78px}
 .kwchip{
   display:inline-flex;align-items:center;gap:7px;height:26px;padding:0 10px;border-radius:999px;
   background:var(--coral-soft);color:var(--coral);font-size:11.5px;font-weight:800;
@@ -672,6 +688,8 @@ img.is-broken{display:none !important}
   .brand-txt b{font-size:16px}
   .search{width:auto;flex:1 1 auto;min-width:0;height:36px}
   .search-kbd{display:none}
+  .search-go{height:30px;padding:0 11px;margin-right:-4px;font-size:12px}
+  #explore{scroll-margin-top:70px}
   .mast-tools{flex:1 1 auto;min-width:0}
   .saved-lbl{display:none}
   .saved-btn{padding:0 10px;height:36px}
@@ -717,6 +735,8 @@ img.is-broken{display:none !important}
   .ad-slot[data-ad="top"] .ad-box,.ad-slot[data-ad="bottom"] .ad-box{min-height:100px}
 }
 @media (max-width:520px){
+  .search-ico{display:none}
+  .search{padding:0 8px;gap:6px}
   .feed{grid-template-columns:minmax(0,1fr)}
   .app-list{grid-template-columns:minmax(0,1fr)}
   .app-list .app-item:nth-child(2){border-top:1px solid var(--line-2);padding-top:9px}
@@ -761,13 +781,14 @@ img.is-broken{display:none !important}
     </nav>
 
     <div class="mast-tools">
-      <div class="search" id="searchWrap">
+      <form class="search" id="searchWrap" role="search" action="#explore" autocomplete="off">
         <svg class="search-ico" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="11" cy="11" r="6.6" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M15.9 15.9 20 20" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
         <label class="sr-only" for="q">제목·매체·키워드 검색</label>
-        <input id="q" type="search" autocomplete="off" placeholder="키워드 · 매체 · 제목 검색" data-testid="search-input">
+        <input id="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="키워드 · 매체 검색" data-testid="search-input">
         <kbd class="search-kbd" aria-hidden="true">⌘K</kbd>
         <button class="search-x" id="qClear" type="button" aria-label="검색어 지우기" hidden>✕</button>
-      </div>
+        <button class="search-go" id="qGo" type="submit" aria-label="검색 실행" data-testid="search-submit">검색</button>
+      </form>
       <button class="saved-btn" id="savedBtn" type="button" aria-pressed="false" data-testid="saved-filter">
         <span aria-hidden="true">⭐</span><span class="saved-lbl">저장한 픽</span><b id="savedN">0</b>
       </button>
@@ -846,8 +867,8 @@ img.is-broken{display:none !important}
 
       <div class="filterbar">
         <span class="micro" id="resultNote" data-testid="result-note">불러오는 중…</span>
-        <button class="kwchip" id="kwChip" type="button" hidden data-testid="kw-chip">
-          <span>#<b id="kwText"></b></span><span class="x" aria-hidden="true">✕</span>
+        <button class="kwchip" id="qChip" type="button" hidden aria-label="검색어 초기화" data-testid="search-chip">
+          <span>‘<b id="qChipText"></b>’ 검색</span><span class="x" aria-hidden="true">✕</span>
         </button>
         <button class="savedchip" id="savedChip" type="button" hidden data-testid="saved-chip">⭐ 저장한 픽만 보기 ✕</button>
       </div>
@@ -1505,6 +1526,7 @@ img.is-broken{display:none !important}
       closeModal();
       state.filter = 'all'; state.q = ''; state.kw = '';
       $('#q').value = '';
+      syncSearchChip();
       renderChips(); renderFeed();
       document.getElementById('explore').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
@@ -1573,12 +1595,35 @@ img.is-broken{display:none !important}
 
   function applyKeyword(kw) {
     state.kw = kw; state.filter = 'all'; state.q = kw; state.limit = 12;
-    var q = $('#q'); if (q) { q.value = kw; $('#qClear').hidden = false; }
-    var chip = $('#kwChip');
-    if (chip) { chip.hidden = false; $('#kwText').textContent = kw; }
-    renderChips(); renderFeed();
-    document.getElementById('explore').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var q = $('#q'); if (q) q.value = kw;
+    renderChips(); syncSearchChip(); renderFeed();
+    scrollToResults();
     toast('‘' + kw + '’ 로 필터했습니다');
+  }
+
+  /* 검색 상태(입력값 · 지우기 버튼 · 결과 칩)를 한 곳에서 맞춥니다. */
+  function syncSearchChip() {
+    var q = $('#q'), term = (state.q || '').trim();
+    var x = $('#qClear'); if (x) x.hidden = !(q && q.value);
+    var chip = $('#qChip');
+    if (chip) {
+      chip.hidden = !term;
+      if (term) { var t = $('#qChipText'); if (t) t.textContent = term; }
+    }
+  }
+
+  function scrollToResults() {
+    var target = document.getElementById('explore');
+    if (!target) return;
+    try { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    catch (e) { target.scrollIntoView(); }
+  }
+
+  function clearSearch(keepFocus) {
+    state.q = ''; state.kw = '';
+    var q = $('#q'); if (q) q.value = '';
+    syncSearchChip(); renderFeed();
+    if (keepFocus && q) q.focus();
   }
 
   /* --------------------------- 칩 · 피드 --------------------------- */
@@ -1711,8 +1756,10 @@ img.is-broken{display:none !important}
       (state.savedOnly ? '카드의 ★ 를 눌러 소재를 저장해 보세요.' : '검색어나 분야를 바꿔 보세요.') + '</div>');
 
     var note = $('#resultNote');
+    var qText = (state.q || '').trim();
+    if (note) note.classList.toggle('is-search', !!qText);
     if (state.savedOnly) note.innerHTML = '저장한 픽 <b>' + list.length + '</b>건';
-    else if (state.q) note.innerHTML = '‘' + esc(state.q) + '’ 검색 결과 <b>' + list.length + '</b>건';
+    else if (qText) note.innerHTML = '‘' + esc(qText) + '’ 검색 결과 <b>' + list.length + '</b>건';
     else if (state.filter !== 'all') note.innerHTML = esc(CAT[state.filter].label) + ' <b>' + list.length + '</b>건';
     else note.innerHTML = '전체 <b>' + list.length + '</b>건 · ' +
       (state.sort === 'rise' ? '급상승 순' : state.sort === 'new' ? '최신 순' : '인기 순');
@@ -2190,24 +2237,31 @@ img.is-broken{display:none !important}
   function bind() {
     // 검색
     var q = $('#q');
+    var qClear = $('#qClear');
     q.addEventListener('input', function () {
       state.q = q.value; state.kw = ''; state.limit = 12;
-      $('#qClear').hidden = !q.value;
-      var chip = $('#kwChip'); if (chip) chip.hidden = !state.kw;
+      syncSearchChip();
       renderFeed();
     });
     q.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); document.getElementById('explore').scrollIntoView({ behavior: 'smooth' }); }
-      if (e.key === 'Escape') { q.value = ''; state.q = ''; $('#qClear').hidden = true; renderFeed(); }
+      if (e.key === 'Escape') { e.preventDefault(); clearSearch(true); }
     });
-    $('#qClear').addEventListener('click', function () {
-      q.value = ''; state.q = ''; state.kw = ''; $('#qClear').hidden = true;
-      $('#kwChip').hidden = true; renderFeed(); q.focus();
-    });
-    $('#kwChip').addEventListener('click', function () {
-      state.kw = ''; state.q = ''; q.value = ''; $('#qClear').hidden = true;
-      this.hidden = true; renderFeed();
-    });
+
+    // 검색 실행 — 버튼 클릭 또는 Enter(submit)에서만 키보드를 닫고 결과로 이동합니다.
+    function runSearch() {
+      var term = (q.value || '').trim();
+      if (!term) { q.focus(); toast('찾고 싶은 키워드를 적어 주세요'); return; }
+      state.q = term; state.kw = ''; state.limit = 12;
+      renderFeed(); syncSearchChip();
+      try { q.blur(); } catch (err) {}          // 모바일 가상 키보드 닫기
+      scrollToResults();
+      var n = visibleList().length;
+      toast(n ? '‘' + term + '’ 검색 결과 ' + n + '건' : '‘' + term + '’에 맞는 픽이 없습니다');
+    }
+    var searchForm = $('#searchWrap');
+    if (searchForm) searchForm.addEventListener('submit', function (e) { e.preventDefault(); runSearch(); });
+    qClear.addEventListener('click', function () { clearSearch(true); });
+    if ($('#qChip')) $('#qChip').addEventListener('click', function () { clearSearch(false); });
 
     // 분야 칩
     $('#catChips').addEventListener('click', function (e) {

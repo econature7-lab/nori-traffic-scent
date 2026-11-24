@@ -72,13 +72,14 @@
     </nav>
 
     <div class="mast-tools">
-      <div class="search" id="searchWrap">
+      <form class="search" id="searchWrap" role="search" action="#explore" autocomplete="off">
         <svg class="search-ico" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="11" cy="11" r="6.6" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M15.9 15.9 20 20" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
         <label class="sr-only" for="q">제목·매체·키워드 검색</label>
-        <input id="q" type="search" autocomplete="off" placeholder="키워드 · 매체 · 제목 검색" data-testid="search-input">
+        <input id="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="키워드 · 매체 검색" data-testid="search-input">
         <kbd class="search-kbd" aria-hidden="true">⌘K</kbd>
         <button class="search-x" id="qClear" type="button" aria-label="검색어 지우기" hidden>✕</button>
-      </div>
+        <button class="search-go" id="qGo" type="submit" aria-label="검색 실행" data-testid="search-submit">검색</button>
+      </form>
       <button class="saved-btn" id="savedBtn" type="button" aria-pressed="false" data-testid="saved-filter">
         <span aria-hidden="true">⭐</span><span class="saved-lbl">저장한 픽</span><b id="savedN">0</b>
       </button>
@@ -157,8 +158,8 @@
 
       <div class="filterbar">
         <span class="micro" id="resultNote" data-testid="result-note">불러오는 중…</span>
-        <button class="kwchip" id="kwChip" type="button" hidden data-testid="kw-chip">
-          <span>#<b id="kwText"></b></span><span class="x" aria-hidden="true">✕</span>
+        <button class="kwchip" id="qChip" type="button" hidden aria-label="검색어 초기화" data-testid="search-chip">
+          <span>‘<b id="qChipText"></b>’ 검색</span><span class="x" aria-hidden="true">✕</span>
         </button>
         <button class="savedchip" id="savedChip" type="button" hidden data-testid="saved-chip">⭐ 저장한 픽만 보기 ✕</button>
       </div>
