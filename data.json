@@ -8,7 +8,7 @@
   },
   "stats": {
     "sources": 30,
-    "collected": 101,
+    "collected": 74,
     "live_sources": 21,
     "skipped_sources": 2,
     "elapsed_sec": 22.2,
@@ -496,7 +496,7 @@
     },
     {
       "id": "n_1ed12bc2c2",
-      "section": "사회·생활",
+      "section": "IT·AI",
       "feed_section": "경제·증시",
       "title": "디지털자산거래소 대주주 지분, 최대 34%까지 허용",
       "source": "매일경제",
@@ -548,7 +548,7 @@
     },
     {
       "id": "n_a1395624d8",
-      "section": "사회·생활",
+      "section": "IT·AI",
       "feed_section": "IT·AI",
       "title": "[뉴스줌인] 디지털자산법 1년 논쟁 끝에 원안 고수…가상자산업계 반발 불가피",
       "source": "전자신문",
@@ -570,7 +570,7 @@
     },
     {
       "id": "n_8a799097a0",
-      "section": "사회·생활",
+      "section": "IT·AI",
       "feed_section": "사회·생활",
       "title": "정부, 디지털자산법 공개…국내 코인 발행 9년 만에 허용 추진, 원화 스테이블코인은 은행 주도로 발행",
       "source": "조선일보",
@@ -2902,11 +2902,11 @@
     "post_summaries": 0
   },
   "retag": {
-    "at": "2026-11-24T23:15:28+09:00",
+    "at": "2026-11-24T23:22:11+09:00",
     "rule": "keyword-score-v2",
-    "news_dropped_sensitive": 1,
-    "posts_dropped_sensitive": 3,
-    "hackathons_dropped": 1,
-    "estate_added": 8
+    "news_dropped_sensitive": 0,
+    "posts_dropped_sensitive": 0,
+    "hackathons_dropped": 0,
+    "estate_added": 0
   }
 }

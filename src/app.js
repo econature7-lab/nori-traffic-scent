@@ -598,7 +598,7 @@
     var q = $('#q'); if (q) q.value = kw;
     renderChips(); syncSearchChip(); renderFeed();
     scrollToResults();
-    toast('‘' + kw + '’ 로 필터했습니다');
+    toast('‘' + kw + '’ 키워드로 필터했습니다');
   }
 
   /* 검색 상태(입력값 · 지우기 버튼 · 결과 칩)를 한 곳에서 맞춥니다. */
@@ -766,8 +766,11 @@
     var html = shown.map(feedCard).join('');
     if (list.length > 6) html = shown.slice(0, 6).map(feedCard).join('') + inFeedAd() +
       shown.slice(6).map(feedCard).join('');
+    var qNow = (state.q || '').trim();
     $('#feedGrid').innerHTML = html || ('<div class="empty"><b>조건에 맞는 픽이 없습니다</b>' +
-      (state.savedOnly ? '카드의 ★ 를 눌러 소재를 저장해 보세요.' : '검색어나 분야를 바꿔 보세요.') + '</div>');
+      (state.savedOnly ? '카드의 ★ 를 눌러 소재를 저장해 보세요.'
+        : qNow ? '‘' + esc(qNow) + '’은 오늘 수집된 픽에 없습니다. 다른 검색어나 분야를 골라 보세요.'
+        : '검색어나 분야를 바꿔 보세요.') + '</div>');
 
     var note = $('#resultNote');
     var qText = (state.q || '').trim();
