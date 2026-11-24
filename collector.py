@@ -716,8 +716,7 @@ BLOG_FEEDS = [
     ("GeekNews", "https://news.hada.io/rss/news"),
     ("슬로우뉴스", "https://slownews.kr/feed"),
     ("바이라인네트워크", "https://byline.network/feed/"),
-    # 한국어 일반 독자용 피드 — 본문(content:encoded)에 대표 이미지가 함께 오는 곳만 넣었습니다.
-    ("요즘IT", "https://yozm.wishket.com/magazine/feed/"),
+    # 한국어 일반 독자용 피드 — 본문에 대표 이미지가 함께 오고, GitHub Actions 러너에서도 열리는 곳.
     ("벤처스퀘어", "https://www.venturesquare.net/feed"),
 ]
 

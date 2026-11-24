@@ -149,7 +149,7 @@ var TRENDPICK_ADS = {
 | 뉴스 | 매일경제 · 연합뉴스(경제/산업/정치/사회) · 전자신문 · AI타임스 · 조선일보 | 불필요 | ✅ 수집 |
 | 유튜브 | SBS 뉴스 · YTN · JTBC 채널 RSS | 불필요 | ✅ 수집 |
 | 유튜브 | 실시간 인기 급상승 | `YOUTUBE_API_KEY` | 키 있으면 인기순 |
-| 블로그 | GeekNews · 슬로우뉴스 · 바이라인네트워크 · 요즘IT · 벤처스퀘어 | 불필요 | ✅ 수집(+본문·og:image 보강) |
+| 블로그 | GeekNews · 슬로우뉴스 · 바이라인네트워크 · 벤처스퀘어 | 불필요 | ✅ 수집(+본문·og:image 보강, 썸네일 12/12) |
 | 오픈소스 | GitHub Trending | 불필요 | ✅ 수집 |
 | 앱·게임 | iTunes 앱 순위(아이콘 포함) · Steam 최다 플레이 | 불필요 | ✅ 수집 |
 | 해커톤 | Devpost Open Hackathons | 불필요 | ✅ 수집 |

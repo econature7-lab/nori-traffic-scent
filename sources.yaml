@@ -109,14 +109,11 @@ blogs:
   - name: 바이라인네트워크
     type: rss
     url: https://byline.network/feed/
-  - name: 요즘IT
-    type: rss
-    url: https://yozm.wishket.com/magazine/feed/
-    note: 한국어 IT 교양 매거진 · content:encoded 본문 이미지
   - name: 벤처스퀘어
     type: rss
     url: https://www.venturesquare.net/feed
     note: 스타트업·IT 뉴스 · 대표 이미지 포함
+    # 요즘IT(yozm.wishket.com) 는 GitHub Actions 러너에서 HTTP 405 로 막혀 제외 (로컬에서는 열렸음)
   - name: 네이버 블로그 검색
     type: api
     key: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET
