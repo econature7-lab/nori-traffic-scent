@@ -42,6 +42,58 @@ KEEP_KEYS = [
 
 AD_HOSTS = ("pagead2.googlesyndication.com", "t1.daumcdn.net")
 
+# ── 안전 필터 (collector.py 와 같은 목록 · 마지막 방어선) ───────────────────
+# 수집 단계에서 걸러지지 않은 자극적 제목·테스트성 공모전이 data.json 에 남아 있어도
+# 화면(애드핏·애드센스 심사 대상)에는 나가지 않게 빌드에서 한 번 더 뺍니다.
+SENSITIVE_PATTERNS = (
+    r"불륜", r"외도", r"성폭행", r"성폭력", r"강간", r"성추행", r"성희롱", r"성매매", r"성범죄",
+    r"음란", r"야동", r"포르노", r"성관계", r"자살", r"자해", r"살인", r"살해", r"시신", r"시체",
+    r"변사체", r"마약", r"도박", r"폭행", r"폭력", r"구타", r"혐오", r"범죄자", r"몰카", r"나체",
+    r"정사신", r"원조교제", r"미성년자.*성",
+)
+SENSITIVE_PAIRS = (("산부인과", "여환자"), ("산부인과", "당황"), ("부부", "성생활"), ("성인", "영상"))
+SENSITIVE_RE = re.compile("|".join(SENSITIVE_PATTERNS), re.I)
+TEST_HACKATHON_NAMES = {"test", "test1", "test2", "testing", "테스트", "테스트1", "sample",
+                        "demo", "asdf", "aaa", "aaaa", "untitled", "hackathon", "my hackathon",
+                        "new hackathon"}
+
+
+def is_sensitive(title: str, desc: str = "") -> bool:
+    t = f"{title or ''} {desc or ''}"
+    if SENSITIVE_RE.search(t):
+        return True
+    return any(a in t and b in t for a, b in SENSITIVE_PAIRS)
+
+
+def is_bogus_hackathon(name: str) -> bool:
+    n = re.sub(r"\s+", " ", str(name or "")).strip().lower()
+    if not n:
+        return True
+    if n in TEST_HACKATHON_NAMES:
+        return True
+    if re.fullmatch(r"(test|테스트|sample|demo|asdf|qwer|aaa+|123+)[\s\-_0-9]*", n):
+        return True
+    return len(re.sub(r"[^0-9a-z가-힣]", "", n)) < 3
+
+
+def clean_payload(payload: dict) -> None:
+    """민감 제목·테스트성 공모전을 빌드 직전에 한 번 더 정리합니다."""
+    dropped = []
+    for key in ("posts", "news"):
+        rows = []
+        for it in payload.get(key) or []:
+            if is_sensitive(it.get("title", ""), it.get("desc", "") or it.get("summary", "")):
+                dropped.append(it.get("title", ""))
+                continue
+            rows.append(it)
+        payload[key] = rows
+    hacks = payload.get("hackathons") or []
+    payload["hackathons"] = [h for h in hacks if not is_bogus_hackathon(h.get("name", ""))]
+    if dropped:
+        print("안전 필터 · 민감 제목", len(dropped), "건 제외")
+    if len(payload["hackathons"]) != len(hacks):
+        print("안전 필터 · 테스트 공모전", len(hacks) - len(payload["hackathons"]), "건 제외")
+
 # ── 고정 페이지 (about · policy · privacy · contact) ────────────────────────
 PAGES = [
     ("about", "소개",
@@ -293,6 +345,7 @@ def main() -> int:
     payload: dict = {}
     if data_path.exists():
         payload = json.loads(data_path.read_text(encoding="utf-8"))
+        clean_payload(payload)
         embedded = {k: payload.get(k) for k in KEEP_KEYS if k in payload}
     else:
         embedded = {"posts": [], "news": [], "notes": ["data.json 이 없습니다. collector.py 를 먼저 실행하세요."]}

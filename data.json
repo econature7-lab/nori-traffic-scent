@@ -8,10 +8,11 @@
   },
   "stats": {
     "sources": 30,
-    "collected": 98,
+    "collected": 101,
     "live_sources": 21,
     "skipped_sources": 2,
-    "elapsed_sec": 22.2
+    "elapsed_sec": 22.2,
+    "news": 39
   },
   "sources": [
     " YTN",
@@ -212,26 +213,6 @@
       "summary": "매년 12월 3일 '국민주권의 날' 지정 소식"
     },
     {
-      "id": "c_48e0bb126f",
-      "cat": "comm",
-      "source": "더쿠",
-      "source_key": "theqoo",
-      "title": "젠슨황, 추가 불륜 사실 공개",
-      "url": "https://theqoo.net/hot/4416430719",
-      "published": "",
-      "time": "최근",
-      "img": "",
-      "keywords": [
-        "더쿠"
-      ],
-      "sample": false,
-      "topics_kw": [],
-      "topics": [],
-      "hot": 63,
-      "rise": 227,
-      "summary": "젠슨황의 추가 불륜 사실 공개 관련 이슈"
-    },
-    {
       "id": "c_edcc64937d",
       "cat": "comm",
       "source": "더쿠",
@@ -318,44 +299,6 @@
       "published": "",
       "time": "최근",
       "img": "https://file1.bobaedream.co.kr/humor/2026/11/24/13/rlqk1795496396_2071801751.gif",
-      "keywords": [
-        "보배드림"
-      ],
-      "sample": false,
-      "topics_kw": [],
-      "topics": [],
-      "hot": 63,
-      "rise": 227
-    },
-    {
-      "id": "c_77749a7620",
-      "cat": "comm",
-      "source": "보배드림",
-      "source_key": "bobaedream",
-      "title": "산부인과 여의사를 당황시킨 여환자",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1049756&vdate=",
-      "published": "",
-      "time": "최근",
-      "img": "https://image.bobaedream.co.kr/mobile/iphone/common/headTitle.png",
-      "keywords": [
-        "보배드림"
-      ],
-      "sample": false,
-      "topics_kw": [],
-      "topics": [],
-      "hot": 63,
-      "rise": 227
-    },
-    {
-      "id": "c_b94e81a841",
-      "cat": "comm",
-      "source": "보배드림",
-      "source_key": "bobaedream",
-      "title": "방송에서 범죄자 얼굴공개를 안하는 이유..",
-      "url": "https://www.bobaedream.co.kr/view?code=best&No=1049755&vdate=",
-      "published": "",
-      "time": "최근",
-      "img": "https://file1.bobaedream.co.kr/humor/2026/11/24/13/BwkW1795495172_820722718.webp",
       "keywords": [
         "보배드림"
       ],
@@ -553,7 +496,7 @@
     },
     {
       "id": "n_1ed12bc2c2",
-      "section": "IT·AI",
+      "section": "사회·생활",
       "feed_section": "경제·증시",
       "title": "디지털자산거래소 대주주 지분, 최대 34%까지 허용",
       "source": "매일경제",
@@ -573,9 +516,7 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "ai"
-      ]
+      "topics": []
     },
     {
       "id": "n_aa0f5438ab",
@@ -607,7 +548,7 @@
     },
     {
       "id": "n_a1395624d8",
-      "section": "IT·AI",
+      "section": "사회·생활",
       "feed_section": "IT·AI",
       "title": "[뉴스줌인] 디지털자산법 1년 논쟁 끝에 원안 고수…가상자산업계 반발 불가피",
       "source": "전자신문",
@@ -625,13 +566,11 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "ai"
-      ]
+      "topics": []
     },
     {
       "id": "n_8a799097a0",
-      "section": "IT·AI",
+      "section": "사회·생활",
       "feed_section": "사회·생활",
       "title": "정부, 디지털자산법 공개…국내 코인 발행 9년 만에 허용 추진, 원화 스테이블코인은 은행 주도로 발행",
       "source": "조선일보",
@@ -649,9 +588,7 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "ai"
-      ]
+      "topics": []
     },
     {
       "id": "n_749460ff5a",
@@ -673,9 +610,7 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "ai"
-      ]
+      "topics": []
     },
     {
       "id": "n_2b6ea971c9",
@@ -697,9 +632,7 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "ai"
-      ]
+      "topics": []
     },
     {
       "id": "n_3d6e27c1da",
@@ -723,9 +656,7 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "ai"
-      ]
+      "topics": []
     },
     {
       "id": "n_8810327ea2",
@@ -755,7 +686,7 @@
     },
     {
       "id": "n_1c162dee13",
-      "section": "부동산·정책",
+      "section": "사회·생활",
       "feed_section": "경제·증시",
       "title": "40년 만에 ‘5·18 진압·삼청교육’ 공적 검토…경찰 102명 정부포상 취소",
       "source": "매일경제",
@@ -775,13 +706,11 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "estate"
-      ]
+      "topics": []
     },
     {
       "id": "n_3e010a1f51",
-      "section": "부동산·정책",
+      "section": "경제·증시",
       "feed_section": "경제·증시",
       "title": "골드만삭스 “내년 한은 기준금리 3.5%가 상단…달러당 원화값은 1280원”",
       "source": "매일경제",
@@ -801,13 +730,11 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "estate"
-      ]
+      "topics": []
     },
     {
       "id": "n_02092eaa20",
-      "section": "부동산·정책",
+      "section": "사회·생활",
       "feed_section": "부동산·정책",
       "title": "나노융합성과전서 오치정 씨아이에스케미칼 부사장 대통령 표창",
       "source": "연합뉴스 산업",
@@ -825,13 +752,11 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "estate"
-      ]
+      "topics": []
     },
     {
       "id": "n_efc8ef142f",
-      "section": "부동산·정책",
+      "section": "사회·생활",
       "feed_section": "부동산·정책",
       "title": "잦은 비에 물러지는 감귤…농진청 \"조생종 수부증 주의\"",
       "source": "연합뉴스 산업",
@@ -849,13 +774,11 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "estate"
-      ]
+      "topics": []
     },
     {
       "id": "n_a14e2dc11d",
-      "section": "부동산·정책",
+      "section": "사회·생활",
       "feed_section": "부동산·정책",
       "title": "박수현 충남지사 \"공공기관 2차 이전 성과 기대 못 미칠 수도\"",
       "source": "연합뉴스 산업",
@@ -873,13 +796,11 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "estate"
-      ]
+      "topics": []
     },
     {
       "id": "n_c37d3d02b6",
-      "section": "부동산·정책",
+      "section": "사회·생활",
       "feed_section": "부동산·정책",
       "title": "서귀포해경, 조업일지 부실 기재 중국 어선 2척 적발",
       "source": "연합뉴스 산업",
@@ -897,13 +818,11 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "estate"
-      ]
+      "topics": []
     },
     {
       "id": "n_2392a64cf8",
-      "section": "부동산·정책",
+      "section": "사회·생활",
       "feed_section": "부동산·정책",
       "title": "[군산소식] SGC에너지, 취약계층에 김치 280상자 기탁",
       "source": "연합뉴스 산업",
@@ -921,13 +840,11 @@
       "comments": 0,
       "views": 0,
       "topics_kw": [],
-      "topics": [
-        "estate"
-      ]
+      "topics": []
     },
     {
       "id": "n_5e956ebaf7",
-      "section": "부동산·정책",
+      "section": "사회·생활",
       "feed_section": "부동산·정책",
       "title": "\"항만공사 통합은 자율성 훼손…연구용역 중단해야\"",
       "source": "연합뉴스 정치",
@@ -948,33 +865,8 @@
         "build"
       ],
       "topics": [
-        "build",
-        "estate"
+        "build"
       ]
-    },
-    {
-      "id": "n_506b8e1609",
-      "section": "사회·생활",
-      "feed_section": "경제·증시",
-      "title": "연인 폭행한 ‘징맨’ 황철순, 민사 항소심도 패소…“1550만원 배상하라”",
-      "source": "매일경제",
-      "url": "https://www.mk.co.kr/news/society/12217099",
-      "published": "2026-11-24T14:59:01+09:00",
-      "time": "5분 전",
-      "fresh": 0.998,
-      "keywords": [
-        "헤드라인"
-      ],
-      "noise": false,
-      "img": "https://pimg.mk.co.kr/news/cms/202611/24/news-p.v1.20261124.a4f399f27b9c40fd8a1ab4d128c9518e_R.jpg",
-      "sample": false,
-      "cat": "news",
-      "hot": 64,
-      "rise": 116,
-      "comments": 0,
-      "views": 0,
-      "topics_kw": [],
-      "topics": []
     },
     {
       "id": "n_a7d4c77201",
@@ -1133,6 +1025,222 @@
       "views": 0,
       "topics_kw": [],
       "topics": []
+    },
+    {
+      "id": "n_548bacf0c5",
+      "section": "부동산·정책",
+      "feed_section": "경제·증시",
+      "title": "“오늘은 또 어디서 자나”…치솟는 집값에 美 노숙 학생 155만명 ‘역대 최다’",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/world/12217548",
+      "published": "2026-11-24T22:39:26+09:00",
+      "time": "35분 전",
+      "fresh": 0.985,
+      "keywords": [
+        "헤드라인"
+      ],
+      "noise": false,
+      "img": "https://pimg.mk.co.kr/news/cms/202611/24/news-p.v1.20261124.3a022e1081dc4949ad8b467c41e39eb6_R.jpeg",
+      "sample": false,
+      "cat": "news",
+      "hot": 86,
+      "rise": 250,
+      "comments": 0,
+      "views": 0,
+      "topics_kw": [
+        "estate"
+      ],
+      "topics": [
+        "estate"
+      ]
+    },
+    {
+      "id": "n_97e915ba72",
+      "section": "부동산·정책",
+      "feed_section": "부동산·정책",
+      "title": "“당첨 땐 17억 번다”…잠래아 2가구 줍줍에 5만3447명 몰려",
+      "source": "매일경제 부동산",
+      "url": "https://www.mk.co.kr/news/realestate/12217460",
+      "published": "2026-11-24T20:01:45+09:00",
+      "time": "3시간 전",
+      "fresh": 0.919,
+      "keywords": [
+        "부동산"
+      ],
+      "noise": false,
+      "img": "https://pimg.mk.co.kr/news/cms/202611/24/news-p.v1.20261124.e53bd0c4a6bc43438933d282ee4c3942_R.png",
+      "sample": false,
+      "cat": "news",
+      "hot": 85,
+      "rise": 244,
+      "comments": 0,
+      "views": 0,
+      "topics_kw": [],
+      "topics": [
+        "estate"
+      ]
+    },
+    {
+      "id": "n_ebf6156511",
+      "section": "부동산·정책",
+      "feed_section": "부동산·정책",
+      "title": "공공택지 이주 협조땐 보상금 30%↑",
+      "source": "매일경제 부동산",
+      "url": "https://www.mk.co.kr/news/realestate/12217322",
+      "published": "2026-11-24T18:00:00+09:00",
+      "time": "5시간 전",
+      "fresh": 0.869,
+      "keywords": [
+        "부동산"
+      ],
+      "noise": false,
+      "img": "https://static.mk.co.kr/facebook_mknews.jpg",
+      "sample": false,
+      "cat": "news",
+      "hot": 84,
+      "rise": 238,
+      "comments": 0,
+      "views": 0,
+      "topics_kw": [],
+      "topics": [
+        "estate"
+      ]
+    },
+    {
+      "id": "n_3426b3b4ce",
+      "section": "부동산·정책",
+      "feed_section": "부동산·정책",
+      "title": "\"팹·주택공급 몰려 … 건설인력 26만명 필요\"",
+      "source": "매일경제 부동산",
+      "url": "https://www.mk.co.kr/news/realestate/12217319",
+      "published": "2026-11-24T17:19:07+09:00",
+      "time": "5시간 전",
+      "fresh": 0.852,
+      "keywords": [
+        "부동산"
+      ],
+      "noise": false,
+      "img": "https://pimg.mk.co.kr/news/cms/202611/25/20261125_01110125000003_L00.jpg",
+      "sample": false,
+      "cat": "news",
+      "hot": 83,
+      "rise": 232,
+      "comments": 0,
+      "views": 0,
+      "topics_kw": [
+        "estate"
+      ],
+      "topics": [
+        "estate"
+      ]
+    },
+    {
+      "id": "n_4861a45de7",
+      "section": "부동산·정책",
+      "feed_section": "부동산·정책",
+      "title": "송파한양1차, 넉달만에 조합 설립",
+      "source": "매일경제 부동산",
+      "url": "https://www.mk.co.kr/news/realestate/12217320",
+      "published": "2026-11-24T17:19:07+09:00",
+      "time": "5시간 전",
+      "fresh": 0.852,
+      "keywords": [
+        "부동산"
+      ],
+      "noise": false,
+      "img": "https://pimg.mk.co.kr/news/cms/202611/25/20261125_01170125000001_S00.jpg",
+      "sample": false,
+      "cat": "news",
+      "hot": 82,
+      "rise": 226,
+      "comments": 0,
+      "views": 0,
+      "topics_kw": [],
+      "topics": [
+        "estate"
+      ]
+    },
+    {
+      "id": "n_07cb0c0d79",
+      "section": "부동산·정책",
+      "feed_section": "부동산·정책",
+      "title": "부산 신축 선착순 전세에 …\"사흘전부터 텐트쳤어요\"",
+      "source": "매일경제 부동산",
+      "url": "https://www.mk.co.kr/news/realestate/12217318",
+      "published": "2026-11-24T17:19:06+09:00",
+      "time": "5시간 전",
+      "fresh": 0.852,
+      "keywords": [
+        "부동산"
+      ],
+      "noise": false,
+      "img": "https://pimg.mk.co.kr/news/cms/202611/25/20261125_01160125000002_L00.jpg",
+      "sample": false,
+      "cat": "news",
+      "hot": 81,
+      "rise": 220,
+      "comments": 0,
+      "views": 0,
+      "topics_kw": [
+        "estate"
+      ],
+      "topics": [
+        "estate"
+      ]
+    },
+    {
+      "id": "n_3104ddddc8",
+      "section": "부동산·정책",
+      "feed_section": "부동산·정책",
+      "title": "“7개월 만에 소폭 반등”…10월 1순위 청약 경쟁률 5.62대 1",
+      "source": "매일경제 부동산",
+      "url": "https://www.mk.co.kr/news/realestate/12217126",
+      "published": "2026-11-24T15:28:50+09:00",
+      "time": "7시간 전",
+      "fresh": 0.806,
+      "keywords": [
+        "부동산"
+      ],
+      "noise": false,
+      "img": "https://pimg.mk.co.kr/news/cms/202611/24/news-p.v1.20261124.94947e8841894c66926b43a6d9eb7a44_R.jpeg",
+      "sample": false,
+      "cat": "news",
+      "hot": 80,
+      "rise": 214,
+      "comments": 0,
+      "views": 0,
+      "topics_kw": [
+        "estate"
+      ],
+      "topics": [
+        "estate"
+      ]
+    },
+    {
+      "id": "n_e3d432bdf7",
+      "section": "부동산·정책",
+      "feed_section": "부동산·정책",
+      "title": "오세훈, 국토장관에 조기 회동 제안…재초환 등 3대 규제 완화 촉구",
+      "source": "매일경제 부동산",
+      "url": "https://www.mk.co.kr/news/realestate/12217111",
+      "published": "2026-11-24T15:15:57+09:00",
+      "time": "7시간 전",
+      "fresh": 0.8,
+      "keywords": [
+        "부동산"
+      ],
+      "noise": false,
+      "img": "https://pimg.mk.co.kr/news/cms/202611/24/rcv.YNA.20261124.PYH2026112413200001300_R.jpg",
+      "sample": false,
+      "cat": "news",
+      "hot": 79,
+      "rise": 208,
+      "comments": 0,
+      "views": 0,
+      "topics_kw": [],
+      "topics": [
+        "estate"
+      ]
     }
   ],
   "videos": [
@@ -1373,12 +1481,8 @@
         "유튜브",
         "long"
       ],
-      "topics_kw": [
-        "ai"
-      ],
-      "topics": [
-        "ai"
-      ]
+      "topics_kw": [],
+      "topics": []
     },
     {
       "id": "y_7178ffcd35",
@@ -1491,12 +1595,8 @@
       "cat": "web",
       "hot": 62,
       "rise": 140,
-      "topics_kw": [
-        "apptech"
-      ],
-      "topics": [
-        "apptech"
-      ]
+      "topics_kw": [],
+      "topics": []
     },
     {
       "id": "b_e69eca284b",
@@ -1864,17 +1964,6 @@
   ],
   "hackathons": [
     {
-      "id": "h_a94a8fe5cc",
-      "name": "test",
-      "host": "Nutech, Islamabad",
-      "prize": "$ 0",
-      "deadline": "Nov 23 - 24, 2026",
-      "dday": "D-0",
-      "url": "https://nutech-hackfest-2026.devpost.com/",
-      "img": "https://assets.devpost.com/assets/defaults/thumbnail-placeholder-8c916ef4da99a222ce6ece077c71c7e282f071f830747b2abb5718018cbfa699.gif",
-      "sample": false
-    },
-    {
       "id": "h_e465c6a4b0",
       "name": "Diwali Festiverse: The Agent-to-Agent Hackathon (India Edition)",
       "host": "hidevs",
@@ -2032,9 +2121,9 @@
       {
         "rank": 3,
         "label": "부동산·정책",
-        "title": "골드만삭스 “내년 한은 기준금리 3.5%가 상단…달러당 원화값은 1280원”",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/stock/12217095",
+        "title": "“당첨 땐 17억 번다”…잠래아 2가구 줍줍에 5만3447명 몰려",
+        "source": "매일경제 부동산",
+        "url": "https://www.mk.co.kr/news/realestate/12217460",
         "img": "https://pimg.mk.co.kr/news/cms/202611/24/news-p.v1.20261124.d999c94f57fa4bc5a634b18e41667c3a_R.jpg"
       },
       {
@@ -2117,27 +2206,27 @@
       {
         "key": "estate",
         "label": "부동산·정책",
-        "emoji": "🏛️",
-        "title": "골드만삭스 '금리 3.5%·환율 1280원' 전망, 공공기관 이전 논의도",
-        "body": "골드만삭스는 내년 한국은행 기준금리 상단을 3.5%, 달러당 원화값을 1280원으로 전망했습니다. 40년 만에 5·18 진압과 삼청교육의 공적을 재검토해 경찰 102명의 정부포상 취소가 논의된 점도 함께 잡혔습니다. 박수현 충남지사는 공공기관 2차 이전의 성과가 기대에 못 미칠 수 있다고 말했습니다.",
+        "emoji": "🏢",
+        "title": "잠래아 2가구 줍줍에 5만 명…청약 경쟁률 5.62대 1 반등",
+        "body": "부동산 시장에서는 잠실 재건축 단지 '잠래아' 2가구 줍줍에 5만3,447명이 몰렸고, 10월 1순위 청약 경쟁률이 7개월 만에 5.62대 1로 반등했습니다. 부산 신축 선착순 전세에는 사흘 전부터 텐트를 치고 기다리는 줄이 섰고, 오세훈 시장은 국토장관에 조기 회동을 제안하며 재초환 등 3대 규제 완화를 촉구했습니다.",
         "points": [
           {
-            "text": "내년 기준금리 3.5%·환율 1280원 전망",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/stock/12217095",
-            "title": "골드만삭스 “내년 한은 기준금리 3.5%가 상단…달러당 원화값은 1280원”"
+            "text": "“당첨 땐 17억 번다”…잠래아 2가구 줍줍에 5만3447명 몰려",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12217460",
+            "title": "“당첨 땐 17억 번다”…잠래아 2가구 줍줍에 5만3447명 몰려"
           },
           {
-            "text": "경찰 102명 정부포상 취소 검토",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/politics/12217101",
-            "title": "40년 만에 ‘5·18 진압·삼청교육’ 공적 검토…경찰 102명 정부포상 취소"
+            "text": "“7개월 만에 소폭 반등”…10월 1순위 청약 경쟁률 5.62대 1",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12217126",
+            "title": "“7개월 만에 소폭 반등”…10월 1순위 청약 경쟁률 5.62대 1"
           },
           {
-            "text": "공공기관 2차 이전 성과 우려",
-            "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261124124100063",
-            "title": "박수현 충남지사 \"공공기관 2차 이전 성과 기대 못 미칠 수도\""
+            "text": "오세훈, 국토장관에 조기 회동 제안…재초환 등 3대 규제 완화 촉구",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12217111",
+            "title": "오세훈, 국토장관에 조기 회동 제안…재초환 등 3대 규제 완화 촉구"
           }
         ]
       },
@@ -2557,9 +2646,9 @@
       }
     ],
     "paragraphs": [
-      "오늘 수집한 102건에서 가장 큰 축은 가상자산 제도입니다. 정부가 디지털자산법을 공개하며 국내 코인 발행이 9년 만에 허용되는 방향이 잡혔고, 원화 스테이블코인은 은행이 주도해 발행하는 구조가 제시됐습니다. 같은 날 디지털자산거래소 대주주 지분을 최대 34%까지 허용하는 방안이 나왔고, 전자신문은 1년 논쟁 끝에 원안을 고수해 업계 반발이 불가피하다고 전했습니다. 제도가 '허용' 쪽으로 방향을 튼 첫날, 시장은 기대와 우려를 함께 계산하는 분위기입니다.",
-      "시장에서는 오늘부터 자사주 하루 주문 한도가 완화되면서 '롤러코스피'의 변동성을 눌러 줄 버팀목이 될지가 관심사입니다. 중소기업 지원은 구체적인 사업으로 이어집니다. 중기부가 제약·바이오 중소벤처의 기술사업화와 해외 진출을 지원하고, 경남도는 내년 중소기업융합대전 개최를 확정했습니다. 부동산·정책에서는 골드만삭스가 내년 한은 기준금리 상단을 3.5%, 달러당 원화값을 1280원으로 전망한 점과, 40년 만에 5·18 진압·삼청교육의 공적을 재검토해 경찰 102명의 정부포상 취소가 논의된 점이 눈에 띕니다.",
-      "생활 영역에서는 K뷰티가 세계 자본을 모으며 생산·물류 거점을 넓히고 있다는 보도가 이어졌고, HPE가 메모리 품귀 때문에 납품에 40주가 걸린다고 밝혀 부품 공급난이 길어질 수 있음을 시사했습니다. 커뮤니티에서는 12월 3일 '국민주권의 날' 지정 소식과 개인주의·결혼을 둘러싼 논쟁이 함께 올랐고, 급상승 키워드는 '퇴직', '장기 기증', '12월 3일', 'AI' 순입니다. 영상 조회수 1위는 BIGBANG 'GiiiRIP'(423만 회)이고 어벤져스 '둠스데이' 메인 예고편(218만 회)이 뒤를 이었습니다. 앱 순위는 팝콘D플레이·네이버플러스 스토어가 1·2위, 피클과 Claude가 3·4위입니다. 마감이 오늘인 해커톤·공모전이 6건 있으니 지원을 준비 중이라면 일정부터 확인하세요."
+      "오늘 수집한 101건에서 가장 큰 축은 가상자산 제도입니다. 정부가 디지털자산법을 공개하며 국내 코인 발행이 9년 만에 허용되는 방향이 잡혔고, 원화 스테이블코인은 은행이 주도해 발행하는 구조가 제시됐습니다. 같은 날 디지털자산거래소 대주주 지분을 최대 34%까지 허용하는 방안이 나왔고, 전자신문은 1년 논쟁 끝에 원안을 고수해 업계 반발이 불가피하다고 전했습니다. 제도가 '허용' 쪽으로 방향을 튼 첫날, 시장은 기대와 우려를 함께 계산하는 분위기입니다.",
+      "시장에서는 오늘부터 자사주 하루 주문 한도가 완화되면서 '롤러코스피'의 변동성을 눌러 줄 버팀목이 될지가 관심사입니다. 중소기업 지원은 구체적인 사업으로 이어집니다. 중기부가 제약·바이오 중소벤처의 기술사업화와 해외 진출을 지원하고, 경남도는 내년 중소기업융합대전 개최를 확정했습니다. 부동산 시장에서는 잠실 재건축 단지 '잠래아' 2가구 줍줍에 5만3,447명이 몰렸고, 10월 1순위 청약 경쟁률이 7개월 만에 5.62대 1로 반등했습니다. 오세훈 시장은 국토장관에 조기 회동을 제안하며 재초환 등 3대 규제 완화를 촉구했고, 골드만삭스는 내년 한은 기준금리 상단을 3.5%, 달러당 원화값을 1280원으로 전망했습니다.",
+      "생활 영역에서는 K뷰티가 세계 자본을 모으며 생산·물류 거점을 넓히고 있다는 보도가 이어졌고, HPE가 메모리 품귀 때문에 납품에 40주가 걸린다고 밝혀 부품 공급난이 길어질 수 있음을 시사했습니다. 커뮤니티에서는 12월 3일 '국민주권의 날' 지정 소식과 개인주의·결혼을 둘러싼 논쟁이 함께 올랐고, 급상승 키워드는 '퇴직', '장기 기증', '12월 3일', 'AI' 순입니다. 영상 조회수 1위는 BIGBANG 'GiiiRIP'(423만 회)이고 어벤져스 '둠스데이' 메인 예고편(218만 회)이 뒤를 이었습니다. 앱 순위는 팝콘D플레이·네이버플러스 스토어가 1·2위, 피클과 Claude가 3·4위입니다. 마감이 오늘인 해커톤·공모전이 5건 있으니 지원을 준비 중이라면 일정부터 확인하세요."
     ],
     "highlights": [
       {
@@ -2805,11 +2894,19 @@
     }
   },
   "summary_meta": {
-    "engine": "trendpick-editorial",
+    "engine": "rule-based",
     "model": "",
-    "at": "2026-11-24T21:55:00+09:00",
+    "at": "2026-11-24T23:15:44+09:00",
     "paragraphs": 3,
-    "sections": 5,
+    "sections": 4,
     "post_summaries": 0
+  },
+  "retag": {
+    "at": "2026-11-24T23:15:28+09:00",
+    "rule": "keyword-score-v2",
+    "news_dropped_sensitive": 1,
+    "posts_dropped_sensitive": 3,
+    "hackathons_dropped": 1,
+    "estate_added": 8
   }
 }

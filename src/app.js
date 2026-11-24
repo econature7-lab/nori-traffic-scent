@@ -290,6 +290,11 @@
       hot: o.hot || 50, rise: o.rise || 100,
       views: o.views || 0,
       section: o.section || '',
+      // 검색 대상 확대용 — 요약·키워드·채널 · 주최 · 분류 · 배급사
+      summary: o.summary || '', desc: o.desc || '',
+      keywords: o.keywords || [], channel: o.channel || '',
+      host: o.host || '', category: o.category || '', publisher: o.publisher || '',
+      topics: topics,
       hue: hashHue(o.title || '')
     };
   }
@@ -644,10 +649,24 @@
     }).join('');
   }
 
+  /* 검색: 제목·매체·분야 + 요약·키워드·채널·주최·분류·배급사까지 한 번에 찾습니다.
+     여러 단어를 넣으면 모두 들어 있는 항목만 남깁니다('아파트 청약'). */
+  function searchText(f) {
+    var kws = f.keywords;
+    if (Array.isArray(kws)) kws = kws.join(' ');
+    return [
+      f.title, f.source, f.section || '',
+      f.summary || '', f.desc || '',
+      kws || '',
+      f.channel || '', f.host || '', f.category || '', f.publisher || ''
+    ].join(' ').toLowerCase();
+  }
   function matchesQuery(f, q) {
     if (!q) return true;
-    var hay = [f.title, f.source, (f.section || '')].join(' ').toLowerCase();
-    return hay.indexOf(q.toLowerCase()) !== -1;
+    var hay = searchText(f);
+    var words = String(q).toLowerCase().split(/\s+/).filter(Boolean);
+    if (!words.length) return true;
+    return words.every(function (w) { return hay.indexOf(w) !== -1; });
   }
 
   function visibleList() {

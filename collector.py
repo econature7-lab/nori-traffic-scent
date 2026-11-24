@@ -467,6 +467,8 @@ def scrape_community(name: str, url: str, key: str, pattern: str) -> list[dict]:
             continue
         if title in NAV_NOISE or any(b in title for b in NOISE_BITS):
             continue
+        if is_sensitive(title):
+            continue  # 선정적·자극적 제목은 커뮤니티 수집에서 제외
         if title in seen:
             continue
         seen.add(title)
@@ -488,15 +490,20 @@ def scrape_community(name: str, url: str, key: str, pattern: str) -> list[dict]:
 # (분야, 매체, URL, 종합 피드 여부)
 # 한국경제 RSS 는 데이터센터 IP·반복 요청에서 403 이 반복되어,
 # 실제로 수집되는 매일경제 + 연합뉴스 경제 피드로 대체했습니다(둘 다 대표 이미지 포함).
+# (피드 분야, 매체, URL, 키워드 미검출 시 기본 분야)
+# 피드 분야는 '어디서 왔는지'이고, 화면 분야는 제목 키워드로 다시 정합니다.
+# 예전에는 연합뉴스 산업·정치 피드를 통째로 부동산·정책으로 두어
+# 농수산·사회 기사가 부동산으로 분류됐습니다 → 기본값을 일반 분야로 내렸습니다.
 NEWS_FEEDS = [
-    ("경제·증시", "매일경제", "https://www.mk.co.kr/rss/30000001/", True),
-    ("경제·증시", "연합뉴스 경제", "https://www.yna.co.kr/rss/economy.xml", False),
-    ("IT·AI", "전자신문", "https://rss.etnews.com/Section901.xml", True),
-    ("IT·AI", "AI타임스", "https://www.aitimes.com/rss/allArticle.xml", False),
-    ("부동산·정책", "연합뉴스 산업", "https://www.yna.co.kr/rss/industry.xml", False),
-    ("부동산·정책", "연합뉴스 정치", "https://www.yna.co.kr/rss/politics.xml", False),
-    ("사회·생활", "연합뉴스 사회", "https://www.yna.co.kr/rss/society.xml", False),
-    ("사회·생활", "조선일보", "https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml", True),
+    ("경제·증시", "매일경제", "https://www.mk.co.kr/rss/30000001/", "사회·생활"),
+    ("경제·증시", "연합뉴스 경제", "https://www.yna.co.kr/rss/economy.xml", "경제·증시"),
+    ("IT·AI", "전자신문", "https://rss.etnews.com/Section901.xml", "사회·생활"),
+    ("IT·AI", "AI타임스", "https://www.aitimes.com/rss/allArticle.xml", "IT·AI"),
+    ("부동산·정책", "매일경제 부동산", "https://www.mk.co.kr/rss/50300009/", "부동산·정책"),
+    ("부동산·정책", "연합뉴스 산업", "https://www.yna.co.kr/rss/industry.xml", "사회·생활"),
+    ("부동산·정책", "연합뉴스 정치", "https://www.yna.co.kr/rss/politics.xml", "사회·생활"),
+    ("사회·생활", "연합뉴스 사회", "https://www.yna.co.kr/rss/society.xml", "사회·생활"),
+    ("사회·생활", "조선일보", "https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml", "사회·생활"),
 ]
 NEWS_SECTION_ORDER = ["경제·증시", "IT·AI", "부동산·정책", "사회·생활"]
 
@@ -506,23 +513,52 @@ ENTERTAINMENT_HINTS = ("열애", "결혼", "컴백", "불화", "아이돌", "드
 PREFERRED_SOURCES = ("연합뉴스", "매일경제", "전자신문", "AI타임스", "조선일보")
 
 
+def kw_hit(text_low: str, word: str) -> bool:
+    """짧은 영문 키워드(AI·IT·GPU·LH)는 단어 경계로, 한글은 부분 일치로 찾습니다.
+
+    경계를 안 쓰면 'AI'가 'mail·air' 같은 문자열 안에서도 걸려 오분류됩니다.
+    """
+    w = word.lower().strip()
+    if w and re.fullmatch(r"[a-z0-9 .:_-]+", w) and len(w) <= 8:
+        return re.search(r"(?<![a-z0-9])" + re.escape(w) + r"(?![a-z0-9])", text_low) is not None
+    return w in text_low
+
+
+# 사고·재난 기사는 '주택·아파트'라는 단어만으로 부동산 뉴스가 되지 않게 합니다.
+ACCIDENT_HINTS = ("화재", "불이 났", "대피", "숨져", "숨진", "사망자", "부상자", "흡입", "붕괴",
+                  "매몰", "실종", "화상")
+ESTATE_MARKET_HINTS = ("집값", "전셋값", "매매가", "분양", "청약", "경매", "공매", "낙찰", "재건축",
+                       "재개발", "입주", "미분양", "공시가격", "아파트값", "부동산 시장", "매매")
+
+
+def is_accident(text: str) -> bool:
+    return any(h in (text or "") for h in ACCIDENT_HINTS)
+
+
 def section_rules(title: str, default: str) -> str:
-    """종합 피드(예: 매일경제 all-news)의 기사를 제목 키워드로 분야에 배정합니다."""
-    t = title
+    """기사 제목 키워드로 화면 분야를 정합니다(피드 분야는 참고만).
+
+    '정부·국회·대통령·정책·세제·금리' 같은 넓은 단어는 부동산·정책에서 뺐습니다.
+    그 단어들이 일반 정치·경제 기사를 부동산으로 끌어와 탭이 오염됐습니다.
+    """
+    low = title.lower()
+    if is_accident(title) and not any(kw_hit(low, w) for w in ESTATE_MARKET_HINTS):
+        return "사회·생활"
     rules = [
-        ("IT·AI", ("AI", "인공지능", "반도체", "IT", "스마트폰", "클라우드", "로봇", "플랫폼",
-                   "게임", "통신", "넥사", "데이터센터", "소프트웨어", "보안", "삼성전자", "LG",
-                   "SK", "네이버", "카카오", "구글", "애플", "배터리", "디스플레이", "메타버스",
-                   "디지털", "5G", "온라인", "앱", "챗봇", "자율주행")),
-        ("부동산·정책", ("부동산", "아파트", "전세", "청약", "집값", "재건축", "국토부", "주택",
-                       "분양", "임대", "금리", "대통령", "국회", "정부", "정책", "세제")),
+        ("IT·AI", ("AI", "인공지능", "반도체", "스마트폰", "클라우드", "로봇", "플랫폼",
+                   "게임", "통신", "데이터센터", "소프트웨어", "삼성전자", "LG전자", "네이버", "카카오",
+                   "구글", "애플", "배터리", "디스플레이", "메타버스", "5G", "챗봇", "자율주행")),
+        ("부동산·정책", ("부동산", "아파트", "전세", "청약", "집값", "재건축", "재개발", "국토부", "국토교통",
+                       "주택", "분양", "임대", "공시가격", "오피스텔", "상가", "경매", "공매", "입주",
+                       "미분양", "주담대", "주택담보", "정비사업", "LH")),
         ("경제·증시", ("증시", "코스피", "코스닥", "주가", "환율", "수출", "물가", "실적", "투자",
-                       "기업", "매출", "영업이익", "반값", "로또", "경제")),
+                       "기업", "매출", "영업이익", "로또", "경제", "금리", "원화값", "펀드")),
         ("사회·생활", ("사고", "검찰", "경찰", "재판", "의료", "교육", "수능", "날씨", "사건",
-                       "논란", "지역", "병원", "화재", "부정행위", "선거")),
+                       "논란", "지역", "병원", "화재", "부정행위", "선거", "대통령", "국회", "정부",
+                       "정책", "세제", "농가", "어선", "감귤", "축제", "기탁")),
     ]
     for section, words in rules:
-        if any(w.lower() in t.lower() for w in words):
+        if any(kw_hit(low, w) for w in words):
             return section
     return default
 
@@ -531,11 +567,12 @@ def collect_news() -> list[dict]:
     note("한국경제 RSS", "replaced", 0,
          "403 차단 반복 → 매일경제 · 연합뉴스 경제(둘 다 대표 이미지 포함)로 대체", kind="news")
     out: list[dict] = []
-    for section, name, url, general in NEWS_FEEDS:
-        default = "사회·생활" if general else section
+    for section, name, url, default in NEWS_FEEDS:
         for it in collect_feed(name, url, kind="news"):
             if re.match(r"\s*\[(사진|포토|화보|영상|그래픽)\]", it["title"]):
                 continue  # 사진 캡션 기사는 트렌드 카드로 가치가 낮아 제외
+            if is_sensitive(it["title"]):
+                continue  # 애드핏·애드센스 심사에 불리한 자극적 제목은 수집 단계에서 제외
             out.append({
                 "id": mk_id("n", it["title"]),
                 "section": section_rules(it["title"], default),
@@ -863,7 +900,9 @@ def collect_hackathons() -> list[dict]:
         data = json.loads(http_get("https://devpost.com/api/hackathons?status[]=open&order_by=deadline",
                                    timeout=20))
         out: list[dict] = []
-        for h in data.get("hackathons", [])[:6]:
+        for h in data.get("hackathons", []):
+            if len(out) >= 6:
+                break
             deadline = h.get("submission_period_dates", "")
             dday = ""
             m = re.search(r"([A-Z][a-z]{2}) (\d{1,2})", deadline or "")
@@ -876,8 +915,11 @@ def collect_hackathons() -> list[dict]:
                     dday = f"D-{max(0, (dt - now_kst()).days)}"
                 except ValueError:
                     dday = ""
+            name = clean_text(h.get("title", ""))
+            if is_bogus_hackathon(name):
+                continue  # 'test' 같은 테스트성 공모전은 목록에서 제외
             out.append({
-                "id": mk_id("h", h.get("title", "")), "name": h.get("title", ""),
+                "id": mk_id("h", h.get("title", "")), "name": name,
                 "host": clean_text(h.get("organization_name", "") or "Devpost"),
                 "prize": clean_text(h.get("prize_amount", "") or ""),
                 "deadline": deadline, "dday": dday or "모집중",
@@ -909,37 +951,105 @@ def collect_trends() -> list[dict]:
 # ----------------------------------------------------------------------------
 # 주제 태깅 (수집 결과를 5개 주제로 분류 — 예시 데이터 없이 실제 글만)
 # ----------------------------------------------------------------------------
+# 제목 키워드 점수 합이 TOPIC_SCORE_MIN 이상일 때만 그 주제로 넣습니다.
+#   core(2점) = 그 주제 자체를 가리키는 말 / weak(1점) = 문맥을 보태는 말
+# 예전에는 제목에 '정부·공사·도시·모델' 같은 넓은 단어가 하나만 있어도 태그가 붙고,
+# 뉴스 분야(section)를 그대로 주제로 옮겨서 무관한 기사가 부동산·경매 탭에 들어갔습니다.
 TOPIC_RULES = {
-    "mom": ("숲", "유아", "초등", "육아", "어린이", "유치원", "어린이집",
-            "방학", "숲놀이", "학부모", "엄마", "아동", "보육", "급식", "돌봄", "교사"),
-    "estate": ("부동산", "아파트", "전세", "매매", "청약", "임대", "집값", "재건축", "경매",
-               "상가", "오피스텔", "중개", "분양", "주택", "월세", "공시가격", "토지",
-               "재개발", "입주"),
-    "ai": ("AI", "인공지능", "챗GPT", "챗gpt", "클로드", "제미나이", "반도체", "데이터센터",
-           "로봇", "LLM", "생성형", "알고리즘", "엔비디아", "GPU", "오픈AI", "앤트로픽",
-           "모델", "자동화"),
-    "apptech": ("핫딜", "할인", "특가", "쿠폰", "리워드", "앱테크", "포인트", "최저가", "세일",
-                "블랙프라이데이", "반값", "이벤트", "경품", "무료", "구독", "체험단"),
-    "build": ("건축", "설계", "입찰", "나라장터", "시공", "공모", "감리", "인테리어", "도시",
-              "용역", "공사", "리모델링", "조경", "철골", "안전진단"),
+    "mom": {
+        "core": ("숲놀이", "유아", "육아", "어린이집", "유치원", "초등학생", "학부모", "보육", "급식",
+                 "돌봄", "아동", "방학", "키즈", "숲 체험", "숲체험", "엄마표"),
+        "weak": ("숲", "초등", "엄마", "아이", "교사", "놀이"),
+    },
+    "estate": {
+        "core": ("부동산", "아파트", "전세", "월세", "청약", "분양", "재건축", "재개발", "경매", "공매",
+                 "낙찰", "집값", "전셋값", "매매가", "임대", "주택", "국토부", "국토교통", "LH", "주담대",
+                 "모기지", "오피스텔", "상가", "토지", "공시가격", "입주", "미분양", "한국부동산원",
+                 "공인중개사", "정비사업", "아파트값", "전세사기", "갭투자", "주택담보", "전세대출"),
+        "weak": ("기준금리", "보유세", "종부세", "취득세", "재산세", "분양가", "청약통장", "임대차",
+                 "도시재생", "땅값", "주거", "세입자", "집주인", "용적률", "건폐율"),
+    },
+    "ai": {
+        "core": ("인공지능", "AI", "챗GPT", "챗gpt", "생성형", "LLM", "오픈AI", "앤트로픽", "제미나이",
+                 "클로드", "엔비디아", "GPU", "반도체", "데이터센터", "로봇", "머신러닝", "딥러닝",
+                 "자율주행", "AI 에이전트", "코파일럿", "허깅페이스", "파운데이션 모델"),
+        "weak": ("알고리즘", "자동화", "챗봇", "빅데이터", "클라우드", "디지털 전환"),
+    },
+    "apptech": {
+        "core": ("핫딜", "특가", "쿠폰", "앱테크", "리워드", "최저가", "블랙프라이데이", "반값", "경품",
+                 "체험단", "무료배송", "할인코드", "기프티콘", "포인트 적립", "리퍼브"),
+        "weak": ("할인", "포인트", "구독", "무료", "이벤트", "프로모션", "세일"),
+    },
+    "build": {
+        "core": ("건축", "설계", "입찰", "나라장터", "시공", "감리", "인테리어", "용역", "리모델링",
+                 "조경", "철골", "안전진단", "공사비", "BIM", "구조설계", "도급", "하도급", "현상설계",
+                 "건설사", "설계공모", "공모전"),
+        "weak": ("도시", "공사", "건설", "용적률", "건폐율", "공정률"),
+    },
 }
-
-SECTION_TOPIC = {"부동산·정책": "estate", "IT·AI": "ai"}
+TOPIC_SCORE_MIN = 2
 
 
 def topic_tags(text: str, section: str = "") -> list[str]:
-    """제목 키워드 + 뉴스 분야로 주제 태그를 만듭니다(수집 글만 대상 · 예시 없음)."""
-    hits: list[str] = []
+    """제목 키워드 점수로 주제 태그를 만듭니다(수집 글만 대상 · 예시 없음).
+
+    section 은 더 이상 주제를 강제하지 않습니다(참고용 인자만 유지).
+    """
     low = text.lower()
-    for cat, words in TOPIC_RULES.items():
-        for w in words:
-            if w.lower() in low:
-                hits.append(cat)
-                break
-    sec_tag = SECTION_TOPIC.get(section)
-    if sec_tag and sec_tag not in hits:
-        hits.append(sec_tag)
+    hits: list[str] = []
+    for cat, rules in TOPIC_RULES.items():
+        if cat == "estate" and is_accident(text) and not any(kw_hit(low, w) for w in ESTATE_MARKET_HINTS):
+            continue  # 화재·사고 기사는 부동산·경매 주제로 넣지 않습니다
+        score = 0
+        for w in rules.get("core", ()):
+            if kw_hit(low, w):
+                score += 2
+        for w in rules.get("weak", ()):
+            if kw_hit(low, w):
+                score += 1
+        if score >= TOPIC_SCORE_MIN:
+            hits.append(cat)
     return hits
+
+
+# ----------------------------------------------------------------------------
+# 자극적·선정적 제목 필터 (애드핏·애드센스 심사 감점 위험 · 수집·빌드 공통 원칙)
+# ----------------------------------------------------------------------------
+SENSITIVE_PATTERNS = (
+    r"불륜", r"외도", r"성폭행", r"성폭력", r"강간", r"성추행", r"성희롱", r"성매매", r"성범죄",
+    r"음란", r"야동", r"포르노", r"성관계", r"자살", r"자해", r"살인", r"살해", r"시신", r"시체",
+    r"변사체", r"마약", r"도박", r"폭행", r"폭력", r"구타", r"혐오", r"범죄자", r"몰카", r"나체",
+    r"정사신", r"원조교제", r"미성년자.*성",
+)
+SENSITIVE_PAIRS = (
+    ("산부인과", "여환자"), ("산부인과", "당황"), ("부부", "성생활"), ("성인", "영상"),
+)
+SENSITIVE_RE = re.compile("|".join(SENSITIVE_PATTERNS), re.I)
+
+
+def is_sensitive(title: str, desc: str = "") -> bool:
+    """제목·요약에 선정적·자극적 표현이 있으면 True."""
+    t = f"{title or ''} {desc or ''}"
+    if SENSITIVE_RE.search(t):
+        return True
+    return any(a in t and b in t for a, b in SENSITIVE_PAIRS)
+
+
+# 무의미한 테스트성 해커톤(예: name='test')은 공모전 목록에서 뺍니다.
+TEST_HACKATHON_NAMES = {"test", "test1", "test2", "testing", "테스트", "테스트1", "sample",
+                        "demo", "asdf", "aaa", "aaaa", "untitled", "hackathon", "my hackathon",
+                        "new hackathon"}
+
+
+def is_bogus_hackathon(name: str) -> bool:
+    n = re.sub(r"\s+", " ", str(name or "")).strip().lower()
+    if not n:
+        return True
+    if n in TEST_HACKATHON_NAMES:
+        return True
+    if re.fullmatch(r"(test|테스트|sample|demo|asdf|qwer|aaa+|123+)[\s\-_0-9]*", n):
+        return True
+    return len(re.sub(r"[^0-9a-z가-힣]", "", n)) < 3
 
 
 # ----------------------------------------------------------------------------
@@ -1302,7 +1412,7 @@ def build_payload() -> dict:
     for it in all_items:
         text = it.get("title", "") + " " + (it.get("source") or "")
         it["topics_kw"] = topic_tags(it.get("title", ""))
-        it["topics"] = topic_tags(text, it.get("section", ""))
+        it["topics"] = topic_tags(text)
     enrich_images([it for it in all_items if not it.get("img")], budget_sec=45.0, workers=8, limit=50)
 
     score_posts(posts)
