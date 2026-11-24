@@ -304,20 +304,12 @@
       "count": 8,
       "items": [
         {
-          "title": "“오늘은 또 어디서 자나”…치솟는 집값에 美 노숙 학생 155만명 ‘역대 최다’",
-          "source": "매일경제",
-          "url": "https://www.mk.co.kr/news/world/12217548",
-          "kind": "news",
-          "time": "35분 전",
-          "hot": 88
-        },
-        {
           "title": "“당첨 땐 17억 번다”…잠래아 2가구 줍줍에 5만3447명 몰려",
           "source": "매일경제 부동산",
           "url": "https://www.mk.co.kr/news/realestate/12217460",
           "kind": "news",
           "time": "3시간 전",
-          "hot": 87
+          "hot": 88
         },
         {
           "title": "송파한양1차, 넉달만에 조합 설립",
@@ -325,7 +317,7 @@
           "url": "https://www.mk.co.kr/news/realestate/12217320",
           "kind": "news",
           "time": "5시간 전",
-          "hot": 86
+          "hot": 87
         },
         {
           "title": "부산 신축 선착순 전세에 …\"사흘전부터 텐트쳤어요\"",
@@ -333,12 +325,20 @@
           "url": "https://www.mk.co.kr/news/realestate/12217318",
           "kind": "news",
           "time": "5시간 전",
-          "hot": 85
+          "hot": 86
         },
         {
           "title": "“7개월 만에 소폭 반등”…10월 1순위 청약 경쟁률 5.62대 1",
           "source": "매일경제 부동산",
           "url": "https://www.mk.co.kr/news/realestate/12217126",
+          "kind": "news",
+          "time": "7시간 전",
+          "hot": 85
+        },
+        {
+          "title": "오세훈, 국토장관에 조기 회동 제안…재초환 등 3대 규제 완화 촉구",
+          "source": "매일경제 부동산",
+          "url": "https://www.mk.co.kr/news/realestate/12217111",
           "kind": "news",
           "time": "7시간 전",
           "hot": 84
