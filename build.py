@@ -256,6 +256,11 @@ def build_creators(payload: dict) -> dict:
         "brief": {
             "no": brief.get("no"), "date": brief.get("date"), "label": brief.get("label"),
             "title": brief.get("title"), "lead": brief.get("lead"), "engine": brief.get("engine"),
+            "paragraphs": brief.get("paragraphs") or [],
+            "highlights": [
+                {k: h.get(k) for k in ("label", "text", "url", "source")}
+                for h in (brief.get("highlights") or []) if isinstance(h, dict)
+            ],
             "picks": [
                 {k: p.get(k) for k in ("rank", "label", "title", "source", "url")}
                 for p in (brief.get("picks") or [])

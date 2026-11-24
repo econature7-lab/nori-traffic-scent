@@ -566,6 +566,7 @@ img.is-broken{display:none !important}
 .ap-ico .art-lbl,.ap-ico .art-mark{display:none}
 .n-thumb .art-lbl b{font-size:9.5px}
 .n-thumb .art-lbl i,.n-thumb .art-mark{display:none}
+.yt-thumb .art-mark{display:none}
 .pick-media .art-lbl{left:12px;bottom:10px}
 .pick-media .art-lbl b{font-size:15px}
 .pick-media .art-lbl i{font-size:7.5px}

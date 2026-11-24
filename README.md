@@ -112,6 +112,8 @@ var TRENDPICK_ADS = {
 
 **경량 피드** — `data/creators.json` (top10 · brief · 분야별 상위 5건 `ai`/`estate`/`mom`/`apptech`/`build`). `지연_X`·블로그 자동화가 그대로 읽어 갈 수 있는 정적 JSON입니다.
 
+**브리프 구성** — `brief` 는 `title`(편집 헤드라인) · `lead`(덱 1~2문장) · `paragraphs`(본문 2~3문단) · `highlights`(핵심 포인트 3줄) · `sections`(분야별 카드) · `picks`(대표 기사)로 이루어집니다. `summarize.py` 는 Gemini 가 있으면 이 구조로 문장을 쓰고, 키가 없으면 같은 구조를 규칙 기반으로 채웁니다. 메인 히어로에는 `lead` 와 `highlights` 가, 그 아래 `#brief-deep` 영역에는 `paragraphs` 와 `sections` 가 그대로 실려 페이지 본문 분량을 만듭니다.
+
 ---
 
 ## 4. 썸네일 정책과 실측
@@ -121,8 +123,9 @@ var TRENDPICK_ADS = {
 3. 이미지가 없는 기사는 `og:image` / `twitter:image` 를 짧은 타임아웃(6초)·동시성 8로 추출하고,
    연속 실패한 호스트는 그 실행에서 건너뜁니다.
 4. GitHub 저장소는 `opengraph.githubassets.com`, 앱은 iTunes 아이콘, 스팀은 `header.jpg` 를 씁니다.
-5. 그래도 이미지가 없거나 `onerror` 가 나면 **깨진 이미지 대신 카테고리별 커스텀 SVG 일러스트**가 나옵니다
-   (`loading="lazy"`, `referrerpolicy="no-referrer"`, `aspect-ratio:16/9` 통일).
+5. 그래도 이미지가 없거나 `onerror` 가 나면 **깨진 이미지 대신 분야별 에디토리얼 커버**가 나옵니다
+   (딥톤 그라데이션 + 분야 라벨·영문 키커 + 기하 장식, 흰 글자 대비 6.8:1 이상).
+   `loading="lazy"`, `referrerpolicy="no-referrer"`, `aspect-ratio:16/9` 통일.
 
 2026-11-22 실측 (`python collector.py` 로그 그대로):
 

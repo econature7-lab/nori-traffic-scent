@@ -253,7 +253,6 @@
         '</g>' +
         '<g stroke="#fff" stroke-opacity=".09"><path d="M206 180 320 58"/><path d="M240 180 320 92"/></g>' +
         '<circle cx="272" cy="22" r="3.6" fill="#fff" fill-opacity=".55"/>' +
-        '<path d="M0 166h320" stroke="#fff" stroke-opacity=".13"/>' +
       '</svg>' +
       '<span class="art-lbl"><i>' + esc(a.en) + '</i><b>' + esc(label) + '</b></span>' +
       '<span class="art-mark">TRENDPICK</span></span>';
@@ -678,6 +677,8 @@
   function feedCard(f) {
     var on = isSaved(f.id);
     var label = CAT[f.cat] ? CAT[f.cat].label : '소식';
+    // 뉴스 카드는 분야별 커버(경제·증시/IT·AI/부동산·정책/사회·생활)로 색을 나눕니다
+    var artCat = f.cat === 'news' ? sectionCat(f.section) : f.cat;
     var meta = [];
     if (f.kind === 'shorts') meta.push('SHORTS');
     else if (f.kind === 'video') meta.push('영상');
@@ -686,7 +687,7 @@
     meta.push(f.source);
     return '<article class="pick" data-id="' + esc(f.id) + '">' +
       '<a class="pick-media" href="' + esc(f.url || '#') + '" target="_blank" rel="noopener" aria-label="' + esc(f.title) + ' 원문 열기">' +
-        artSvg(f.cat, f.title) +
+        artSvg(artCat, f.title) +
         (f.img ? '<img src="' + esc(f.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async" data-testid="thumb-' + esc(f.id) + '">' : '') +
         '<span class="pick-tag' + (f.kind === 'shorts' || f.kind === 'video' ? ' video' : '') + '">' + esc(label) + '</span>' +
       '</a>' +
