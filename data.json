@@ -2036,7 +2036,7 @@
         "src": "Google Trends"
       },
       {
-        "k": "12 월 3 일",
+        "k": "12월 3일",
         "r": 200,
         "url": "",
         "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS2B5MFvdfjl2sKaKitA1emZ49Ls8HT1xG-0Rc4NVw82C-NnEISxPqX-R9ICtY",
@@ -2145,8 +2145,8 @@
     ],
     "metrics": {
       "topics": 5,
-      "news": 32,
-      "items": 102
+      "news": 39,
+      "items": 101
     },
     "sections": [
       {

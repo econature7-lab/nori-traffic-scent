@@ -122,6 +122,20 @@ def main() -> int:
         data["stats"]["news"] = len(data["news"])
         data["stats"]["collected"] = (len(data["news"]) + len(data.get("posts", []))
                                       + len(data.get("videos", [])) + len(data.get("blogs", [])))
+    # 6) 브리프 수치·키워드 표기 정리 ---------------------------------------
+    brief = data.get("brief") or {}
+    metrics = brief.get("metrics")
+    if isinstance(metrics, dict):
+        metrics["news"] = len(data["news"])
+        metrics["items"] = sum(len(data.get(k, [])) for k in
+                               ("posts", "news", "videos", "blogs", "deals",
+                                "opensource", "apps", "hackathons"))
+        metrics["topics"] = len(brief.get("sections") or []) or metrics.get("topics")
+    # 구글 트렌드 키워드에 섞인 자동 띄어쓰기('12 월 3 일')를 바로잡습니다
+    ranks = data.get("ranks") or {}
+    for row in ranks.get("all") or []:
+        row["k"] = re.sub(r"(\d)\s+(월|일|년|주|개|건|명|분|초)", r"\1\2", str(row.get("k", "")))
+
     data["retag"] = {
         "at": datetime.now(col.KST).isoformat(timespec="seconds"),
         "rule": "keyword-score-v2",
