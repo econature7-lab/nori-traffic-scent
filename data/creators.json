@@ -1,13 +1,13 @@
 {
   "schema": "trendpick/creators/1",
-  "generated_at": "2026-11-25T06:40:42+09:00",
+  "generated_at": "2026-11-25T06:50:06+09:00",
   "site": {
     "repo": "econature7-lab/nori-traffic-scent",
     "pages_url": "https://econature7-lab.github.io/nori-traffic-scent/"
   },
   "issue": {
-    "no": 12,
-    "label": "No.12 (11.25)",
+    "no": 13,
+    "label": "No.13 (11.25)",
     "date": "2026-11-25"
   },
   "schedule": {
@@ -21,90 +21,113 @@
     {
       "rank": 1,
       "keyword": "AI",
-      "rise": 235,
+      "rise": 220,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 2,
-      "keyword": "원자력 잠수함",
-      "rise": 200,
-      "source": "Google Trends",
+      "keyword": "멸망전",
+      "rise": 192,
+      "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 3,
-      "keyword": "복귀",
+      "keyword": "둠스데이",
       "rise": 177,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 4,
-      "keyword": "서울지하철",
+      "keyword": "예고편",
       "rise": 177,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 5,
-      "keyword": "엔비디아",
-      "rise": 177,
-      "source": "트렌드픽 수집",
-      "url": ""
-    },
-    {
-      "rank": 6,
-      "keyword": "다시",
-      "rise": 177,
-      "source": "트렌드픽 수집",
-      "url": ""
-    },
-    {
-      "rank": 7,
       "keyword": "1원",
       "rise": 177,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
+      "rank": 6,
+      "keyword": "뉴스 모음",
+      "rise": 177,
+      "source": "트렌드픽 수집",
+      "url": ""
+    },
+    {
+      "rank": 7,
+      "keyword": "뉴스&트렌드",
+      "rise": 177,
+      "source": "트렌드픽 수집",
+      "url": ""
+    },
+    {
       "rank": 8,
-      "keyword": "건설",
-      "rise": 168,
-      "source": "Google Trends",
+      "keyword": "뉴스콘텐츠",
+      "rise": 177,
+      "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 9,
-      "keyword": "한동훈",
-      "rise": 164,
-      "source": "Google Trends",
+      "keyword": "금융·핀테크",
+      "rise": 177,
+      "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 10,
-      "keyword": "출근길",
-      "rise": 163,
-      "source": "트렌드픽 수집",
+      "keyword": "건설",
+      "rise": 168,
+      "source": "Google Trends",
       "url": ""
     }
   ],
   "brief": {
-    "no": "No.12",
+    "no": "No.13",
     "date": "2026-11-25",
     "label": "11.25",
-    "title": "역대급 실적에도 승진 잔치 없었다…삼성 ‘임원 가는 문’ 좁힌 · '장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험 · LH 미분양 매입확약 3만1천가구 중 1만3천가구 착공",
-    "lead": "IT·AI에서는 ''장롱면허' 이소영 장관도 탔다…중기부 공무원,…' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 'LH 미분양 매입확약 3만1천가구 중 1만3…' 소식이 눈에 띕니다. 오늘 수집한 103건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 6개 이슈를 골랐습니다.",
-    "engine": "rule-based",
-    "paragraphs": [],
-    "highlights": [],
+    "title": "바이오 자금난과 건설 인력난 속 AI 인재 확보 경쟁 심화",
+    "lead": "오늘 경제 분야에서는 바이오 기업들의 자금 확보 노력이 두드러졌습니다. 건설 시장에서는 인력난이 심화되는 가운데, IT·AI 분야에서는 인재 확보 경쟁이 가속화되고 있습니다. 주요 기업들의 실적과 투자 동향을 통해 시장의 흐름을 파악해야 할 시점입니다.",
+    "engine": "gemini:gemini-2.5-flash",
+    "paragraphs": [
+      "오늘의 핵심 흐름은 바이오 기업들의 자금 확보 노력과 건설 시장의 인력난 심화, 그리고 IT·AI 분야의 인재 확보 경쟁으로 요약됩니다. 바이오 기업들은 주식 할인 발행과 사채 조건 완화를 통해 자금난을 해소하려 안간힘을 쓰고 있으며, 이는 기업 체감경기 악화와 맞물려 투자 시장의 신중한 분위기를 반영합니다. 한편, 팹과 주택 공급이 몰리면서 건설 인력 26만 명 필요 전망이 나오는 등 건설 현장의 인력 부족 문제가 부각되었고, 이는 부동산 시장의 공급 계획에도 영향을 미칠 수 있습니다. 동시에 AI 부트캠프 학생 취업지원 행사 개최와 같은 움직임은 인공지능 인재 확보를 위한 산업계의 노력을 보여주며, 기술 경쟁 심화 속 인재의 중요성을 강조합니다.",
+      "경제·증시 분야에서는 바이오 기업들이 자금 확보를 위해 주식 할인 발행과 사채 조건 완화 등 다양한 노력을 기울이고 있다는 점을 주목해야 합니다. IT·AI 분야에서는 인공지능 인재 확보를 위한 움직임이 활발하며, AI 부트캠프 학생 취업지원 행사 개최를 통해 인재 유치 경쟁이 심화되고 있음을 확인할 수 있습니다. 부동산·정책 분야에서는 팹과 주택 공급이 몰리면서 건설 인력 26만 명 필요 전망이 제기되어 인력난이 심화될 것으로 예상되며, 이는 향후 공급 계획에 영향을 줄 수 있습니다. 사회·생활 분야에서는 소득과 나이 제한 없이 1인당 80만원을 지원한다는 소식이 주목받으며, 생활 경제에 대한 관심이 높다는 것을 알 수 있습니다.",
+      "오늘 챙겨볼 실용 포인트로는 급상승 키워드에서 'AI', '멸망전', '둠스데이', '예고편' 등이 눈에 띄며, 이는 인공지능 기술과 엔터테인먼트 콘텐츠에 대한 높은 관심을 반영합니다. 유튜브 인기 영상 순위에서는 '어벤져스: 둠스데이' 메인 예고편이 높은 조회수를 기록하며 영화 개봉에 대한 기대감을 보여줍니다. 앱스토어 순위에서는 '피클: 나만의 AI 에이전트'와 'Claude by Anthropic'이 생산성 앱 상위권을 차지하며 AI 기반 서비스의 인기를 증명합니다. 또한, '1원' 키워드와 네이버페이 관련 커뮤니티 글은 앱테크와 소액 리워드에 대한 사용자들의 높은 관심을 시사합니다."
+    ],
+    "highlights": [
+      {
+        "label": "경제·증시",
+        "text": "바이오 기업들이 자금 확보를 위해 주식 할인 발행과 사채 조건 완화 등 노력을 기울이고 있습니다.",
+        "url": "https://www.chosun.com/economy/science/2026/11/25/MM3DEMZWMYYDSYLDGY2TSZRWGE/",
+        "source": "조선일보"
+      },
+      {
+        "label": "IT·AI",
+        "text": "인공지능 인재 확보를 위한 산업계의 노력이 활발하며, 취업지원 행사도 개최되었습니다.",
+        "url": "https://www.yna.co.kr/view/AKR20261124148300530",
+        "source": "연합뉴스 산업"
+      },
+      {
+        "label": "부동산·정책",
+        "text": "팹과 주택 공급 증가로 건설 인력 26만 명이 필요할 것으로 전망됩니다.",
+        "url": "https://www.mk.co.kr/news/realestate/12217319",
+        "source": "매일경제 부동산"
+      }
+    ],
     "picks": [
       {
         "rank": 1,
         "label": "경제·증시",
-        "title": "역대급 실적에도 승진 잔치 없었다…삼성 ‘임원 가는 문’ 좁힌 이유는?",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/business/12217650"
+        "title": "[인터뷰] ‘美 20대 VC’ 알럼나이벤처스 창업자 “기업 몸값 따지다 미래 놓쳐선 안 돼”",
+        "source": "조선일보",
+        "url": "https://www.chosun.com/economy/smb-venture/2026/11/25/MVSGKYZQMFSTONTDMM3WCZBYGQ/"
       },
       {
         "rank": 2,
@@ -123,144 +146,103 @@
       {
         "rank": 4,
         "label": "사회·생활",
-        "title": "‘대마 재범’ 시나위 출신 김바다, 오늘 1심 선고…실형 면할까",
+        "title": "“1인당 80만원 드릴게요”…소득·나이 제한없이 뿌린다는 ‘이 지원금’",
         "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/society/12217409"
+        "url": "https://www.mk.co.kr/news/world/12217663"
       },
       {
         "rank": 5,
         "label": "경제·증시",
-        "title": "“노후자금으로 환경운동 마라”…퇴직연금서 ESG펀드 빼라는 트럼프",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/economy/12217649"
+        "title": "주식 싸게 팔고 사채 조건 낮추고…바이오기업들 자금 확보 안간힘",
+        "source": "조선일보",
+        "url": "https://www.chosun.com/economy/science/2026/11/25/MM3DEMZWMYYDSYLDGY2TSZRWGE/"
       }
     ],
     "sections": [
       {
-        "key": "경제·증시",
+        "key": "econ",
         "label": "경제·증시",
-        "title": "역대급 실적에도 승진 잔치 없었다…삼성 ‘임원 가는 문’ 좁힌 이유는?",
-        "body": "매일경제·연합뉴스 산업 등이 전한 경제·증시 흐름입니다. 역대급 실적에도 승진 잔치 없었다…삼성 ‘임원 가는 문’ 좁힌 이유는? 이어서 '“노후자금으로 환경운동 마라”…퇴직연금서 ESG펀드 빼라는 트럼프', '500대 기업 이익잉여금 1천862조원…삼전닉스가 37% 차지'도 함께 다뤄졌습니다.",
+        "title": "바이오기업들 자금 확보 안간힘, 기업 체감경기 한달만에 악화",
+        "body": "바이오 기업들이 자금 확보를 위해 주식을 싸게 팔고 사채 조건을 낮추는 등 안간힘을 쓰고 있습니다. 이는 투자 시장의 신중한 분위기와 맞물려 기업들의 자금 조달에 어려움이 있음을 보여줍니다. 동시에 기업 체감경기가 한 달 만에 악화되었으며, 내수 기업은 4년 6개월 만에 최고치를 기록하는 등 업종별 희비가 엇갈리고 있습니다.",
         "points": [
           {
-            "text": "역대급 실적에도 승진 잔치 없었다…삼성 ‘임원 가는 문’ 좁힌 이유는?",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/business/12217650"
-          },
-          {
-            "text": "“노후자금으로 환경운동 마라”…퇴직연금서 ESG펀드 빼라는 트럼프",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/economy/12217649"
-          },
-          {
-            "text": "500대 기업 이익잉여금 1천862조원…삼전닉스가 37% 차지",
-            "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261124163200003"
-          }
-        ]
-      },
-      {
-        "key": "IT·AI",
-        "label": "IT·AI",
-        "title": "'장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험",
-        "body": "연합뉴스 산업·연합뉴스 경제 등이 전한 IT·AI 흐름입니다. '장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험 이어서 '계란 산지 가격 하락에도 소매가는 올라…고병원성 AI 확산 우려', '인공지능 인재들 한자리에…AI 부트캠프 학생 취업지원 행사'도 함께 다뤄졌습니다.",
-        "points": [
-          {
-            "text": "'장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험",
-            "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261124156900030"
-          },
-          {
-            "text": "계란 산지 가격 하락에도 소매가는 올라…고병원성 AI 확산 우려",
-            "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261124155800030"
-          },
-          {
-            "text": "인공지능 인재들 한자리에…AI 부트캠프 학생 취업지원 행사",
-            "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261124148300530"
-          }
-        ]
-      },
-      {
-        "key": "부동산·정책",
-        "label": "부동산·정책",
-        "title": "LH 미분양 매입확약 3만1천가구 중 1만3천가구 착공",
-        "body": "연합뉴스 경제·매일경제·매일경제 부동산 등이 전한 부동산·정책 흐름입니다. LH 미분양 매입확약 3만1천가구 중 1만3천가구 착공 이어서 '서울역 뒤편 ‘낡은 동네’의 반전 … 아파트 1만7천가구에 철길도 지하로', '주우정 현대엔지니어링 대표 물러난다'도 함께 다뤄졌습니다.",
-        "points": [
-          {
-            "text": "LH 미분양 매입확약 3만1천가구 중 1만3천가구 착공",
-            "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261124169300003"
-          },
-          {
-            "text": "서울역 뒤편 ‘낡은 동네’의 반전 … 아파트 1만7천가구에 철길도 지하로",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/realestate/12217136"
-          },
-          {
-            "text": "주우정 현대엔지니어링 대표 물러난다",
-            "source": "매일경제 부동산",
-            "url": "https://www.mk.co.kr/news/realestate/12217546"
-          }
-        ]
-      },
-      {
-        "key": "사회·생활",
-        "label": "사회·생활",
-        "title": "‘대마 재범’ 시나위 출신 김바다, 오늘 1심 선고…실형 면할까",
-        "body": "매일경제·조선일보 등이 전한 사회·생활 흐름입니다. ‘대마 재범’ 시나위 출신 김바다, 오늘 1심 선고…실형 면할까 이어서 '젠슨황 약발 하루만에...나스닥 다시 급락 [월가월부]', '[인터뷰] 김성연, 오스코텍 경영진에 정면 반박…“이해상충 근거 뭔가, '도 함께 다뤄졌습니다.",
-        "points": [
-          {
-            "text": "‘대마 재범’ 시나위 출신 김바다, 오늘 1심 선고…실형 면할까",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/society/12217409"
-          },
-          {
-            "text": "젠슨황 약발 하루만에...나스닥 다시 급락 [월가월부]",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/economy/12217655"
-          },
-          {
-            "text": "[인터뷰] 김성연, 오스코텍 경영진에 정면 반박…“이해상충 근거 뭔가, 이사회 진입 왜 막나”",
+            "text": "바이오 기업들의 자금 조달 방식 변화를 확인하세요.",
             "source": "조선일보",
-            "url": "https://www.chosun.com/economy/science/2026/11/25/HAYDONZXHEYWCZJWMM2DEMJVGQ/"
-          }
-        ]
-      },
-      {
-        "key": "estate",
-        "label": "부동산·경매",
-        "title": "\"팹·주택공급 몰려 … 건설인력 26만명 필요\"",
-        "body": "매일경제 부동산에서 '\"팹·주택공급 몰려 … 건설인력 26만명 필요\"' 글이 올라왔습니다. 매일경제 부동산에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
-        "points": [
-          {
-            "text": "\"팹·주택공급 몰려 … 건설인력 26만명 필요\"",
-            "source": "매일경제 부동산",
-            "url": "https://www.mk.co.kr/news/realestate/12217319"
+            "url": "https://www.chosun.com/economy/science/2026/11/25/MM3DEMZWMYYDSYLDGY2TSZRWGE/"
           },
           {
-            "text": "부산 신축 선착순 전세에 …\"사흘전부터 텐트쳤어요\"",
-            "source": "매일경제 부동산",
-            "url": "https://www.mk.co.kr/news/realestate/12217318"
+            "text": "기업 체감경기 악화 원인과 내수 기업 동향을 살펴보세요.",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261124156500002"
+          },
+          {
+            "text": "보험사 순익 변화와 생보·손보의 차이를 확인하세요.",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261124165700002"
           }
         ]
       },
       {
         "key": "ai",
-        "label": "AI·부업",
-        "title": "‘로봇 강국’ 타이틀 탈환 나선 일본의 역습 … 휴머노이드 부품 패권 지도 [맥킨지·매경 산업분석]",
-        "body": "매일경제에서 '‘로봇 강국’ 타이틀 탈환 나선 일본의 역습 … 휴머노이드 부품 패권 지도 [맥킨지·매경 산업분석]' 글이 올라왔습니다. 매일경제에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "label": "IT·AI",
+        "title": "AI 인재 확보 경쟁 심화, 일본은 로봇 강국 타이틀 탈환 나서",
+        "body": "인공지능 인재들을 위한 취업지원 행사가 개최되는 등 AI 분야의 인재 확보 경쟁이 심화되고 있습니다. 이는 기술 발전과 산업 성장에 필수적인 인력 유치를 위한 기업들의 노력을 반영합니다. 한편, 일본은 '로봇 강국' 타이틀 탈환을 위해 휴머노이드 부품 패권 지도를 그리는 등 로봇 산업에 대한 투자를 확대하고 있습니다.",
         "points": [
           {
-            "text": "‘로봇 강국’ 타이틀 탈환 나선 일본의 역습 … 휴머노이드 부품 패권 지도 [맥킨지·매경 산업분석]",
+            "text": "AI 부트캠프 학생 취업지원 행사 내용을 확인하세요.",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261124148300530"
+          },
+          {
+            "text": "일본의 로봇 산업 투자 및 휴머노이드 부품 전략을 살펴보세요.",
             "source": "매일경제",
             "url": "https://www.mk.co.kr/news/business/12217342"
           },
           {
-            "text": "종전·유가·AI 규제에 쏠린 ‘눈’ … 연말 증시 향방 가를 국제정치 변수들",
+            "text": "삼성전자 주주환원 결정에 대한 준감위 판단을 확인하세요.",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261124122351003"
+          }
+        ]
+      },
+      {
+        "key": "estate",
+        "label": "부동산·정책",
+        "title": "건설 인력 26만명 필요 전망, 서울역 뒤편 낡은 동네의 반전",
+        "body": "팹과 주택 공급이 몰리면서 건설 인력 26만 명이 필요할 것으로 전망되어 건설 현장의 인력난이 심화될 것으로 보입니다. 이는 향후 주택 공급 계획과 공사 진행에 영향을 미칠 수 있는 중요한 문제입니다. 한편, 서울역 뒤편의 낡은 동네가 아파트 1만 7천 가구 건설과 철길 지하화 계획으로 반전을 맞이하고 있습니다.",
+        "points": [
+          {
+            "text": "건설 인력 부족 현황과 전망을 자세히 살펴보세요.",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12217319"
+          },
+          {
+            "text": "서울역 뒤편 개발 계획과 변화 내용을 확인하세요.",
             "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/world/12217148"
+            "url": "https://www.mk.co.kr/news/realestate/12217136"
+          },
+          {
+            "text": "잠래아 2가구 줍줍 청약 경쟁률과 배경을 확인하세요.",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12217460"
+          }
+        ]
+      },
+      {
+        "key": "social",
+        "label": "사회·생활",
+        "title": "소득·나이 제한 없는 1인당 80만원 지원금에 관심 집중",
+        "body": "소득과 나이 제한 없이 1인당 80만원을 지원한다는 소식이 전해지며 대중의 관심이 집중되고 있습니다. 이러한 지원금은 생활 경제에 직접적인 영향을 미칠 수 있어 많은 이들이 주목하고 있습니다. 동시에 시나위 출신 김바다 씨의 대마 재범 1심 선고 결과에도 이목이 쏠리고 있습니다.",
+        "points": [
+          {
+            "text": "1인당 80만원 지원금의 상세 내용을 확인하세요.",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/world/12217663"
+          },
+          {
+            "text": "김바다 씨의 대마 재범 1심 선고 결과를 확인하세요.",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/society/12217409"
           }
         ]
       }
@@ -269,14 +251,14 @@
   "topics": {
     "ai": {
       "label": "AI·부업",
-      "count": 16,
+      "count": 10,
       "items": [
         {
           "title": "'장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험",
           "source": "연합뉴스 산업",
           "url": "https://www.yna.co.kr/view/AKR20261124156900030",
           "kind": "news",
-          "time": "9분 전",
+          "time": "18분 전",
           "hot": 80
         },
         {
@@ -284,7 +266,7 @@
           "source": "연합뉴스 경제",
           "url": "https://www.yna.co.kr/view/AKR20261124155800030",
           "kind": "news",
-          "time": "20분 전",
+          "time": "29분 전",
           "hot": 79
         },
         {
@@ -292,7 +274,7 @@
           "source": "연합뉴스 산업",
           "url": "https://www.yna.co.kr/view/AKR20261124148300530",
           "kind": "news",
-          "time": "40분 전",
+          "time": "49분 전",
           "hot": 78
         },
         {
@@ -300,7 +282,7 @@
           "source": "AI타임스",
           "url": "https://www.aitimes.com/news/articleView.html?idxno=217752",
           "kind": "news",
-          "time": "44분 전",
+          "time": "54분 전",
           "hot": 77
         },
         {
@@ -322,7 +304,7 @@
           "source": "연합뉴스 경제",
           "url": "https://www.yna.co.kr/view/AKR20261124169300003",
           "kind": "news",
-          "time": "37분 전",
+          "time": "46분 전",
           "hot": 72
         },
         {
@@ -330,7 +312,7 @@
           "source": "매일경제",
           "url": "https://www.mk.co.kr/news/realestate/12217136",
           "kind": "news",
-          "time": "40분 전",
+          "time": "49분 전",
           "hot": 71
         },
         {
@@ -374,44 +356,44 @@
       "count": 12,
       "items": [
         {
-          "title": "화산귀환",
-          "source": "네이버웹툰",
-          "url": "https://comic.naver.com/webtoon/list?titleId=769209",
-          "kind": "webtoon",
-          "time": "",
-          "hot": 0
-        },
-        {
           "title": "별을 품은 소드마스터",
           "source": "네이버웹툰",
           "url": "https://comic.naver.com/webtoon/list?titleId=816809",
           "kind": "webtoon",
-          "time": "",
-          "hot": 0
-        },
-        {
-          "title": "종말이 찾아왔다",
-          "source": "네이버웹툰",
-          "url": "https://comic.naver.com/webtoon/list?titleId=838002",
-          "kind": "webtoon",
-          "time": "",
-          "hot": 0
+          "time": "수요일",
+          "hot": 86
         },
         {
           "title": "쪽팔려게임",
           "source": "네이버웹툰",
           "url": "https://comic.naver.com/webtoon/list?titleId=847135",
           "kind": "webtoon",
-          "time": "",
-          "hot": 0
+          "time": "수요일",
+          "hot": 86
         },
         {
           "title": "천마는 조용히 살고싶다",
           "source": "네이버웹툰",
           "url": "https://comic.naver.com/webtoon/list?titleId=834502",
           "kind": "webtoon",
-          "time": "",
-          "hot": 0
+          "time": "수요일",
+          "hot": 86
+        },
+        {
+          "title": "멸귀수도전",
+          "source": "네이버웹툰",
+          "url": "https://comic.naver.com/webtoon/list?titleId=851689",
+          "kind": "webtoon",
+          "time": "수요일",
+          "hot": 86
+        },
+        {
+          "title": "66666년 만에 환생한 흑마법사",
+          "source": "네이버웹툰",
+          "url": "https://comic.naver.com/webtoon/list?titleId=775141",
+          "kind": "webtoon",
+          "time": "수요일",
+          "hot": 86
         }
       ]
     }
