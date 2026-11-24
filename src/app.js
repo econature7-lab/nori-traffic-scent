@@ -255,6 +255,7 @@
         '<circle cx="272" cy="22" r="3.6" fill="#fff" fill-opacity=".55"/>' +
       '</svg>' +
       '<span class="art-lbl"><i>' + esc(a.en) + '</i><b>' + esc(label) + '</b></span>' +
+      '<span class="art-mono">' + esc((a.en || 'T').slice(0, 1)) + '</span>' +
       '<span class="art-mark">TRENDPICK</span></span>';
   }
 
@@ -689,7 +690,9 @@
       '<a class="pick-media" href="' + esc(f.url || '#') + '" target="_blank" rel="noopener" aria-label="' + esc(f.title) + ' 원문 열기">' +
         artSvg(artCat, f.title) +
         (f.img ? '<img src="' + esc(f.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async" data-testid="thumb-' + esc(f.id) + '">' : '') +
-        '<span class="pick-tag' + (f.kind === 'shorts' || f.kind === 'video' ? ' video' : '') + '">' + esc(label) + '</span>' +
+        (f.img || f.kind === 'video' || f.kind === 'shorts'
+          ? '<span class="pick-tag' + (f.kind === 'shorts' || f.kind === 'video' ? ' video' : '') + '">' + esc(label) + '</span>'
+          : '') +
       '</a>' +
       '<button class="pick-save" type="button" data-save="' + esc(f.id) + '" aria-pressed="' + on + '" ' +
         'aria-label="저장" data-testid="save-' + esc(f.id) + '">★</button>' +
@@ -1293,7 +1296,11 @@
     });
 
     // 브리프
-    $('#bOpen').addEventListener('click', briefModal);
+    $('#bOpen').addEventListener('click', function () {
+      var deep = document.getElementById('brief-deep');
+      if (deep) deep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else briefModal();
+    });
     $('#bKit').addEventListener('click', kitModal);
     $('#bPast').addEventListener('click', pastModal);
     $('#brief').addEventListener('click', function (e) {
