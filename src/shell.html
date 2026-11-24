@@ -102,6 +102,7 @@
         <p class="eyebrow" id="bEyebrow">오늘의 트렌드픽 브리프</p>
         <h1 class="brief-h" id="bTitle">오늘의 브리프를 준비하고 있습니다</h1>
         <p class="brief-lead" id="bLead"></p>
+        <div class="brief-points" id="bPoints" aria-label="오늘의 핵심 포인트"></div>
         <ol class="picks" id="bPicks"></ol>
         <div class="brief-foot">
           <button class="btn btn-ink" id="bOpen" type="button" data-testid="brief-open">브리프 전문 <span aria-hidden="true">→</span></button>
@@ -120,6 +121,19 @@
       <ol class="top10-list" id="top10List" data-testid="top10-list"></ol>
       <p class="micro-note">키워드를 누르면 아래 탐색 피드가 그 키워드로 바로 필터됩니다.</p>
     </aside>
+  </section>
+
+  <!-- ================= BRIEF 전문 (읽을거리) ================= -->
+  <section class="block brief-deep" id="brief-deep" aria-labelledby="bdTitle">
+    <div class="block-head">
+      <h2 id="bdTitle"><span class="dot"></span>오늘의 브리프 <em>전문</em></h2>
+      <span class="micro" id="bdMeta"></span>
+    </div>
+    <div class="bd-grid">
+      <div class="bd-main" id="bdMain"></div>
+      <div class="bd-secs" id="bdSecs"></div>
+    </div>
+    <p class="bd-note micro-note" id="bdNote"></p>
   </section>
 
   <!-- 광고 슬롯 1 · 상단 리더보드 (728×90 / 320×100) -->

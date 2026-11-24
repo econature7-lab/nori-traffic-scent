@@ -133,7 +133,9 @@
     apps:     { label: '앱·게임' },
     os:       { label: '오픈소스' },
     hack:     { label: '해커톤' },
-    deal:     { label: '핫딜' }
+    deal:     { label: '핫딜' },
+    econ:     { label: '경제·증시' },
+    social:   { label: '사회·생활' }
   };
   var TOPIC_ORDER = ['mom', 'estate', 'ai', 'apptech', 'build'];
 
@@ -208,41 +210,53 @@
     if (btn) btn.setAttribute('aria-pressed', String(state.savedOnly));
   }
 
-  /* ------------------------ 카테고리별 일러스트 ------------------------ */
+  /* ------------------ 카테고리별 에디토리얼 커버 ------------------
+     이미지가 없는 카드는 분야별 딥톤 그라데이션 + 잡지 표지형 타이포그래피로 그립니다.
+     색은 채도를 낮춘 딥톤만 사용하고, 글자는 흰색 → 대비 7:1 이상 확보.  */
   var ART = {
-    comm:    { bg: '#EDF2F4', fg: '#334155', g: 'M4 6.5h16v9.5h-8.5L6 20v-4H4z M8 11h8 M8 14h5' },
-    news:    { bg: '#EEF3FB', fg: '#1E3A8A', g: 'M4 5h12v14H4z M16 8h4v9a2 2 0 0 1-2 2h-2 M7 9h6 M7 12h6 M7 15h4' },
-    youtube: { bg: '#FFF0F3', fg: '#BE123C', g: 'M3.5 8.5A2.5 2.5 0 0 1 6 6h12a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 1 18 18H6a2.5 2.5 0 0 1-2.5-2.5z M10.5 9.6l4.6 2.4-4.6 2.4z' },
-    web:     { bg: '#EFF6FF', fg: '#1D4ED8', g: 'M5 4.5h8.5L19 10v9.5H5z M13 4.5V10h5.5 M8 13h8 M8 16h5' },
-    mom:     { bg: '#EAF7F0', fg: '#047857', g: 'M12 20c5-3 7-6.2 7-9a7 7 0 0 0-14 0c0 2.8 2 6 7 9z M12 11.5v-5 M12 8c-2 0-3.2-1-3.6-2.4' },
-    estate:  { bg: '#F3F1FA', fg: '#5B21B6', g: 'M4 20V9l8-4.5L20 9v11 M9 20v-6h6v6 M7.5 11.5h2 M14.5 11.5h2' },
-    ai:      { bg: '#EAF8F5', fg: '#0F766E', g: 'M8 8h8v8H8z M12 4.5v3.5 M12 16v3.5 M4.5 12H8 M16 12h3.5 M8 8 5.5 5.5 M16 8l2.5-2.5 M8 16l-2.5 2.5 M16 16l2.5 2.5' },
-    apptech: { bg: '#FFF6EC', fg: '#B45309', g: 'M7 8.5h10l-1 11.5H8z M9.8 8.5V7a2.2 2.2 0 0 1 4.4 0v1.5 M10.5 13h3' },
-    build:   { bg: '#FEFBEB', fg: '#A16207', g: 'M4 17.5h16 M6.5 17.5V9l5.5-3.5L17.5 9v8.5 M9 17.5v-4h6v4 M12 2.5v3' },
-    apps:    { bg: '#EEF1FE', fg: '#4338CA', g: 'M4.5 5.5h6v6h-6z M13.5 5.5h6v6h-6z M4.5 13.5h6v5h-6z M13.5 13.5h6v5h-6z' },
-    os:      { bg: '#F2F3F5', fg: '#111827', g: 'M7.5 6.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z M7.5 17.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0z M19.5 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0z M7.5 8.5v7 M15.5 11c-1.5 3.5-4 4-7 4' },
-    hack:    { bg: '#FEF1F1', fg: '#B91C1C', g: 'M8 4.5h8v4a4 4 0 0 1-8 0z M8 6.5H5.5v1.2A2.8 2.8 0 0 0 8.3 10.5 M16 6.5h2.5v1.2a2.8 2.8 0 0 1-2.8 2.8 M12 12.5v4 M9 20h6 M10 16.5h4l1 3.5H9z' },
-    deal:    { bg: '#FFF0F3', fg: '#9F1239', g: 'M12.5 3.5H20v7.5l-8.5 8.5L4 12z M16.5 7.5h.01' }
+    comm:    { a: '#1B2430', b: '#3A4C61', en: 'COMMUNITY' },
+    news:    { a: '#14243A', b: '#2E4E6E', en: 'NEWSROOM' },
+    econ:    { a: '#14342C', b: '#2A6553', en: 'MARKET' },
+    social:  { a: '#1E2B2E', b: '#3E5257', en: 'LIFE' },
+    youtube: { a: '#3E1220', b: '#7C2442', en: 'VIDEO' },
+    web:     { a: '#1A2350', b: '#38477F', en: 'BLOG' },
+    mom:     { a: '#22331F', b: '#46603B', en: 'FAMILY' },
+    estate:  { a: '#2B2140', b: '#503B75', en: 'PROPERTY' },
+    ai:      { a: '#0D3335', b: '#166068', en: 'AI' },
+    apptech: { a: '#3B2A10', b: '#6F4E1C', en: 'APPTECH' },
+    build:   { a: '#33301C', b: '#615C35', en: 'BUILD' },
+    apps:    { a: '#1E2350', b: '#3C428C', en: 'APPS' },
+    os:      { a: '#1F2124', b: '#3C4046', en: 'OPEN SOURCE' },
+    hack:    { a: '#3C1B18', b: '#703229', en: 'CHALLENGE' },
+    deal:    { a: '#3A0E26', b: '#701D46', en: 'DEALS' }
   };
 
-  function artSvg(cat) {
+  // 뉴스 섹션 → 커버 카테고리
+  function sectionCat(section) {
+    var s = String(section || '');
+    if (s.indexOf('경제') >= 0) return 'econ';
+    if (s.indexOf('IT') >= 0 || s.indexOf('AI') >= 0) return 'ai';
+    if (s.indexOf('부동산') >= 0) return 'estate';
+    if (s.indexOf('사회') >= 0) return 'social';
+    return 'news';
+  }
+
+  function artSvg(cat, seed) {
     var a = ART[cat] || ART.news;
-    var lines = '';
-    for (var i = 1; i < 7; i++) lines += '<line x1="' + (i * 46) + '" y1="0" x2="' + (i * 46) + '" y2="180"/>';
-    for (var j = 1; j < 4; j++) lines += '<line x1="0" y1="' + (j * 45) + '" x2="320" y2="' + (j * 45) + '"/>';
-    var label = (CAT[cat] && CAT[cat].label) || '트렌드';
-    return '<span class="art" aria-hidden="true"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">' +
-      '<rect width="320" height="180" fill="' + a.bg + '"/>' +
-      '<g stroke="' + a.fg + '" stroke-opacity=".07" stroke-width="1">' + lines + '</g>' +
-      '<circle cx="268" cy="34" r="64" fill="' + a.fg + '" opacity=".05"/>' +
-      '<circle cx="268" cy="34" r="34" fill="none" stroke="' + a.fg + '" stroke-opacity=".16" stroke-width="1.2"/>' +
-      '<circle cx="268" cy="34" r="6" fill="' + a.fg + '" opacity=".22"/>' +
-      '<g transform="translate(112,38) scale(3.6)" fill="none" stroke="' + a.fg + '" stroke-width="1.25" ' +
-        'stroke-linecap="round" stroke-linejoin="round" opacity=".66"><path d="' + a.g + '"/></g>' +
-      '<text x="16" y="152" font-family="ui-monospace,SFMono-Regular,monospace" font-size="9.5" ' +
-        'letter-spacing="2.6" fill="' + a.fg + '" opacity=".4">TRENDPICK</text>' +
-      '<text x="16" y="168" font-size="12" font-weight="700" letter-spacing=".4" fill="' + a.fg + '" ' +
-        'opacity=".5">' + esc(label) + '</text></svg></span>';
+    var v = Math.abs(hashHue(String(seed || cat))) % 3;
+    var label = (CAT[cat] && CAT[cat].label) || (ART[cat] ? ART[cat].en : '트렌드');
+    return '<span class="art art--' + esc(cat) + ' v' + v + '" aria-hidden="true">' +
+      '<svg viewBox="0 0 320 180" preserveAspectRatio="xMinYMax slice" focusable="false">' +
+        '<g fill="none" stroke="#fff" stroke-opacity=".16">' +
+          '<circle cx="272" cy="22" r="74"/><circle cx="272" cy="22" r="45"/>' +
+          '<circle cx="272" cy="22" r="17"/>' +
+        '</g>' +
+        '<g stroke="#fff" stroke-opacity=".09"><path d="M206 180 320 58"/><path d="M240 180 320 92"/></g>' +
+        '<circle cx="272" cy="22" r="3.6" fill="#fff" fill-opacity=".55"/>' +
+        '<path d="M0 166h320" stroke="#fff" stroke-opacity=".13"/>' +
+      '</svg>' +
+      '<span class="art-lbl"><i>' + esc(a.en) + '</i><b>' + esc(label) + '</b></span>' +
+      '<span class="art-mark">TRENDPICK</span></span>';
   }
 
   /* --------------------------- 통합 피드 --------------------------- */
@@ -367,6 +381,25 @@
   }
 
   /* --------------------------- 브리프 --------------------------- */
+  function briefParagraphs(b) {
+    var paras = (b.paragraphs || []).filter(function (p) { return p && String(p).trim(); });
+    if (!paras.length && b.lead) paras = [b.lead];
+    return paras;
+  }
+
+  function briefHighlights(b) {
+    if (b.highlights && b.highlights.length) return b.highlights.slice(0, 3);
+    // 하이라이트가 없는 예전 데이터: 분야별 첫 포인트를 그대로 씁니다.
+    return (b.sections || []).slice(0, 3).map(function (s) {
+      var p = (s.points || [])[0];
+      return {
+        label: s.label || '',
+        text: (typeof p === 'string' ? p : (p && p.text)) || s.title || '',
+        url: (typeof p === 'string' ? '' : (p && p.url)) || ''
+      };
+    });
+  }
+
   function renderBrief() {
     var b = DATA.brief || {};
     var issue = DATA.issue || {};
@@ -375,23 +408,30 @@
     $('#bNo').textContent = b.no || ('No.' + String(issue.no || 1).padStart(2, '0'));
     $('#bDate').textContent = (b.label || '') + (b.weekday ? ' ' + b.weekday : '');
     $('#bEyebrow').textContent = '오늘의 트렌드픽 브리프 · ' + (b.date || issue.date || '');
-    $('#bTitle').textContent = (b.picks && b.picks[0] && b.picks[0].title) || b.title || '오늘의 트렌드픽 브리프';
-    $('#bLead').textContent = b.lead || '';
 
+    // 제호는 편집 헤드라인(b.title) 우선, 없으면 대표 기사 제목
     var picks = b.picks || [];
     var lead = picks[0] || { title: b.title || '', url: '', img: '', label: '', source: '' };
-    $('#bTitle').textContent = lead.title || b.title || '오늘의 트렌드픽 브리프';
+    $('#bTitle').textContent = b.title || lead.title || '오늘의 트렌드픽 브리프';
     $('#bLead').textContent = b.lead || '';
 
-    // 헤드라인은 대표 기사, 그 아래 핫픽 3선(서로 다른 분야 우선)
+    // 핵심 포인트 3줄 — 오늘의 이슈를 한 문장씩
+    var hl = briefHighlights(b);
+    $('#bPoints').innerHTML = hl.length ? hl.map(function (h, i) {
+      var tag = h.url ? 'a' : 'div';
+      return '<' + tag + ' class="bp-item"' + (h.url ? ' href="' + esc(h.url) + '" target="_blank" rel="noopener"' : '') +
+        ' data-testid="brief-point-' + i + '"><span class="bp-k">' +
+        '<em>' + String(i + 1).padStart(2, '0') + '</em>' + esc(h.label || '') + '</span>' +
+        '<span class="bp-t">' + esc(h.text || '') + '</span></' + tag + '>';
+    }).join('') : '';
+
+    // 헤드라인은 대표 기사, 그 아래 핵픽 3선(서로 다른 분야 우선)
     var hotPicks = picks.slice(1, 4);
-    var pickCat = function (label) {
-      return label === 'IT·AI' ? 'ai' : label === '부동산·정책' ? 'estate' : 'news';
-    };
     $('#bPicks').innerHTML = hotPicks.map(function (p, i) {
+      var cat = p.label === '커뮤니티' ? 'comm' : sectionCat(p.label);
       return '<li><a class="pick-row" href="' + esc(p.url || '#') + '" target="_blank" rel="noopener" data-testid="brief-pick-' + i + '">' +
         '<span class="pick-no">' + String(i + 1).padStart(2, '0') + '</span>' +
-        '<span class="pick-thumb">' + artSvg(pickCat(p.label)) +
+        '<span class="pick-thumb">' + artSvg(cat, p.title) +
           (p.img ? '<img src="' + esc(p.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
         '</span>' +
         '<span><span class="pick-t">' + esc(p.title) + '</span>' +
@@ -409,10 +449,49 @@
     if (items) bits.push('수집 ' + items + '건');
     if (gen) bits.push(gen + ' 갱신');
     $('#bMeta').textContent = bits.join(' · ');
+
+    renderBriefDeep(b, bits, items);
+  }
+
+  /* 브리프 전문 — 페이지 본문에 그대로 실어 읽을거리를 확보합니다. */
+  function renderBriefDeep(b, bits, items) {
+    var host = $('#bdMain');
+    if (!host) return;
+    var paras = briefParagraphs(b);
+    var meta = $('#bdMeta');
+    if (meta) {
+      meta.textContent = [(b.no || ''), (b.date || ''), items ? '수집 ' + items + '건' : ''].filter(Boolean).join(' · ');
+    }
+    host.innerHTML = paras.map(function (p, i) {
+      return '<p class="bd-p' + (i === 0 ? ' bd-p-lead' : '') + '">' + esc(p) + '</p>';
+    }).join('') || '<p class="bd-p">오늘 수집된 이슈로 브리프를 준비하고 있습니다.</p>';
+
+    var secs = (b.sections || []).slice(0, 6);
+    $('#bdSecs').innerHTML = secs.map(function (s, i) {
+      var points = (s.points || []).slice(0, 3).map(function (p) {
+        var text = typeof p === 'string' ? p : p.text;
+        var url = typeof p === 'string' ? '' : p.url;
+        return '<li>' + (url
+          ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(text) + '</a>'
+          : esc(text)) + '</li>';
+      }).join('');
+      return '<article class="bd-sec" data-testid="bd-sec-' + i + '">' +
+        '<h3><span>' + esc(s.label || '') + '</span>' + esc(s.title || '') + '</h3>' +
+        '<p>' + esc(s.body || '') + '</p>' +
+        (points ? '<ul>' + points + '</ul>' : '') + '</article>';
+    }).join('');
+
+    var note = $('#bdNote');
+    if (note) {
+      note.textContent = '공개 RSS·API 로 수집한 제목과 수치만 근거로 쓴 오늘의 편집 브리프입니다. 원문과 전체 맥락은 각 항목의 링크에서 확인하세요.' +
+        (b.engine && String(b.engine).indexOf('gemini') === 0 ? ' 문장 다듬기: Gemini Flash.' : '') +
+        (bits && bits.length ? ' · ' + bits.join(' · ') : '');
+    }
   }
 
   function briefModal() {
     var b = DATA.brief || {};
+    var paras = briefParagraphs(b);
     var secs = (b.sections || []).map(function (s) {
       var points = (s.points || []).map(function (p) {
         var text = typeof p === 'string' ? p : p.text;
@@ -427,8 +506,9 @@
     }).join('');
     openModal({
       eyebrow: 'DAILY BRIEF · ' + (b.no || '') + ' · ' + (b.date || ''),
-      title: '오늘의 트렌드픽 브리프',
-      body: '<p class="mb-p">' + esc(b.lead || '') + '</p>' + (secs || '<p class="mb-p">수집된 이슈가 없습니다.</p>') +
+      title: b.title || '오늘의 트렌드픽 브리프',
+      body: paras.map(function (p) { return '<p class="mb-p">' + esc(p) + '</p>'; }).join('') +
+        (secs || '<p class="mb-p">수집된 이슈가 없습니다.</p>') +
         '<p class="micro-note" style="margin-top:14px">※ 공개 RSS·API 로 수집한 제목을 규칙 기반으로 묶었습니다. 원문은 각 항목의 링크에서 확인하세요. ' +
         (b.engine && b.engine.indexOf('gemini') === 0 ? '문장 요약: Gemini Flash.' : '') + '</p>',
       foot: '<button class="btn btn-ink" type="button" id="toFeed">이 키워드로 피드 보기</button>' +
@@ -606,7 +686,7 @@
     meta.push(f.source);
     return '<article class="pick" data-id="' + esc(f.id) + '">' +
       '<a class="pick-media" href="' + esc(f.url || '#') + '" target="_blank" rel="noopener" aria-label="' + esc(f.title) + ' 원문 열기">' +
-        artSvg(f.cat) +
+        artSvg(f.cat, f.title) +
         (f.img ? '<img src="' + esc(f.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async" data-testid="thumb-' + esc(f.id) + '">' : '') +
         '<span class="pick-tag' + (f.kind === 'shorts' || f.kind === 'video' ? ' video' : '') + '">' + esc(label) + '</span>' +
       '</a>' +
@@ -676,7 +756,7 @@
     }).slice(0, state.newsSec === '전체' ? 8 : 10);
     $('#newsList').innerHTML = list.length ? list.map(function (n) {
       return '<a class="news-item" href="' + esc(n.url || '#') + '" target="_blank" rel="noopener" data-testid="news-' + esc(n.id) + '">' +
-        '<span class="n-thumb">' + artSvg('news') +
+        '<span class="n-thumb">' + artSvg(sectionCat(n.section), n.title) +
           (n.img ? '<img src="' + esc(n.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
         '</span>' +
         '<span class="n-body"><span class="n-sec">' + esc(n.section || '뉴스') + '</span>' +
@@ -692,7 +772,7 @@
       (vids.length ? ' · ' + vids.length + '편' : '');
     $('#ytRail').innerHTML = vids.length ? vids.map(function (v, i) {
       return '<a class="yt-card" href="' + esc(v.url || '#') + '" target="_blank" rel="noopener" data-testid="yt-' + i + '">' +
-        '<span class="yt-thumb">' + artSvg('youtube') +
+        '<span class="yt-thumb">' + artSvg('youtube', v.title) +
           (v.img ? '<img src="' + esc(v.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
           (v.kind === 'shorts' ? '<span class="yt-badge">SHORTS</span>' : '') +
           '<span class="yt-play" aria-hidden="true">▶</span></span>' +
@@ -742,7 +822,7 @@
         '<span class="deal-store">' + esc(d.source || '') + (d.time ? ' · ' + esc(d.time) : '') + '</span></span>';
     return '<article class="deal-cell">' +
       '<a class="deal" href="' + esc(d.url || aff || '#') + '" target="_blank" rel="noopener">' +
-        '<span class="deal-thumb">' + artSvg(kind === 'deal' ? 'deal' : 'apptech') +
+        '<span class="deal-thumb">' + artSvg(kind === 'deal' ? 'deal' : 'apptech', name) +
           (d.img ? '<img src="' + esc(d.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
         '</span>' + body + '</a>' +
       '<div class="deal-acts">' +
@@ -1031,7 +1111,7 @@
     var list = DATA.opensource || [];
     $('#osList').innerHTML = list.length ? list.slice(0, 6).map(function (o, i) {
       return '<a class="os-item" href="' + esc(o.url || '#') + '" target="_blank" rel="noopener" data-testid="os-' + i + '">' +
-        '<span class="os-ico">' + artSvg('os') +
+        '<span class="os-ico">' + artSvg('os', o.repo) +
           (o.img ? '<img src="' + esc(o.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
         '</span><span class="os-body"><span class="os-repo">' + esc(o.repo) + '</span>' +
         '<span class="os-desc">' + esc(o.desc || o.lang || '') + '</span></span>' +
@@ -1052,7 +1132,7 @@
     $('#appList').innerHTML = list.length ? list.slice(0, 10).map(function (a, i) {
       return '<a class="app-item" href="' + esc(a.url || '#') + '" target="_blank" rel="noopener">' +
         '<span class="ap-rank">' + (a.rank || i + 1) + '</span>' +
-        '<span class="ap-ico">' + artSvg('apps') +
+        '<span class="ap-ico">' + artSvg('apps', a.name) +
           (a.img ? '<img src="' + esc(a.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
         '</span><span class="ap-body"><span class="ap-n">' + esc(a.name) + '</span>' +
         '<span class="ap-c">' + esc(a.category || '') + '</span></span></a>';
@@ -1063,7 +1143,7 @@
     var list = DATA.hackathons || [];
     $('#hackList').innerHTML = list.length ? list.slice(0, 6).map(function (h, i) {
       return '<a class="hack" href="' + esc(h.url || '#') + '" target="_blank" rel="noopener" data-testid="hack-' + i + '">' +
-        '<span class="hack-thumb">' + artSvg('hack') +
+        '<span class="hack-thumb">' + artSvg('hack', h.name) +
           (h.img ? '<img src="' + esc(h.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async">' : '') +
           '<span class="hack-dday">' + esc(h.dday || '모집중') + '</span></span>' +
         '<span class="hack-body"><span class="hack-n">' + esc(h.name) + '</span>' +
