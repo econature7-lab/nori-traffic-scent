@@ -36,7 +36,7 @@ KST = timezone(timedelta(hours=9))
 
 KEEP_KEYS = [
     "schema", "generated_at", "issue", "stats", "sources", "youtube_mode", "site",
-    "posts", "news", "videos", "blogs", "deals", "opensource", "apps", "hackathons",
+    "posts", "news", "videos", "blogs", "webtoons", "deals", "opensource", "apps", "hackathons",
     "ranks", "brief", "thumbs", "collect_log", "notes",
 ]
 
@@ -129,7 +129,7 @@ TOPIC_KEYS = [
     ("estate", "부동산·경매"),
     ("mom", "맘카페·육아"),
     ("apptech", "앱테크·핫딜"),
-    ("build", "건축·입찰"),
+    ("webtoon", "웹툰·엔터"),
 ]
 
 
@@ -254,7 +254,8 @@ def write_seo_files(today: str) -> list[Path]:
 def build_creators(payload: dict) -> dict:
     """지연_X · 네이버 블로그 자동화가 가볍게 긁어갈 정적 JSON."""
     items: list[dict] = []
-    for key, kind in (("posts", "post"), ("news", "news"), ("videos", "video"), ("blogs", "blog")):
+    for key, kind in (("posts", "post"), ("news", "news"), ("videos", "video"),
+                      ("blogs", "blog"), ("webtoons", "webtoon")):
         for it in payload.get(key) or []:
             if not it.get("title"):
                 continue
@@ -406,7 +407,8 @@ def main() -> int:
     print("내장 데이터:", len(embedded.get("posts", [])), "posts ·",
           len(embedded.get("news", [])), "news ·",
           len(embedded.get("videos", [])), "videos ·",
-          len(embedded.get("blogs", [])), "blogs")
+          len(embedded.get("blogs", [])), "blogs ·",
+          len(embedded.get("webtoons", [])), "webtoons")
     return 0
 
 

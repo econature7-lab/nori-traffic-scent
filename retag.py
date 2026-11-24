@@ -10,7 +10,9 @@
   2) 커뮤니티·뉴스의 자극적·선정적 제목 제거 (애드핏 심사 감점 위험)
   3) 테스트성 공모전(name='test' 등) 제거
   4) 부동산·경매 주제 글이 0건이면 공개 RSS(한국경제 부동산 등)에서 실제 기사로 보충
-     → 지어낸 기사는 넣지 않습니다.
+  5) 블로그 글 중 썸네일이 없는 항목은 원문 og:image 로 보강
+  6) 인기 웹툰(네이버웹툰 공개 목록)을 새로 수집해 웹툰 주제로 태깅
+     → 지어낸 기사·작품은 넣지 않습니다.
 
 사용법
   python retag.py                 # data.json 제자리 정리
@@ -79,6 +81,24 @@ def main() -> int:
             it["topics_kw"] = col.topic_tags(it.get("title", ""))
             it["topics"] = col.topic_tags(text)
 
+    # 2-b) 블로그 썸네일 보강 (이미지가 없는 글만 · 원문 og:image)
+    missing_blog = [b for b in data.get("blogs", []) if not b.get("img")]
+    if missing_blog:
+        filled = col.enrich_images(missing_blog, budget_sec=25.0, workers=6, limit=12)
+        print("블로그 썸네일 보강", filled, "/", len(missing_blog))
+
+    # 2-c) 인기 웹툰 (네이버웹툰 요일 연재 · 평점 순)
+    if not args.no_topup:
+        webtoons = col.collect_webtoons()
+        if webtoons:
+            data["webtoons"] = webtoons
+            print("웹툰·엔터 수집", len(webtoons), "건")
+        else:
+            print("웹툰 수집 실패 → 기존 웹툰 데이터 유지", len(data.get("webtoons") or []), "건")
+    for w in data.get("webtoons", []):
+        w["topics"] = ["webtoon"]
+        w["topics_kw"] = ["webtoon"]
+
     # 3) 테스트성 공모전 제거 ---------------------------------------------
     before_h = len(data.get("hackathons", []))
     data["hackathons"] = [h for h in data.get("hackathons", [])
@@ -121,20 +141,24 @@ def main() -> int:
     if isinstance(data.get("stats"), dict):
         data["stats"]["news"] = len(data["news"])
         data["stats"]["collected"] = (len(data["news"]) + len(data.get("posts", []))
-                                      + len(data.get("videos", [])) + len(data.get("blogs", [])))
+                                      + len(data.get("videos", [])) + len(data.get("blogs", []))
+                                      + len(data.get("webtoons", [])))
     # 6) 브리프 수치·키워드 표기 정리 ---------------------------------------
     brief = data.get("brief") or {}
     metrics = brief.get("metrics")
     if isinstance(metrics, dict):
         metrics["news"] = len(data["news"])
         metrics["items"] = sum(len(data.get(k, [])) for k in
-                               ("posts", "news", "videos", "blogs", "deals",
+                               ("posts", "news", "videos", "blogs", "webtoons", "deals",
                                 "opensource", "apps", "hackathons"))
         metrics["topics"] = len(brief.get("sections") or []) or metrics.get("topics")
     # 구글 트렌드 키워드에 섞인 자동 띄어쓰기('12 월 3 일')를 바로잡습니다
     ranks = data.get("ranks") or {}
     for row in ranks.get("all") or []:
         row["k"] = re.sub(r"(\d)\s+(월|일|년|주|개|건|명|분|초)", r"\1\2", str(row.get("k", "")))
+
+    # 7) 썸네일 집계 재계산 ------------------------------------------------
+    data["thumbs"] = col.thumb_stats(data)
 
     data["retag"] = {
         "at": datetime.now(col.KST).isoformat(timespec="seconds"),
@@ -150,7 +174,7 @@ def main() -> int:
     print("  뉴스 유지", len(data["news"]), "· 민감 제외", len(dropped_news))
     print("  커뮤니티 유지", len(data["posts"]), "· 민감 제외", len(dropped_posts))
     print("  공모전", len(data["hackathons"]), "· 테스트 제외", dropped_h)
-    print("  부동산 보충", len(added))
+    print("  부동산 보충", len(added), "· 웹툰", len(data.get("webtoons") or []))
     for t in dropped_news:
         print("   - news 제외:", t[:70])
     for t in dropped_posts:

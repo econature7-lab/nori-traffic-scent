@@ -289,6 +289,9 @@ img.is-broken{display:none !important}
 .pick:hover{transform:translateY(-2px);box-shadow:var(--sh-2);border-color:#DCD9D0}
 .pick-media{position:relative;aspect-ratio:16/9;background:var(--surface-3);overflow:hidden}
 .pick-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+/* 웹툰 표지는 세로(3:4)라서 16:9 로 자르면 그림이 잘립니다 → 4:3 + 위쪽 중심 */
+.pick--webtoon .pick-media{aspect-ratio:4/3}
+.pick--webtoon .pick-media img{object-position:50% 24%}
 .pick:hover .pick-media img{transform:scale(1.025)}
 .pick-media .art{position:absolute;inset:0;display:block}
 .pick-media .art svg{display:block;width:100%;height:100%}
@@ -570,7 +573,7 @@ img.is-broken{display:none !important}
 .art--estate{--a:#2B2140;--b:#503B75}
 .art--ai{--a:#0D3335;--b:#166068}
 .art--apptech{--a:#3B2A10;--b:#6F4E1C}
-.art--build{--a:#33301C;--b:#615C35}
+.art--webtoon{--a:#2C1A38;--b:#59406F}
 .art--apps{--a:#1E2350;--b:#3C428C}
 .art--os{--a:#1F2124;--b:#3C4046}
 .art--hack{--a:#3C1B18;--b:#703229}

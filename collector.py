@@ -16,7 +16,7 @@
   7) 앱·게임 순위    : Apple 앱스토어 RSS(실패 시 iTunes JSON) + Steam 최다 플레이
   8) 해커톤·공모전   : Devpost 공개 API
   9) 급상승 키워드   : Google Trends KR + 수집 제목 키워드 (TOP 10)
- 10) 주제 분류       : 수집 결과를 맘카페·육아 / 부동산·경매 / AI·부업 / 앱테크·핫딜 / 건축·입찰 로 태깅
+ 10) 주제 분류       : 수집 결과를 맘카페·육아 / 부동산·경매 / AI·부업 / 앱테크·핫딜 / 웹툰·엔터 로 태깅
 
 v3 썸네일 원칙 (실제 이미지 우선)
   - RSS media:group > media:thumbnail / media:content / enclosure / 본문 <img> 를 먼저 읽습니다.
@@ -70,6 +70,7 @@ MRSS = "http://search.yahoo.com/mrss/"
 NS = {
     "atom": "http://www.w3.org/2005/Atom",
     "dc": "http://purl.org/dc/elements/1.1/",
+    "content": "http://purl.org/rss/1.0/modules/content/",
     "ht": "https://trends.google.com/trending/rss",
     "media": MRSS,
     "yt": "http://www.youtube.com/xml/schemas/2015",
@@ -159,8 +160,10 @@ IMG_EXT = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif", ".bmp")
 IMG_BAD_BITS = ("1x1", "pixel.gif", "blank.gif", "spacer.gif", "transparent.gif",
                 "logo_default", "no_image", "noimage", "default_thumb",
                 "og-talk.png", "og_default", "default_og", "og_image.png")
-# og:image 로는 쓰이지만 실제 이미지가 아닌(링크 미리보기) 호스트
+# og:image 로는 쓰이지만 대개 링크 미리보기(이미지 아님)인 호스트
 NON_IMAGE_HOSTS = {"social.news.hada.io"}
+# …단 GeekNews 는 /topic/<id>/<hash> 경로로 1200×630 실제 대표 이미지를 만들어 줍니다.
+NON_IMAGE_HOST_ALLOW = {"social.news.hada.io": ("/topic/",)}
 
 
 def _norm_img(url: str, base: str = "") -> str:
@@ -176,8 +179,11 @@ def _norm_img(url: str, base: str = "") -> str:
     if not u.startswith("http"):
         return ""
     low = u.lower()
-    if urllib.parse.urlparse(low).netloc in NON_IMAGE_HOSTS:
-        return ""
+    host = urllib.parse.urlparse(low).netloc
+    if host in NON_IMAGE_HOSTS:
+        ok_paths = NON_IMAGE_HOST_ALLOW.get(host, ())
+        if not any(urllib.parse.urlparse(low).path.startswith(p) for p in ok_paths):
+            return ""
     if any(b in low for b in IMG_BAD_BITS):
         return ""
     if low.startswith("data:"):
@@ -207,19 +213,29 @@ def pick_feed_image(item_el, entry_url: str = "") -> str:
             u = _norm_img(node.get("url") or "", entry_url)
             if u:
                 return u
+    # 1-b) media:content 에 type 표기가 없어도 확장자가 이미지면 사용
+    for node in item_el.iter("{%s}content" % MRSS):
+        u = _norm_img(node.get("url") or "", entry_url)
+        if u and urllib.parse.urlparse(u.lower()).path.endswith(IMG_EXT):
+            return u
     # 2) <enclosure type="image/jpeg" url="...">
     for node in item_el.iter("enclosure"):
         if (node.get("type") or "").lower().startswith("image"):
             u = _norm_img(node.get("url") or "", entry_url)
             if u:
                 return u
+    # 2-b) enclosure 에 type 이 없어도 이미지 확장자면 사용
+    for node in item_el.iter("enclosure"):
+        u = _norm_img(node.get("url") or "", entry_url)
+        if u and urllib.parse.urlparse(u.lower()).path.endswith(IMG_EXT):
+            return u
     for node in item_el.findall("atom:link", NS):
         if (node.get("rel") or "") == "enclosure" and (node.get("type") or "").startswith("image"):
             u = _norm_img(node.get("href") or "", entry_url)
             if u:
                 return u
-    # 3) 본문 안의 <img> (description / content / summary)
-    for path in ("description", "atom:content", "atom:summary", "content"):
+    # 3) 본문 안의 <img> (description / content:encoded / content / summary)
+    for path in ("description", "content:encoded", "content", "atom:content", "atom:summary"):
         node = item_el.find(path, NS)
         if node is None:
             continue
@@ -229,6 +245,12 @@ def pick_feed_image(item_el, entry_url: str = "") -> str:
         u = _first_img_in_html(raw, entry_url)
         if u:
             return u
+    # 4) 네임스페이스 표기가 다른 content:encoded 는 localname 으로 한 번 더 찾습니다.
+    for node in item_el:
+        if str(node.tag).endswith("}encoded"):
+            u = _first_img_in_html(node.text or "", entry_url)
+            if u:
+                return u
     return ""
 
 
@@ -694,6 +716,9 @@ BLOG_FEEDS = [
     ("GeekNews", "https://news.hada.io/rss/news"),
     ("슬로우뉴스", "https://slownews.kr/feed"),
     ("바이라인네트워크", "https://byline.network/feed/"),
+    # 한국어 일반 독자용 피드 — 본문(content:encoded)에 대표 이미지가 함께 오는 곳만 넣었습니다.
+    ("요즘IT", "https://yozm.wishket.com/magazine/feed/"),
+    ("벤처스퀘어", "https://www.venturesquare.net/feed"),
 ]
 
 
@@ -744,7 +769,80 @@ def collect_blogs() -> list[dict]:
             })
             n += 1
         note("네이버 블로그 API", "ok" if n else "skip", n, kind="api")
-    return out[:10]
+
+    # 피드가 이미지를 주지 않은 글(예: GeekNews 텍스트 글)은 원문 og:image 로 보강합니다.
+    # 짧은 타임아웃·동시성 제한 · 실패한 호스트는 이번 실행에서 건너뜁니다.
+    enrich_images([b for b in out if not b.get("img")], budget_sec=25.0, workers=6, limit=12)
+
+    # 한 피드가 블로그 탭을 독점하지 않게 피드 순서대로 한 건씩 돌아가며 고릅니다.
+    by_source: dict[str, list[dict]] = {}
+    for b in out:
+        by_source.setdefault(b["source"], []).append(b)
+    order = [name for name, _ in BLOG_FEEDS] + (["네이버 블로그"] if by_source.get("네이버 블로그") else [])
+    picked: list[dict] = []
+    for round_no in range(4):
+        for name in order:
+            rows = by_source.get(name) or []
+            if round_no < len(rows) and len(picked) < 12:
+                picked.append(rows[round_no])
+        if len(picked) >= 12:
+            break
+    return picked or out[:12]
+
+
+# ----------------------------------------------------------------------------
+# 4-b) 인기 웹툰 · 엔터 (네이버웹툰 공개 목록 JSON · 로그인·키 없음)
+# ----------------------------------------------------------------------------
+# 네이버웹툰은 요일별 연재 목록을 공개 JSON 으로 제공합니다(titleId·작품명·작가·썸네일·평점).
+# 목록 순서는 플랫폼이 정한 요일별 노출 순서이므로 그 순서를 그대로 쓰고, 카드에는 평점을 함께 보여 줍니다.
+# 19금(adult)·휴재·자극적 제목은 일반 독자용 탭에서 제외합니다.
+WEBTOON_API = "https://comic.naver.com/api/webtoon/titlelist/weekday?week={week}"
+WEBTOON_WEEKS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+WEBTOON_DAY_KO = {"mon": "월", "tue": "화", "wed": "수", "thu": "목",
+                  "fri": "금", "sat": "토", "sun": "일"}
+
+
+def collect_webtoons(limit: int = 12) -> list[dict]:
+    week = WEBTOON_WEEKS[now_kst().weekday()]
+    day_ko = WEBTOON_DAY_KO[week]
+    try:
+        data = json.loads(http_get(WEBTOON_API.format(week=week), timeout=12))
+    except Exception as exc:  # noqa: BLE001
+        note("네이버웹툰", "error", 0, str(exc), kind="webtoon")
+        return []
+
+    rows: list[dict] = []
+    for t in data.get("titleList") or []:
+        name = clean_text(t.get("titleName", ""))
+        title_id = t.get("titleId")
+        img = _norm_img(t.get("thumbnailUrl") or "", "https://comic.naver.com/")
+        if not name or not title_id or not img:
+            continue
+        if t.get("adult") or t.get("rest") or is_sensitive(name):
+            continue  # 19금·휴재·자극적 제목 제외
+        author = clean_text(t.get("author", ""))
+        rows.append({
+            "id": mk_id("w", str(title_id)),
+            "title": name,
+            "author": author,
+            "source": "네이버웹툰",
+            "url": f"https://comic.naver.com/webtoon/list?titleId={title_id}",
+            "img": img,
+            "star": round(float(t.get("starScore") or 0), 2),
+            "day": f"{day_ko}요일",
+            "finish": bool(t.get("finish")),
+            "up": bool(t.get("up")),
+            "tags": [],
+            "topics": ["webtoon"],
+            "topics_kw": ["webtoon"],
+            "desc": f"{author} · {day_ko}요일 연재 · 평점 {float(t.get('starScore') or 0):.2f}",
+            "sample": False,
+        })
+
+    # 플랫폼이 정한 요일별 노출 순서를 유지합니다(그 순서가 곧 요일 인기 배열).
+    rows = dedupe_items(rows, key="title")[:limit]
+    note("네이버웹툰", "ok" if rows else "skip", len(rows), kind="webtoon")
+    return rows
 
 
 # ----------------------------------------------------------------------------
@@ -981,11 +1079,9 @@ TOPIC_RULES = {
                  "체험단", "무료배송", "할인코드", "기프티콘", "포인트 적립", "리퍼브"),
         "weak": ("할인", "포인트", "구독", "무료", "이벤트", "프로모션", "세일"),
     },
-    "build": {
-        "core": ("건축", "설계", "입찰", "나라장터", "시공", "감리", "인테리어", "용역", "리모델링",
-                 "조경", "철골", "안전진단", "공사비", "BIM", "구조설계", "도급", "하도급", "현상설계",
-                 "건설사", "설계공모", "공모전"),
-        "weak": ("도시", "공사", "건설", "용적률", "건폐율", "공정률"),
+    "webtoon": {
+        "core": ("웹툰", "만화", "연재", "네이버웹툰", "카카오웹툰", "웹소설"),
+        "weak": ("작가", "완결", "신작", "애니", "드라마화"),
     },
 }
 TOPIC_SCORE_MIN = 2
@@ -1189,7 +1285,7 @@ def news_importance(n: dict) -> float:
 
 TOPIC_PLAN = [("mom", "맘카페·육아", "🌿"), ("estate", "부동산·경매", "🏢"),
               ("ai", "AI·부업", "🤖"), ("apptech", "앱테크·핫딜", "💰"),
-              ("build", "건축·입찰", "📐")]
+              ("webtoon", "웹툰·엔터", "🎬")]
 
 
 def rule_brief(news: list[dict], feed: list[dict], issue_no: int) -> dict:
@@ -1339,6 +1435,7 @@ def thumb_stats(payload: dict) -> dict:
         "opensource": payload.get("opensource", []),
         "apps": payload.get("apps", []),
         "hackathons": payload.get("hackathons", []),
+        "webtoons": payload.get("webtoons", []),
     }
     out = {}
     total = have = 0
@@ -1383,6 +1480,16 @@ def build_payload() -> dict:
     apps = collect_apps()
     hackathons = collect_hackathons()
     trends = collect_trends()
+    webtoons = collect_webtoons()
+    if not webtoons:
+        # 네이버 측 일시 차단·점검일 때는 직전 수집분을 그대로 이어 씁니다(있을 때만).
+        try:
+            prev = json.loads((ROOT / "data.json").read_text(encoding="utf-8"))
+            webtoons = [w for w in (prev.get("webtoons") or []) if w.get("url") and w.get("img")]
+            if webtoons:
+                log(f"  웹툰 수집 실패 → 직전 수집분 {len(webtoons)}건 유지")
+        except Exception:  # noqa: BLE001
+            webtoons = []
 
     # --- 통합 피드용 뉴스 카드
     for i, n in enumerate(news):
@@ -1408,6 +1515,13 @@ def build_payload() -> dict:
         b["rise"] = 140
         b["sample"] = False
 
+    for w in webtoons:
+        w["cat"] = "webtoon"
+        w["hot"] = max(45, 86 - int(round((10 - min(w.get("star", 0), 10)) * 6)))
+        w["rise"] = max(120, 210 - len(w.get("title", "")))
+        w["time"] = w.get("day") or ""
+        w["sample"] = False
+
     # --- 주제 태깅 + og:image 보강 (이미지 없는 항목만)
     all_items = posts + news + videos + blogs
     for it in all_items:
@@ -1424,7 +1538,7 @@ def build_payload() -> dict:
                        | {o["repo"].split("/")[0] for o in opensource})
     stats = {
         "sources": len(visited_sources),
-        "collected": len(all_items) + len(deals) + len(opensource) + len(apps) + len(hackathons),
+        "collected": len(all_items) + len(deals) + len(opensource) + len(apps) + len(hackathons) + len(webtoons),
         "live_sources": sum(1 for r in COLLECT_LOG if r["status"] == "ok"),
         "skipped_sources": sum(1 for r in COLLECT_LOG if r["status"] in ("skip", "error", "key-missing")),
         "elapsed_sec": round(time.time() - started, 1),
@@ -1456,6 +1570,7 @@ def build_payload() -> dict:
         "opensource": opensource,
         "apps": apps,
         "hackathons": hackathons,
+        "webtoons": webtoons,
         "ranks": build_ranks(all_items, trends),
         "brief": brief,
         "collect_log": COLLECT_LOG,
@@ -1463,6 +1578,7 @@ def build_payload() -> dict:
             "posts/news/videos/blogs 는 모두 공개 RSS·API 에서 실제로 수집한 항목입니다(예시 데이터 없음).",
             "rise 값은 최신성·반응을 합산한 상승 지수 추정치입니다.",
             "이미지가 없는 항목은 화면에서 카테고리 일러스트 카드로 대체됩니다.",
+            "웹툰·엔터는 네이버웹툰 요일 연재 공개 목록에서 평점 순으로 고른 작품입니다(19금 제외).",
         ],
     }
     payload["thumbs"] = thumb_stats(payload)

@@ -52,7 +52,7 @@ SECTION_KEY = {"경제·증시": ("econ", "📈"), "IT·AI": ("ai", "🤖"),
                "부동산·정책": ("estate", "🏢"), "사회·생활": ("social", "🧾")}
 TOPIC_PLAN = [("mom", "맘카페·육아", "🌿"), ("estate", "부동산·경매", "🏢"),
               ("ai", "AI·부업", "🤖"), ("apptech", "앱테크·핫딜", "💰"),
-              ("build", "건축·입찰", "📐")]
+              ("webtoon", "웹툰·엔터", "🎬")]
 # 브리프 '챙겨볼 것' 문단에서 쓰는 분야 순서
 TOPIC_LABEL = {k: label for k, label, _ in TOPIC_PLAN}
 
@@ -351,7 +351,7 @@ def build_prompt(data: dict) -> str:
 반드시 아래 JSON 스키마로만 응답하라(설명·마크다운 없이):
 {{"title":"","lead":"","paragraphs":["","",""],
  "highlights":[{{"label":"","text":"","source":""}}],
- "sections":[{{"key":"econ|ai|estate|social|mom|apptech|build|comm","label":"","emoji":"","title":"","body":"","points":[{{"text":"","source":"","title":""}}]}}],
+ "sections":[{{"key":"econ|ai|estate|social|mom|apptech|webtoon|comm","label":"","emoji":"","title":"","body":"","points":[{{"text":"","source":"","title":""}}]}}],
  "post_summaries":{{}}}}
 
 [오늘] {data.get('issue', {}).get('date', '')} · 수집 {total}건 · 출처 {(data.get('stats') or {}).get('live_sources', '')}곳

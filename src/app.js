@@ -109,7 +109,7 @@
 
   /* ------------------------------ 데이터 ------------------------------ */
   var EMBEDDED = {
-    posts: [], news: [], videos: [], blogs: [], deals: [], opensource: [], apps: [], hackathons: [],
+    posts: [], news: [], videos: [], blogs: [], webtoons: [], deals: [], opensource: [], apps: [], hackathons: [],
     ranks: { all: [] }, brief: { sections: [], picks: [] }, stats: {}, issue: {}, thumbs: {}
   };
   try {
@@ -129,7 +129,7 @@
     estate:   { label: '부동산·경매' },
     ai:       { label: 'AI·부업' },
     apptech:  { label: '앱테크·핫딜' },
-    build:    { label: '건축·입찰' },
+    webtoon:  { label: '웹툰·엔터' },
     apps:     { label: '앱·게임' },
     os:       { label: '오픈소스' },
     hack:     { label: '해커톤' },
@@ -137,7 +137,7 @@
     econ:     { label: '경제·증시' },
     social:   { label: '사회·생활' }
   };
-  var TOPIC_ORDER = ['mom', 'estate', 'ai', 'apptech', 'build'];
+  var TOPIC_ORDER = ['mom', 'estate', 'ai', 'apptech', 'webtoon'];
 
   var state = {
     filter: 'all', sort: 'hot', q: '', kw: '', savedOnly: false,
@@ -224,7 +224,7 @@
     estate:  { a: '#2B2140', b: '#503B75', en: 'PROPERTY' },
     ai:      { a: '#0D3335', b: '#166068', en: 'AI' },
     apptech: { a: '#3B2A10', b: '#6F4E1C', en: 'APPTECH' },
-    build:   { a: '#33301C', b: '#615C35', en: 'BUILD' },
+    webtoon: { a: '#2C1A38', b: '#59406F', en: 'WEBTOON' },
     apps:    { a: '#1E2350', b: '#3C428C', en: 'APPS' },
     os:      { a: '#1F2124', b: '#3C4046', en: 'OPEN SOURCE' },
     hack:    { a: '#3C1B18', b: '#703229', en: 'CHALLENGE' },
@@ -241,22 +241,96 @@
     return 'news';
   }
 
-  function artSvg(cat, seed) {
+  function artSvg(cat, seed, sub) {
     var a = ART[cat] || ART.news;
-    var v = Math.abs(hashHue(String(seed || cat))) % 3;
+    var h = Math.abs(hashHue(String(seed || cat)));
+    var v = h % 4;
+    var pair = tonePair(a.a, a.b, seed);
     var label = (CAT[cat] && CAT[cat].label) || (ART[cat] ? ART[cat].en : '트렌드');
-    return '<span class="art art--' + esc(cat) + ' v' + v + '" aria-hidden="true">' +
+    var subTxt = sub ? String(sub) : a.en;
+    return '<span class="art art--' + esc(cat) + ' v' + v + '" style="--a:' + pair[0] + ';--b:' + pair[1] + '" aria-hidden="true">' +
       '<svg viewBox="0 0 320 180" preserveAspectRatio="xMinYMax slice" focusable="false">' +
-        '<g fill="none" stroke="#fff" stroke-opacity=".16">' +
-          '<circle cx="272" cy="22" r="74"/><circle cx="272" cy="22" r="45"/>' +
-          '<circle cx="272" cy="22" r="17"/>' +
-        '</g>' +
-        '<g stroke="#fff" stroke-opacity=".09"><path d="M206 180 320 58"/><path d="M240 180 320 92"/></g>' +
-        '<circle cx="272" cy="22" r="3.6" fill="#fff" fill-opacity=".55"/>' +
+        artPattern(v) +
       '</svg>' +
-      '<span class="art-lbl"><i>' + esc(a.en) + '</i><b>' + esc(label) + '</b></span>' +
+      '<span class="art-lbl"><i>' + esc(subTxt) + '</i><b>' + esc(label) + '</b></span>' +
       '<span class="art-mono">' + esc((a.en || 'T').slice(0, 1)) + '</span>' +
       '<span class="art-mark">TRENDPICK</span></span>';
+  }
+
+  /* 카드마다 같은 분야 안에서도 톤·무늬가 달라 보이게 하는 장치 —
+     제목 해시로 색상(±12도)·명도(±5%) 를 조금씩 돌리고, 무늬 4종을 돌려 씁니다. */
+  function artPattern(v) {
+    if (v === 1) {
+      return '<g stroke="#fff" stroke-opacity=".10">' +
+        '<path d="M0 30h320M0 62h320M0 94h320M0 126h320M0 158h320"/>' +
+        '<path d="M40 0v180M96 0v180M152 0v180M208 0v180M264 0v180"/></g>' +
+        '<circle cx="264" cy="94" r="30" fill="#fff" fill-opacity=".10"/>';
+    }
+    if (v === 2) {
+      return '<g fill="none" stroke="#fff" stroke-opacity=".13">' +
+        '<path d="M-10 190a120 120 0 0 1 240 0"/><path d="M30 190a80 80 0 0 1 160 0"/>' +
+        '<path d="M70 190a40 40 0 0 1 80 0"/></g>' +
+        '<circle cx="246" cy="34" r="4.4" fill="#fff" fill-opacity=".6"/>';
+    }
+    if (v === 3) {
+      return '<g fill="#fff" fill-opacity=".11">' +
+        '<circle cx="34" cy="34" r="13"/><circle cx="92" cy="34" r="13"/><circle cx="150" cy="34" r="13"/>' +
+        '<circle cx="34" cy="92" r="13"/><circle cx="92" cy="92" r="13"/><circle cx="150" cy="92" r="13"/>' +
+        '<circle cx="34" cy="150" r="13"/><circle cx="92" cy="150" r="13"/></g>' +
+        '<path d="M210 180 320 52" stroke="#fff" stroke-opacity=".12"/>';
+    }
+    return '<g fill="none" stroke="#fff" stroke-opacity=".16">' +
+      '<circle cx="272" cy="22" r="74"/><circle cx="272" cy="22" r="45"/>' +
+      '<circle cx="272" cy="22" r="17"/></g>' +
+      '<g stroke="#fff" stroke-opacity=".09"><path d="M206 180 320 58"/><path d="M240 180 320 92"/></g>' +
+      '<circle cx="272" cy="22" r="3.6" fill="#fff" fill-opacity=".55"/>';
+  }
+
+  function tonePair(aHex, bHex, seed) {
+    var h = Math.abs(hashHue(String(seed || aHex)));
+    var shift = (h % 25) - 12;
+    var A = hex2hsl(aHex), B = hex2hsl(bHex);
+    if (!A || !B) return [aHex, bHex];
+    A.h = (A.h + shift + 360) % 360;
+    B.h = (B.h + shift + 360) % 360;
+    A.l = Math.min(34, Math.max(7, A.l + ((h >> 3) % 9) - 4));
+    B.l = Math.min(52, Math.max(17, B.l + ((h >> 5) % 11) - 5));
+    return ['#' + hsl2hex(A), '#' + hsl2hex(B)];
+  }
+  function hex2hsl(hex) {
+    var m = /^#?([0-9a-f]{6})$/i.exec(String(hex || ''));
+    if (!m) return null;
+    var n = parseInt(m[1], 16), r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
+    var max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, h = 0, s = 0;
+    if (max !== min) {
+      var d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      if (max === r) h = (g - b) / d + (g < b ? 6 : 0);
+      else if (max === g) h = (b - r) / d + 2;
+      else h = (r - g) / d + 4;
+      h *= 60;
+    }
+    return { h: h, s: s * 100, l: l * 100 };
+  }
+  function hsl2hex(c) {
+    var h = ((c.h % 360) + 360) % 360 / 360, s = Math.min(100, Math.max(0, c.s)) / 100,
+      l = Math.min(100, Math.max(0, c.l)) / 100;
+    function q(p, q2, t) {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1 / 6) return p + (q2 - p) * 6 * t;
+      if (t < 1 / 2) return q2;
+      if (t < 2 / 3) return p + (q2 - p) * (2 / 3 - t) * 6;
+      return p;
+    }
+    var r, g, b;
+    if (!s) { r = g = b = l; }
+    else {
+      var q2 = l < 0.5 ? l * (1 + s) : l + s - l * s, p = 2 * l - q2;
+      r = q(p, q2, h + 1 / 3); g = q(p, q2, h); b = q(p, q2, h - 1 / 3);
+    }
+    function hex(x) { var v = Math.round(x * 255).toString(16); return v.length < 2 ? '0' + v : v; }
+    return hex(r) + hex(g) + hex(b);
   }
 
   /* --------------------------- 통합 피드 --------------------------- */
@@ -275,6 +349,13 @@
     });
     (DATA.blogs || []).forEach(function (b) {
       feed.push(mkItem(b, 'web', 'blog'));
+    });
+    (DATA.webtoons || []).forEach(function (w) {
+      var item = mkItem(w, 'webtoon', 'webtoon');
+      item.star = w.star || 0;
+      item.day = w.day || '';
+      item.author = w.author || '';
+      feed.push(item);
     });
     return feed;
   }
@@ -720,18 +801,26 @@
 
   function feedCard(f) {
     var on = isSaved(f.id);
-    var label = CAT[f.cat] ? CAT[f.cat].label : '소식';
+    var label = f.cat === 'webtoon' ? '웹툰' : (CAT[f.cat] ? CAT[f.cat].label : '소식');
     // 뉴스 카드는 분야별 커버(경제·증시/IT·AI/부동산·정책/사회·생활)로 색을 나눕니다
     var artCat = f.cat === 'news' ? sectionCat(f.section) : f.cat;
+    var artSub = f.cat === 'webtoon' ? 'NAVER WEBTOON' : (f.cat === 'web' ? (f.source || 'BLOG') : '');
     var meta = [];
-    if (f.kind === 'shorts') meta.push('SHORTS');
-    else if (f.kind === 'video') meta.push('영상');
-    if (f.views) meta.push('조회 ' + compact(f.views));
-    if (f.time) meta.push(f.time);
-    meta.push(f.source);
-    return '<article class="pick" data-id="' + esc(f.id) + '">' +
+    if (f.kind === 'webtoon') {
+      if (f.star) meta.push('★ ' + Number(f.star).toFixed(2));
+      if (f.day) meta.push(f.day + ' 연재');
+      if (f.author) meta.push(f.author);
+      meta.push(f.source);
+    } else {
+      if (f.kind === 'shorts') meta.push('SHORTS');
+      else if (f.kind === 'video') meta.push('영상');
+      if (f.views) meta.push('조회 ' + compact(f.views));
+      if (f.time) meta.push(f.time);
+      meta.push(f.source);
+    }
+    return '<article class="pick' + (f.kind === 'webtoon' ? ' pick--webtoon' : '') + '" data-id="' + esc(f.id) + '">' +
       '<a class="pick-media" href="' + esc(f.url || '#') + '" target="_blank" rel="noopener" aria-label="' + esc(f.title) + ' 원문 열기">' +
-        artSvg(artCat, f.title) +
+        artSvg(artCat, f.title, artSub) +
         (f.img ? '<img src="' + esc(f.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" decoding="async" data-testid="thumb-' + esc(f.id) + '">' : '') +
         (f.img || f.kind === 'video' || f.kind === 'shorts'
           ? '<span class="pick-tag' + (f.kind === 'shorts' || f.kind === 'video' ? ' video' : '') + '">' + esc(label) + '</span>'

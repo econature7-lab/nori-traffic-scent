@@ -109,12 +109,27 @@ blogs:
   - name: 바이라인네트워크
     type: rss
     url: https://byline.network/feed/
+  - name: 요즘IT
+    type: rss
+    url: https://yozm.wishket.com/magazine/feed/
+    note: 한국어 IT 교양 매거진 · content:encoded 본문 이미지
+  - name: 벤처스퀘어
+    type: rss
+    url: https://www.venturesquare.net/feed
+    note: 스타트업·IT 뉴스 · 대표 이미지 포함
   - name: 네이버 블로그 검색
     type: api
     key: NAVER_CLIENT_ID / NAVER_CLIENT_SECRET
     url: https://openapi.naver.com/v1/search/blog.json
 
-# ── 5. 핫딜 ──────────────────────────────────────────────
+# ── 5. 인기 웹툰·엔터 (네이버웹툰 공개 목록) ───────────────
+webtoons:
+  - name: 네이버웹툰 요일 연재
+    type: api
+    url: https://comic.naver.com/api/webtoon/titlelist/weekday?week=mon
+    note: 로그인·키 없음 · titleId·작품명·작가·썸네일·평점 · 19금/휴재/자극적 제목 제외 · 평점 순
+
+# ── 5-1. 핫딜 ──────────────────────────────────────────────
 deals:
   - name: 네이버 쇼핑 최저가
     type: api
@@ -162,8 +177,7 @@ topics:
   estate: [부동산, 아파트, 전세, 매매, 청약, 임대, 집값, 재건축, 경매, 상가, 오피스텔, 중개, 분양, 주택, 월세, 공시가격, 토지, 재개발, 입주]
   ai: [AI, 인공지능, 챗GPT, 클로드, 제미나이, 반도체, 데이터센터, 로봇, LLM, 생성형, 알고리즘, 엔비디아, GPU, 오픈AI, 앤트로픽, 자동화]
   apptech: [핫딜, 할인, 특가, 쿠폰, 리워드, 앱테크, 포인트, 최저가, 세일, 블랙프라이데이, 반값, 이벤트, 경품, 무료, 구독, 체험단]
-  build: [건축, 설계, 입찰, 나라장터, 시공, 공모, 감리, 인테리어, 도시, 용역, 공사, 리모델링, 조경, 철골, 안전진단]
-
+  webtoon: [웹툰, 만화, 연재, 네이버웹툰, 카카오웹툰, 웹소설, 애니, 완결, 신작]
 # ── 11. AI 요약 ──────────────────────────────────────────
 summary:
   provider: Google Gemini
