@@ -1,0 +1,281 @@
+{
+  "date": "2026-11-26",
+  "issue": {
+    "no": 15,
+    "label": "No.15 (11.26)",
+    "date": "2026-11-26"
+  },
+  "generated_at": "2026-11-26T04:54:43+09:00",
+  "brief": {
+    "no": "No.15",
+    "date": "2026-11-26",
+    "label": "11.26",
+    "weekday": "목",
+    "title": "역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도 · 덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇 · 구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
+    "lead": "IT·AI에서는 '덤블링은 못하지만 제조 현장에 없어선 안 되는 …' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '구례 주택서 80대 2명 쓰러진 채 발견…1…' 소식이 눈에 띕니다. 오늘 수집한 104건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 6개 이슈를 골랐습니다.",
+    "picks": [
+      {
+        "rank": 1,
+        "label": "경제·증시",
+        "title": "역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261126002000003",
+        "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/25/PYH2026112514250006100_P2.jpg"
+      },
+      {
+        "rank": 2,
+        "label": "IT·AI",
+        "title": "덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇",
+        "source": "조선일보",
+        "url": "https://www.chosun.com/economy/startup_story/2026/11/26/4WR5JPDTWNEAHDT2JRMMTVFHO4/",
+        "img": "https://www.chosun.com/resizer/v2/WBRFFCMV5NEIPB4U7CYTCXW55I.jpg?auth=15b74bc1b39962884ee05366bbd7860c999181c71e9c7828e817981784bb3fb9&smart=true&width=3712&height=2475"
+      },
+      {
+        "rank": 3,
+        "label": "부동산·정책",
+        "title": "구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
+        "source": "연합뉴스 사회",
+        "url": "https://www.yna.co.kr/view/AKR20261125187400054",
+        "img": "https://img.yna.co.kr/photo/cms/2026/10/20/03/PCM20261020000003990_P2.jpg"
+      },
+      {
+        "rank": 4,
+        "label": "사회·생활",
+        "title": "3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업",
+        "source": "조선일보",
+        "url": "https://www.chosun.com/economy/startup_story/2026/08/13/EHGP3RRMCRAZLGN4P325EU437A/",
+        "img": "https://www.chosun.com/resizer/v2/YXPX7WPZ3BHIDGRCXT666CWK3A.jpg?auth=2bec0e4723030806ea3d56b565508cd5ab876c90b3d9940caa972487ad534d2c&smart=true&width=3578&height=2424"
+      },
+      {
+        "rank": 5,
+        "label": "경제·증시",
+        "title": "[속보] 美 10월 PCE 물가 전년 대비 3.8%↑…예상치 부합",
+        "source": "매일경제",
+        "url": "https://www.mk.co.kr/news/world/12218748",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/25/news-p.v1.20261125.3f1b3886c29f4ea9a9cc442393fdfd09_R.png"
+      }
+    ],
+    "metrics": {
+      "topics": 6,
+      "news": 32,
+      "items": 104
+    },
+    "sections": [
+      {
+        "key": "경제·증시",
+        "label": "경제·증시",
+        "emoji": "📰",
+        "title": "역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도",
+        "body": "연합뉴스 경제·매일경제 등이 전한 경제·증시 흐름입니다. 역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도 이어서 '[속보] 美 10월 PCE 물가 전년 대비 3.8%↑…예상치 부합', '[속보] 美, 한국 등 14개 경제주체에 ‘과잉생산 관세’ 예고'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261126002000003"
+          },
+          {
+            "text": "[속보] 美 10월 PCE 물가 전년 대비 3.8%↑…예상치 부합",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/world/12218748"
+          },
+          {
+            "text": "[속보] 美, 한국 등 14개 경제주체에 ‘과잉생산 관세’ 예고",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/world/12218736"
+          }
+        ]
+      },
+      {
+        "key": "IT·AI",
+        "label": "IT·AI",
+        "emoji": "📰",
+        "title": "덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇",
+        "body": "조선일보·매일경제 등이 전한 IT·AI 흐름입니다. 덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇 이어서 '美, 관세 부과하며 호남 반도체 언급… “SK 등에 국내 생산 확대 ‘압', '‘큰 형님’ 구글의 귀환 … 제미나이 네온·무료 비서 태스크 “꽤 쓸만하'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/economy/startup_story/2026/11/26/4WR5JPDTWNEAHDT2JRMMTVFHO4/"
+          },
+          {
+            "text": "美, 관세 부과하며 호남 반도체 언급… “SK 등에 국내 생산 확대 ‘압박’”",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/international/us/2026/11/26/I6UO4BGCEJGFVFW6KLPRUASKKM/"
+          },
+          {
+            "text": "‘큰 형님’ 구글의 귀환 … 제미나이 네온·무료 비서 태스크 “꽤 쓸만하네”",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/world/12218137"
+          }
+        ]
+      },
+      {
+        "key": "부동산·정책",
+        "label": "부동산·정책",
+        "emoji": "📰",
+        "title": "구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
+        "body": "연합뉴스 사회·매일경제 등이 전한 부동산·정책 흐름입니다. 구례 주택서 80대 2명 쓰러진 채 발견…1명 사망 이어서 '李 \"공적주택, 중산층에게도 기회를 … 분양전환은 금지해야\"', '도보 왕복 1km 청담 신축 아파트…배달 라이더들이 현수막 건 이유가?'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
+            "source": "연합뉴스 사회",
+            "url": "https://www.yna.co.kr/view/AKR20261125187400054"
+          },
+          {
+            "text": "李 \"공적주택, 중산층에게도 기회를 … 분양전환은 금지해야\"",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/politics/12218774"
+          },
+          {
+            "text": "도보 왕복 1km 청담 신축 아파트…배달 라이더들이 현수막 건 이유가?",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/society/12218738"
+          }
+        ]
+      },
+      {
+        "key": "사회·생활",
+        "label": "사회·생활",
+        "emoji": "📰",
+        "title": "3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업",
+        "body": "조선일보·연합뉴스 사회 등이 전한 사회·생활 흐름입니다. 3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업 이어서 '이정효 감독 \"더 과격해지면 집에서 쫓겨납니다\" 선수들에겐 공포의 대상,', '철도노조, 오전 9시부터 '안전운행 투쟁'…일부 열차 지연 예상'도 함께 다뤄졌습니다.",
+        "points": [
+          {
+            "text": "3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/economy/startup_story/2026/08/13/EHGP3RRMCRAZLGN4P325EU437A/"
+          },
+          {
+            "text": "이정효 감독 \"더 과격해지면 집에서 쫓겨납니다\" 선수들에겐 공포의 대상, 집에선 매일 혼나는 남편 [오!쎈 ",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/sports/football/2026/11/26/MM3GCZLCMU3TMYRQGQYGGZRWGY/"
+          },
+          {
+            "text": "철도노조, 오전 9시부터 '안전운행 투쟁'…일부 열차 지연 예상",
+            "source": "연합뉴스 사회",
+            "url": "https://www.yna.co.kr/view/AKR20261125182900063"
+          }
+        ]
+      },
+      {
+        "key": "estate",
+        "label": "부동산·경매",
+        "emoji": "🏢",
+        "title": "\"배달음식은 받고 싶습니까?\"…오토바이 출입 막은 청담동 아파트",
+        "body": "연합뉴스 사회에서 '\"배달음식은 받고 싶습니까?\"…오토바이 출입 막은 청담동 아파트' 글이 올라왔습니다. 연합뉴스 경제에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "points": [
+          {
+            "text": "\"배달음식은 받고 싶습니까?\"…오토바이 출입 막은 청담동 아파트",
+            "source": "연합뉴스 사회",
+            "url": "https://www.yna.co.kr/view/AKR20261125183200004"
+          },
+          {
+            "text": "2030년까지 수도권에 아파트 발주 182조원…50만호 착공(종합)",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261125168651001"
+          }
+        ]
+      },
+      {
+        "key": "ai",
+        "label": "AI·부업",
+        "emoji": "🤖",
+        "title": "[뉴테크] 韓美 개발 미세 로봇, 뇌 장벽 뚫고 악성종양 치료",
+        "body": "조선일보에서 '[뉴테크] 韓美 개발 미세 로봇, 뇌 장벽 뚫고 악성종양 치료' 글이 올라왔습니다. AI타임스에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "points": [
+          {
+            "text": "[뉴테크] 韓美 개발 미세 로봇, 뇌 장벽 뚫고 악성종양 치료",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/economy/science/2026/11/26/GZRTEMRXGVSTON3DG42DQMDBMQ/"
+          },
+          {
+            "text": "오픈AI \"범용 AI GPT-6, 전문 모델 없이 단백질 설계…실험서 검증\"",
+            "source": "AI타임스",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217758"
+          }
+        ]
+      }
+    ],
+    "engine": "rule-based",
+    "past": []
+  },
+  "stats": {
+    "sources": 32,
+    "collected": 112,
+    "live_sources": 24,
+    "skipped_sources": 2,
+    "elapsed_sec": 27.8
+  },
+  "ranks": [
+    {
+      "k": "AI",
+      "r": 307,
+      "url": "",
+      "img": "https://cdn.aitimes.com/news/photo/202611/217758_222151_2754.png",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "sabah 대 바르셀로나",
+      "r": 240,
+      "url": "",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkRuE6DWEZc6i9B___I1F7V8at9Is4QNM10QbaCy1VCK-WXW8tDY0oP_evEjg",
+      "src": "Google Trends"
+    },
+    {
+      "k": "뉴스 모음",
+      "r": 206,
+      "url": "",
+      "img": "",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "뉴스&트렌드",
+      "r": 206,
+      "url": "",
+      "img": "",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "뉴스콘텐츠",
+      "r": 206,
+      "url": "",
+      "img": "",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "선수",
+      "r": 180,
+      "url": "",
+      "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRdu4tM_5UHB_246v6As7Rm8kY07WCNtfoDJuMq1KmupW26i-B8nMfvBlJBXp0",
+      "src": "Google Trends"
+    },
+    {
+      "k": "한국",
+      "r": 177,
+      "url": "",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/25/news-p.v1.20260221.635e301f951b4f1296d55e6be71394c4_R.png",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "예고편",
+      "r": 177,
+      "url": "",
+      "img": "https://i.ytimg.com/vi/Oae1ZnQ15gQ/hqdefault.jpg",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "아파트",
+      "r": 177,
+      "url": "",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/25/news-p.v1.20261125.e25a86d6f1014f7a94c472c26e03e289_R.png",
+      "src": "트렌드픽 수집"
+    },
+    {
+      "k": "관세",
+      "r": 163,
+      "url": "",
+      "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/25/PYH2026112514250006100_P2.jpg",
+      "src": "트렌드픽 수집"
+    }
+  ]
+}
