@@ -1,62 +1,62 @@
 {
   "date": "2026-11-25",
   "issue": {
-    "no": 13,
-    "label": "No.13 (11.25)",
+    "no": 14,
+    "label": "No.14 (11.25)",
     "date": "2026-11-25"
   },
-  "generated_at": "2026-11-25T06:50:06+09:00",
+  "generated_at": "2026-11-25T13:54:19+09:00",
   "brief": {
-    "no": "No.13",
+    "no": "No.14",
     "date": "2026-11-25",
     "label": "11.25",
     "weekday": "수",
-    "title": "[인터뷰] ‘美 20대 VC’ 알럼나이벤처스 창업자 “기업 몸 · '장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험 · LH 미분양 매입확약 3만1천가구 중 1만3천가구 착공",
-    "lead": "IT·AI에서는 ''장롱면허' 이소영 장관도 탔다…중기부 공무원,…' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 'LH 미분양 매입확약 3만1천가구 중 1만3…' 소식이 눈에 띕니다. 오늘 수집한 104건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 6개 이슈를 골랐습니다.",
+    "title": "11월 전남광주 소비자심리지수 하락 · \"AI에 월 25달러 쓰면 물 7.2ℓ 소비…아몬드 우유의 1 · 제6회 서울도시건축비엔날레 총감독에 카를로 라티 선정",
+    "lead": "IT·AI에서는 '\"AI에 월 25달러 쓰면 물 7.2ℓ 소비…아…' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '제6회 서울도시건축비엔날레 총감독에 카를로 …' 소식이 눈에 띕니다. 오늘 수집한 104건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 7개 이슈를 골랐습니다.",
     "picks": [
       {
         "rank": 1,
         "label": "경제·증시",
-        "title": "[인터뷰] ‘美 20대 VC’ 알럼나이벤처스 창업자 “기업 몸값 따지다 미래 놓쳐선 안 돼”",
-        "source": "조선일보",
-        "url": "https://www.chosun.com/economy/smb-venture/2026/11/25/MVSGKYZQMFSTONTDMM3WCZBYGQ/",
-        "img": "https://image.chosun.com/thumb_meta.png"
+        "title": "11월 전남광주 소비자심리지수 하락",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261125098500054",
+        "img": "https://img.yna.co.kr/photo/yna/YH/2026/10/27/PYH2026102711420001300_P2.jpg"
       },
       {
         "rank": 2,
         "label": "IT·AI",
-        "title": "'장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험",
-        "source": "연합뉴스 산업",
-        "url": "https://www.yna.co.kr/view/AKR20261124156900030",
-        "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/24/AKR20261124156900030_02_i_P2.jpg"
+        "title": "\"AI에 월 25달러 쓰면 물 7.2ℓ 소비…아몬드 우유의 162분의 1\"",
+        "source": "AI타임스",
+        "url": "https://www.aitimes.com/news/articleView.html?idxno=217769",
+        "img": "https://cdn.aitimes.com/news/photo/202611/217769_222123_4428.png"
       },
       {
         "rank": 3,
         "label": "부동산·정책",
-        "title": "LH 미분양 매입확약 3만1천가구 중 1만3천가구 착공",
-        "source": "연합뉴스 경제",
-        "url": "https://www.yna.co.kr/view/AKR20261124169300003",
-        "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/24/PYH2026112405180001300_P2.jpg"
+        "title": "제6회 서울도시건축비엔날레 총감독에 카를로 라티 선정",
+        "source": "매일경제 부동산",
+        "url": "https://www.mk.co.kr/news/realestate/12217919",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/25/news-p.v1.20261125.64813903cb014a909dafec19e47d82d7_R.jpg"
       },
       {
         "rank": 4,
         "label": "사회·생활",
-        "title": "“1인당 80만원 드릴게요”…소득·나이 제한없이 뿌린다는 ‘이 지원금’",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/world/12217663",
-        "img": "https://pimg.mk.co.kr/news/cms/202611/25/news-p.v1.20261125.c4926ec716634fc5a937f0d12d5ec0e8_R.png"
+        "title": "[게시판] 해수부, 항행장애물 대응 역량 강화 합동 연수회",
+        "source": "연합뉴스 사회",
+        "url": "https://www.yna.co.kr/view/AKR20261125105200051",
+        "img": "https://img.yna.co.kr/photo/cms/2019/01/19/55/PCM20190119000055030_P2.jpg"
       },
       {
         "rank": 5,
         "label": "경제·증시",
-        "title": "주식 싸게 팔고 사채 조건 낮추고…바이오기업들 자금 확보 안간힘",
-        "source": "조선일보",
-        "url": "https://www.chosun.com/economy/science/2026/11/25/MM3DEMZWMYYDSYLDGY2TSZRWGE/",
-        "img": "https://www.chosun.com/resizer/v2/GI2WMNLCGU2TIZRSGFSDANJWG4.jpg?auth=6c79834be854105299c344dfb513d4e0481de1c644d3e96987d9e9f25ffad291&smart=true&width=5000&height=2264"
+        "title": "KB국민은행, '2026-2차 공동구매정기예금'…최고 연 3.9%",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261125103500002",
+        "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/25/AKR20261125103500002_01_i_P2.jpg"
       }
     ],
     "metrics": {
-      "topics": 6,
+      "topics": 7,
       "news": 32,
       "items": 104
     },
@@ -65,23 +65,23 @@
         "key": "경제·증시",
         "label": "경제·증시",
         "emoji": "📰",
-        "title": "[인터뷰] ‘美 20대 VC’ 알럼나이벤처스 창업자 “기업 몸값 따지다 미래 놓쳐선 안 돼”",
-        "body": "조선일보·매일경제 등이 전한 경제·증시 흐름입니다. [인터뷰] ‘美 20대 VC’ 알럼나이벤처스 창업자 “기업 몸값 따지다 미래 놓쳐선 안 돼” 이어서 '주식 싸게 팔고 사채 조건 낮추고…바이오기업들 자금 확보 안간힘', '역대급 실적에도 승진 잔치 없었다…삼성 ‘임원 가는 문’ 좁힌 이유는?'도 함께 다뤄졌습니다.",
+        "title": "11월 전남광주 소비자심리지수 하락",
+        "body": "연합뉴스 경제 등이 전한 경제·증시 흐름입니다. 11월 전남광주 소비자심리지수 하락 이어서 'KB국민은행, '2026-2차 공동구매정기예금'…최고 연 3.9%', '역도·레슬링, IBK기업은행과 후원 협약…3년간 최대 14억원'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "[인터뷰] ‘美 20대 VC’ 알럼나이벤처스 창업자 “기업 몸값 따지다 미래 놓쳐선 안 돼”",
-            "source": "조선일보",
-            "url": "https://www.chosun.com/economy/smb-venture/2026/11/25/MVSGKYZQMFSTONTDMM3WCZBYGQ/"
+            "text": "11월 전남광주 소비자심리지수 하락",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261125098500054"
           },
           {
-            "text": "주식 싸게 팔고 사채 조건 낮추고…바이오기업들 자금 확보 안간힘",
-            "source": "조선일보",
-            "url": "https://www.chosun.com/economy/science/2026/11/25/MM3DEMZWMYYDSYLDGY2TSZRWGE/"
+            "text": "KB국민은행, '2026-2차 공동구매정기예금'…최고 연 3.9%",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261125103500002"
           },
           {
-            "text": "역대급 실적에도 승진 잔치 없었다…삼성 ‘임원 가는 문’ 좁힌 이유는?",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/business/12217650"
+            "text": "역도·레슬링, IBK기업은행과 후원 협약…3년간 최대 14억원",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261125103700007"
           }
         ]
       },
@@ -89,23 +89,23 @@
         "key": "IT·AI",
         "label": "IT·AI",
         "emoji": "📰",
-        "title": "'장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험",
-        "body": "연합뉴스 산업·연합뉴스 경제 등이 전한 IT·AI 흐름입니다. '장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험 이어서 '계란 산지 가격 하락에도 소매가는 올라…고병원성 AI 확산 우려', '인공지능 인재들 한자리에…AI 부트캠프 학생 취업지원 행사'도 함께 다뤄졌습니다.",
+        "title": "\"AI에 월 25달러 쓰면 물 7.2ℓ 소비…아몬드 우유의 162분의 1\"",
+        "body": "AI타임스·매일경제·연합뉴스 산업 등이 전한 IT·AI 흐름입니다. \"AI에 월 25달러 쓰면 물 7.2ℓ 소비…아몬드 우유의 162분의 1\" 이어서 '배경훈 “국가시험 AI 부정행위 막을 기술대책 전방위 검토”', '민형배 \"반도체·통합지원금 활용계획 이번주까지 수립\"'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "'장롱면허' 이소영 장관도 탔다…중기부 공무원, 자율주행 체험",
-            "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261124156900030"
+            "text": "\"AI에 월 25달러 쓰면 물 7.2ℓ 소비…아몬드 우유의 162분의 1\"",
+            "source": "AI타임스",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217769"
           },
           {
-            "text": "계란 산지 가격 하락에도 소매가는 올라…고병원성 AI 확산 우려",
-            "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261124155800030"
+            "text": "배경훈 “국가시험 AI 부정행위 막을 기술대책 전방위 검토”",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/it/12218009"
           },
           {
-            "text": "인공지능 인재들 한자리에…AI 부트캠프 학생 취업지원 행사",
+            "text": "민형배 \"반도체·통합지원금 활용계획 이번주까지 수립\"",
             "source": "연합뉴스 산업",
-            "url": "https://www.yna.co.kr/view/AKR20261124148300530"
+            "url": "https://www.yna.co.kr/view/AKR20261125099400054"
           }
         ]
       },
@@ -113,23 +113,23 @@
         "key": "부동산·정책",
         "label": "부동산·정책",
         "emoji": "📰",
-        "title": "LH 미분양 매입확약 3만1천가구 중 1만3천가구 착공",
-        "body": "연합뉴스 경제·매일경제·매일경제 부동산 등이 전한 부동산·정책 흐름입니다. LH 미분양 매입확약 3만1천가구 중 1만3천가구 착공 이어서 '서울역 뒤편 ‘낡은 동네’의 반전 … 아파트 1만7천가구에 철길도 지하로', '주우정 현대엔지니어링 대표 물러난다'도 함께 다뤄졌습니다.",
+        "title": "제6회 서울도시건축비엔날레 총감독에 카를로 라티 선정",
+        "body": "매일경제 부동산 등이 전한 부동산·정책 흐름입니다. 제6회 서울도시건축비엔날레 총감독에 카를로 라티 선정 이어서 '아파트 매수 54%가 3040…전용 84㎡ 오피스텔 거래 57% 증가', '강남구 삼성동 옛 한국감정원 부지…38층 국제업무 거점시설로 재탄생'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "LH 미분양 매입확약 3만1천가구 중 1만3천가구 착공",
-            "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261124169300003"
-          },
-          {
-            "text": "서울역 뒤편 ‘낡은 동네’의 반전 … 아파트 1만7천가구에 철길도 지하로",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/realestate/12217136"
-          },
-          {
-            "text": "주우정 현대엔지니어링 대표 물러난다",
+            "text": "제6회 서울도시건축비엔날레 총감독에 카를로 라티 선정",
             "source": "매일경제 부동산",
-            "url": "https://www.mk.co.kr/news/realestate/12217546"
+            "url": "https://www.mk.co.kr/news/realestate/12217919"
+          },
+          {
+            "text": "아파트 매수 54%가 3040…전용 84㎡ 오피스텔 거래 57% 증가",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12217918"
+          },
+          {
+            "text": "강남구 삼성동 옛 한국감정원 부지…38층 국제업무 거점시설로 재탄생",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12217879"
           }
         ]
       },
@@ -137,23 +137,23 @@
         "key": "사회·생활",
         "label": "사회·생활",
         "emoji": "📰",
-        "title": "“1인당 80만원 드릴게요”…소득·나이 제한없이 뿌린다는 ‘이 지원금’",
-        "body": "매일경제·조선일보 등이 전한 사회·생활 흐름입니다. “1인당 80만원 드릴게요”…소득·나이 제한없이 뿌린다는 ‘이 지원금’ 이어서 '‘대마 재범’ 시나위 출신 김바다, 오늘 1심 선고…실형 면할까', '‘4년 연속 꼴찌’ 키움, 샐러리캡 하한액 도입 첫 해부터 패널티 받나 '도 함께 다뤄졌습니다.",
+        "title": "[게시판] 해수부, 항행장애물 대응 역량 강화 합동 연수회",
+        "body": "연합뉴스 사회·조선일보 등이 전한 사회·생활 흐름입니다. [게시판] 해수부, 항행장애물 대응 역량 강화 합동 연수회 이어서 ''러닝맨' 정철민 PD, 강제추행 '혐의없음' 뒤집혔다...검찰, 벌금형', '현대엔지니어링, 용인·호남 발전소 연속 수주…두달 새 2.3조 규모'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "“1인당 80만원 드릴게요”…소득·나이 제한없이 뿌린다는 ‘이 지원금’",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/world/12217663"
+            "text": "[게시판] 해수부, 항행장애물 대응 역량 강화 합동 연수회",
+            "source": "연합뉴스 사회",
+            "url": "https://www.yna.co.kr/view/AKR20261125105200051"
           },
           {
-            "text": "‘대마 재범’ 시나위 출신 김바다, 오늘 1심 선고…실형 면할까",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/society/12217409"
-          },
-          {
-            "text": "‘4년 연속 꼴찌’ 키움, 샐러리캡 하한액 도입 첫 해부터 패널티 받나 “샐러리캡 채우기 위한 영입은 없다”",
+            "text": "'러닝맨' 정철민 PD, 강제추행 '혐의없음' 뒤집혔다...검찰, 벌금형 구형",
             "source": "조선일보",
-            "url": "https://www.chosun.com/sports/baseball/2026/11/25/ME2DOYJZMU4GENRZGRRDGNTFMY/"
+            "url": "https://www.chosun.com/entertainments/enter_general/2026/11/25/GNRWINTDMYZDMZJXGAZTKMBZMQ/"
+          },
+          {
+            "text": "현대엔지니어링, 용인·호남 발전소 연속 수주…두달 새 2.3조 규모",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/economy/real_estate/2026/11/25/2FMLT3IEPBGSXDE7UVOQHYIBOI/"
           }
         ]
       },
@@ -161,18 +161,18 @@
         "key": "estate",
         "label": "부동산·경매",
         "emoji": "🏢",
-        "title": "\"팹·주택공급 몰려 … 건설인력 26만명 필요\"",
-        "body": "매일경제 부동산에서 '\"팹·주택공급 몰려 … 건설인력 26만명 필요\"' 글이 올라왔습니다. 매일경제 부동산에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "title": "반도체·신규 입주 효과?…인구 감소세 속에서도 경기·충청권엔 사람 몰렸다",
+        "body": "매일경제에서 '반도체·신규 입주 효과?…인구 감소세 속에서도 경기·충청권엔 사람 몰렸다' 글이 올라왔습니다. 매일경제 부동산에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
         "points": [
           {
-            "text": "\"팹·주택공급 몰려 … 건설인력 26만명 필요\"",
-            "source": "매일경제 부동산",
-            "url": "https://www.mk.co.kr/news/realestate/12217319"
+            "text": "반도체·신규 입주 효과?…인구 감소세 속에서도 경기·충청권엔 사람 몰렸다",
+            "source": "매일경제",
+            "url": "https://www.mk.co.kr/news/realestate/12218002"
           },
           {
-            "text": "부산 신축 선착순 전세에 …\"사흘전부터 텐트쳤어요\"",
+            "text": "“서울 청약자 10명 중 8명은 소형 선택”… 전용 60㎡ 이하 비중 ‘역대 최고’",
             "source": "매일경제 부동산",
-            "url": "https://www.mk.co.kr/news/realestate/12217318"
+            "url": "https://www.mk.co.kr/news/realestate/12217877"
           }
         ]
       },
@@ -180,18 +180,18 @@
         "key": "ai",
         "label": "AI·부업",
         "emoji": "🤖",
-        "title": "‘로봇 강국’ 타이틀 탈환 나선 일본의 역습 … 휴머노이드 부품 패권 지도 [맥킨지·매경 산업분석]",
-        "body": "매일경제에서 '‘로봇 강국’ 타이틀 탈환 나선 일본의 역습 … 휴머노이드 부품 패권 지도 [맥킨지·매경 산업분석]' 글이 올라왔습니다. 매일경제에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "title": "서울반도체, OLED보다 3배 밝은 LCD 광원 양산",
+        "body": "매일경제에서 '서울반도체, OLED보다 3배 밝은 LCD 광원 양산' 글이 올라왔습니다. AI타임스에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
         "points": [
           {
-            "text": "‘로봇 강국’ 타이틀 탈환 나선 일본의 역습 … 휴머노이드 부품 패권 지도 [맥킨지·매경 산업분석]",
+            "text": "서울반도체, OLED보다 3배 밝은 LCD 광원 양산",
             "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/business/12217342"
+            "url": "https://www.mk.co.kr/news/business/12218006"
           },
           {
-            "text": "종전·유가·AI 규제에 쏠린 ‘눈’ … 연말 증시 향방 가를 국제정치 변수들",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/world/12217148"
+            "text": "트럼프가 젠슨 황을 복귀시킨 이유…\"미국 오픈웨이트 AI 수호자\"",
+            "source": "AI타임스",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217764"
           }
         ]
       }
@@ -203,22 +203,43 @@
     "sources": 32,
     "collected": 112,
     "live_sources": 24,
-    "skipped_sources": 3,
-    "elapsed_sec": 26.5
+    "skipped_sources": 2,
+    "elapsed_sec": 20.4
   },
   "ranks": [
     {
-      "k": "AI",
-      "r": 220,
+      "k": "반도체",
+      "r": 999,
       "url": "",
-      "img": "https://img.yna.co.kr/photo/yna/YH/2026/09/10/PYH2026091010800001300_P2.jpg",
+      "img": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSU85opYwjXjsXZXVb1cq2hb0S9gH5dkMoLz0wOoF8X_rtcMZ7SwagTS6KCUIU",
+      "src": "Google Trends"
+    },
+    {
+      "k": "공휴일",
+      "r": 320,
+      "url": "",
+      "img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQYp64LvN8da4yVrQL9vzV9vO9zCMZZXDjUDKFt03Xs4Zk2Vu2vKnZnmRmLK78",
+      "src": "Google Trends"
+    },
+    {
+      "k": "술",
+      "r": 240,
+      "url": "",
+      "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSKimsTxnURjlDnLJMQ-txlljXh-2FwZTRRG8jqfvPjczJFiaU-rDtl1pBFXWc",
+      "src": "Google Trends"
+    },
+    {
+      "k": "AI",
+      "r": 235,
+      "url": "",
+      "img": "https://cdn.aitimes.com/news/photo/202611/217769_222123_4428.png",
       "src": "트렌드픽 수집"
     },
     {
-      "k": "멸망전",
-      "r": 192,
+      "k": "최고",
+      "r": 177,
       "url": "",
-      "img": "https://i.ytimg.com/vi/4thSglP8FXQ/hqdefault.jpg",
+      "img": "https://img.yna.co.kr/etc/inner/KR/2026/11/25/AKR20261125103500002_01_i_P2.jpg",
       "src": "트렌드픽 수집"
     },
     {
@@ -233,13 +254,6 @@
       "r": 177,
       "url": "",
       "img": "https://i.ytimg.com/vi/Oae1ZnQ15gQ/hqdefault.jpg",
-      "src": "트렌드픽 수집"
-    },
-    {
-      "k": "1원",
-      "r": 177,
-      "url": "",
-      "img": "",
       "src": "트렌드픽 수집"
     },
     {
@@ -262,20 +276,6 @@
       "url": "",
       "img": "",
       "src": "트렌드픽 수집"
-    },
-    {
-      "k": "금융·핀테크",
-      "r": 177,
-      "url": "",
-      "img": "",
-      "src": "트렌드픽 수집"
-    },
-    {
-      "k": "건설",
-      "r": 168,
-      "url": "",
-      "img": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRKCw0oMyDgX0eYd7_nX2-eay0NKcsDFo8ZpFHGuWzoXwDfq3YAjA34veL_vw",
-      "src": "Google Trends"
     }
   ]
 }
