@@ -1,13 +1,13 @@
 {
   "schema": "trendpick/creators/1",
-  "generated_at": "2026-11-26T04:54:43+09:00",
+  "generated_at": "2026-11-26T13:10:43+09:00",
   "site": {
     "repo": "econature7-lab/nori-traffic-scent",
     "pages_url": "https://econature7-lab.github.io/nori-traffic-scent/"
   },
   "issue": {
-    "no": 15,
-    "label": "No.15 (11.26)",
+    "no": 16,
+    "label": "No.16 (11.26)",
     "date": "2026-11-26"
   },
   "schedule": {
@@ -21,49 +21,49 @@
     {
       "rank": 1,
       "keyword": "AI",
-      "rise": 307,
+      "rise": 264,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 2,
-      "keyword": "sabah 대 바르셀로나",
-      "rise": 240,
-      "source": "Google Trends",
-      "url": ""
-    },
-    {
-      "rank": 3,
       "keyword": "뉴스 모음",
       "rise": 206,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
-      "rank": 4,
+      "rank": 3,
       "keyword": "뉴스&트렌드",
       "rise": 206,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
-      "rank": 5,
+      "rank": 4,
       "keyword": "뉴스콘텐츠",
       "rise": 206,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
+      "rank": 5,
+      "keyword": "이정재",
+      "rise": 200,
+      "source": "Google Trends",
+      "url": ""
+    },
+    {
       "rank": 6,
-      "keyword": "선수",
-      "rise": 180,
+      "keyword": "의심",
+      "rise": 200,
       "source": "Google Trends",
       "url": ""
     },
     {
       "rank": 7,
-      "keyword": "한국",
-      "rise": 177,
+      "keyword": "총재",
+      "rise": 192,
       "source": "트렌드픽 수집",
       "url": ""
     },
@@ -76,178 +76,178 @@
     },
     {
       "rank": 9,
-      "keyword": "아파트",
-      "rise": 177,
+      "keyword": "신현송",
+      "rise": 163,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 10,
-      "keyword": "관세",
+      "keyword": "서울",
       "rise": 163,
       "source": "트렌드픽 수집",
       "url": ""
     }
   ],
   "brief": {
-    "no": "No.15",
+    "no": "No.16",
     "date": "2026-11-26",
     "label": "11.26",
-    "title": "미국발 경제 압박 속 AI·로봇 기술 발전, 주택 정책 변화 예고",
-    "lead": "오늘 경제는 미국의 과잉생산 관세 예고와 PCE 물가 발표에 촉각을 곤두세웠습니다. 한편, AI와 로봇 기술은 뇌종양 치료 및 단백질 설계 등 다양한 분야에서 혁신을 이어가고 있으며, 주택 시장에서는 공적주택 공급 확대와 정비사업 규제 완화 논의가 활발합니다.",
+    "title": "물가 압력 속 AI·부동산 시장 변화, 주요 이슈로 부상",
+    "lead": "오늘 한국은행 총재는 물가 상승률과 잠재성장률에 대한 견해를 밝히며 경제 전반에 대한 관심을 높였습니다. 동시에 AI 기술의 발전과 부동산 시장의 미묘한 변화가 주목받고 있습니다. 오늘 하루 주요 뉴스를 통해 핵심 흐름을 확인해 보세요.",
     "engine": "gemini:gemini-2.5-flash",
     "paragraphs": [
-      "오늘의 핵심 흐름은 미국발 경제 압박과 국내 AI·로봇 기술의 약진, 그리고 주택 정책 변화 예고로 요약됩니다. 미국은 한국 등 14개 경제주체에 과잉생산 관세를 예고하며 대미 흑자 규모에 대한 우려를 키웠고, 10월 PCE 물가 지표는 예상치에 부합하며 시장의 불확실성을 더했습니다. 이러한 경제적 긴장 속에서도 한국의 로봇 기술은 제조 현장에서 필수적인 역할을 수행하고 있으며, 뇌 장벽을 뚫고 악성 종양을 치료하는 미세 로봇 개발 소식은 기술 혁신의 가능성을 보여주었습니다. 또한, 이재명 대표가 공적주택 공급 확대를 주장하며 중산층에게도 기회를 제공해야 한다고 강조한 점은 향후 주택 정책의 방향에 중요한 영향을 미 미칠 것으로 보입니다.",
-      "경제·증시 분야에서는 미국이 한국에 과잉생산 관세를 예고하며 대미 흑자 규모가 큰 한국 경제에 미칠 영향에 주목해야 합니다. IT·AI 분야에서는 구글의 제미나이 네온과 무료 비서 태스크 출시, 오픈AI의 GPT-6 단백질 설계 능력 등 범용 AI의 발전이 산업 전반에 미칠 파급 효과를 주시해야 합니다. 부동산·정책 분야에서는 이재명 대표의 공적주택 대전환 119만호 물량 예고와 분양전환 금지 주장이 주택 시장에 어떤 변화를 가져올지 확인해야 합니다. 사회·생활 분야에서는 3주 걸리던 3D 데이터 작업을 몇 초 만에 처리하는 한국 스타트업의 기술이 산업 생산성을 어떻게 혁신할지 주목할 필요가 있습니다.",
-      "오늘 챙겨볼 실용 포인트로는 급상승 키워드에서 'AI'와 '뉴스 모음'을 통해 최신 정보 흐름을 파악하는 것이 좋습니다. 유튜브 인기 영상에서는 '어벤져스: 둠스데이' 메인 예고편이 높은 조회수를 기록하며 관련 콘텐츠에 대한 관심이 뜨거움을 보여줍니다. 앱·게임 순위에서는 '피클: 나만의 AI 에이전트'와 'Claude by Anthropic'이 생산성 앱 상위권을 차지하며 AI 기반 서비스의 인기를 실감할 수 있습니다. 마감 임박 공모전 등은 수집 목록에 없어 확인할 수 없습니다."
+      "오늘 경제 분야에서는 한국은행 총재의 발언이 핵심적인 흐름을 형성했습니다. 총재는 물가 상승률이 2028년 목표 수준에 수렴할 것이며, 고유가 장기화와 수요 압력으로 물가 안정에 중점을 두겠다고 밝혔습니다. 이는 추가 금리 인상 가능성을 시사하는 동시에 가계 실질소비가 13분기 만에 줄어든 상황과 맞물려 경제 전반의 긴축 기조를 예상하게 합니다. 한편, IT·AI 분야에서는 미국이 스페이스X의 우주 데이터센터용 위성 100만기 배치를 승인하고 국내 AI 스타트업의 미국 진출이 모색되는 등 기술 발전과 글로벌 경쟁이 가속화되는 양상을 보였습니다. 부동산 시장에서는 수도권 소형 아파트의 상승세가 중대형을 웃돌고, 종부세에 대한 집주인들의 반응이 주목받는 등 정책과 시장의 복합적인 변화가 감지되었습니다.",
+      "경제·증시 분야에서는 신현송 한은 총재가 물가 안정에 중점을 두면서도 잠재성장률 추정치를 높이는 방향을 내달 발표하겠다고 밝힌 점을 주목해야 합니다. IT·AI 분야에서는 미국이 스페이스X의 위성 배치를 승인하며 우주 데이터센터 시장의 확장을 예고한 가운데, 국내 AI 스타트업의 해외 진출과 오픈AI의 챗GPT 사용량 통합 정책 변화를 확인해야 합니다. 부동산·정책 분야에서는 수도권 소형 아파트의 상승률이 중대형을 넘어선 현상과 함께, 기준금리 인상에도 전월세 불안이 지속되는 상황을 눈여겨봐야 합니다. 사회·생활 분야에서는 부산교육청이 악성 민원 학부모를 고발하며 교육 활동 침해에 대한 강력한 대응 의지를 보인 점이 주요 포인트입니다.",
+      "오늘의 급상승 키워드로는 'AI', '뉴스 모음', '이정재', '총재', '예고편' 등이 있습니다. 앱스토어에서는 '피클: 나만의 AI 에이전트'와 'Claude by Anthropic' 등 AI 관련 앱이 생산성 부문 상위권을 차지하며 AI 기술에 대한 높은 관심을 반영했습니다. 유튜브에서는 '[어벤져스: 둠스데이] 메인 예고편'이 479만 회 이상의 조회수를 기록하며 큰 인기를 끌고 있습니다. 마감 임박 공모전 등 실용 정보는 수집 목록에 포함되지 않았으므로, 오늘 챙겨볼 실용 포인트는 급상승 키워드와 앱·영상 순위 정보에 집중해야 합니다."
     ],
     "highlights": [
       {
         "label": "경제·증시",
-        "text": "미국이 한국 등 14개 경제주체에 과잉생산 관세를 예고하며 경제 압박이 고조되고 있습니다.",
-        "url": "https://www.mk.co.kr/news/world/12218736",
+        "text": "한은 총재가 물가 안정에 중점을 두며 추가 인상 가능성을 시사했습니다.",
+        "url": "https://www.mk.co.kr/news/economy/12219235",
         "source": "매일경제"
       },
       {
         "label": "IT·AI",
-        "text": "오픈AI의 GPT-6가 전문 모델 없이 단백질 설계를 검증하며 AI 기술의 진보를 알렸습니다.",
-        "url": "https://www.mk.co.kr/news/world/12218137",
+        "text": "미국이 스페이스X의 우주 데이터센터용 위성 100만기 배치를 승인했습니다.",
+        "url": "https://www.aitimes.com/news/articleView.html?idxno=217807",
         "source": "AI타임스"
       },
       {
         "label": "부동산·정책",
-        "text": "이재명 대표가 공적주택 119만호 물량 폭탄을 예고하며 중산층 기회 확대를 강조했습니다.",
-        "url": "https://www.mk.co.kr/news/politics/12218774",
-        "source": "전자신문"
+        "text": "수도권 소형 아파트가 중대형보다 높은 7% 상승률을 기록했습니다.",
+        "url": "https://www.yna.co.kr/view/AKR20261126099900003",
+        "source": "연합뉴스 경제"
       }
     ],
     "picks": [
       {
         "rank": 1,
         "label": "경제·증시",
-        "title": "역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도",
+        "title": "유디엠텍, 21억원 제3자배정 유상증자",
         "source": "연합뉴스 경제",
-        "url": "https://www.yna.co.kr/view/AKR20261126002000003"
+        "url": "https://www.yna.co.kr/view/AKR20261126098700008"
       },
       {
         "rank": 2,
         "label": "IT·AI",
-        "title": "덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇",
+        "title": "드레이퍼, 인천 AI 스타트업 5곳 이끌고 美 진출 물꼬",
         "source": "조선일보",
-        "url": "https://www.chosun.com/economy/startup_story/2026/11/26/4WR5JPDTWNEAHDT2JRMMTVFHO4/"
+        "url": "https://www.chosun.com/economy/tech_it/2026/11/26/X2AS6HW57BE6HGYIFAAXL4YQCA/"
       },
       {
         "rank": 3,
         "label": "부동산·정책",
-        "title": "구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
-        "source": "연합뉴스 사회",
-        "url": "https://www.yna.co.kr/view/AKR20261125187400054"
+        "title": "올해 수도권 소형 아파트 7% 상승…중대형 오름폭 웃돌아",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261126099900003"
       },
       {
         "rank": 4,
         "label": "사회·생활",
-        "title": "3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업",
+        "title": "부산교육청, ‘악성 민원’ 학부모 고발… “교육 활동 침해”",
         "source": "조선일보",
-        "url": "https://www.chosun.com/economy/startup_story/2026/08/13/EHGP3RRMCRAZLGN4P325EU437A/"
+        "url": "https://www.chosun.com/national/regional/2026/11/26/DHZQAZXDFNEOBGD6OHLRHNWYMY/"
       },
       {
         "rank": 5,
         "label": "경제·증시",
-        "title": "[속보] 美 10월 PCE 물가 전년 대비 3.8%↑…예상치 부합",
+        "title": "신현송 한은 총재 “물가 상승률, 2028년 목표 수준에 수렴”…추가인상 시사",
         "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/world/12218748"
+        "url": "https://www.mk.co.kr/news/economy/12219235"
       }
     ],
     "sections": [
       {
         "key": "econ",
         "label": "경제·증시",
-        "title": "미국, 한국 등 14개 경제주체에 ‘과잉생산 관세’ 예고…대미흑자 관세 부메랑 피했다?",
-        "body": "미국이 한국을 포함한 14개 경제주체에 과잉생산 관세를 예고하며 무역 압박을 강화했습니다. 이는 역대급 대미 흑자 규모에 대한 미국의 견제 움직임으로 풀이됩니다. 한편, 10월 PCE 물가 지표는 전년 대비 3.8% 상승하며 예상치에 부합했으나, 여전히 높은 수준을 유지하고 있어 인플레이션에 대한 경계심이 필요합니다. 10조원대 증안펀드 확대 가능성과 금융사 추가 출자 타진 소식은 시장의 안정화 노력과 맞물려 주목됩니다.",
+        "title": "한은 총재, 물가 안정 중점과 잠재성장률 상향 시사",
+        "body": "신현송 한은 총재는 물가 상승률이 2028년 목표 수준에 수렴할 것이며, 고유가 장기화와 수요 압력으로 물가 안정에 중점을 두겠다고 밝혔습니다. 이는 추가 금리 인상 가능성을 열어두는 동시에, 다음 달 잠재성장률 추정치를 높이는 방향으로 발표할 것이라고 언급하며 경제 전반에 대한 기대를 모았습니다. 물가에 가계 실질소비가 13분기 만에 줄어든 상황에서 총재의 발언은 향후 경제 정책 방향에 중요한 영향을 미칠 것으로 보입니다.",
         "points": [
           {
-            "text": "미국의 과잉생산 관세 예고가 국내 산업에 미칠 영향을 확인하세요.",
+            "text": "신현송 한은 총재의 물가 및 잠재성장률 발언을 확인하세요.",
             "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/world/12218736"
+            "url": "https://www.mk.co.kr/news/economy/12219235"
           },
           {
-            "text": "미국 10월 PCE 물가 지표가 향후 금리 인상에 미칠 영향을 분석하세요.",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/world/12218748"
-          },
-          {
-            "text": "증안펀드 확대 논의가 국내 증시 안정화에 어떻게 기여할지 살펴보세요.",
+            "text": "가계 실질소비 감소가 경제에 미칠 영향을 분석하세요.",
             "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261125183800002"
+            "url": "https://www.yna.co.kr/view/AKR20261126077400002"
+          },
+          {
+            "text": "유디엠텍의 유상증자 소식을 통해 기업 동향을 파악하세요.",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261126098700008"
           }
         ]
       },
       {
         "key": "ai",
         "label": "IT·AI",
-        "title": "‘큰 형님’ 구글의 귀환 … 제미나이 네온·무료 비서 태스크 “꽤 쓸만하네”",
-        "body": "구글이 제미나이 네온과 무료 비서 태스크를 선보이며 AI 시장에서의 존재감을 다시 한번 드러냈습니다. 이는 범용 AI 기술의 발전을 가속화하는 계기가 될 것으로 보입니다. 또한, 오픈AI는 GPT-6가 전문 모델 없이 단백질 설계를 성공적으로 검증했다고 밝히며 AI의 과학 연구 적용 가능성을 확대했습니다. 국내에서는 뇌 장벽을 뚫고 악성 종양을 치료하는 미세 로봇이 개발되어 의료 분야 AI 기술의 혁신을 예고하고 있습니다.",
+        "title": "미국, 스페이스X 위성 100만기 배치 승인…AI 경쟁 심화",
+        "body": "미국이 스페이스X의 우주 데이터센터용 위성 최대 100만기 배치를 승인하며 우주 기반 AI 인프라 확장에 대한 기대를 높였습니다. 국내에서는 드레이퍼가 인천 AI 스타트업 5곳의 미국 진출을 이끌며 글로벌 시장 진출의 물꼬를 텄습니다. 한편, 오픈AI는 챗GPT와 코덱스 사용량을 통합하여 헤비 유저의 한도 조기 소진 가능성을 알렸고, 중국 AI 기업들은 미국과의 기술 격차로 모델 개발 포기까지 검토하는 등 AI 분야의 경쟁이 더욱 치열해지는 양상입니다.",
         "points": [
           {
-            "text": "구글 제미나이 네온과 무료 비서 태스크의 활용 방안을 알아보세요.",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/world/12218137"
-          },
-          {
-            "text": "오픈AI GPT-6의 단백질 설계 기술이 바이오 산업에 미칠 영향을 분석하세요.",
+            "text": "스페이스X의 위성 배치 승인으로 인한 시장 변화를 주시하세요.",
             "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217758"
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217807"
           },
           {
-            "text": "한국 로봇 기술이 제조 현장과 의료 분야에서 어떻게 활용되는지 확인하세요.",
+            "text": "국내 AI 스타트업의 해외 진출 성공 사례를 살펴보세요.",
             "source": "조선일보",
-            "url": "https://www.chosun.com/economy/startup_story/2026/11/26/4WR5JPDTWNEAHDT2JRMMTVFHO4/"
+            "url": "https://www.chosun.com/economy/tech_it/2026/11/26/X2AS6HW57BE6HGYIFAAXL4YQCA/"
+          },
+          {
+            "text": "오픈AI의 챗GPT 사용량 통합 정책 변화를 확인하세요.",
+            "source": "AI타임스",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217800"
           }
         ]
       },
       {
         "key": "estate",
         "label": "부동산·정책",
-        "title": "李 \"공적주택, 중산층에게도 기회를 … 분양전환은 금지해야\"",
-        "body": "이재명 대표가 공적주택의 중산층 기회 확대를 주장하며 분양전환 금지를 강조했습니다. 이는 2030년까지 수도권에 50만호 착공을 목표로 하는 119만호 물량 폭탄 예고와 맞물려 주택 시장에 큰 변화를 가져올 것으로 예상됩니다. 한편, 서울시와 국토부가 정비사업 규제 완화를 놓고 장외 공방을 벌이는 등 정책 방향에 대한 이견이 표출되고 있습니다. 아파트·학교 시멘트의 발암물질 기준이 17년째 그대로라는 지적은 주거 환경 안전에 대한 우려를 제기합니다.",
+        "title": "수도권 소형 아파트 7% 상승, 종부세 논란 지속",
+        "body": "올해 수도권 소형 아파트가 7% 상승하며 중대형 오름폭을 웃돌았습니다. 이는 기준금리 인상으로 부동산 매수세가 위축된 상황에서도 전월세 불안이 여전한 가운데 나타난 현상입니다. 국세청장 후보자가 비거주 1주택에 대한 국민 눈높이 미흡에 사과하고, 종부세 조회 후 놀란 집주인들의 반응이 이어지는 등 세금 관련 논란도 지속되고 있습니다. 공공택지 민간분양의 씨가 마르면서 경기 분상제 단지의 몸값이 높아지는 현상도 주목됩니다.",
         "points": [
           {
-            "text": "이재명 대표의 공적주택 정책이 주택 시장에 미칠 영향을 분석하세요.",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/politics/12218774"
+            "text": "수도권 소형 아파트의 상승 요인을 분석하세요.",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261126099900003"
           },
           {
-            "text": "정비사업 규제 완화 논의가 주택 공급에 어떤 영향을 줄지 살펴보세요.",
+            "text": "종부세 관련 국세청장 후보자의 발언과 시장 반응을 확인하세요.",
             "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261125122851003"
+            "url": "https://www.yna.co.kr/view/AKR20261126099800002"
           },
           {
-            "text": "수도권 아파트 발주 182조원, 50만호 착공 계획의 실현 가능성을 확인하세요.",
-            "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261125168651001"
+            "text": "공공택지 민간분양 감소가 시장에 미칠 영향을 예측하세요.",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12219130"
           }
         ]
       },
       {
         "key": "social",
         "label": "사회·생활",
-        "title": "3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업",
-        "body": "한국의 한 스타트업이 3주 걸리던 3D 데이터 작업을 몇 초 만에 처리하는 기술을 선보이며 세계의 주목을 받았습니다. 이는 산업 전반의 생산성 향상에 크게 기여할 것으로 기대됩니다. 한편, 청담동 신축 아파트에서 배달 라이더들의 오토바이 출입을 막아 현수막이 걸리는 등 배달 문화와 주거 환경 간의 갈등이 표출되고 있습니다. 구례 주택에서 80대 2명이 쓰러진 채 발견되어 1명이 사망하는 안타까운 소식도 있었습니다.",
+        "title": "부산교육청, 악성 민원 학부모 고발…교육 활동 침해 강력 대응",
+        "body": "부산교육청이 악성 민원 학부모를 고발하며 교육 활동 침해에 대한 강력한 대응 의지를 보였습니다. 이는 교권 보호와 교육 환경 안정화에 대한 사회적 요구가 반영된 조치로 풀이됩니다. 한편, 롯데 자이언츠의 레이예스 선수가 3년 연속 안타왕을 기록하며 내년에도 롯데에서 뛰게 되었다는 소식은 스포츠 팬들의 관심을 모았습니다.",
         "points": [
           {
-            "text": "한국 스타트업의 3D 데이터 처리 기술이 산업에 미칠 파급 효과를 확인하세요.",
+            "text": "부산교육청의 악성 민원 대응 사례를 통해 교권 보호 이슈를 확인하세요.",
             "source": "조선일보",
-            "url": "https://www.chosun.com/economy/startup_story/2026/08/13/EHGP3RRMCRAZLGN4P325EU437A/"
+            "url": "https://www.chosun.com/national/regional/2026/11/26/DHZQAZXDFNEOBGD6OHLRHNWYMY/"
           },
           {
-            "text": "청담동 아파트의 배달 오토바이 출입 제한 사례를 통해 배달 문화를 살펴보세요.",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/society/12218738"
+            "text": "프로야구 롯데 레이예스 선수의 재계약 소식을 확인하세요.",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/sports/baseball/2026/11/26/FSBR5CAGOVHGZPTATCTBDQAOTY/"
           },
           {
-            "text": "이정효 감독의 인터뷰를 통해 스포츠계의 인간적인 면모를 엿보세요.",
+            "text": "교육 활동 침해 관련 현행 정책 및 개선 방안을 살펴보세요.",
             "source": "조선일보",
-            "url": "https://www.chosun.com/sports/football/2026/11/26/MM3GCZLCMU3TMYRQGQYGGZRWGY/"
+            "url": "https://www.chosun.com/national/regional/2026/11/26/DHZQAZXDFNEOBGD6OHLRHNWYMY/"
           }
         ]
       }
@@ -259,97 +259,114 @@
       "count": 12,
       "items": [
         {
-          "title": "덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇",
-          "source": "조선일보",
-          "url": "https://www.chosun.com/economy/startup_story/2026/11/26/4WR5JPDTWNEAHDT2JRMMTVFHO4/",
+          "title": "이재혁 마키나락스 공동 창업자, 식품제조 AX로 시드 투자 유치",
+          "source": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217805",
           "kind": "news",
-          "time": "9분 전",
+          "time": "1시간 전",
+          "hot": 84
+        },
+        {
+          "title": "드레이퍼, 인천 AI 스타트업 5곳 이끌고 美 진출 물꼬",
+          "source": "조선일보",
+          "url": "https://www.chosun.com/economy/tech_it/2026/11/26/X2AS6HW57BE6HGYIFAAXL4YQCA/",
+          "kind": "news",
+          "time": "3분 전",
           "hot": 80
         },
         {
-          "title": "美, 관세 부과하며 호남 반도체 언급… “SK 등에 국내 생산 확대 ‘압박’”",
+          "title": "신현송 “올해 국민소득 3000조 넘길 것… 700조는 반도체 기업 영업이익”",
           "source": "조선일보",
-          "url": "https://www.chosun.com/international/us/2026/11/26/I6UO4BGCEJGFVFW6KLPRUASKKM/",
+          "url": "https://www.chosun.com/economy/economy_general/2026/11/26/MJRDSYJUGIYTMYRVGZSGGOJWMY/",
           "kind": "news",
-          "time": "20분 전",
+          "time": "7분 전",
           "hot": 79
         },
         {
-          "title": "‘큰 형님’ 구글의 귀환 … 제미나이 네온·무료 비서 태스크 “꽤 쓸만하네”",
-          "source": "매일경제",
-          "url": "https://www.mk.co.kr/news/world/12218137",
+          "title": "미국, 스페이스X 우주 데이터센터용 위성 최대 100만기 배치 승인",
+          "source": "AI타임스",
+          "url": "https://www.aitimes.com/news/articleView.html?idxno=217807",
           "kind": "news",
-          "time": "24분 전",
+          "time": "25분 전",
           "hot": 78
         },
         {
-          "title": "[뉴테크] 韓美 개발 미세 로봇, 뇌 장벽 뚫고 악성종양 치료",
-          "source": "조선일보",
-          "url": "https://www.chosun.com/economy/science/2026/11/26/GZRTEMRXGVSTON3DG42DQMDBMQ/",
+          "title": "한은 총재 “올해 명목GDP 3000조원 상회…반도체 영업익 700조원”",
+          "source": "매일경제",
+          "url": "https://www.mk.co.kr/news/economy/12219230",
           "kind": "news",
-          "time": "54분 전",
+          "time": "35분 전",
           "hot": 77
-        },
-        {
-          "title": "오픈AI \"범용 AI GPT-6, 전문 모델 없이 단백질 설계…실험서 검증\"",
-          "source": "AI타임스",
-          "url": "https://www.aitimes.com/news/articleView.html?idxno=217758",
-          "kind": "news",
-          "time": "10시간 전",
-          "hot": 76
         }
       ]
     },
     "estate": {
       "label": "부동산·경매",
-      "count": 8,
+      "count": 9,
       "items": [
         {
-          "title": "구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
-          "source": "연합뉴스 사회",
-          "url": "https://www.yna.co.kr/view/AKR20261125187400054",
+          "title": "올해 수도권 소형 아파트 7% 상승…중대형 오름폭 웃돌아",
+          "source": "연합뉴스 경제",
+          "url": "https://www.yna.co.kr/view/AKR20261126099900003",
           "kind": "news",
-          "time": "5시간 전",
+          "time": "1시간 전",
           "hot": 72
         },
         {
-          "title": "李 \"공적주택, 중산층에게도 기회를 … 분양전환은 금지해야\"",
-          "source": "매일경제",
-          "url": "https://www.mk.co.kr/news/politics/12218774",
+          "title": "국세청장 후보자, 비거주 1주택에 \"국민 눈높이 미흡…죄송하다\"",
+          "source": "연합뉴스 경제",
+          "url": "https://www.yna.co.kr/view/AKR20261126099800002",
           "kind": "news",
-          "time": "5시간 전",
+          "time": "1시간 전",
           "hot": 71
         },
         {
-          "title": "도보 왕복 1km 청담 신축 아파트…배달 라이더들이 현수막 건 이유가?",
-          "source": "매일경제",
-          "url": "https://www.mk.co.kr/news/society/12218738",
+          "title": "“작년 59만원, 올해 290만원”…종부세 조회하고 놀란 집주인들",
+          "source": "매일경제 부동산",
+          "url": "https://www.mk.co.kr/news/realestate/12219159",
           "kind": "news",
-          "time": "6시간 전",
+          "time": "2시간 전",
           "hot": 70
         },
         {
-          "title": "\"배달음식은 받고 싶습니까?\"…오토바이 출입 막은 청담동 아파트",
-          "source": "연합뉴스 사회",
-          "url": "https://www.yna.co.kr/view/AKR20261125183200004",
+          "title": "기준금리 또 올라 3.25%…부동산 매수세 위축에도 전월세 불안은 ‘여전’",
+          "source": "매일경제 부동산",
+          "url": "https://www.mk.co.kr/news/realestate/12219140",
           "kind": "news",
-          "time": "6시간 전",
+          "time": "2시간 전",
           "hot": 69
         },
         {
-          "title": "2030년까지 수도권에 아파트 발주 182조원…50만호 착공(종합)",
-          "source": "연합뉴스 경제",
-          "url": "https://www.yna.co.kr/view/AKR20261125168651001",
+          "title": "공공택지 민간분양 씨 마른다…몸값 높아지는 경기 분상제 단지",
+          "source": "매일경제 부동산",
+          "url": "https://www.mk.co.kr/news/realestate/12219130",
           "kind": "news",
-          "time": "7시간 전",
+          "time": "2시간 전",
           "hot": 68
         }
       ]
     },
     "mom": {
       "label": "맘카페·육아",
-      "count": 0,
-      "items": []
+      "count": 2,
+      "items": [
+        {
+          "title": "조국 “공공기관 이전 부지에 공공주택 짓자…‘제2의 무상급식’으로”",
+          "source": "매일경제 부동산",
+          "url": "https://www.mk.co.kr/news/realestate/12219114",
+          "kind": "news",
+          "time": "2시간 전",
+          "hot": 67
+        },
+        {
+          "title": "부산교육청, ‘악성 민원’ 학부모 고발… “교육 활동 침해”",
+          "source": "조선일보",
+          "url": "https://www.chosun.com/national/regional/2026/11/26/DHZQAZXDFNEOBGD6OHLRHNWYMY/",
+          "kind": "news",
+          "time": "4분 전",
+          "hot": 64
+        }
+      ]
     },
     "apptech": {
       "label": "앱테크·핫딜",

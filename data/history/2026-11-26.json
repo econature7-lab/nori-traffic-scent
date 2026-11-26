@@ -1,62 +1,62 @@
 {
   "date": "2026-11-26",
   "issue": {
-    "no": 15,
-    "label": "No.15 (11.26)",
+    "no": 16,
+    "label": "No.16 (11.26)",
     "date": "2026-11-26"
   },
-  "generated_at": "2026-11-26T04:54:43+09:00",
+  "generated_at": "2026-11-26T13:10:43+09:00",
   "brief": {
-    "no": "No.15",
+    "no": "No.16",
     "date": "2026-11-26",
     "label": "11.26",
     "weekday": "목",
-    "title": "역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도 · 덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇 · 구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
-    "lead": "IT·AI에서는 '덤블링은 못하지만 제조 현장에 없어선 안 되는 …' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '구례 주택서 80대 2명 쓰러진 채 발견…1…' 소식이 눈에 띕니다. 오늘 수집한 104건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 6개 이슈를 골랐습니다.",
+    "title": "유디엠텍, 21억원 제3자배정 유상증자 · 드레이퍼, 인천 AI 스타트업 5곳 이끌고 美 진출 물꼬 · 올해 수도권 소형 아파트 7% 상승…중대형 오름폭 웃돌아",
+    "lead": "IT·AI에서는 '드레이퍼, 인천 AI 스타트업 5곳 이끌고 美 …' 흐름이 이어졌습니다. 부동산·정책 쪽에서도 '올해 수도권 소형 아파트 7% 상승…중대형 …' 소식이 눈에 띕니다. 오늘 수집한 104건에서 경제·증시·IT·AI·부동산·정책·사회·생활 분야 7개 이슈를 골랐습니다.",
     "picks": [
       {
         "rank": 1,
         "label": "경제·증시",
-        "title": "역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도",
+        "title": "유디엠텍, 21억원 제3자배정 유상증자",
         "source": "연합뉴스 경제",
-        "url": "https://www.yna.co.kr/view/AKR20261126002000003",
-        "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/25/PYH2026112514250006100_P2.jpg"
+        "url": "https://www.yna.co.kr/view/AKR20261126098700008",
+        "img": "https://r.yna.co.kr/global/home/v01/img/yonhapnews_logo_1200x800_kr01.jpg"
       },
       {
         "rank": 2,
         "label": "IT·AI",
-        "title": "덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇",
+        "title": "드레이퍼, 인천 AI 스타트업 5곳 이끌고 美 진출 물꼬",
         "source": "조선일보",
-        "url": "https://www.chosun.com/economy/startup_story/2026/11/26/4WR5JPDTWNEAHDT2JRMMTVFHO4/",
-        "img": "https://www.chosun.com/resizer/v2/WBRFFCMV5NEIPB4U7CYTCXW55I.jpg?auth=15b74bc1b39962884ee05366bbd7860c999181c71e9c7828e817981784bb3fb9&smart=true&width=3712&height=2475"
+        "url": "https://www.chosun.com/economy/tech_it/2026/11/26/X2AS6HW57BE6HGYIFAAXL4YQCA/",
+        "img": "https://www.chosun.com/resizer/v2/3INYPOT7CNFVNMPEKL7YP6ZRIA.jpeg?auth=0a8c464009b1e28b2cbfe593f1e63b4505930d7b6ba7904d79f321564226424d&smart=true&width=4500&height=2711"
       },
       {
         "rank": 3,
         "label": "부동산·정책",
-        "title": "구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
-        "source": "연합뉴스 사회",
-        "url": "https://www.yna.co.kr/view/AKR20261125187400054",
-        "img": "https://img.yna.co.kr/photo/cms/2026/10/20/03/PCM20261020000003990_P2.jpg"
+        "title": "올해 수도권 소형 아파트 7% 상승…중대형 오름폭 웃돌아",
+        "source": "연합뉴스 경제",
+        "url": "https://www.yna.co.kr/view/AKR20261126099900003",
+        "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/01/PYH2026110103340001300_P2.jpg"
       },
       {
         "rank": 4,
         "label": "사회·생활",
-        "title": "3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업",
+        "title": "부산교육청, ‘악성 민원’ 학부모 고발… “교육 활동 침해”",
         "source": "조선일보",
-        "url": "https://www.chosun.com/economy/startup_story/2026/08/13/EHGP3RRMCRAZLGN4P325EU437A/",
-        "img": "https://www.chosun.com/resizer/v2/YXPX7WPZ3BHIDGRCXT666CWK3A.jpg?auth=2bec0e4723030806ea3d56b565508cd5ab876c90b3d9940caa972487ad534d2c&smart=true&width=3578&height=2424"
+        "url": "https://www.chosun.com/national/regional/2026/11/26/DHZQAZXDFNEOBGD6OHLRHNWYMY/",
+        "img": "https://www.chosun.com/resizer/v2/UABNU7SI4JU23ZAT4KNKIVXWZA.jpg?auth=1a77b160e61312af93c297ad5ca3b66fe261c45e44526b3ea19e02027e99b6e1&smart=true&width=720&height=480"
       },
       {
         "rank": 5,
         "label": "경제·증시",
-        "title": "[속보] 美 10월 PCE 물가 전년 대비 3.8%↑…예상치 부합",
+        "title": "신현송 한은 총재 “물가 상승률, 2028년 목표 수준에 수렴”…추가인상 시사",
         "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/world/12218748",
-        "img": "https://pimg.mk.co.kr/news/cms/202611/25/news-p.v1.20261125.3f1b3886c29f4ea9a9cc442393fdfd09_R.png"
+        "url": "https://www.mk.co.kr/news/economy/12219235",
+        "img": "https://pimg.mk.co.kr/news/cms/202611/26/news-p.v1.20261126.5cccd20068be4345984c1d83bbd1bca6_R.jpg"
       }
     ],
     "metrics": {
-      "topics": 6,
+      "topics": 7,
       "news": 32,
       "items": 104
     },
@@ -65,23 +65,23 @@
         "key": "경제·증시",
         "label": "경제·증시",
         "emoji": "📰",
-        "title": "역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도",
-        "body": "연합뉴스 경제·매일경제 등이 전한 경제·증시 흐름입니다. 역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도 이어서 '[속보] 美 10월 PCE 물가 전년 대비 3.8%↑…예상치 부합', '[속보] 美, 한국 등 14개 경제주체에 ‘과잉생산 관세’ 예고'도 함께 다뤄졌습니다.",
+        "title": "유디엠텍, 21억원 제3자배정 유상증자",
+        "body": "연합뉴스 경제·매일경제 등이 전한 경제·증시 흐름입니다. 유디엠텍, 21억원 제3자배정 유상증자 이어서 '신현송 한은 총재 “물가 상승률, 2028년 목표 수준에 수렴”…추가인상', '춘천시 카자흐스탄 방문해 태권도 교류·체육시설 벤치마킹'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "역대급 대미흑자 관세 부메랑 피했다…15% 사수에 일단 안도",
+            "text": "유디엠텍, 21억원 제3자배정 유상증자",
             "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261126002000003"
+            "url": "https://www.yna.co.kr/view/AKR20261126098700008"
           },
           {
-            "text": "[속보] 美 10월 PCE 물가 전년 대비 3.8%↑…예상치 부합",
+            "text": "신현송 한은 총재 “물가 상승률, 2028년 목표 수준에 수렴”…추가인상 시사",
             "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/world/12218748"
+            "url": "https://www.mk.co.kr/news/economy/12219235"
           },
           {
-            "text": "[속보] 美, 한국 등 14개 경제주체에 ‘과잉생산 관세’ 예고",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/world/12218736"
+            "text": "춘천시 카자흐스탄 방문해 태권도 교류·체육시설 벤치마킹",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261126093000062"
           }
         ]
       },
@@ -89,23 +89,23 @@
         "key": "IT·AI",
         "label": "IT·AI",
         "emoji": "📰",
-        "title": "덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇",
-        "body": "조선일보·매일경제 등이 전한 IT·AI 흐름입니다. 덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇 이어서 '美, 관세 부과하며 호남 반도체 언급… “SK 등에 국내 생산 확대 ‘압', '‘큰 형님’ 구글의 귀환 … 제미나이 네온·무료 비서 태스크 “꽤 쓸만하'도 함께 다뤄졌습니다.",
+        "title": "드레이퍼, 인천 AI 스타트업 5곳 이끌고 美 진출 물꼬",
+        "body": "조선일보·AI타임스 등이 전한 IT·AI 흐름입니다. 드레이퍼, 인천 AI 스타트업 5곳 이끌고 美 진출 물꼬 이어서 '신현송 “올해 국민소득 3000조 넘길 것… 700조는 반도체 기업 영업', '미국, 스페이스X 우주 데이터센터용 위성 최대 100만기 배치 승인'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "덤블링은 못하지만 제조 현장에 없어선 안 되는 한국 로봇",
+            "text": "드레이퍼, 인천 AI 스타트업 5곳 이끌고 美 진출 물꼬",
             "source": "조선일보",
-            "url": "https://www.chosun.com/economy/startup_story/2026/11/26/4WR5JPDTWNEAHDT2JRMMTVFHO4/"
+            "url": "https://www.chosun.com/economy/tech_it/2026/11/26/X2AS6HW57BE6HGYIFAAXL4YQCA/"
           },
           {
-            "text": "美, 관세 부과하며 호남 반도체 언급… “SK 등에 국내 생산 확대 ‘압박’”",
+            "text": "신현송 “올해 국민소득 3000조 넘길 것… 700조는 반도체 기업 영업이익”",
             "source": "조선일보",
-            "url": "https://www.chosun.com/international/us/2026/11/26/I6UO4BGCEJGFVFW6KLPRUASKKM/"
+            "url": "https://www.chosun.com/economy/economy_general/2026/11/26/MJRDSYJUGIYTMYRVGZSGGOJWMY/"
           },
           {
-            "text": "‘큰 형님’ 구글의 귀환 … 제미나이 네온·무료 비서 태스크 “꽤 쓸만하네”",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/world/12218137"
+            "text": "미국, 스페이스X 우주 데이터센터용 위성 최대 100만기 배치 승인",
+            "source": "AI타임스",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217807"
           }
         ]
       },
@@ -113,23 +113,23 @@
         "key": "부동산·정책",
         "label": "부동산·정책",
         "emoji": "📰",
-        "title": "구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
-        "body": "연합뉴스 사회·매일경제 등이 전한 부동산·정책 흐름입니다. 구례 주택서 80대 2명 쓰러진 채 발견…1명 사망 이어서 '李 \"공적주택, 중산층에게도 기회를 … 분양전환은 금지해야\"', '도보 왕복 1km 청담 신축 아파트…배달 라이더들이 현수막 건 이유가?'도 함께 다뤄졌습니다.",
+        "title": "올해 수도권 소형 아파트 7% 상승…중대형 오름폭 웃돌아",
+        "body": "연합뉴스 경제·매일경제 부동산 등이 전한 부동산·정책 흐름입니다. 올해 수도권 소형 아파트 7% 상승…중대형 오름폭 웃돌아 이어서 '국세청장 후보자, 비거주 1주택에 \"국민 눈높이 미흡…죄송하다\"', '“작년 59만원, 올해 290만원”…종부세 조회하고 놀란 집주인들'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "구례 주택서 80대 2명 쓰러진 채 발견…1명 사망",
-            "source": "연합뉴스 사회",
-            "url": "https://www.yna.co.kr/view/AKR20261125187400054"
+            "text": "올해 수도권 소형 아파트 7% 상승…중대형 오름폭 웃돌아",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261126099900003"
           },
           {
-            "text": "李 \"공적주택, 중산층에게도 기회를 … 분양전환은 금지해야\"",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/politics/12218774"
+            "text": "국세청장 후보자, 비거주 1주택에 \"국민 눈높이 미흡…죄송하다\"",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261126099800002"
           },
           {
-            "text": "도보 왕복 1km 청담 신축 아파트…배달 라이더들이 현수막 건 이유가?",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/society/12218738"
+            "text": "“작년 59만원, 올해 290만원”…종부세 조회하고 놀란 집주인들",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12219159"
           }
         ]
       },
@@ -137,23 +137,37 @@
         "key": "사회·생활",
         "label": "사회·생활",
         "emoji": "📰",
-        "title": "3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업",
-        "body": "조선일보·연합뉴스 사회 등이 전한 사회·생활 흐름입니다. 3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업 이어서 '이정효 감독 \"더 과격해지면 집에서 쫓겨납니다\" 선수들에겐 공포의 대상,', '철도노조, 오전 9시부터 '안전운행 투쟁'…일부 열차 지연 예상'도 함께 다뤄졌습니다.",
+        "title": "부산교육청, ‘악성 민원’ 학부모 고발… “교육 활동 침해”",
+        "body": "조선일보 등이 전한 사회·생활 흐름입니다. 부산교육청, ‘악성 민원’ 학부모 고발… “교육 활동 침해” 이어서 '3년 연속 안타왕 레이예스, 내년에도 롯데에서 뛴다 ... 1년 총액 1', '롯데, '3년 연속 안타왕' 레이예스 붙잡았다…180만 달러에 재계약'도 함께 다뤄졌습니다.",
         "points": [
           {
-            "text": "3주 걸리던 3D 데이터 작업을 몇 초만에, 세계 놀래킨 한국 스타트업",
+            "text": "부산교육청, ‘악성 민원’ 학부모 고발… “교육 활동 침해”",
             "source": "조선일보",
-            "url": "https://www.chosun.com/economy/startup_story/2026/08/13/EHGP3RRMCRAZLGN4P325EU437A/"
+            "url": "https://www.chosun.com/national/regional/2026/11/26/DHZQAZXDFNEOBGD6OHLRHNWYMY/"
           },
           {
-            "text": "이정효 감독 \"더 과격해지면 집에서 쫓겨납니다\" 선수들에겐 공포의 대상, 집에선 매일 혼나는 남편 [오!쎈 ",
+            "text": "3년 연속 안타왕 레이예스, 내년에도 롯데에서 뛴다 ... 1년 총액 180만달러",
             "source": "조선일보",
-            "url": "https://www.chosun.com/sports/football/2026/11/26/MM3GCZLCMU3TMYRQGQYGGZRWGY/"
+            "url": "https://www.chosun.com/sports/baseball/2026/11/26/FSBR5CAGOVHGZPTATCTBDQAOTY/"
           },
           {
-            "text": "철도노조, 오전 9시부터 '안전운행 투쟁'…일부 열차 지연 예상",
-            "source": "연합뉴스 사회",
-            "url": "https://www.yna.co.kr/view/AKR20261125182900063"
+            "text": "롯데, '3년 연속 안타왕' 레이예스 붙잡았다…180만 달러에 재계약",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/sports/2026/11/26/WWKGGFK2ZNDEDH3ZWLTDUP7IJU/"
+          }
+        ]
+      },
+      {
+        "key": "mom",
+        "label": "맘카페·육아",
+        "emoji": "🌿",
+        "title": "조국 “공공기관 이전 부지에 공공주택 짓자…‘제2의 무상급식’으로”",
+        "body": "매일경제 부동산에서 '조국 “공공기관 이전 부지에 공공주택 짓자…‘제2의 무상급식’으로”' 글이 올라왔습니다.",
+        "points": [
+          {
+            "text": "조국 “공공기관 이전 부지에 공공주택 짓자…‘제2의 무상급식’으로”",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12219114"
           }
         ]
       },
@@ -161,37 +175,18 @@
         "key": "estate",
         "label": "부동산·경매",
         "emoji": "🏢",
-        "title": "\"배달음식은 받고 싶습니까?\"…오토바이 출입 막은 청담동 아파트",
-        "body": "연합뉴스 사회에서 '\"배달음식은 받고 싶습니까?\"…오토바이 출입 막은 청담동 아파트' 글이 올라왔습니다. 연합뉴스 경제에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
+        "title": "기준금리 또 올라 3.25%…부동산 매수세 위축에도 전월세 불안은 ‘여전’",
+        "body": "매일경제 부동산에서 '기준금리 또 올라 3.25%…부동산 매수세 위축에도 전월세 불안은 ‘여전’' 글이 올라왔습니다. 매일경제 부동산에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
         "points": [
           {
-            "text": "\"배달음식은 받고 싶습니까?\"…오토바이 출입 막은 청담동 아파트",
-            "source": "연합뉴스 사회",
-            "url": "https://www.yna.co.kr/view/AKR20261125183200004"
+            "text": "기준금리 또 올라 3.25%…부동산 매수세 위축에도 전월세 불안은 ‘여전’",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12219140"
           },
           {
-            "text": "2030년까지 수도권에 아파트 발주 182조원…50만호 착공(종합)",
-            "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261125168651001"
-          }
-        ]
-      },
-      {
-        "key": "ai",
-        "label": "AI·부업",
-        "emoji": "🤖",
-        "title": "[뉴테크] 韓美 개발 미세 로봇, 뇌 장벽 뚫고 악성종양 치료",
-        "body": "조선일보에서 '[뉴테크] 韓美 개발 미세 로봇, 뇌 장벽 뚫고 악성종양 치료' 글이 올라왔습니다. AI타임스에서도 비슷한 흐름의 글이 함께 수집됐습니다.",
-        "points": [
-          {
-            "text": "[뉴테크] 韓美 개발 미세 로봇, 뇌 장벽 뚫고 악성종양 치료",
-            "source": "조선일보",
-            "url": "https://www.chosun.com/economy/science/2026/11/26/GZRTEMRXGVSTON3DG42DQMDBMQ/"
-          },
-          {
-            "text": "오픈AI \"범용 AI GPT-6, 전문 모델 없이 단백질 설계…실험서 검증\"",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217758"
+            "text": "공공택지 민간분양 씨 마른다…몸값 높아지는 경기 분상제 단지",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12219130"
           }
         ]
       }
@@ -200,26 +195,19 @@
     "past": []
   },
   "stats": {
-    "sources": 32,
+    "sources": 31,
     "collected": 112,
     "live_sources": 24,
     "skipped_sources": 2,
-    "elapsed_sec": 27.8
+    "elapsed_sec": 26.0
   },
   "ranks": [
     {
       "k": "AI",
-      "r": 307,
+      "r": 264,
       "url": "",
-      "img": "https://cdn.aitimes.com/news/photo/202611/217758_222151_2754.png",
+      "img": "https://www.chosun.com/resizer/v2/3INYPOT7CNFVNMPEKL7YP6ZRIA.jpeg?auth=0a8c464009b1e28b2cbfe593f1e63b4505930d7b6ba7904d79f321564226424d&smart=true&width=4500&height=2711",
       "src": "트렌드픽 수집"
-    },
-    {
-      "k": "sabah 대 바르셀로나",
-      "r": 240,
-      "url": "",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkRuE6DWEZc6i9B___I1F7V8at9Is4QNM10QbaCy1VCK-WXW8tDY0oP_evEjg",
-      "src": "Google Trends"
     },
     {
       "k": "뉴스 모음",
@@ -243,17 +231,24 @@
       "src": "트렌드픽 수집"
     },
     {
-      "k": "선수",
-      "r": 180,
+      "k": "이정재",
+      "r": 200,
       "url": "",
-      "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRdu4tM_5UHB_246v6As7Rm8kY07WCNtfoDJuMq1KmupW26i-B8nMfvBlJBXp0",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXEaj904YNycdJ_5dCqA6Vi7t9NztuBV5vV3GI3VSGxS4os7i4tJSl9H7LakU",
       "src": "Google Trends"
     },
     {
-      "k": "한국",
-      "r": 177,
+      "k": "의심",
+      "r": 200,
       "url": "",
-      "img": "https://pimg.mk.co.kr/news/cms/202611/25/news-p.v1.20260221.635e301f951b4f1296d55e6be71394c4_R.png",
+      "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ-QQ65WwE1F_TDoDT2dhGOKLj3zHGJh0lqvunEEhsdBxuxgmw27u0ZjDnuIGU",
+      "src": "Google Trends"
+    },
+    {
+      "k": "총재",
+      "r": 192,
+      "url": "",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/26/news-p.v1.20261126.5cccd20068be4345984c1d83bbd1bca6_R.jpg",
       "src": "트렌드픽 수집"
     },
     {
@@ -264,17 +259,17 @@
       "src": "트렌드픽 수집"
     },
     {
-      "k": "아파트",
-      "r": 177,
+      "k": "신현송",
+      "r": 163,
       "url": "",
-      "img": "https://pimg.mk.co.kr/news/cms/202611/25/news-p.v1.20261125.e25a86d6f1014f7a94c472c26e03e289_R.png",
+      "img": "https://pimg.mk.co.kr/news/cms/202611/26/news-p.v1.20261126.5cccd20068be4345984c1d83bbd1bca6_R.jpg",
       "src": "트렌드픽 수집"
     },
     {
-      "k": "관세",
+      "k": "서울",
       "r": 163,
       "url": "",
-      "img": "https://img.yna.co.kr/photo/yna/YH/2026/11/25/PYH2026112514250006100_P2.jpg",
+      "img": "https://img.yna.co.kr/photo/cms/2023/10/13/26/PCM20231013000026990_P2.jpg",
       "src": "트렌드픽 수집"
     }
   ]
