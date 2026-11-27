@@ -1,14 +1,14 @@
 {
   "schema": "trendpick/creators/1",
-  "generated_at": "2026-11-27T13:16:44+09:00",
+  "generated_at": "2026-11-28T04:27:46+09:00",
   "site": {
     "repo": "econature7-lab/nori-traffic-scent",
     "pages_url": "https://econature7-lab.github.io/nori-traffic-scent/"
   },
   "issue": {
-    "no": 18,
-    "label": "No.18 (11.27)",
-    "date": "2026-11-27"
+    "no": 19,
+    "label": "No.19 (11.28)",
+    "date": "2026-11-28"
   },
   "schedule": {
     "timezone": "Asia/Seoul",
@@ -20,234 +20,229 @@
   "top10": [
     {
       "rank": 1,
+      "keyword": "파기환송",
+      "rise": 360,
+      "source": "Google Trends",
+      "url": ""
+    },
+    {
+      "rank": 2,
       "keyword": "AI",
       "rise": 278,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
-      "rank": 2,
-      "keyword": "강시후",
-      "rise": 200,
-      "source": "Google Trends",
-      "url": ""
-    },
-    {
       "rank": 3,
-      "keyword": "남경필",
+      "keyword": "교사",
       "rise": 200,
       "source": "Google Trends",
       "url": ""
     },
     {
       "rank": 4,
-      "keyword": "뉴스",
+      "keyword": "박서진",
       "rise": 200,
       "source": "Google Trends",
       "url": ""
     },
     {
       "rank": 5,
-      "keyword": "스타트업 가이드",
+      "keyword": "김범수",
       "rise": 177,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 6,
-      "keyword": "최대",
-      "rise": 163,
+      "keyword": "예고편",
+      "rise": 177,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
       "rank": 7,
+      "keyword": "1원",
+      "rise": 177,
+      "source": "트렌드픽 수집",
+      "url": ""
+    },
+    {
+      "rank": 8,
+      "keyword": "스타트업 가이드",
+      "rise": 177,
+      "source": "트렌드픽 수집",
+      "url": ""
+    },
+    {
+      "rank": 9,
       "keyword": "어벤져스",
       "rise": 163,
       "source": "트렌드픽 수집",
       "url": ""
     },
     {
-      "rank": 8,
-      "keyword": "둠스데이",
-      "rise": 163,
-      "source": "트렌드픽 수집",
-      "url": ""
-    },
-    {
-      "rank": 9,
-      "keyword": "예고편",
-      "rise": 163,
-      "source": "트렌드픽 수집",
-      "url": ""
-    },
-    {
       "rank": 10,
-      "keyword": "기술창업",
+      "keyword": "둠스데이",
       "rise": 163,
       "source": "트렌드픽 수집",
       "url": ""
     }
   ],
   "brief": {
-    "no": "No.18",
-    "date": "2026-11-27",
-    "label": "11.27",
-    "title": "AI 기술 발전과 경제 지표 변화, 그리고 부동산 시장의 지역별 온도차",
-    "lead": "오늘의 주요 흐름은 AI 기술의 진화와 산업 전반의 영향, 소비 지출 증가에 따른 경제 지표 변화, 그리고 지역별로 상이한 부동산 시장 동향입니다. 각 분야의 핵심 포인트를 통해 오늘을 관통하는 트렌드를 3분 안에 파악해 보세요.",
+    "no": "No.19",
+    "date": "2026-11-28",
+    "label": "11.28",
+    "title": "AI 기술 경쟁과 부동산 시장의 미묘한 변화",
+    "lead": "오늘 국내외 AI 기술 경쟁이 심화되는 가운데, 국내 부동산 시장에서는 이색적인 대출 매물이 등장하며 새로운 양상을 보입니다. 기업들은 주주가치 제고와 유상증자를 통해 경영 환경 변화에 대응하고 있습니다.",
     "engine": "gemini:gemini-2.5-flash",
     "paragraphs": [
-      "오늘의 핵심 흐름은 인공지능(AI) 기술의 발전이 산업 전반에 미치는 영향과 함께, 소비 지출 증가가 경제 지표에 반영되는 양상, 그리고 지역별로 상이한 부동산 시장의 온도차로 요약됩니다. AI 분야에서는 'GPT-6 아스트라'가 양자 중력 이론을 제안하고 '클로드'가 반박하는 등 기술적 진보가 빠르게 이루어지고 있으며, 엔비디아발 AI 조정 우려가 잦아들면서 코스피와 코스닥이 일제히 급등하는 모습을 보였습니다. 한편, 3분기 카드 해외사용액이 역대 최대치를 기록하며 여행 지출 증가를 시사하는 등 소비 활성화가 경제 지표에 긍정적인 영향을 미치고 있습니다. 그러나 배달 매장의 이중가격 문제나 OTT 공유 계정 단속 등 소비자 관련 이슈도 함께 부각되고 있습니다. 부동산 시장에서는 부산시가 인허가 감소와 악성 미분양 증가로 지방 맞춤형 대책을 요구하는 반면, 서울 신축 아파트 청약은 소형 평형에 몰리고 경기 남부 지역은 집값 상승세를 보이는 등 지역별로 다른 양상을 나타내고 있습니다.",
-      "경제·증시 분야에서는 3분기 카드 해외사용액이 66억 달러로 역대 최대를 기록하며 여행 지출 증가가 두드러졌음을 확인해야 합니다. IT·AI 분야에서는 'GPT-6 아스트라'가 양자 중력 이론을 제안하고 '클로드'가 반박하는 등 AI 기술의 진보와 함께, 스위스 정부가 AI 에이전트를 활용한 사이버 공격 5건을 확인하는 등 보안 위협도 함께 증가하고 있음을 주목해야 합니다. 부동산·정책 분야에서는 부산시가 인허가 3분의 1토막과 악성 미분양 증가를 겪으며 지방 맞춤형 대책을 요구하는 상황과 서울 및 경기 남부의 상이한 시장 반응을 비교해야 합니다. 사회·생활 분야에서는 과학기술인공제회 해킹으로 회원 정보 21만 건이 유출된 사건과 함께, 배달 매장의 이중가격 문제 등 소비 생활과 관련된 이슈들을 점검해야 합니다.",
-      "오늘 챙겨볼 실용적인 포인트로는 급상승 키워드에서 'AI'와 '어벤져스', '둠스데이'가 눈에 띄며, AI 기술과 관련 콘텐츠에 대한 높은 관심을 보여줍니다. 유튜브 인기 영상에서는 '어벤져스: 둠스데이' 관련 예고편 분석 영상이 높은 조회수를 기록하며 마블 콘텐츠의 인기를 입증했습니다. 앱 순위에서는 '피클: 나만의 AI 에이전트'와 'Claude by Anthropic'이 생산성 앱 상위권을 차지하며 AI 에이전트 서비스에 대한 수요가 높음을 알 수 있습니다. 또한, 상상인증권 주원 대표이사의 '사람 살리는 금융' 캠페인 동참 소식과 청년농 협업 경영 모델 지원 등 사회적 가치와 관련된 소식들도 함께 확인해 볼 필요가 있습니다."
+      "오늘의 핵심 흐름은 AI 기술 경쟁 심화와 국내 부동산 시장의 미묘한 변화로 요약됩니다. 미국 샌프란시스코가 AI 시대 미래 준비 최고 도시로 선정되고, 에임인텔리전스가 K-디지털 챔피언십 대상을 받는 등 AI 분야의 기술 개발과 경쟁이 활발합니다. 동시에 건설 현장에 AI 기술을 접목하려는 시도도 이어지고 있습니다. 한편, 부동산 시장에서는 '집주인 대출'이라는 이색적인 매물이 등장하며 시장의 불안정한 상황을 반영하고 있습니다. SK하이닉스와 대동은 주주가치 제고 및 유상증자를 결정하며 기업의 재무 건전성 확보와 주주 환원 노력을 지속하고 있습니다.",
+      "경제·증시 분야에서는 SK하이닉스가 자사주 일일 매수 주문량을 2배로 늘리며 주주가치 제고에 나선 점을 주목해야 합니다. IT·AI 분야에서는 샌프란시스코가 AI 시대 미래 준비 최고 도시로 꼽히고 서울이 8위로 상승한 가운데, AI 보안 기업 에임인텔리전스가 K-디지털 챔피언십 대상을 수상하며 국내 AI 기술력을 입증했습니다. 부동산·정책 분야에서는 92억 집을 팔기 위해 60억을 빌려준 '집주인 대출' 매물이 등장하며 시장의 특이한 상황을 보여주고 있습니다. 사회·생활 분야에서는 위스키가 잘 팔리지 않음에도 저장고를 더 지은 역발상 경영 사례가 눈에 띄며, 시장 변화에 대한 기업의 대응 전략을 엿볼 수 있습니다.",
+      "오늘 챙겨볼 실용 포인트로는 급상승 키워드 중 '파기환송', 'AI', '김범수' 등을 통해 주요 사회 및 경제 이슈의 흐름을 파악할 수 있습니다. 앱 순위에서는 '피클: 나만의 AI 에이전트', 'Claude by Anthropic', 'Google Gemini' 등 AI 관련 앱들이 생산성 부문 상위권을 차지하며 AI 기술에 대한 높은 관심을 보여줍니다. 또한, 유튜브 인기 영상에서 '어벤져스: 둠스데이' 메인 예고편이 높은 조회수를 기록하며 대중의 관심사를 확인할 수 있습니다."
     ],
     "highlights": [
       {
         "label": "IT·AI",
-        "text": "AI 에이전트 기술이 빠르게 발전하며 양자 중력 이론 제안까지 가능해졌습니다.",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=217864",
-        "source": "AI타임스"
-      },
-      {
-        "label": "경제·증시",
-        "text": "3분기 카드 해외사용액이 역대 최대치를 기록하며 여행 지출 증가를 보였습니다.",
-        "url": "https://www.yna.co.kr/view/AKR20261127064200002",
+        "text": "AI 시대 미래 준비 최고 도시에 샌프란시스코가 선정되었고, 서울이 8위로 상승했습니다.",
+        "url": "https://www.yna.co.kr/view/AKR20261127169800371",
         "source": "연합뉴스 경제"
       },
       {
         "label": "부동산·정책",
-        "text": "부산시가 인허가 감소와 악성 미분양 증가로 지방 맞춤형 대책을 요구했습니다.",
-        "url": "https://www.mk.co.kr/news/realestate/12220039",
+        "text": "92억 집을 팔려고 60억을 빌려준 '집주인 대출' 매물이 등장했습니다.",
+        "url": "https://www.mk.co.kr/news/realestate/12220403",
         "source": "매일경제 부동산"
+      },
+      {
+        "label": "경제·증시",
+        "text": "SK하이닉스가 자사주 일일 매수 주문량을 2배로 늘리며 주주가치 제고에 나섰습니다.",
+        "url": "https://www.yna.co.kr/view/AKR20261127165200003",
+        "source": "연합뉴스 산업"
       }
     ],
     "picks": [
       {
         "rank": 1,
         "label": "경제·증시",
-        "title": "송미령 농식품장관 \"청년농 협업 경영 모델 지원\"",
-        "source": "연합뉴스 경제",
-        "url": "https://www.yna.co.kr/view/AKR20261127063200030"
+        "title": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고",
+        "source": "연합뉴스 산업",
+        "url": "https://www.yna.co.kr/view/AKR20261127165200003"
       },
       {
         "rank": 2,
         "label": "IT·AI",
-        "title": "'GPT-6 아스트라'로 양자 중력 이론 제안…'클로드'로 반박도 등장",
-        "source": "AI타임스",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=217864"
+        "title": "「ジェンスン・フアン氏の不倫相手」関連の中国データセンターでエヌビディアの最先端AIチップ",
+        "source": "조선일보",
+        "url": "https://www.chosun.com/jp/international-jp/2026/11/28/HLK7JOTJLREE7DVDWYKLPCMOWM/"
       },
       {
         "rank": 3,
         "label": "부동산·정책",
-        "title": "인허가 3분의 1토막·악성 미분양 2455호…부산시 “지방 맞춤형 대책 달라”",
-        "source": "매일경제 부동산",
-        "url": "https://www.mk.co.kr/news/realestate/12220039"
+        "title": "서울 시민 97% “아파트 숨 막혀”… ‘막사’ 대신 ‘공원’ 짓는다",
+        "source": "조선일보",
+        "url": "https://www.chosun.com/economy/weeklybiz/2026/11/28/JJB2PTGKKRH3VFR2KBKYHQJEJ4/"
       },
       {
         "rank": 4,
         "label": "사회·생활",
-        "title": "“원룸에 김치냉장고까지 사치 아니냐고요?”…5만대 팔린 ‘미니의 반란’",
-        "source": "매일경제",
-        "url": "https://www.mk.co.kr/news/economy/12220071"
+        "title": "세종 전동면 야산서 불…1시간 58분 만에 진화(종합2보)",
+        "source": "연합뉴스 사회",
+        "url": "https://www.yna.co.kr/view/AKR20261128001452034"
       },
       {
         "rank": 5,
         "label": "경제·증시",
-        "title": "與정년연장특위 노사합의 불발…10개월만 회동에도 접점 못찾아(종합)",
+        "title": "국내 송금업체 해킹으로 25억원 피해…금감원 현장점검 착수",
         "source": "연합뉴스 경제",
-        "url": "https://www.yna.co.kr/view/AKR20261127069251001"
+        "url": "https://www.yna.co.kr/view/AKR20261127162500002"
       }
     ],
     "sections": [
       {
-        "key": "ai",
-        "label": "IT·AI",
-        "title": "AI 기술, 이론 제안부터 사이버 공격까지…산업 전반 영향력 확대",
-        "body": "인공지능(AI) 기술이 'GPT-6 아스트라'의 양자 중력 이론 제안과 '클로드'의 반박 등 학술적 영역까지 확장되며 빠른 발전을 보이고 있습니다. 동시에 앤트로픽은 MCP 서버에 '스킬'을 도입하여 AI 에이전트의 업무 노하우 전달 기능을 강화하는 등 실용적 활용도 증가하고 있습니다. 그러나 영국 중앙은행 총재는 미공개 최첨단 AI가 암호화 체계를 위협할 가능성을 경고했으며, 스위스 정부는 AI 에이전트를 활용한 사이버 공격 5건을 확인하는 등 AI 기술 발전과 함께 보안 위협도 커지고 있습니다. SAP는 AI 중심의 구조조정을 추진하며 최소 1만 명 감원을 검토하는 등 AI가 산업 구조에도 큰 변화를 가져오고 있습니다.",
+        "key": "econ",
+        "label": "경제·증시",
+        "title": "SK하이닉스, 자사주 매수 확대…김범수 SM시세조종 혐의 무죄 확정",
+        "body": "SK하이닉스가 주주가치 제고를 위해 자사주 일일 매수 주문량을 2배로 늘렸습니다. 이는 기업의 주주 환원 정책 강화의 일환으로 풀이됩니다. 한편, 김범수 카카오 창업자는 SM시세조종 혐의에 대해 공소청의 상고 포기로 무죄가 확정되었습니다. 국내 송금업체 해킹으로 25억원 피해가 발생하여 금감원이 현장 점검에 착수했습니다.",
         "points": [
           {
-            "text": "AI 에이전트의 기술 발전과 활용 사례를 확인하세요.",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217864"
+            "text": "SK하이닉스의 자사주 매수 확대 규모를 확인하세요.",
+            "source": "연합뉴스 산업",
+            "url": "https://www.yna.co.kr/view/AKR20261127165200003"
           },
           {
-            "text": "AI 관련 보안 위협 증가에 대한 경고를 살펴보세요.",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217858"
+            "text": "김범수 카카오 창업자의 SM시세조종 혐의 무죄 확정 소식을 확인하세요.",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261127156300004"
           },
           {
-            "text": "AI가 산업 구조조정에 미치는 영향을 분석하세요.",
-            "source": "AI타임스",
-            "url": "https://www.aitimes.com/news/articleView.html?idxno=217860"
+            "text": "국내 송금업체 해킹 피해 규모와 금감원 조치 내용을 확인하세요.",
+            "source": "연합뉴스 경제",
+            "url": "https://www.yna.co.kr/view/AKR20261127162500002"
           }
         ]
       },
       {
-        "key": "econ",
-        "label": "경제·증시",
-        "title": "해외여행 지출 역대 최대, OTT 공유 단속 등 소비 시장 변화 포착",
-        "body": "3분기 카드 해외사용액이 66억 달러로 역대 최대를 기록하며 여행 지출 증가가 두드러졌습니다. 이는 소비 심리 회복과 함께 해외 활동이 활발해지고 있음을 시사합니다. 그러나 OTT 공유 계정 단속으로 이용 중단이 속출하고 소비자 상담이 급증하는 등 새로운 소비 트렌드에 따른 소비자 이슈도 발생하고 있습니다. 또한 소비자연맹 조사 결과 배달 매장 68.9%가 이중가격을 적용하고 포장에도 배달가를 적용하는 문제가 지적되어 소비자 불만이 커질 수 있습니다. 한편, 여당 정년연장특위는 노사 합의 불발로 접점을 찾지 못했으며, 국고채 금리는 혼조세를 보이는 등 경제 전반의 다양한 움직임이 관찰됩니다.",
+        "key": "ai",
+        "label": "IT·AI",
+        "title": "AI 시대 미래 준비 도시 순위 발표…국내 AI 보안 기업 대상 수상",
+        "body": "AI 시대 미래 준비 최고 도시로 샌프란시스코가 선정되었으며, 서울은 8위로 상승하며 AI 분야에서의 경쟁력을 보여주었습니다. 국내에서는 AI 보안기업 에임인텔리전스가 K-디지털 챔피언십 대상을 수상하며 기술력을 인정받았습니다. 건설 현장에도 위험 예지 AI와 교량 점검 로봇 등 AI 기술이 도입되고 있습니다.",
         "points": [
           {
-            "text": "3분기 카드 해외사용액 증가 원인을 분석하세요.",
+            "text": "AI 시대 미래 준비 도시 순위에서 서울의 위치를 확인하세요.",
             "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261127064200002"
+            "url": "https://www.yna.co.kr/view/AKR20261127169800371"
           },
           {
-            "text": "OTT 공유 계정 단속이 소비자에게 미치는 영향을 확인하세요.",
+            "text": "AI 보안기업 에임인텔리전스의 수상 내용을 확인하세요.",
             "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261126142100030"
+            "url": "https://www.yna.co.kr/view/AKR20261127156800017"
           },
           {
-            "text": "배달 매장의 이중가격 문제와 소비자 불만을 점검하세요.",
-            "source": "연합뉴스 경제",
-            "url": "https://www.yna.co.kr/view/AKR20261127072000030"
+            "text": "건설 현장에 적용되는 AI 기술 사례를 확인하세요.",
+            "source": "매일경제 부동산",
+            "url": "https://www.mk.co.kr/news/realestate/12220274"
           }
         ]
       },
       {
         "key": "estate",
         "label": "부동산·정책",
-        "title": "지방 미분양 증가 속 서울 소형 청약 몰림…지역별 부동산 시장 양극화",
-        "body": "부산시는 인허가 3분의 1토막과 악성 미분양 2455호 증가를 겪으며 지방 맞춤형 대책을 정부에 요구하고 있습니다. 이는 지방 부동산 시장의 침체 심화를 보여주는 지표입니다. 반면 서울 신축 아파트 '경희궁 에피트'는 소형 평형에 청약이 몰렸으나, '25억 국평'은 주춤하는 등 서울 내에서도 평형별 선호도 차이가 나타났습니다. 특히 경기 남부 지역은 “이틀 새 6000만원 올랐다”는 보도처럼 서울이 주춤한 사이 '불장'을 보이는 등 지역별로 상이한 부동산 시장 양극화가 심화되고 있습니다. 전세사기 의심 사례 88건이 덜미를 잡히는 등 전세 시장의 불안정성도 여전합니다.",
+        "title": "압구정 '집주인 대출' 매물 등장…서울 시민 97% \"아파트 숨 막혀\"",
+        "body": "압구정에서 92억 원짜리 집을 팔기 위해 60억 원을 빌려준 '집주인 대출 가능' 매물이 등장하며 부동산 시장의 이색적인 상황을 보여주고 있습니다. 이는 세금 부담을 피하려는 움직임과도 연결됩니다. 한편, 서울 시민의 97%가 아파트에 답답함을 느끼며 '막사' 대신 '공원'을 짓는 정책에 대한 관심이 높아지고 있습니다.",
         "points": [
           {
-            "text": "부산시의 미분양 현황과 지방 부동산 대책 요구를 확인하세요.",
+            "text": "'집주인 대출' 매물의 등장 배경과 시장의 반응을 확인하세요.",
             "source": "매일경제 부동산",
-            "url": "https://www.mk.co.kr/news/realestate/12220039"
+            "url": "https://www.mk.co.kr/news/realestate/12220403"
           },
           {
-            "text": "서울 신축 아파트 청약 시장의 평형별 선호도를 분석하세요.",
-            "source": "매일경제 부동산",
-            "url": "https://www.mk.co.kr/news/realestate/12220003"
+            "text": "서울 시민들의 주거 환경 만족도와 정책 방향을 확인하세요.",
+            "source": "조선일보",
+            "url": "https://www.chosun.com/economy/weeklybiz/2026/11/28/JJB2PTGKKRH3VFR2KBKYHQJEJ4/"
           },
           {
-            "text": "경기 남부 지역의 집값 상승 요인을 살펴보세요.",
+            "text": "대우건설 '괴정역 푸르지오 더 센트럴'의 분양 정보를 확인하세요.",
             "source": "매일경제 부동산",
-            "url": "https://www.mk.co.kr/news/realestate/12219936"
+            "url": "https://www.mk.co.kr/news/realestate/12220366"
           }
         ]
       },
       {
         "key": "social",
         "label": "사회·생활",
-        "title": "과학기술인공제회 해킹으로 회원 정보 유출…미니 가전 인기 지속",
-        "body": "과학기술인공제회가 해킹당해 회원 정보 21만 건이 유출되는 심각한 보안 사고가 발생했습니다. 이는 개인 정보 보호의 중요성을 다시 한번 상기시키는 사건입니다. 한편, “원룸에 김치냉장고까지 사치 아니냐고요?”라는 질문처럼 미니 가전제품의 인기가 지속되며 5만 대 판매를 기록하는 등 1인 가구 및 소형 주거 공간에 최적화된 소비 트렌드가 이어지고 있습니다. 이와 함께 커뮤니티에서는 수지, 김선호 주연의 '현혹' 포스터 공개에 대한 관심이 높으며, 손연재 부부의 30억 기부 소식 등 다양한 사회적 이슈들이 주목받고 있습니다.",
+        "title": "위스키 시장의 역발상 경영 사례…세종 야산 화재 발생",
+        "body": "위스키가 잘 팔리지 않는 상황에서도 저장고를 더 지은 역발상 경영 사례가 주목받고 있습니다. 이는 장기적인 시장 전망과 기업의 독특한 전략을 보여줍니다. 한편, 세종 전동면 야산에서 불이 발생하여 1시간 58분 만에 진화되었습니다.",
         "points": [
           {
-            "text": "과학기술인공제회 해킹 사건의 경과와 피해 규모를 확인하세요.",
+            "text": "위스키 시장의 역발상 경영 사례가 어떤 내용인지 확인하세요.",
             "source": "조선일보",
-            "url": "https://www.chosun.com/economy/tech_it/2026/11/27/QOALEAOOOJGY5PPYJWWXHGCHFU/"
+            "url": "https://www.chosun.com/culture-life/food-taste/2026/11/28/U7F44MN3TVDOBIWJ44EHRJFLUA/"
           },
           {
-            "text": "미니 가전제품의 인기 요인과 소비 트렌드를 분석하세요.",
-            "source": "매일경제",
-            "url": "https://www.mk.co.kr/news/economy/12220071"
-          },
-          {
-            "text": "손연재 부부의 기부 소식 등 사회 공헌 활동을 살펴보세요.",
-            "source": "더쿠",
-            "url": "https://theqoo.net/hot/4419519684"
+            "text": "세종 야산 화재의 발생 원인과 진화 상황을 확인하세요.",
+            "source": "연합뉴스 사회",
+            "url": "https://www.yna.co.kr/view/AKR20261128001452034"
           }
         ]
       }
@@ -259,97 +254,114 @@
       "count": 10,
       "items": [
         {
-          "title": "'GPT-6 아스트라'로 양자 중력 이론 제안…'클로드'로 반박도 등장",
-          "source": "AI타임스",
-          "url": "https://www.aitimes.com/news/articleView.html?idxno=217864",
+          "title": "「ジェンスン・フアン氏の不倫相手」関連の中国データセンターでエヌビディアの最先端AIチップ",
+          "source": "조선일보",
+          "url": "https://www.chosun.com/jp/international-jp/2026/11/28/HLK7JOTJLREE7DVDWYKLPCMOWM/",
           "kind": "news",
-          "time": "29분 전",
+          "time": "2시간 전",
           "hot": 80
         },
         {
-          "title": "엔비디아발 'AI 조정' 잦아드나…코스피·코스닥 일제히 급등",
+          "title": "'AI 시대' 미래준비 최고 도시는 샌프란시스코…서울 8위로 상승",
           "source": "연합뉴스 경제",
-          "url": "https://www.yna.co.kr/view/AKR20261127078300008",
+          "url": "https://www.yna.co.kr/view/AKR20261127169800371",
           "kind": "news",
-          "time": "37분 전",
+          "time": "4시간 전",
           "hot": 79
         },
         {
-          "title": "앤트로픽, MCP 서버에 '스킬' 도입…AI 에이전트에 업무 노하우까지 전달",
-          "source": "AI타임스",
-          "url": "https://www.aitimes.com/news/articleView.html?idxno=217847",
+          "title": "AI 보안기업 에임인텔리전스, K-디지털 챔피언십 대상",
+          "source": "연합뉴스 경제",
+          "url": "https://www.yna.co.kr/view/AKR20261127156800017",
           "kind": "news",
-          "time": "53분 전",
+          "time": "9시간 전",
           "hot": 78
         },
         {
-          "title": "영국 중앙은행 총재 \"미공개 최첨단 AI, 암호화 체계 위협 가능성\"",
-          "source": "AI타임스",
-          "url": "https://www.aitimes.com/news/articleView.html?idxno=217858",
+          "title": "나주 육용오리 농장서 고병원성 AI 확진…이달 들어 11번째",
+          "source": "연합뉴스 경제",
+          "url": "https://www.yna.co.kr/view/AKR20261127152300030",
           "kind": "news",
-          "time": "1시간 전",
+          "time": "10시간 전",
           "hot": 77
         },
         {
-          "title": "한국창업학회·중기중앙회, AI 시대 중기·벤처 성장 전략 모색",
-          "source": "연합뉴스 경제",
-          "url": "https://www.yna.co.kr/view/AKR20261127074200030",
+          "title": "[테크스냅] NIA, AI 안전·격차 해소 법제도 논의",
+          "source": "연합뉴스 산업",
+          "url": "https://www.yna.co.kr/view/AKR20261127147500017",
           "kind": "news",
-          "time": "1시간 전",
+          "time": "10시간 전",
           "hot": 76
         }
       ]
     },
     "estate": {
       "label": "부동산·경매",
-      "count": 8,
+      "count": 10,
       "items": [
         {
-          "title": "인허가 3분의 1토막·악성 미분양 2455호…부산시 “지방 맞춤형 대책 달라”",
+          "title": "“건설현장이 ‘노가다’라구요?”…위험 예지 AI부터 교량 점검 로봇까지 [현장]",
           "source": "매일경제 부동산",
-          "url": "https://www.mk.co.kr/news/realestate/12220039",
+          "url": "https://www.mk.co.kr/news/realestate/12220274",
+          "kind": "news",
+          "time": "12시간 전",
+          "hot": 75
+        },
+        {
+          "title": "반도체 산업 경쟁력 키우는 천안·아산…두정역 일대 신규 분양 단지 ‘주목’",
+          "source": "매일경제 부동산",
+          "url": "https://www.mk.co.kr/news/realestate/12220239",
+          "kind": "news",
+          "time": "12시간 전",
+          "hot": 73
+        },
+        {
+          "title": "서울 시민 97% “아파트 숨 막혀”… ‘막사’ 대신 ‘공원’ 짓는다",
+          "source": "조선일보",
+          "url": "https://www.chosun.com/economy/weeklybiz/2026/11/28/JJB2PTGKKRH3VFR2KBKYHQJEJ4/",
           "kind": "news",
           "time": "1시간 전",
           "hot": 72
         },
         {
-          "title": "집값 25%만 먼저 낼까 땅 빼고 아파트만 살까 … 현금 적은 2030의 청약법",
+          "title": "92억 집 팔려고 60억 빌려준 집주인",
           "source": "매일경제 부동산",
-          "url": "https://www.mk.co.kr/news/realestate/12220034",
+          "url": "https://www.mk.co.kr/news/realestate/12220418",
           "kind": "news",
-          "time": "1시간 전",
+          "time": "10시간 전",
           "hot": 71
         },
         {
-          "title": "서울 신축 경희궁 에피트, 소형에 청약 몰렸다...‘25억 국평’은 주춤",
+          "title": "\"세금 날벼락 피하자\"…'집주인 대출' 매물 넉달새 100배",
           "source": "매일경제 부동산",
-          "url": "https://www.mk.co.kr/news/realestate/12220003",
+          "url": "https://www.mk.co.kr/news/realestate/12220408",
           "kind": "news",
-          "time": "2시간 전",
+          "time": "10시간 전",
           "hot": 70
-        },
-        {
-          "title": "“집값보다 높은 전세금에 주택 55채 매입”…전세사기 의심 88건 덜미",
-          "source": "매일경제 부동산",
-          "url": "https://www.mk.co.kr/news/economy/12219982",
-          "kind": "news",
-          "time": "2시간 전",
-          "hot": 69
-        },
-        {
-          "title": "“우리 집에서도 한강뷰”…마포 한신오피스텔 일대 재개발 추진",
-          "source": "매일경제 부동산",
-          "url": "https://www.mk.co.kr/news/realestate/12219977",
-          "kind": "news",
-          "time": "2시간 전",
-          "hot": 68
         }
       ]
     },
     "mom": {
       "label": "맘카페·육아",
-      "count": 0,
-      "items": []
+      "count": 2,
+      "items": [
+        {
+          "title": "유명 모델들한테 샤라웃받더니 세계적인 모델 나오미 캠벨한테까지 샤라웃받은 한국 초등학생 ㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷ.jpg",
+          "source": "더쿠",
+          "url": "https://theqoo.net/hot/4420078014",
+          "kind": "post",
+          "time": "최근",
+          "hot": 63
+        },
+        {
+          "title": "청연, 20만 매니저 기반 가사·돌봄 서비스 혁신…중소벤처기업부 장관상 수상",
+          "source": "벤처스퀘어",
+          "url": "https://www.venturesquare.net/1132246/",
+          "kind": "blog",
+          "time": "13시간 전",
+          "hot": 62
+        }
+      ]
     },
     "apptech": {
       "label": "앱테크·핫딜",
@@ -358,46 +370,46 @@
     },
     "webtoon": {
       "label": "웹툰·엔터",
-      "count": 14,
+      "count": 12,
       "items": [
         {
-          "title": "광마회귀",
+          "title": "절대군림",
           "source": "네이버웹툰",
-          "url": "https://comic.naver.com/webtoon/list?titleId=776601",
+          "url": "https://comic.naver.com/webtoon/list?titleId=832677",
           "kind": "webtoon",
-          "time": "금요일",
+          "time": "토요일",
           "hot": 86
         },
         {
-          "title": "나 혼자 만렙 뉴비",
+          "title": "마도전생기",
           "source": "네이버웹툰",
-          "url": "https://comic.naver.com/webtoon/list?titleId=773797",
+          "url": "https://comic.naver.com/webtoon/list?titleId=807777",
           "kind": "webtoon",
-          "time": "금요일",
+          "time": "토요일",
           "hot": 86
         },
         {
-          "title": "상남자",
+          "title": "킬러 배드로",
           "source": "네이버웹툰",
-          "url": "https://comic.naver.com/webtoon/list?titleId=751168",
+          "url": "https://comic.naver.com/webtoon/list?titleId=816798",
           "kind": "webtoon",
-          "time": "금요일",
+          "time": "토요일",
           "hot": 86
         },
         {
-          "title": "나 혼자 탑에서 농사",
+          "title": "대기업 탈출일지",
           "source": "네이버웹툰",
-          "url": "https://comic.naver.com/webtoon/list?titleId=808389",
+          "url": "https://comic.naver.com/webtoon/list?titleId=855719",
           "kind": "webtoon",
-          "time": "금요일",
+          "time": "토요일",
           "hot": 86
         },
         {
-          "title": "아카데미에서 살아남기",
+          "title": "나태 공자, 노력 천재 되다",
           "source": "네이버웹툰",
-          "url": "https://comic.naver.com/webtoon/list?titleId=820097",
+          "url": "https://comic.naver.com/webtoon/list?titleId=772853",
           "kind": "webtoon",
-          "time": "금요일",
+          "time": "토요일",
           "hot": 86
         }
       ]
